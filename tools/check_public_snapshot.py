@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import re
+import struct
 
 ROOT = Path(__file__).resolve().parents[1]
 PYTHON2_ADAPTERS = {
@@ -27,6 +28,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--verify-import', action='store_true', help='Verify the initial copied snapshot; omit for later source edits.')
     args = parser.parse_args()
+    asset_file = ROOT / 'ASSET_MANIFEST.json'
+    asset_manifest = json.loads(asset_file.read_text(encoding='utf-8')) if asset_file.is_file() else {'included': []}
+    assets = {item['path']: item for item in asset_manifest['included']}
     findings = []
     checked = 0
     python3_parsed = 0
@@ -37,7 +41,25 @@ def main():
         if path.is_symlink():
             findings.append({'path':rel.as_posix(),'rule':'symlink'})
             continue
-        if path.name not in {'LICENSE','.gitignore','.gitattributes'} and path.suffix not in ALLOWED_SUFFIXES:
+        if path.suffix == '.png':
+            item = assets.get(rel.as_posix())
+            if item is None or not rel.as_posix().startswith('TwilightBossSliceR/textures/'):
+                findings.append({'path':rel.as_posix(),'rule':'unlisted-image'})
+                continue
+            raw = path.read_bytes()
+            if len(raw) < 24 or raw[:8] != b'\x89PNG\r\n\x1a\n':
+                findings.append({'path':rel.as_posix(),'rule':'invalid-png'})
+            else:
+                dimensions = struct.unpack('>II', raw[16:24])
+                if dimensions != (item['width'], item['height']) or max(dimensions) > 8192:
+                    findings.append({'path':rel.as_posix(),'rule':'png-dimensions'})
+            if hashlib.sha256(raw).hexdigest() != item['sha256'] or len(raw) != item['bytes']:
+                findings.append({'path':rel.as_posix(),'rule':'image-hash-mismatch'})
+            if item.get('license') != 'CC-BY-NC-SA-4.0' or not item.get('creators') or not item.get('changes'):
+                findings.append({'path':rel.as_posix(),'rule':'image-attribution-missing'})
+            checked += 1
+            continue
+        if path.name not in {'LICENSE','ASSET_LICENSE','.gitignore','.gitattributes'} and path.suffix not in ALLOWED_SUFFIXES:
             findings.append({'path':rel.as_posix(),'rule':'unexpected-file-type'})
             continue
         raw = path.read_bytes()
@@ -54,6 +76,9 @@ def main():
             except SyntaxError as error:
                 findings.append({'path':rel.as_posix(),'line':error.lineno,'rule':'python3-syntax'})
         checked += 1
+    for name in assets:
+        if '..' in Path(name).parts or not (ROOT/name).is_file():
+            findings.append({'path':name,'rule':'asset-path-or-file-missing'})
     hashes_checked = 0
     if args.verify_import:
         manifest = json.loads((ROOT/'SOURCE_SNAPSHOT.json').read_text(encoding='utf-8'))
@@ -62,7 +87,7 @@ def main():
             if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=item['sha256']:
                 findings.append({'path':item['path'],'rule':'source-hash-mismatch'})
             hashes_checked += 1
-    print(json.dumps({'checked_files':checked,'python3_parsed':python3_parsed,'python2_adapters_not_parsed':sorted(PYTHON2_ADAPTERS),'snapshot_hashes_checked':hashes_checked,'findings':findings},ensure_ascii=False,indent=2))
+    print(json.dumps({'checked_files':checked,'python3_parsed':python3_parsed,'python2_adapters_not_parsed':sorted(PYTHON2_ADAPTERS),'snapshot_hashes_checked':hashes_checked,'asset_hashes_checked':len(assets),'findings':findings},ensure_ascii=False,indent=2))
     return int(bool(findings))
 
 if __name__=='__main__':

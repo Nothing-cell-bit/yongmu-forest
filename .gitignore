@@ -19,9 +19,10 @@ tmp/
 *.mp4
 *.wav
 *.ogg
-*.png
 *.jpg
 *.jar
 *.mcstructure
-TwilightBossSliceR/
+/TwilightBossSliceR/*
+!/TwilightBossSliceR/textures/
+!/TwilightBossSliceR/README.md
 source_locks/

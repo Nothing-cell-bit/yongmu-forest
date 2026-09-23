@@ -16,6 +16,8 @@
 
 模式检查通过不等于代码没有其他安全问题。此处没有作完整仓库漏洞审计。
 
+后续图片提交的检查另覆盖439张PNG的签名、尺寸、哈希和许可署名清单，CI无需安装Pillow即可执行这些检查。
+
 ## 可选依赖审计
 
 命令：`python -m pip_audit -r requirements-dev.txt -r requirements-tools.txt --format json`
