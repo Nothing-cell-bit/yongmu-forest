@@ -1,0 +1,1502 @@
+{
+  "snapshot_date": "2026-09-23",
+  "kind": "code-only development snapshot",
+  "source_version": "0.12.0",
+  "source_release_stage": "ur_ghast_hitbox_debug_candidate_runtime_pending",
+  "copied_files": [
+    {
+      "path": "LICENSE_CODE.md",
+      "bytes": 484,
+      "sha256": "ece558d8fa509ff9111d188ef22e2bed5617a9379f64dbc2b8f76902c3c6dacc"
+    },
+    {
+      "path": "licenses/LGPL-2.1.txt",
+      "bytes": 25515,
+      "sha256": "b158f965313ae302c11f57c4435a9dbf9bcb89846c23c04d71ed81c102607474"
+    },
+    {
+      "path": "tests/test_armor_wearable_visuals.py",
+      "bytes": 7480,
+      "sha256": "a080ef97900b8c8425027c7923315704e9c27ec2d26fcd966c8dea800e7a3c47"
+    },
+    {
+      "path": "tests/test_banister_logic.py",
+      "bytes": 8508,
+      "sha256": "b9fda106bea1b1f330881ecaf6779ff702121a1a5e806ef5b3c8ea745fda6a69"
+    },
+    {
+      "path": "tests/test_beetle_combat_workflow.py",
+      "bytes": 11741,
+      "sha256": "d500473679ce85ad962f8804810ed8a278a5775793ee4526883f60cf8b16173c"
+    },
+    {
+      "path": "tests/test_beetle_model_workflow.py",
+      "bytes": 15250,
+      "sha256": "ed20feebf7a93a469b26543f14fc275d6e4bd86bc3e4ecf5ea7bb16bc5c85af3"
+    },
+    {
+      "path": "tests/test_beetle_state_transitions.py",
+      "bytes": 5303,
+      "sha256": "df23326731877e3228b112303259cebd2e0eca8b84c5c3f66219456be17fccf7"
+    },
+    {
+      "path": "tests/test_biome_animals_expansion_contract.py",
+      "bytes": 8883,
+      "sha256": "7e2bd5d4b873862ba725e70ae53b2530fad82ea380e42643ed4037c4baad610e"
+    },
+    {
+      "path": "tests/test_biome_expansion_contract.py",
+      "bytes": 23198,
+      "sha256": "0c21decc52f6077073e225add236c51252c204eb09ddba926a2a9edad92f9836"
+    },
+    {
+      "path": "tests/test_biome_feature_expansion_contract.py",
+      "bytes": 33119,
+      "sha256": "c3c455daa4737c92c3249c86a609615941b05ede11887f6cdefbe074a8ef4a3d"
+    },
+    {
+      "path": "tests/test_biome_structure_matrix_contract.py",
+      "bytes": 3540,
+      "sha256": "a7e316ac8e379e39fa599ac4c6beabe158dda1e8adaac883e9dcca2eadc25e92"
+    },
+    {
+      "path": "tests/test_boss_hud_source_parity.py",
+      "bytes": 9490,
+      "sha256": "6ebf1dc1a156bcda67e23ebc267aa3b50ebfd5af64ef50c09d787bb033b7714b"
+    },
+    {
+      "path": "tests/test_boss_hud_visibility.py",
+      "bytes": 16311,
+      "sha256": "a68c4e906d1265a7c194c78547e574384d0a35812406b9513350608677cf2495"
+    },
+    {
+      "path": "tests/test_canopy_wood_family_contract.py",
+      "bytes": 11116,
+      "sha256": "6cf8c493d8f7ac4e0ed7a08d5c5314a5e34013aca2eb4a72f7e1d0a08f96b5e2"
+    },
+    {
+      "path": "tests/test_cave_ecology_contract.py",
+      "bytes": 6670,
+      "sha256": "fe49813e587cb94085483e6c2c96ced41af585c7a1b3c90a8cc9c7c9144f3bfc"
+    },
+    {
+      "path": "tests/test_chain_detached_visual.py",
+      "bytes": 8996,
+      "sha256": "77e52ff0e7be58e72112e93991064b5f3dbbf45ede4c909847a37a8667eb1633"
+    },
+    {
+      "path": "tests/test_chain_held_root.py",
+      "bytes": 3401,
+      "sha256": "944ef0b06691df16e2e7248f43f9f8076ecf2b45913ccfdd2ca72eb6fb377939"
+    },
+    {
+      "path": "tests/test_chain_render_time.py",
+      "bytes": 3095,
+      "sha256": "2911113725a4cf7d2cf8263b903a09f8dda33dfbf0fa5ad3d26e9887d4a3d3bc"
+    },
+    {
+      "path": "tests/test_chain_source_alignment.py",
+      "bytes": 7384,
+      "sha256": "4505b3b441fbbc8a971515788247e56cb29592851e9cc8e9c6244e65d07c4192"
+    },
+    {
+      "path": "tests/test_chain_source_spacing.py",
+      "bytes": 2451,
+      "sha256": "c10140226a45a3423225ad5ac29063f2efd1dd87a020e8650bced63c6e8fdded"
+    },
+    {
+      "path": "tests/test_chain_visual_frame.py",
+      "bytes": 11473,
+      "sha256": "52b60440f504385874fb6ab3679bdc23a43314bfc9d05ab941fc5224037ba6b2"
+    },
+    {
+      "path": "tests/test_chain_visual_startup.py",
+      "bytes": 5320,
+      "sha256": "599557a1bcd9a565fc32df7e71a6b7e19a5d228d040f8c3aa2e7914bc0c4c1ee"
+    },
+    {
+      "path": "tests/test_cindercoil_v2.py",
+      "bytes": 4974,
+      "sha256": "1f79e569187a805bb24a8cc1eb11a613ab3e3d9f22e830ac76c366ffb06112c3"
+    },
+    {
+      "path": "tests/test_creative_catalog_cleanup.py",
+      "bytes": 10127,
+      "sha256": "f808d8d841543dbdd92b0c44bd98e9b9b407cfcecc56e5b96a7a5ec81ec9d6ad"
+    },
+    {
+      "path": "tests/test_dark_forest_content_contract.py",
+      "bytes": 45756,
+      "sha256": "767d2d2fdc5d8e6abb25c3370fc0b0e160f30a3246ab519cfadafffda5cd383c"
+    },
+    {
+      "path": "tests/test_dark_forest_landmark_worldgen_contract.py",
+      "bytes": 14523,
+      "sha256": "cd7cd4055a1a9d584e86d625d002c9b844bf33cc49b5dfa78c6023053f17976e"
+    },
+    {
+      "path": "tests/test_dark_tower_route_contract.py",
+      "bytes": 159662,
+      "sha256": "fc3d98ca80efea65f4bf8203787ea84e3d1b68401705b8af8c053c353f3582b4"
+    },
+    {
+      "path": "tests/test_deer_sound_rights_reset.py",
+      "bytes": 9419,
+      "sha256": "090fa5f630abb790e8925c6104a9a9762f94a5f02260fdb689a2baed9787a809"
+    },
+    {
+      "path": "tests/test_enchanted_tree_worldgen_service.py",
+      "bytes": 5981,
+      "sha256": "89439c587050169a5725d3837b17945756d7bf6bbb386452d9af56dcb7ea2f22"
+    },
+    {
+      "path": "tests/test_entity_behavior_acceptance_workflow.py",
+      "bytes": 2812,
+      "sha256": "568c25cfafe68a99d3a1d131c4aa2744e58ef882a53b14b9628442d846b8fc31"
+    },
+    {
+      "path": "tests/test_entity_loot_repairs.py",
+      "bytes": 5878,
+      "sha256": "22a896ed7a51df531e1ff62cbaa602f2182067d039aeb696911a5e9a294b5f8f"
+    },
+    {
+      "path": "tests/test_entity_registry_logic.py",
+      "bytes": 989,
+      "sha256": "233755e8c0d397defc43007d6f3660b4a73ac870134b579f33c44b613dfd59e2"
+    },
+    {
+      "path": "tests/test_entry_diagnostics.py",
+      "bytes": 3849,
+      "sha256": "bf7d900ca3ab7ba9e7b7c0f57a418eca07e0b8ccb98178cacddd329b99a72139"
+    },
+    {
+      "path": "tests/test_fire_react_ui_contract.py",
+      "bytes": 1857,
+      "sha256": "06c863bca99eee6b3ad4728da54e1570079fd511106b266293df45b66c7ee586"
+    },
+    {
+      "path": "tests/test_fire_swamp_parity_contract.py",
+      "bytes": 18308,
+      "sha256": "9e9bd09e42455306a601573ec47fca26bf4be62823725cea06b3e2639a012730"
+    },
+    {
+      "path": "tests/test_firefly_legacy_support.py",
+      "bytes": 6860,
+      "sha256": "077b3c69294d62944a6508a1b2df8e712ed2a90d0b2ef7be78aa713ae0b7eb55"
+    },
+    {
+      "path": "tests/test_forest_animals_contract.py",
+      "bytes": 11473,
+      "sha256": "ecf79c97b12ef3950aafab190baf5ea210dd05822e1a5c26b24cdf0fba5e714c"
+    },
+    {
+      "path": "tests/test_fortification_lifecycle_runtime.py",
+      "bytes": 29116,
+      "sha256": "f3b825a64b3fa6b81fa43cabd2dacb89e299dd47b6a23a95a9bda50899108e85"
+    },
+    {
+      "path": "tests/test_fortification_player_layer.py",
+      "bytes": 9501,
+      "sha256": "f40947b151844409c9299d911d3cfa3354be999683c58c34b24cc9db3179a87b"
+    },
+    {
+      "path": "tests/test_fortification_visual_logic.py",
+      "bytes": 3196,
+      "sha256": "36e8fb4d5bbbe01e6b32a94968166819ce62afbd95ee6a3b7609fe0d5814045a"
+    },
+    {
+      "path": "tests/test_goblin_combat_runtime.py",
+      "bytes": 22457,
+      "sha256": "9b34beceed9c7a74db704316e5142ef156332ff92254bd11143257b9aae7a881"
+    },
+    {
+      "path": "tests/test_hostile_wolf_audio_repair.py",
+      "bytes": 6665,
+      "sha256": "3f143f52a2e5b88c656ab6f4d5a6878af48fc03cfdfc5b05e4824d7fcfcb8945"
+    },
+    {
+      "path": "tests/test_huge_lily_native_crash_regression.py",
+      "bytes": 2294,
+      "sha256": "1c23e1084027715ecf2a3ae59f51e6010caebb2163874bbabbb950920789e33f"
+    },
+    {
+      "path": "tests/test_hydra_audio_repair.py",
+      "bytes": 9449,
+      "sha256": "5b3fb517d4381ff260f3c49f6055eff06796dde021d20ca74d546e97af0f4f90"
+    },
+    {
+      "path": "tests/test_hydra_complete_parity_spec.py",
+      "bytes": 35457,
+      "sha256": "b42583414f4abd1d5ffe76a4e4c98e473bacdf996b6f0164de799eadbab06e41"
+    },
+    {
+      "path": "tests/test_hydra_logic.py",
+      "bytes": 20606,
+      "sha256": "9614d11b885f5606ed5eb93e6f1788b40de278a9ae4fee29d902a9cba9141c86"
+    },
+    {
+      "path": "tests/test_hydra_route_content_contract.py",
+      "bytes": 7449,
+      "sha256": "ac8f946385bc226904441b890677c3dd5e6472f48453e4fca6e0e92ed34fce3e"
+    },
+    {
+      "path": "tests/test_hydra_route_entity_contract.py",
+      "bytes": 32491,
+      "sha256": "fc5cbd85ace0a99a9a770aa9a05635ffae1c41f1b6b2aed5069651b81f8703e9"
+    },
+    {
+      "path": "tests/test_hydra_route_model_workflow.py",
+      "bytes": 24324,
+      "sha256": "fcc1742b6c7cffe1069b8f7934cd0daf90b3c01164391d95c06733cda9d8b736"
+    },
+    {
+      "path": "tests/test_hydra_route_progression_logic.py",
+      "bytes": 3596,
+      "sha256": "d2b047c6b3ca557e1db21b13858277a24bdb6e5e21e7590f58e4b285012d7ae1"
+    },
+    {
+      "path": "tests/test_hydra_route_structure_contract.py",
+      "bytes": 6673,
+      "sha256": "6189d8332d174353e439cd0b5252bd9e1adea4886fc33ee75fbc7efd7b00ec12"
+    },
+    {
+      "path": "tests/test_item_effects.py",
+      "bytes": 14602,
+      "sha256": "5dc0be3030470b2a090c0da9201196026f1bf3121c475e7b1918600c45d58ed2"
+    },
+    {
+      "path": "tests/test_knight_route_content_and_combat.py",
+      "bytes": 92047,
+      "sha256": "1d0ed29424852121c75e878150c6860b8e932727ae1e55262d05c559d9bc4ce0"
+    },
+    {
+      "path": "tests/test_knight_stronghold_component_port.py",
+      "bytes": 7610,
+      "sha256": "7240b81b8c6ac95882cbc844a71c0057e273ba629deb16da33603aff9aacf767"
+    },
+    {
+      "path": "tests/test_knight_stronghold_generation_regressions.py",
+      "bytes": 64226,
+      "sha256": "4de5fedbd8a20157b0bad8087f8deec3498f1221e22fd0d41d3f1ad09ee370a9"
+    },
+    {
+      "path": "tests/test_knight_stronghold_route_contract.py",
+      "bytes": 9619,
+      "sha256": "19a52fe31af4c0805e3f5c17d46d9a7ab63fee54b35e08c80807934eaf602526"
+    },
+    {
+      "path": "tests/test_kobold_audio_repair.py",
+      "bytes": 8741,
+      "sha256": "91c864cae9b2ed4a5faedd5d80944f2ed2145afc4f04a51922bc5572c5f69a43"
+    },
+    {
+      "path": "tests/test_labyrinth_route_logic.py",
+      "bytes": 12715,
+      "sha256": "96e538800d9006dada59c0a0a94b4a8c9ce147f7dbc0fdc2f5e63f616baabf6e"
+    },
+    {
+      "path": "tests/test_leaf_decay_integration_contract.py",
+      "bytes": 3630,
+      "sha256": "7aadd61db07ac7ac33e87ea08d22e64eb6808becda3f4ae2a7bb0912153446a9"
+    },
+    {
+      "path": "tests/test_leaf_decay_logic.py",
+      "bytes": 8751,
+      "sha256": "85cd357e9fea06ec2aeee3e771bcf6e2eff181610cc953d474f53286baf7cca6"
+    },
+    {
+      "path": "tests/test_lich_animation_checker_compatibility.py",
+      "bytes": 9955,
+      "sha256": "b15c5bcb9ac142acc7519ecbefe85cf75597a08d9f564df3c148655e64d96f93"
+    },
+    {
+      "path": "tests/test_lich_death_shutdown.py",
+      "bytes": 6366,
+      "sha256": "9473c240881fcf5f3ed77b14619deea7dcbd90f2668a8229441ab12056c938aa"
+    },
+    {
+      "path": "tests/test_lich_effect_runtime.py",
+      "bytes": 9673,
+      "sha256": "84f9c616d47f1e6bb8b408e6e9f563d259a55969c9617551224ff6b323962cd5"
+    },
+    {
+      "path": "tests/test_lich_integration_contract.py",
+      "bytes": 26719,
+      "sha256": "330208572404ba0bc8666c980d6213c5497a7f85ad70b9d51c0ddb20b1d371c9"
+    },
+    {
+      "path": "tests/test_lich_logic.py",
+      "bytes": 15755,
+      "sha256": "4039725a74b077351d4920b0751a92cf39e8716b4ce4cd696a6588cbbed905f0"
+    },
+    {
+      "path": "tests/test_lich_minion_floor.py",
+      "bytes": 4377,
+      "sha256": "837bac1229b893515ae80daae86abceef60b3938a309032f85db84d2ffc45433"
+    },
+    {
+      "path": "tests/test_lich_model_workflow.py",
+      "bytes": 17149,
+      "sha256": "091b9a195be0dbea3ced8e28054822752e73edf4e6f1a12a4b4e815f83b6297e"
+    },
+    {
+      "path": "tests/test_lich_parity_repairs.py",
+      "bytes": 14054,
+      "sha256": "fe32502ed1d78b403124bec3648e8078e184f7d726b92d85dea1e5661cdd4070"
+    },
+    {
+      "path": "tests/test_lich_phase3_particles.py",
+      "bytes": 3612,
+      "sha256": "0e4a5bd1f4c61bd6fac95ef582fb07ee26eccf17e4a6493070c1a2040551aa5e"
+    },
+    {
+      "path": "tests/test_lich_resources_contract.py",
+      "bytes": 10889,
+      "sha256": "ff9104371d55fbbaa82f800ca0e098ea700f1e79da78895bd3cc6dbbc9335098"
+    },
+    {
+      "path": "tests/test_lich_tower_contract.py",
+      "bytes": 23427,
+      "sha256": "f6001c95f534a97cd5fb847d85c7c6728064e66f3d2039b9f9623bc152e87419"
+    },
+    {
+      "path": "tests/test_lily_pad_worldgen.py",
+      "bytes": 9157,
+      "sha256": "4850af9f2295eccb58077b59038bc551d3b98ac31d4a01cff55dde3dc94ede23"
+    },
+    {
+      "path": "tests/test_magic_map_bitmap_cache.py",
+      "bytes": 9290,
+      "sha256": "deb04ac10f78515c869761f081589c35a7ceb7eb58c2414ad8fcddda6f2d075c"
+    },
+    {
+      "path": "tests/test_magic_map_client_item_logic.py",
+      "bytes": 5768,
+      "sha256": "c453809dba7d12d631e63ea46c2942c257589787a48ec71f00d5e282f466aab1"
+    },
+    {
+      "path": "tests/test_magic_map_contract.py",
+      "bytes": 53781,
+      "sha256": "7ff1010c8a0bf0898553715450589dda9f56ed8525996ae201aba8e4cb5d72f7"
+    },
+    {
+      "path": "tests/test_magic_map_hud_renderer.py",
+      "bytes": 10398,
+      "sha256": "08343961f4395f5e1cbfbe5008beea078293d36a2a13e51e58d8b4426f3e1be5"
+    },
+    {
+      "path": "tests/test_magic_map_logic.py",
+      "bytes": 29435,
+      "sha256": "b5fdf7367058b560354ff260beec28fbd3b782ed2be4bde8883e315ffaf1fc71"
+    },
+    {
+      "path": "tests/test_magic_map_ui_renderer.py",
+      "bytes": 5574,
+      "sha256": "0cb218199a9aad076ca6a549408c9ab7d6c035e607229b841b926b3e3c2e41c7"
+    },
+    {
+      "path": "tests/test_map_ui_lifecycle.py",
+      "bytes": 3872,
+      "sha256": "75d75994353f773d0871dd75e1e5bd6bb30b076c477bb8977bb0f6b61f843a42"
+    },
+    {
+      "path": "tests/test_maze_map_cache_runtime.py",
+      "bytes": 1538,
+      "sha256": "af54a69900446c2d8f76afb05c443e72b03c2bc6a196ed837c5fd1882d782561"
+    },
+    {
+      "path": "tests/test_maze_map_integration.py",
+      "bytes": 13070,
+      "sha256": "4e0f7e49984fee75e4082ae4d33dd3f7a1ca2d733b439f235c472b7f74b657b8"
+    },
+    {
+      "path": "tests/test_maze_map_logic.py",
+      "bytes": 2585,
+      "sha256": "b95f03c909da1bf381cb9125ceac82e29be411dfb30c14b9475c52cef90d5813"
+    },
+    {
+      "path": "tests/test_model_acceptance_workflow.py",
+      "bytes": 27049,
+      "sha256": "8423dcda617bc47503ecd2a76802016e0685fd40e6c2c57cf77d53fb213f55e9"
+    },
+    {
+      "path": "tests/test_molang_runtime_compatibility.py",
+      "bytes": 2223,
+      "sha256": "9ff04a661eccae9dd55231e0bb3dd3f5bb75f90be951bd3068014102a5db74eb"
+    },
+    {
+      "path": "tests/test_mosquito_swarm_parity.py",
+      "bytes": 6914,
+      "sha256": "84eeb9647ee9ec82c6a3a4f71958ad36efec377318a3c535c3c862fe6c7d62fa"
+    },
+    {
+      "path": "tests/test_mushroom_forest_generation_contract.py",
+      "bytes": 19019,
+      "sha256": "affac9bce23999a59ab6ee1976acfa1292bcf1714b3303642b02cf34f4657f9b"
+    },
+    {
+      "path": "tests/test_mushroom_worldgen_service.py",
+      "bytes": 8655,
+      "sha256": "004e38ff6cd0240bfad97b588c03c7e5d4ac3670af22f6f067bb496f8beafb73"
+    },
+    {
+      "path": "tests/test_naga_boss_workflow.py",
+      "bytes": 10523,
+      "sha256": "fbc62506a54b3e6bdd8fba1bfc3a389b4c0ccdd768a23a34eadc7fd13de1b2e9"
+    },
+    {
+      "path": "tests/test_naga_courtyard_contract.py",
+      "bytes": 16165,
+      "sha256": "341944eee39cd8df29f323f79b70b93cacb0e4d01db7212c3401b4c028d67846"
+    },
+    {
+      "path": "tests/test_naga_integration_contract.py",
+      "bytes": 56227,
+      "sha256": "9c643221a2d43dbebebe7f5fdf892e5100a259ed2ac954397d4c072f5eefcb3c"
+    },
+    {
+      "path": "tests/test_naga_logic.py",
+      "bytes": 32699,
+      "sha256": "cf9ae51195abe5931f5420edbb9921d96a8abedf94f654e0961dc48659235454"
+    },
+    {
+      "path": "tests/test_naga_sound_rights_reset.py",
+      "bytes": 11099,
+      "sha256": "0a6bf073319a0782d2b59fbd37a26e0293a67e54522b1dc6eb3f1af631324b6e"
+    },
+    {
+      "path": "tests/test_native_item_diagnostics.py",
+      "bytes": 3457,
+      "sha256": "fc27c5dfd2211b9e4620e3d240557b5840cf2caee7b29431f91402f22b0818f1"
+    },
+    {
+      "path": "tests/test_native_structure_worldgen_safety.py",
+      "bytes": 10229,
+      "sha256": "e6ed378280768716012a0e311759b2e6ed399833ae630916be88b739e124465d"
+    },
+    {
+      "path": "tests/test_new_animal_ai_contract.py",
+      "bytes": 13766,
+      "sha256": "b2f095da6189319982ea75c7d9f38ce6581bb6f34505340b01053747efe8f4fa"
+    },
+    {
+      "path": "tests/test_pack_sync.py",
+      "bytes": 49626,
+      "sha256": "7baf1b93062aeabdb2d309b7874195b77fb19daea45a07e26dad26e3c454da91"
+    },
+    {
+      "path": "tests/test_penguin_model_workflow.py",
+      "bytes": 10963,
+      "sha256": "80a15e4a71b5d285b9f4af6a2f114aad3eed7a0b911a11a48bceaa49c6cf3a4f"
+    },
+    {
+      "path": "tests/test_phantom_urghast_entity_quality.py",
+      "bytes": 38940,
+      "sha256": "8cd464013a99ebed6710188490b8be0cd74931f6081c6b69060461b2ecb35ccb"
+    },
+    {
+      "path": "tests/test_phantom_urghast_route_foundation.py",
+      "bytes": 8128,
+      "sha256": "333a7be1d533acdf55c55ab12599d6b47a2ac250df3ebe6e0f8017152b191ace"
+    },
+    {
+      "path": "tests/test_plant_support.py",
+      "bytes": 14929,
+      "sha256": "b26bf00c2f0ac71c2ebea6abc6319abad3269c668d71873c87b4e4c1268914d5"
+    },
+    {
+      "path": "tests/test_port_boss_entities_skill.py",
+      "bytes": 10274,
+      "sha256": "b965bb78c1a0dcc8f42088b7c67909d1982d7fdfff5f7333dbdbbfc2b18e4e9b"
+    },
+    {
+      "path": "tests/test_portal_arrival_runtime.py",
+      "bytes": 69802,
+      "sha256": "148099464aceee04c507e3589008837fe3bd4945a689b86f074048eff06961af"
+    },
+    {
+      "path": "tests/test_portal_integration_contract.py",
+      "bytes": 13481,
+      "sha256": "721868b53391d4339b9b5db3750f95db50b33470bdcfeb0afc072eba2f541247"
+    },
+    {
+      "path": "tests/test_portal_logic.py",
+      "bytes": 16138,
+      "sha256": "44b19ecb32d61d3719ca1857d7dca80d1240c41322891828671e64a1da2f51d1"
+    },
+    {
+      "path": "tests/test_portal_ui_lifecycle.py",
+      "bytes": 5915,
+      "sha256": "649de79af0c1ffe78e6527fd0f854b3041e82af4c0adb6fa30ac9d6c30b4e8af"
+    },
+    {
+      "path": "tests/test_public_block_implementation_contract.py",
+      "bytes": 48233,
+      "sha256": "913d396fe9949a96fd590bd176cd3fc30815b53c40e242c872921aa0096f4bbd"
+    },
+    {
+      "path": "tests/test_public_block_logic.py",
+      "bytes": 9544,
+      "sha256": "3e83a3d04d15a959f31e5173d84fab0c2efc3dbb8da233492cc07417bd46144d"
+    },
+    {
+      "path": "tests/test_quest_grove_contract.py",
+      "bytes": 16686,
+      "sha256": "76178569d48610d831128b10eb6be4336888e71abfb180e4cfd493f6f8a0b276"
+    },
+    {
+      "path": "tests/test_raven_audio_repair.py",
+      "bytes": 6904,
+      "sha256": "75259b76c1bab9e7d8c4acb5b27abc52c9cc9106c0e0e8ae7776c9f30e579d90"
+    },
+    {
+      "path": "tests/test_recipe_atlas.py",
+      "bytes": 2864,
+      "sha256": "50637df8c9ab2b0a4592bf531fc2a88baa7a2c5fd7e434706a2d744777102cc6"
+    },
+    {
+      "path": "tests/test_recipe_atlas_server.py",
+      "bytes": 4218,
+      "sha256": "213568f1569d1ea9067f0f6c51d7ad189e36c57bfe71075c01d73ef955844821"
+    },
+    {
+      "path": "tests/test_recipe_completion_contract.py",
+      "bytes": 6579,
+      "sha256": "e9fd073027dd69650b4174876477fa75570fa622337c36d32d6b59a165ad28c4"
+    },
+    {
+      "path": "tests/test_recipe_source_material_parity.py",
+      "bytes": 5412,
+      "sha256": "12f19a3bd689734680584e06bb4f75b7bbe19b2ef4962c06f19bc592501faa52"
+    },
+    {
+      "path": "tests/test_redcap_alignment_runtime.py",
+      "bytes": 26366,
+      "sha256": "737ff645066949890a3c9f5426f445a7ee14cca3de2a280bd06164b367b91739"
+    },
+    {
+      "path": "tests/test_redcap_audio_repair.py",
+      "bytes": 9909,
+      "sha256": "7f3361d38b8b4ed602dd977ea6ac6e0aa2ad83d6e6240a510288cd9de067a8c0"
+    },
+    {
+      "path": "tests/test_redcap_model_workflow.py",
+      "bytes": 9660,
+      "sha256": "f71820597d1cccd0f7aa02a048d921e7741300ef327fe4579b12eca9e6f46377"
+    },
+    {
+      "path": "tests/test_review_code18.py",
+      "bytes": 5772,
+      "sha256": "1448585074d8c71dd8b4a8403d6f644de1859362bb4c6e1ca58902e97387727f"
+    },
+    {
+      "path": "tests/test_reward_delivery.py",
+      "bytes": 6104,
+      "sha256": "9b29663483995dea18766be40c4a406fc7e75204a3ecae4f6a6df6251f833d9b"
+    },
+    {
+      "path": "tests/test_reward_runtime_adapter.py",
+      "bytes": 4198,
+      "sha256": "dd85fca4d1e2989638764b95dd6491c69e1a24e66a59c92c82bbd137c0f9b992"
+    },
+    {
+      "path": "tests/test_route_structure_parity.py",
+      "bytes": 35895,
+      "sha256": "8ece75e29294b8d377deb2a064b06dc1d0f62b3baeda0e396f92c73fb44d2829"
+    },
+    {
+      "path": "tests/test_route_territory_landmark_contract.py",
+      "bytes": 31536,
+      "sha256": "7ebb58c9549a5a037a8ea76d48d49100fbc0db581e2b3ad279c9fe775c931afb"
+    },
+    {
+      "path": "tests/test_ruin_build_cli_safety.py",
+      "bytes": 4248,
+      "sha256": "75aa9c772ba8f155a9fc9fff3a6412c086f247897ffbc30fb708b59b46cc5834"
+    },
+    {
+      "path": "tests/test_ruin_command_feedback.py",
+      "bytes": 1632,
+      "sha256": "c8f66b59977e7031c2585688473a964c1d7c5e8ff042a77d055271c76d9ea994"
+    },
+    {
+      "path": "tests/test_ruin_mob_fidelity_contract.py",
+      "bytes": 22157,
+      "sha256": "4b465c3112a0cdc2d12b5fa451672ccb97c30bde99b60469928488b694827564"
+    },
+    {
+      "path": "tests/test_ruin_probabilities.py",
+      "bytes": 2663,
+      "sha256": "e8fe642d9f5f176b2d43bb0eae0953122cffd5159a86e2a6b79fb27882b9b7ad"
+    },
+    {
+      "path": "tests/test_ruin_structure_deduplication.py",
+      "bytes": 7738,
+      "sha256": "b0d468e220618e3180a734801c4f4a9362021378a8cd6462516feae00155d38c"
+    },
+    {
+      "path": "tests/test_ruin_worldgen_contract.py",
+      "bytes": 116913,
+      "sha256": "e6bffa93344f20684fe8e1a035987e172608354d50910cedc6c737b1b10012e2"
+    },
+    {
+      "path": "tests/test_ruin_worldgen_logic.py",
+      "bytes": 25564,
+      "sha256": "b540acdbdbfcbd8b0457b1f6cb7c12ad40725aa7df30479fe5b76e3365055eb7"
+    },
+    {
+      "path": "tests/test_runtime_log_compatibility_contract.py",
+      "bytes": 2689,
+      "sha256": "3db958f1a0d9c59178bd1a551e7e1fe22cda19ae1c77bb94386a6b1dfbbf5edd"
+    },
+    {
+      "path": "tests/test_runtime_regression_and_localization.py",
+      "bytes": 21071,
+      "sha256": "b5f8942a675cda76f8e644cff457d158fb17e0fb69797ec0b1334c609ea4e11b"
+    },
+    {
+      "path": "tests/test_scepter_logic.py",
+      "bytes": 6699,
+      "sha256": "df48ae7f758d913409d696039231cd693cdc79c0a48d29e08b4beeb16e62e101"
+    },
+    {
+      "path": "tests/test_serpent_guardian_visuals.py",
+      "bytes": 5755,
+      "sha256": "f5175bd1141f554bbe8355d2cf60a3f34379025cfc32a315a1618698caa460d2"
+    },
+    {
+      "path": "tests/test_server_event_listener_binding.py",
+      "bytes": 2391,
+      "sha256": "094021fd98a11dab881b6b5e73f479d6ebadbf15dbc56839332fd0c65492e8da"
+    },
+    {
+      "path": "tests/test_solid_block_collision_contract.py",
+      "bytes": 5004,
+      "sha256": "ddcc0dd8a41961b4a415143401c99356770a9a783eb0e47ea287e1bbc022ff25"
+    },
+    {
+      "path": "tests/test_structure_tree_probe_repairs.py",
+      "bytes": 4746,
+      "sha256": "0521642c9a0be480ada75137b6af0335ee57ece531f0321c559a04665672d46e"
+    },
+    {
+      "path": "tests/test_structure_worldgen_handoff.py",
+      "bytes": 186528,
+      "sha256": "9f423bb65c1b84a8ffe5114ad421aa202439e741078571bfa8ba3334e408b6f8"
+    },
+    {
+      "path": "tests/test_surface_native_artifact_completeness.py",
+      "bytes": 2412,
+      "sha256": "b1675e9becd812d1bbe4108478efe8d25ade356c94f8b2fe4ab45230df18ffe2"
+    },
+    {
+      "path": "tests/test_swamp_tree_placement.py",
+      "bytes": 9853,
+      "sha256": "a7950c857097d6e6d9f8106798f411503e6c7bff9953c273f8d552ca0eff5ad0"
+    },
+    {
+      "path": "tests/test_swamp_worldgen_parity_contract.py",
+      "bytes": 37448,
+      "sha256": "2c03e02e15d2d90cbd5c337349c97ff6a46a59a0d454193f162f61c3ee58632e"
+    },
+    {
+      "path": "tests/test_territory_profile_pool_contract.py",
+      "bytes": 11503,
+      "sha256": "38731914cbffcb176fc9379a00bc605c89274867b0795de497ebe1f085babb68"
+    },
+    {
+      "path": "tests/test_tiny_bird_audio_repair.py",
+      "bytes": 4972,
+      "sha256": "f3d867b847f533ea4553bfa2c37fa043540642060b2a1ceb880919abd246122d"
+    },
+    {
+      "path": "tests/test_transformation_powder_runtime.py",
+      "bytes": 3416,
+      "sha256": "93207337affe9222666879c99436d973f3a054d32146ad9e1cc2b31af8408863"
+    },
+    {
+      "path": "tests/test_trophy_break_effect.py",
+      "bytes": 5314,
+      "sha256": "1aeb86c37b62b0568145b5aa2ba0c6809d2d3c810ec350085d636ecfab96a994"
+    },
+    {
+      "path": "tests/test_trophy_model_parity.py",
+      "bytes": 40899,
+      "sha256": "30205fab12c967c60b9d5de854218eb03fff1a6a88ce064da4a98decca54d000"
+    },
+    {
+      "path": "tests/test_trophy_pedestal_item_activation.py",
+      "bytes": 2894,
+      "sha256": "8fb402faeeb7b79a089e605ff29c2dabc1284c7b859e9f0b6d45d726b4272693"
+    },
+    {
+      "path": "tests/test_trophy_wearable.py",
+      "bytes": 15523,
+      "sha256": "42f15f698caec8612aa74625ccabcfaf8cc09aad2bdd864ebca8c74d84632db2"
+    },
+    {
+      "path": "tests/test_twilight_ecology_contract.py",
+      "bytes": 36570,
+      "sha256": "679a077635a01d4e42c02cd352328770b33ae326ac0828e2505ec1c9067bb590"
+    },
+    {
+      "path": "tests/test_twilight_sapling_contract.py",
+      "bytes": 13355,
+      "sha256": "57f216379654940068e7871df25e78ead4656f3c82fa38a6669c8b484b3054f0"
+    },
+    {
+      "path": "tests/test_twilight_spawn_policy.py",
+      "bytes": 4697,
+      "sha256": "240afaf7c4eb57de5c895009ecd4a9bb56e2d952a3559ba4849c1947dd97f4c1"
+    },
+    {
+      "path": "tests/test_twilight_worldgen_contract.py",
+      "bytes": 16805,
+      "sha256": "d63cbad05708571b815f0b602f5acf20ed96f0272a6df62184bc96f34049200a"
+    },
+    {
+      "path": "tests/test_underground_generation_contract.py",
+      "bytes": 6622,
+      "sha256": "1394950b886c19604369ef13965d4dfcceb52b62bdd475daef799ffa52acd925"
+    },
+    {
+      "path": "tests/test_upstream_sound_clearance.py",
+      "bytes": 2131,
+      "sha256": "17752261017f28257158ee4f8a56752a692285af147edf5a65c486d3c9ca0292"
+    },
+    {
+      "path": "tests/test_ur_ghast_route_logic.py",
+      "bytes": 6625,
+      "sha256": "4605485c290164665b54eb0f9b1ee5c8ccd0a0ae3e6dfaca090ba804519ce51b"
+    },
+    {
+      "path": "tests/test_ur_ghast_source_parity.py",
+      "bytes": 104418,
+      "sha256": "5e1f420501f8c2589a23078d514f1b2263cba1464e750aed0199a7d5b2cda46a"
+    },
+    {
+      "path": "tests/test_vanilla_block_adapter_logic.py",
+      "bytes": 13237,
+      "sha256": "e726d4a8fd8f22bc87926ad3440d8aec3e94a340d58720a28f75e36c74433347"
+    },
+    {
+      "path": "tests/test_worldgen_selection_cache.py",
+      "bytes": 10111,
+      "sha256": "fd689a7250937c2f9ad6ddcb7cca06f1fd6817987b95c8d4bd4198f253f47722"
+    },
+    {
+      "path": "tests/test_wraith_audio_repair.py",
+      "bytes": 5080,
+      "sha256": "28a9ba959939daf97a643052c257d6ede5065feb03bc0f2b1e6d827a2c805edc"
+    },
+    {
+      "path": "tests/worldgen_selection_baseline.json",
+      "bytes": 177,
+      "sha256": "17cbaa40def86bedef6699fddb087bb9b0cb5ee6101519f00dd71c9890b1d913"
+    },
+    {
+      "path": "tools/build_biome_features.py",
+      "bytes": 18969,
+      "sha256": "a6e5b098a1019a27854ec5058b8a86de0327b52de0f309c1ae5394cfbe28f152"
+    },
+    {
+      "path": "tools/build_biome_performance_candidate.py",
+      "bytes": 4498,
+      "sha256": "04943074a44309abe79fc22a3434a155980624d821a31358591b38b6c6db4ef9"
+    },
+    {
+      "path": "tools/build_cindercoil_v2.py",
+      "bytes": 12961,
+      "sha256": "72ab41b22ee51fbb1e78c597d425bccc4e12f4a55cad3efd9c94f12cd45abfb1"
+    },
+    {
+      "path": "tools/build_courtyard_blocks.py",
+      "bytes": 18464,
+      "sha256": "4d71489a729b783a81be1e234614990b2c1b07e94ee477ffe61011bfa808c11c"
+    },
+    {
+      "path": "tools/build_creative_catalog.py",
+      "bytes": 16409,
+      "sha256": "6440b294aad078e98bb5b88be6940747eaedd8ebde07a154f37c8b18bf90bc8e"
+    },
+    {
+      "path": "tools/build_dark_forest_biomes.py",
+      "bytes": 12160,
+      "sha256": "a0fee124cee1ab42207b99f1f122304fed06f4c3067e45b439ae24ffae0f6c05"
+    },
+    {
+      "path": "tools/build_dark_forest_content.py",
+      "bytes": 57941,
+      "sha256": "f0bea6daebda3ceae373cc065e56b979d72c62dc3846dfea836c80bbf26d4471"
+    },
+    {
+      "path": "tools/build_dark_tower_content.py",
+      "bytes": 42966,
+      "sha256": "98059b5b867e9a3fca4a7e9b1e2a2750a194c9c8b84c49ba298de67e52c6505b"
+    },
+    {
+      "path": "tools/build_enchanted_forest.py",
+      "bytes": 23628,
+      "sha256": "5d07bd04a5bf8d961b6a359b1db71e400208149cf65ea404960a3e092ea004b0"
+    },
+    {
+      "path": "tools/build_hydra_route_acceptance.py",
+      "bytes": 23384,
+      "sha256": "19669daabcd7724ba0e13185c8721e4704767507782a9dfea46027f71e0048fc"
+    },
+    {
+      "path": "tools/build_hydra_route_content.py",
+      "bytes": 40189,
+      "sha256": "a8fb709c5703761d9b1f743c063e33973103a7a5afaca5176a29a59d7514f0e9"
+    },
+    {
+      "path": "tools/build_hydra_route_models.py",
+      "bytes": 55163,
+      "sha256": "0dd8eb9c450d88cf3eb52ee4f496c0d0af537516a142e0ef23c366e95e6afb8a"
+    },
+    {
+      "path": "tools/build_hydra_route_source_lock.py",
+      "bytes": 5052,
+      "sha256": "e1f5ac40addb7b4c4686c4c0a16bd50e29794ff9a1f88ac524e25a3816f5c790"
+    },
+    {
+      "path": "tools/build_knight_stronghold_content.py",
+      "bytes": 52183,
+      "sha256": "d60b142e6d0298b9f4d2b15c495ea9b275079fea5838177312c56b73e0d22d09"
+    },
+    {
+      "path": "tools/build_lich_models.py",
+      "bytes": 28191,
+      "sha256": "ac019397fe57bba2ddb42d5aa5c850e2903c6ea69c47be268bbf87d3c7d9ed51"
+    },
+    {
+      "path": "tools/build_localization.py",
+      "bytes": 20926,
+      "sha256": "bb235db47db840331abe1981f72bc34e7d59092246ecb7dcaf2809442dcb036e"
+    },
+    {
+      "path": "tools/build_locked_wood_inventory_icons.py",
+      "bytes": 764,
+      "sha256": "173060272647edcd6e572fe7a35f23f28d4c1aa7a4e0f31be17e7de419f75a1e"
+    },
+    {
+      "path": "tools/build_matched_dark_inventory_icons.py",
+      "bytes": 2924,
+      "sha256": "4584be809d236284badf622206454d8b9ee868db05c7168dcc79043ddba3f99f"
+    },
+    {
+      "path": "tools/build_mushroom_forest.py",
+      "bytes": 32810,
+      "sha256": "fefc254fc013c0f7f9e64da6e407a2e4c454fa30a11290e07fe2b27ca81cad96"
+    },
+    {
+      "path": "tools/build_naga_dazed_texture.py",
+      "bytes": 1097,
+      "sha256": "ee079d1a48ea13348be071ec941c885198cf72d3ffa69734ba0d516968d0d1c0"
+    },
+    {
+      "path": "tools/build_phantom_urghast_acceptance.py",
+      "bytes": 27631,
+      "sha256": "fcf81f3849d2eb45d8bebe6cd93cf4d4b053e457e04b26ceb2157867dd596efa"
+    },
+    {
+      "path": "tools/build_phantom_urghast_models.py",
+      "bytes": 41217,
+      "sha256": "0c114a8a084303c4e63b8dcc86a0222325279ac9876a92e03aa5074044fa8cfd"
+    },
+    {
+      "path": "tools/build_phantom_urghast_source_lock.py",
+      "bytes": 10993,
+      "sha256": "6308e57dd7f7530321b3941df2fbf560534672b8caf890971ab24eee2b2ebffb"
+    },
+    {
+      "path": "tools/build_phantom_urghast_structures.py",
+      "bytes": 30133,
+      "sha256": "cd181d8fd65d22817049bb04465d131b1f23a96e004b8b1b9eaac77e412e27db"
+    },
+    {
+      "path": "tools/build_public_block_shapes.py",
+      "bytes": 164398,
+      "sha256": "7ac60ee174b8569dfd9fbe545c5116fe8575f6ba6be67fce0dc3772da8f28b09"
+    },
+    {
+      "path": "tools/build_public_wood_native_items.py",
+      "bytes": 2333,
+      "sha256": "43c4518f07ace713e682b773d32d576ee0df42b67a39ad150070387e2724c5a1"
+    },
+    {
+      "path": "tools/build_recipe_atlas.py",
+      "bytes": 30165,
+      "sha256": "cfa9f6ecd128dc0dc707ddf7fb77d1df8885502fb57374f7d542aa9101089a16"
+    },
+    {
+      "path": "tools/build_ruin_dependencies.py",
+      "bytes": 119734,
+      "sha256": "6fe3b0b42f2bef00a54e07ddbb4d56650ed895732c487bef03174468ddbac3c4"
+    },
+    {
+      "path": "tools/build_ruin_structures.py",
+      "bytes": 295721,
+      "sha256": "9e90fe3ff3a2d0e5fa3e74ab7e5c46823dff1655ceff64c0b3b74fdac0794099"
+    },
+    {
+      "path": "tools/build_spooky_forest.py",
+      "bytes": 18886,
+      "sha256": "e3dc628de97d82e95589dddf98c0befb5a992ed29891b1c7b07e7460b7378e40"
+    },
+    {
+      "path": "tools/build_swamp_features.py",
+      "bytes": 55182,
+      "sha256": "1d7a428794c6b84732e1e3203b8ead1ab4f42ff8e6ab1a1d1b8ba6e4a0d202f4"
+    },
+    {
+      "path": "tools/build_twilight_skybox.py",
+      "bytes": 6068,
+      "sha256": "44bb936fedf8ceb5ba5a33975df502718ce2cf020c62c0efbfdfb0e3dc9e06f7"
+    },
+    {
+      "path": "tools/build_underground_features.py",
+      "bytes": 10983,
+      "sha256": "8925a660d5741eec0943ac1ea3bc066d2d28f0e46b1b65a111359a8d6498db88"
+    },
+    {
+      "path": "tools/build_ur_ghast_effect_assets.py",
+      "bytes": 6865,
+      "sha256": "16297d92053d9e1a5c0d20a7cc49eeb217466a4ab88017dff96352c1133470c6"
+    },
+    {
+      "path": "tools/dark_tower_legacy_port.py",
+      "bytes": 121208,
+      "sha256": "d4c1db57fc3d4e77d3eadd4a4715ba24224492020fd8211edd82c8290ca5e522"
+    },
+    {
+      "path": "tools/ensure_solid_block_collisions.py",
+      "bytes": 2073,
+      "sha256": "2b49e6d5bdc8bee9c1ba8cc3a93d32345a4cde499db2b3a567f7e44d58af6b6a"
+    },
+    {
+      "path": "tools/generate_cc0_roe_deer_sounds.py",
+      "bytes": 8306,
+      "sha256": "93c2940c9b3fafea1652edd7468bd200ebbd0aa20bc89e7f4eb1d178565322b1"
+    },
+    {
+      "path": "tools/generate_hostile_wolf_sounds.py",
+      "bytes": 9978,
+      "sha256": "e87b3f03653c6ae7f1b9d788865c7f2eda5360093ec872da2234e663752a1928"
+    },
+    {
+      "path": "tools/generate_hydra_sounds.py",
+      "bytes": 9979,
+      "sha256": "d68f8873d23d59dd4877155a388c75fe2ffb18a64bcf84a51d45280251c5acda"
+    },
+    {
+      "path": "tools/generate_kobold_sounds.py",
+      "bytes": 12226,
+      "sha256": "b3d5e1f67a586672487fb57a80cd85e30fb02c906b54285da3bff9c26d561ee1"
+    },
+    {
+      "path": "tools/generate_original_naga_sounds.py",
+      "bytes": 16456,
+      "sha256": "4ec7b08c818916ad4a359dea364ea58a70752ba036f50d8465b05c366042bb80"
+    },
+    {
+      "path": "tools/generate_raven_sounds.py",
+      "bytes": 7532,
+      "sha256": "4f316175723d6304233439a518ade3171c6b67c3405ae3fd1305e343d125b0f3"
+    },
+    {
+      "path": "tools/generate_redcap_sounds.py",
+      "bytes": 14989,
+      "sha256": "82e0002f0084c1317442b667c72835224add0c8278fb7f787170bc08ed2fbecd"
+    },
+    {
+      "path": "tools/generate_serpent_guardian_textures.py",
+      "bytes": 513,
+      "sha256": "2d21d38982f3f6adad32fbdaee5946e82394d9ffce9a1c1a825ac872ddb5f08b"
+    },
+    {
+      "path": "tools/generate_tiny_bird_sounds.py",
+      "bytes": 8616,
+      "sha256": "d4b7bcb05b9c131cbb30eba00e3b06bbe98b2461e7418213f1cb5866f2f918f4"
+    },
+    {
+      "path": "tools/generate_wraith_sounds.py",
+      "bytes": 6100,
+      "sha256": "476dac8ec1ecc1faf495a37f1b8f98978099bab0ceed995bb7407e86460f7eeb"
+    },
+    {
+      "path": "tools/goblin_assets.py",
+      "bytes": 7242,
+      "sha256": "c5a20c5c646d61089c1f95218c89733c9a34f7a9ab190dd1ec5cccea9e4a56d9"
+    },
+    {
+      "path": "tools/import_quest_grove_assets.py",
+      "bytes": 1159,
+      "sha256": "f9be6997cdd91380e6a6335fde71d85055bde451f2fe8980dfb0b8801d2b35e9"
+    },
+    {
+      "path": "tools/import_twilight_animal_assets.py",
+      "bytes": 2071,
+      "sha256": "ad766b6caa37d2b9a262fb54022e3d64d81c3c2345de8ad5e9bdc480f60e23bd"
+    },
+    {
+      "path": "tools/import_twilight_biome_assets.py",
+      "bytes": 2178,
+      "sha256": "82353667776dba367d36313c474b1154ced5bad74f42e2199ab4c0bd0e530442"
+    },
+    {
+      "path": "tools/knight_stronghold_legacy_port.py",
+      "bytes": 102555,
+      "sha256": "99a27750cd71d16556d6d4c1a3b41951994969daf66d1b35f9558ce35dccbecf"
+    },
+    {
+      "path": "tools/landmark_surface_decorations.py",
+      "bytes": 11961,
+      "sha256": "6779cfae03f1f387d2b7d4b2e346124343d0efd8c5b013c73a43d46ae72f682e"
+    },
+    {
+      "path": "tools/lich_tower_legacy_port.py",
+      "bytes": 56654,
+      "sha256": "4666900751b3f43c096b22f725abb1816a12b82af408570b976a35b1229f21a3"
+    },
+    {
+      "path": "tools/native_structure_worldgen_safety.py",
+      "bytes": 8978,
+      "sha256": "5c729a57680129d71ecc824bf8089f7f5176399b7099353734de41d92cda67ed"
+    },
+    {
+      "path": "tools/phantom_urghast_model_registry.py",
+      "bytes": 18911,
+      "sha256": "6223e1b12259097632887163cf31df0f808d574ce1e021ec763b6afc76bf6639"
+    },
+    {
+      "path": "tools/refresh_acceptance_hashes.py",
+      "bytes": 3626,
+      "sha256": "62fdd920f85cb6df4dccbfbbc520111bda2001b3e5281958b0de8da035576f41"
+    },
+    {
+      "path": "tools/render_cindercoil_v2.py",
+      "bytes": 3119,
+      "sha256": "38ad7aff95801cd126f651e395c5674b0b4dfefa5490f2b8978dce8e1bc4b288"
+    },
+    {
+      "path": "tools/render_entity_geo_preview.py",
+      "bytes": 26281,
+      "sha256": "4309c3969ffccad6b3d3e38bd518c2839bd44fad6632fc8938f0f5168f72e33a"
+    },
+    {
+      "path": "tools/render_hydra_composite_preview.py",
+      "bytes": 7080,
+      "sha256": "a7493ab204829fcad48cbe6d6acb55b53619a61573fe5fe4b4c6ce2ff4622e66"
+    },
+    {
+      "path": "tools/render_knight_phantom_preview.py",
+      "bytes": 7517,
+      "sha256": "06e4cd384368debc322d68b8c9f07fb52afd4e611c72763654b8ce0226af5e81"
+    },
+    {
+      "path": "tools/render_lich_tower_preview.py",
+      "bytes": 6045,
+      "sha256": "77c16ed03ac31b19ec17ff159f2fad4b008915dcbe7f1054a31a3041c8e0377a"
+    },
+    {
+      "path": "tools/render_ur_ghast_orientation_comparison.py",
+      "bytes": 5118,
+      "sha256": "291328bb71473bbd4510fe66ec20fd6d7191f5e43978c4ff6ef41aa20580caa9"
+    },
+    {
+      "path": "tools/render_ur_ghast_preview.py",
+      "bytes": 7082,
+      "sha256": "abef0dddbda0151c6e0d0be1e55fb8293085ccf5a8a08d4b38196c4652ea9009"
+    },
+    {
+      "path": "tools/ruin_structure_dedup.py",
+      "bytes": 6403,
+      "sha256": "4eb61210eafbb9d4a0f8586b924fbed4850711e9bd4e4a5775756e2c584b8845"
+    },
+    {
+      "path": "tools/serve_recipe_atlas.py",
+      "bytes": 4257,
+      "sha256": "47e449bedce59fe538d5fb805c7718656a47fb98039f5c054d71b5bf9a053d07"
+    },
+    {
+      "path": "tools/swamp_tree_placement.py",
+      "bytes": 5343,
+      "sha256": "13966451de69f833148c99d3c49c52e7243ac036e67772a598fb19cba0817515"
+    },
+    {
+      "path": "tools/sync_packs.py",
+      "bytes": 40363,
+      "sha256": "d25ca12fcd0e4b16ddad8108995f4c3bfe5cd82332bf59e9bb6aa57fffc7364f"
+    },
+    {
+      "path": "tools/sync_release_version.py",
+      "bytes": 1701,
+      "sha256": "71bbbd48a82fb4071f3f1cb74a08fa0f51fe937017b8c275e3e2769c9437c261"
+    },
+    {
+      "path": "tools/worldgen_probe_repairs.py",
+      "bytes": 6415,
+      "sha256": "09806b24d33e478cbde3a6c6145590a439c11e22f892c9249f7fdbe38847bbc2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/__init__.py",
+      "bytes": 24,
+      "sha256": "8b084a9f378124b2b1a51563bf3c22444eb7ff33692017da28b2136ae56987ed"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/banister_logic.py",
+      "bytes": 1893,
+      "sha256": "aa1e22df273dde95b2564fe81159db82820fc657ab9a3744bc0ed0ad885ce2b2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/beetle_combat_logic.py",
+      "bytes": 4878,
+      "sha256": "fe4448a895a8704c1afe21e4127cc2e01a87f6e29575c8a2b84807ee50bd1cb8"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/biome_catalog.py",
+      "bytes": 43562,
+      "sha256": "4dc4c6c6939530906b6d0dd171b66349d6f2095a91a6f577b985dd48452b0834"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/boss_hud_logic.py",
+      "bytes": 5798,
+      "sha256": "6ed140f75b0d88c8cac9949cd744118dcd85e7102b42f7e9168fe6fe0d64d002"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/cave_plant_logic.py",
+      "bytes": 513,
+      "sha256": "a3009094e733bf2782b59606fd1eb192c6f1ed3e203d2f3f9c9c9a843d6f7533"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/chain_visual_client.py",
+      "bytes": 17868,
+      "sha256": "cb719e3fde91d9b9d5233f52734596099d741a2361c2671b8e1e2d07c2cf8c72"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/chat_command_logic.py",
+      "bytes": 1239,
+      "sha256": "0126323e1111d9732f35ee15554e35dba2ee8c06a0495ed9736c6a150b79c4a5"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/cindercoil_visuals.py",
+      "bytes": 858,
+      "sha256": "351f059517e25acde28094377f3400022b06b2068ee5953bfd5b7eb860fd4f23"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/clientItemLogic.py",
+      "bytes": 2688,
+      "sha256": "2a07baa269068c359e1d5e292373e2f7e7247c2c35bab771192af07bc84ddbc5"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/clientSystem.py",
+      "bytes": 161814,
+      "sha256": "2c3328aa15cb2cd20a2339fc62f95b9362cc2183bd0eedb0262d02ced52b0cf2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/config.py",
+      "bytes": 8364,
+      "sha256": "d968b022f0dd09b003233d1cdf276a5190b77109f4a550b17ba63128f59330de"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/dark_tower_logic.py",
+      "bytes": 28322,
+      "sha256": "3a4bccbc534eb6d6184c901359244ed5c44556f8153512c120796ce61c7a98a2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/enchanted_tree_catalog_data.py",
+      "bytes": 83129,
+      "sha256": "ff7811d14c586cadf5e1f4cfa0e37050c406737d5bc4b35441b3327173db5e03"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/enchanted_tree_worldgen_logic.py",
+      "bytes": 1429,
+      "sha256": "0358e87478fa957dd338d6ae2e3cdeeb8020b136b38c86c5369330b0cced2a80"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/enchantedTreeWorldgenService.py",
+      "bytes": 8145,
+      "sha256": "032d0d03e1585b24f29b7b89ad2464e5c326d98b2e6c15c9364b85445cf9c45a"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/entity_registry_logic.py",
+      "bytes": 424,
+      "sha256": "59bdca5aee4a96a140b39ac6b1563162d3db3897543f2bf3250953ca5cf9a17b"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/entry_diagnostics.py",
+      "bytes": 823,
+      "sha256": "5580c54a087d56836ceeebeb2975005c9e57667758d6f9a2723631f1e690fa9a"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/fire_swamp_logic.py",
+      "bytes": 3804,
+      "sha256": "5ebfff190de6dc9bddbe96ed583b1707177ba96b1ccfd23f915c50adc56f7b0b"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/fireReactUI.py",
+      "bytes": 2963,
+      "sha256": "72fda37a9cb63ce048adf7a14fdbc8d730e806eab2951b0ae93d3e7b3d008ba7"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/flight_logic.py",
+      "bytes": 1050,
+      "sha256": "bc2e368c505673742b891fde1dbd196bbbb881f881c4f9dc6d5ae0df4bf6705f"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/forest_animal_logic.py",
+      "bytes": 3093,
+      "sha256": "33d284443e1bf7d0bdc6484af8a866ee1b455176a480b39007e5ff4a9434b7ba"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/fortification_player_layer.py",
+      "bytes": 4030,
+      "sha256": "4964a6cc74bba31cb465156d7846631029e43146bcd52b5794b1e124b1cbe2de"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/fortification_visual_logic.py",
+      "bytes": 1347,
+      "sha256": "cb0320af8dd33ec1bd2bc520a746854ec93bafa5086a2a9bdaf098b9a2c2199b"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/goblin_combat.py",
+      "bytes": 19951,
+      "sha256": "10d12afa88583555369291811045bc99f605303f21b88f709c405adcc7cfdace"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/hydra_logic.py",
+      "bytes": 36013,
+      "sha256": "8b1c5a416db5eae2683368626ae887a832152619492ddf28d64588ab029159b2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/item_effects.py",
+      "bytes": 9335,
+      "sha256": "0b5dbbbb3aaa4226d484be9c49ceeea1c9cd3710c166bd8d1ed27838ea7726f9"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/knight_route_logic.py",
+      "bytes": 41812,
+      "sha256": "257b69de408a070b7d5a77e28d4744ba556c616bcc983ede32370d5b9ccf92e4"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/labyrinth_logic.py",
+      "bytes": 1805,
+      "sha256": "0625a12670744d8d98b940123f615df69d5f24f879faadf766e94e6773b103f2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/leaf_decay_logic.py",
+      "bytes": 11364,
+      "sha256": "a17251c125d42054b251a2c8e65f8c14b8accd3fdcf06a022238dd402d3c6fb6"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/lich_logic.py",
+      "bytes": 20861,
+      "sha256": "20eb124d227bb176f94cf766291ea8a925e3c4d696d0f704954f4d044716b084"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/lichBossHudUI.py",
+      "bytes": 3758,
+      "sha256": "f35972e04cc9a0c99f1fc574a2cce50b630c9e4288ca2ba1b9a219a6e64e11a9"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/lilyPadWorldgenService.py",
+      "bytes": 4339,
+      "sha256": "f2647c022a2938cfce1be277e3d6b62860efa8e2e63de95a28ffef4345a2be5b"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/magic_map_bitmap_cache.py",
+      "bytes": 7385,
+      "sha256": "572b69fd1e3b123fb190ce45f3be0be80d0e0120b65883e880fd08a0c6e561f5"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/magic_map_logic.py",
+      "bytes": 36105,
+      "sha256": "b3999e49fcc96a6145e5e1cc579267833b51ebc264b3390a99a3bc8e7a3933d2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/magicMapHudUI.py",
+      "bytes": 32966,
+      "sha256": "11e58bef4c0afd1e4f6f7e2ccfb8736d3eb0365b56348f0662b6afa2efc738c2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/magicMapUI.py",
+      "bytes": 23882,
+      "sha256": "e667c86657fdc83274a1b2c6a87c8ee9f3f2c42fabc947c91ba640e59c19a4c9"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/maze_map_logic.py",
+      "bytes": 7655,
+      "sha256": "e25d8d5b351b74fb421a3b6030989b09245d0de0a9bb558911ae2c9a833cb9cd"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/maze_slime_logic.py",
+      "bytes": 1108,
+      "sha256": "3e1f4efae0d2f3df459d3f75970479000d5e0c32222b06f65972de97468c9a8a"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/minotaur_logic.py",
+      "bytes": 8363,
+      "sha256": "4b471f2ad061e217fe0a0e6956dd9019e869cef265e592a8f4afe2c1ac68a352"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/modMain.py",
+      "bytes": 853,
+      "sha256": "9ee9438935635d7188396d54dbe8e2fb1f359434cbf8109f31c9a3ee0d836e3c"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/mosquito_swarm_logic.py",
+      "bytes": 718,
+      "sha256": "ad65d9976dfdc6b0f87d72b06717fee4339aac931dd66bf06f7c7851f8b322a2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/mushroom_catalog_data.py",
+      "bytes": 117230,
+      "sha256": "d0eccde814e4a3c7f443eb6958dfbbf64d6457fc2c5371412e8833d3953b3f0c"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/mushroom_worldgen_logic.py",
+      "bytes": 4125,
+      "sha256": "903d086d7d0efed04828aba150fe5d4e81ff7fcbe1416294d0a2d63f62bf728a"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/mushroomWorldgenService.py",
+      "bytes": 14944,
+      "sha256": "90a846a1cdf3b38e1487a73bf5c89c48aa3e1eed2e0ea93078dcfe78d185c25b"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/naga_logic.py",
+      "bytes": 32214,
+      "sha256": "a88a331a140de15c59cddf76aaafff6dbe8653b62ec56d1920c790165ceac9f0"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/nagaBossHudUI.py",
+      "bytes": 3143,
+      "sha256": "048e0cde386404ce206a37f2137f59d7bdf57baaf6d6ce295c020cd9c7e9c989"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/native_item_diagnostics.py",
+      "bytes": 2157,
+      "sha256": "4d0e645bc1ce314262c22a978191622807674020ef811faa5b8ab77ead3e78db"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/phantom_urghast_mob_logic.py",
+      "bytes": 6290,
+      "sha256": "ac0aa916732f1fe8c906b1165a0b47a32465438116ff86e3c18ace48983caf33"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/plant_support_logic.py",
+      "bytes": 4693,
+      "sha256": "92673289541d795b24120ee0d5000862c5f1011d6862b59c0b12287ceaf4312c"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/portal_logic.py",
+      "bytes": 17484,
+      "sha256": "df684b793f2dba24d99fdcaa50011ad100d9b0905b974483baca711dbb71e87a"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/portalLoadingUI.py",
+      "bytes": 1251,
+      "sha256": "a71b6f7507fd4c40b855cb93d2b80ba2ffd67ebf6aad144970c6ee44776213e2"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/public_block_logic.py",
+      "bytes": 6139,
+      "sha256": "9db8f3ada25a93d8ca43d3429d0818730741afb0ac8df718d6b61f15443bf734"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/quest_ram_logic.py",
+      "bytes": 3840,
+      "sha256": "b77be693d60c43fe5d66406a7f68e0cb383bfe99f510abc0b58b23109b9a220c"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/release_metadata.py",
+      "bytes": 670,
+      "sha256": "e75b7e4a44363d433a27b9d09b17ef624ce5468e17285c83bf0d7c11f85b703e"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/reward_delivery.py",
+      "bytes": 5052,
+      "sha256": "0cad07f9fc45237a0d089e847fc237f8a7759289f3dbf9ca0589d4b6b2db803d"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/route_progression_logic.py",
+      "bytes": 5752,
+      "sha256": "ebde43d669a4f844467f5c00b28a8344e389018c96add6deb9542ba1ed18dde4"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/routeBossHudUI.py",
+      "bytes": 7665,
+      "sha256": "84134fc8c916be206c3797428a6a57e74e205d96d5ce24b75d210c916e1861ed"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/ruin_catalog_data.py",
+      "bytes": 1629057,
+      "sha256": "cc0209cbaa9c534b20b0094fe451c8efd0dafe6149cdd6468a87d15f8857728f"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/ruin_worldgen_logic.py",
+      "bytes": 45510,
+      "sha256": "a88693ce12cfcaa36818f4345922100a77ed7d988471a54c33b0332ce81b32fa"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/scepter_logic.py",
+      "bytes": 8059,
+      "sha256": "10384fdf7aba1829882ee940a016679313b9ef695eb2d568eef69581056a7e8b"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/serverSystem.py",
+      "bytes": 947919,
+      "sha256": "8e38618ffaf33dbe086b26ae29e12470ed3cff84a6b2f48bc0b6989d82592101"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/spawn_policy.py",
+      "bytes": 2427,
+      "sha256": "91ce3ac0ffbbd9d779f57bb9ad37643ea95b9175e420cd66c0ca7d1a66789aeb"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/spider_logic.py",
+      "bytes": 1117,
+      "sha256": "bffefa1d227511b729f79d1d28f14f003683038df2313b50bc025db446e32068"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/structureWorldgenService.py",
+      "bytes": 300471,
+      "sha256": "e9a1e628af21f16a9de33f7fc34d09080c487802592b5c7473cf486e2e8512af"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/transformation_logic.py",
+      "bytes": 1802,
+      "sha256": "79e6b5107841768881b3c1f4ec6fb2e3d3f5192d637309befcedd347fc179b0b"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/ur_ghast_effect_logic.py",
+      "bytes": 4079,
+      "sha256": "404b1bfd2c2ebba86b7cc26b20221ee968597aa3bd4b6c5c07368bb4de4fc247"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/ur_ghast_hitbox_debug_logic.py",
+      "bytes": 2121,
+      "sha256": "54ec7d2f4aa806e690a2a812411af2e9ab41cca7b065f08bcaeab0737bc45ca8"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/ur_ghast_logic.py",
+      "bytes": 47275,
+      "sha256": "6dbae25cc32f180a913643b280f8e570fc451afd091a919d34b450ea5a62cf60"
+    },
+    {
+      "path": "TwilightBossSliceB/TwilightBossSlice/vanilla_block_adapter_logic.py",
+      "bytes": 3881,
+      "sha256": "7099e7ef93f3f3f4009410316dfda9b64a65cd6a7992c0c726f0eeaffc0790cd"
+    }
+  ],
+  "excluded": [
+    "game/resource assets and pack manifests",
+    "NetEase SDK",
+    "JARs and mcstructure binaries",
+    "worlds, backups, logs, screenshots and recordings",
+    "local agent configuration, caches and credentials",
+    "machine-specific deployment PowerShell scripts",
+    "runtime attestations and active lease/lock files"
+  ]
+}

@@ -1,0 +1,2 @@
+# Preserve the imported source bytes, including existing Windows line endings.
+* -text whitespace=cr-at-eol

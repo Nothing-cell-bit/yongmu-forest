@@ -1,0 +1,8 @@
+{
+  "sha256": "2b18a94e7cf3379a252415cce9eb7a4b109b1f5271893c9d30cf9fd89c1ff5e7",
+  "counts": {
+    "surface": 4771,
+    "hollow_tree": 552,
+    "rejected": 21002
+  }
+}
