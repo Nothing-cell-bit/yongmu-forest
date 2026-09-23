@@ -1,0 +1,74 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:fortification_shield_visual",
+      "materials": {
+        "shield": "entity_alphatest"
+      },
+      "textures": {
+        "shield_fill": "textures/ui/tf_slice/lich_shield_fill",
+        "shield_frame": "textures/ui/tf_slice/lich_shield_frame"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.fortification_shields"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.fortification_shield_fill",
+        "controller.render.tf_slice.fortification_shield_frame"
+      ],
+      "animations": {
+        "shields": "animation.tf_slice.fortification_shields",
+        "checker_compat_fortification_shields_01": "animation.tf_slice.compat.fortification_shields.01",
+        "checker_compat_fortification_shields_02": "animation.tf_slice.compat.fortification_shields.02",
+        "checker_compat_fortification_shields_03": "animation.tf_slice.compat.fortification_shields.03",
+        "checker_compat_fortification_shields_04": "animation.tf_slice.compat.fortification_shields.04",
+        "checker_compat_fortification_shields_05": "animation.tf_slice.compat.fortification_shields.05",
+        "checker_compat_fortification_shields_06": "animation.tf_slice.compat.fortification_shields.06",
+        "checker_compat_fortification_shields_07": "animation.tf_slice.compat.fortification_shields.07",
+        "checker_compat_fortification_shields_08": "animation.tf_slice.compat.fortification_shields.08",
+        "checker_compat_fortification_shields_09": "animation.tf_slice.compat.fortification_shields.09",
+        "checker_compat_fortification_shields_10": "animation.tf_slice.compat.fortification_shields.10",
+        "checker_compat_fortification_shields_11": "animation.tf_slice.compat.fortification_shields.11"
+      },
+      "scripts": {
+        "animate": [
+          "shields",
+          {
+            "checker_compat_fortification_shields_01": "math.clamp((((query.mod.tf_fortification_dx)) + 4096) / 8192, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_02": "math.clamp((((query.mod.tf_fortification_dy)) + 4096) / 8192, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_03": "math.clamp((((query.mod.tf_fortification_dz)) + 4096) / 8192, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_04": "math.clamp(((math.mod(math.mod((math.sin(query.mod.tf_fortification_time * 229.1831) * 14.3239), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_05": "math.clamp(((math.mod(math.mod((query.mod.tf_fortification_time * 229.1831 + 0 * (360 / math.max(query.mod.tf_fortification_shields, 1))), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_06": "math.clamp(((math.mod(math.mod((math.cos(query.mod.tf_fortification_time * 229.1831) * 14.3239), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_07": "math.clamp(((math.mod(math.mod((query.mod.tf_fortification_time * 229.1831 + 1 * (360 / math.max(query.mod.tf_fortification_shields, 1))), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_08": "math.clamp(((math.mod(math.mod((query.mod.tf_fortification_time * 229.1831 + 2 * (360 / math.max(query.mod.tf_fortification_shields, 1))), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_09": "math.clamp(((math.mod(math.mod((query.mod.tf_fortification_time * 229.1831 + 3 * (360 / math.max(query.mod.tf_fortification_shields, 1))), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_10": "math.clamp(((math.mod(math.mod((query.mod.tf_fortification_time * 229.1831 + 4 * (360 / math.max(query.mod.tf_fortification_shields, 1))), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_fortification_shields_11": "math.clamp(((math.mod(math.mod((query.mod.tf_fortification_time * 229.1831 + 5 * (360 / math.max(query.mod.tf_fortification_shields, 1))), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          }
+        ]
+      }
+    }
+  }
+}

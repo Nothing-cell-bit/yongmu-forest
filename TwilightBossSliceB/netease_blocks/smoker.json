@@ -1,0 +1,79 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:smoker",
+      "register_to_creative_menu": false
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 6.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.courtyard_cube",
+      "minecraft:material_instances": {
+        "side": {
+          "texture": "tf_slice:firejet_side",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "top": {
+          "texture": "tf_slice:firejet_top",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "bottom": {
+          "texture": "tf_slice:firejet_bottom",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "*": {
+          "texture": "tf_slice:firejet_side",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "clip": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": true
+      },
+      "netease:pathable": {
+        "value": false
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:hydra_neck",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/hydra4"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.hydra_neck"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.hydra_hurt"
+      ],
+      "animations": {
+        "main": "animation.tf_slice.hydra_neck.pose"
+      },
+      "scripts": {
+        "animate": [
+          "main"
+        ]
+      }
+    }
+  }
+}

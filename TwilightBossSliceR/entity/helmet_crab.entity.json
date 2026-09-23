@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:helmet_crab",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/helmet_crab"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.helmet_crab"
+      },
+      "animations": {
+        "move": "animation.tf_slice.helmet_crab.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#2A2A32",
+        "overlay_color": "#8D7F67"
+      }
+    }
+  }
+}

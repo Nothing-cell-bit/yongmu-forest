@@ -1,0 +1,124 @@
+{
+  "namespace": "minoshroom_boss_hud",
+  "main": {
+    "type": "screen",
+    "render_game_behind": true,
+    "is_showing_menu": false,
+    "absorbs_input": false,
+    "controls": [
+      {
+        "boss_root": {
+          "type": "panel",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [
+            0,
+            0
+          ],
+          "size": [
+            182,
+            20
+          ],
+          "layer": 300,
+          "visible": false,
+          "controls": [
+            {
+              "title": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  182,
+                  10
+                ],
+                "text": "米诺菇",
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "text_alignment": "center",
+                "shadow": true,
+                "layer": 303
+              }
+            },
+            {
+              "bar_frame": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [
+                  0,
+                  10
+                ],
+                "size": [
+                  182,
+                  5
+                ],
+                "layer": 301,
+                "controls": [
+                  {
+                    "bar_empty": {
+                      "type": "image",
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "size": [
+                        182,
+                        5
+                      ],
+                      "texture": "textures/ui/empty_progress_bar",
+                      "keep_ratio": false,
+                      "layer": 301
+                    }
+                  },
+                  {
+                    "bar_fill_clip": {
+                      "type": "panel",
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "offset": [
+                        0,
+                        0
+                      ],
+                      "size": [
+                        182,
+                        5
+                      ],
+                      "clips_children": true,
+                      "layer": 302,
+                      "controls": [
+                        {
+                          "bar_fill": {
+                            "type": "image",
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "offset": [
+                              0,
+                              0
+                            ],
+                            "size": [
+                              182,
+                              5
+                            ],
+                            "texture": "textures/ui/filled_progress_bar",
+                            "color": [
+                              1.0,
+                              0.0,
+                              0.0
+                            ],
+                            "keep_ratio": false,
+                            "layer": 302
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

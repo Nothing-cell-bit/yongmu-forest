@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:fire_breath",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/blocks/fire_0"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.fire_breath"
+      },
+      "animations": {
+        "spin": "animation.tf_slice.nature_bolt.spin"
+      },
+      "scripts": {
+        "animate": [
+          "spin"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

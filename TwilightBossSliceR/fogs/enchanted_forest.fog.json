@@ -1,0 +1,28 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "tf_slice:fog_enchanted_forest"
+    },
+    "distance": {
+      "air": {
+        "fog_start": 0.84,
+        "fog_end": 1.0,
+        "fog_color": "#C0FFD8",
+        "render_distance_type": "render"
+      },
+      "water": {
+        "fog_start": 0.0,
+        "fog_end": 40.0,
+        "fog_color": "#050533",
+        "render_distance_type": "fixed"
+      },
+      "weather": {
+        "fog_start": 0.8,
+        "fog_end": 1.0,
+        "fog_color": "#C0FFD8",
+        "render_distance_type": "render"
+      }
+    }
+  }
+}

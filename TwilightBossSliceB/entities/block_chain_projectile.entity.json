@@ -1,0 +1,74 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:block_chain_projectile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:chain_x": {
+          "type": "float",
+          "range": [-20.0, 20.0],
+          "default": 0.0,
+          "client_sync": true
+        },
+        "tf_slice:chain_y": {
+          "type": "float",
+          "range": [-20.0, 20.0],
+          "default": 0.0,
+          "client_sync": true
+        },
+        "tf_slice:chain_z": {
+          "type": "float",
+          "range": [-20.0, 20.0],
+          "default": 0.0,
+          "client_sync": true
+        }
+      }
+    },
+    "component_groups": {
+      "tf_slice:instant_remove": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "block_chain_projectile",
+          "knight_projectile",
+          "projectile"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.35,
+        "height": 0.35
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:projectile": {
+        "power": 0.6,
+        "gravity": 0.05,
+        "uncertainty_base": 0.0,
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": true,
+            "semi_random_diff_damage": false
+          }
+        }
+      }
+    },
+    "events": {
+      "tf_slice:instant_remove": {
+        "add": {
+          "component_groups": [
+            "tf_slice:instant_remove"
+          ]
+        }
+      }
+    }
+  }
+}

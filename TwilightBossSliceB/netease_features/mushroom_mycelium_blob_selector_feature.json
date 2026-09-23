@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "tf_slice:mushroom_mycelium_blob_selector_feature"
+    },
+    "features": [
+      [
+        "tf_slice:mushroom_mycelium_blob_r4_feature",
+        1
+      ],
+      [
+        "tf_slice:mushroom_mycelium_blob_r5_feature",
+        1
+      ],
+      [
+        "tf_slice:mushroom_mycelium_blob_r6_feature",
+        1
+      ]
+    ]
+  }
+}

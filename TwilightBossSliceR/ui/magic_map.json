@@ -1,0 +1,350 @@
+{
+  "namespace": "magic_map",
+  "hud_biome": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "keep_ratio": false,
+    "visible": false,
+    "layer": 202
+  },
+  "biome_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.0, 0.42, 0.0],
+    "layer": 2
+  },
+  "biome_dense_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.0, 0.34, 0.0],
+    "layer": 2
+  },
+  "biome_oak_savannah": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.35, 0.49, 0.15],
+    "layer": 2
+  },
+  "biome_mushroom_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.60, 0.35, 0.14],
+    "layer": 2
+  },
+  "biome_firefly_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.0, 0.73, 0.20],
+    "layer": 2
+  },
+  "biome_stream": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.22, 0.22, 0.86],
+    "layer": 2
+  },
+  "biome_dense_mushroom_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.67, 0.35, 0.45],
+    "layer": 2
+  },
+  "biome_lake": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.13, 0.13, 0.53],
+    "layer": 2
+  },
+  "biome_enchanted_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.30, 0.50, 0.60],
+    "layer": 2
+  },
+  "biome_clearing": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.50, 0.70, 0.22],
+    "layer": 2
+  },
+  "biome_spooky_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.35, 0.17, 0.49],
+    "layer": 2
+  },
+  "biome_unknown": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.773, 0.427, 0.729],
+    "layer": 2
+  },
+  "biome_swamp": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.19, 0.45, 0.44],
+    "layer": 2
+  },
+  "biome_fire_swamp": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.38, 0.01, 0.0],
+    "layer": 2
+  },
+  "biome_dark_forest": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.207843, 0.258824, 0.105882],
+    "layer": 2
+  },
+  "biome_dark_forest_center": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "textures/ui/white",
+    "color": [0.439216, 0.258824, 0.105882],
+    "layer": 2
+  },
+  "landmark_marker": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [8, 8],
+    "layer": 5
+  },
+  "conquered_marker": {
+    "type": "label",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [8, 8],
+    "text": "X",
+    "text_alignment": "center",
+    "font_scale_factor": 0.7,
+    "color": [0.78, 0.04, 0.03],
+    "layer": 6
+  },
+  "other_player_marker": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [8, 8],
+    "texture": "textures/ui/tf_slice/magic_map_player/north",
+    "keep_ratio": false,
+    "layer": 7
+  },
+  "player_marker": {
+    "type": "image",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [8, 8],
+    "texture": "textures/ui/tf_slice/magic_map_player/north",
+    "keep_ratio": false,
+    "layer": 8
+  },
+  "main": {
+    "type": "screen",
+    "absorbs_input": true,
+    "always_accepts_input": false,
+    "force_render_below": false,
+    "is_showing_menu": true,
+    "render_game_behind": true,
+    "render_only_when_topmost": true,
+    "should_steal_mouse": false,
+    "controls": [
+      {
+        "dim_background": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": [0.03, 0.025, 0.02],
+          "alpha": 0.72,
+          "size": ["100%", "100%"],
+          "layer": 0
+        }
+      },
+      {
+        "parchment_frame": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [220, 218],
+          "texture": "textures/ui/tf_slice/magic_map_frame_v2",
+          "layer": 1,
+          "controls": [
+            {
+              "title": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [0, 5],
+                "size": [140, 8],
+                "text": "魔法地图",
+                "text_alignment": "center",
+                "font_scale_factor": 1.15,
+                "color": [0.20, 0.10, 0.035],
+                "layer": 3
+              }
+            },
+            {
+              "map_canvas": {
+                "type": "image",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [0, -1],
+                "size": [192, 192],
+                "texture": "textures/ui/white",
+                "color": [0.69, 0.57, 0.35],
+                "clips_children": true,
+                "layer": 2,
+                "controls": [
+                  {
+                    "biome_bitmap_a": {
+                      "type": "image",
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "offset": [0, 0],
+                      "size": [192, 192],
+                      "texture": "#tf_magic_map_bitmap_path_a",
+                      "texture_file_system": "RawPath",
+                      "force_texture_reload": true,
+                      "allow_debug_missing_texture": false,
+                      "keep_ratio": false,
+                      "bilinear": false,
+                      "pixel_perfect": true,
+                      "visible": false,
+                      "layer": 2,
+                      "bindings": [
+                        {
+                          "binding_name": "#tf_magic_map_bitmap_path_a",
+                          "binding_name_override": "#texture",
+                          "binding_condition": "always"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "biome_bitmap_b": {
+                      "type": "image",
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "offset": [0, 0],
+                      "size": [192, 192],
+                      "texture": "#tf_magic_map_bitmap_path_b",
+                      "texture_file_system": "RawPath",
+                      "force_texture_reload": true,
+                      "allow_debug_missing_texture": false,
+                      "keep_ratio": false,
+                      "bilinear": false,
+                      "pixel_perfect": true,
+                      "visible": false,
+                      "layer": 2,
+                      "bindings": [
+                        {
+                          "binding_name": "#tf_magic_map_bitmap_path_b",
+                          "binding_name_override": "#texture",
+                          "binding_condition": "always"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "biome_bitmap_c": {
+                      "type": "image",
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "offset": [0, 0],
+                      "size": [192, 192],
+                      "texture": "#tf_magic_map_bitmap_path_c",
+                      "texture_file_system": "RawPath",
+                      "force_texture_reload": true,
+                      "allow_debug_missing_texture": false,
+                      "keep_ratio": false,
+                      "bilinear": false,
+                      "pixel_perfect": true,
+                      "visible": false,
+                      "layer": 2,
+                      "bindings": [
+                        {
+                          "binding_name": "#tf_magic_map_bitmap_path_c",
+                          "binding_name_override": "#texture",
+                          "binding_condition": "always"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "coordinates": {
+                "type": "label",
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "offset": [0, -5],
+                "size": [150, 8],
+                "text": "",
+                "text_alignment": "center",
+                "font_scale_factor": 0.75,
+                "color": [0.20, 0.10, 0.035],
+                "layer": 3
+              }
+            },
+            {
+              "close_button": {
+                "type": "button",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [-5, 5],
+                "size": [12, 12],
+                "layer": 10,
+                "controls": [
+                  {
+                    "close_label": {
+                      "type": "label",
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "text": "X",
+                      "font_scale_factor": 1.35,
+                      "color": [0.15, 0.08, 0.03]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:crumble_horn"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:crumble_horn.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:crumble_horn"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:durability": {
+        "max_durability": 1024
+      },
+      "minecraft:use_animation": "bow",
+      "minecraft:use_duration": 72000
+    }
+  }
+}

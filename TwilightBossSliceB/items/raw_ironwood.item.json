@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:raw_ironwood"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:raw_ironwood.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:raw_ironwood"
+        }
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

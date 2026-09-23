@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tf_slice.forest_wyrm": {
+      "initial_state": "circle",
+      "states": {
+        "circle": {
+          "animations": ["circle"],
+          "transitions": [
+            {"intimidate": "query.variant == 1"},
+            {"crumble": "query.variant == 2"},
+            {"charge": "query.variant == 3 || query.variant == 4"},
+            {"daze": "query.variant == 5"}
+          ]
+        },
+        "intimidate": {
+          "animations": ["intimidate"],
+          "transitions": [
+            {"circle": "query.variant == 0"},
+            {"crumble": "query.variant == 2"},
+            {"charge": "query.variant == 3 || query.variant == 4"},
+            {"daze": "query.variant == 5"}
+          ]
+        },
+        "crumble": {
+          "animations": ["crumble"],
+          "transitions": [
+            {"circle": "query.variant == 0"},
+            {"intimidate": "query.variant == 1"},
+            {"charge": "query.variant == 3 || query.variant == 4"},
+            {"daze": "query.variant == 5"}
+          ]
+        },
+        "charge": {
+          "animations": ["charge"],
+          "transitions": [
+            {"circle": "query.variant == 0"},
+            {"intimidate": "query.variant == 1"},
+            {"crumble": "query.variant == 2"},
+            {"daze": "query.variant == 5"}
+          ]
+        },
+        "daze": {
+          "animations": ["daze"],
+          "transitions": [
+            {"circle": "query.variant == 0"},
+            {"intimidate": "query.variant == 1"},
+            {"crumble": "query.variant == 2"},
+            {"charge": "query.variant == 3 || query.variant == 4"}
+          ]
+        }
+      }
+    }
+  }
+}

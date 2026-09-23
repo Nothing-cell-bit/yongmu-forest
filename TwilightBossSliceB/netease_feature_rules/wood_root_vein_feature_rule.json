@@ -1,0 +1,54 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "tf_slice:wood_root_vein_feature_rule",
+      "places_feature": "tf_slice:wood_root_vein_feature"
+    },
+    "conditions": {
+      "placement_pass": "underground_pass",
+      "minecraft:biome_filter": [
+        {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "dm33027004"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "tf_slice_has_underground_roots"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [
+          -32,
+          0
+        ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "scatter_chance": 2.5
+    }
+  }
+}

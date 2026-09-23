@@ -1,0 +1,65 @@
+{
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:paper",
+          "functions": [
+            {
+              "count": 3.0,
+              "function": "set_count"
+            },
+            {
+              "count": {
+                "min": 0.0,
+                "max": 1.0
+              },
+              "function": "looting_enchant"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:writable_book",
+          "quality": 3,
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "minecraft:book",
+          "weight": 19
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/tf_slice/death_tome_books.json"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "conditions": [
+        {
+          "condition": "killed_by_player"
+        },
+        {
+          "chance": 0.025,
+          "condition": "random_chance_with_looting",
+          "looting_multiplier": 0.005
+        }
+      ],
+      "entries": [
+        {
+          "type": "item",
+          "name": "tf_slice:magic_map_focus"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

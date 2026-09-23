@@ -1,0 +1,61 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:knight_axe_projectile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tf_slice:instant_remove": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "knight_axe_projectile",
+          "knight_projectile",
+          "projectile"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.35,
+        "height": 0.35
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:projectile": {
+        "power": 0.6,
+        "gravity": 0.001,
+        "uncertainty_base": 0.0,
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": true,
+            "semi_random_diff_damage": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "tf_slice:instant_remove",
+              "target": "self"
+            }
+          }
+        }
+      }
+    },
+    "events": {
+      "tf_slice:instant_remove": {
+        "add": {
+          "component_groups": [
+            "tf_slice:instant_remove"
+          ]
+        }
+      }
+    }
+  }
+}

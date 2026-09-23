@@ -1,0 +1,29 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:ur_ghast_trophy_item",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "tile.tf_slice:ur_ghast_trophy.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:ur_ghast_trophy_item"
+        }
+      },
+      "minecraft:block_placer": {
+        "block": "tf_slice:ur_ghast_trophy"
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.head",
+        "protection": 0
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

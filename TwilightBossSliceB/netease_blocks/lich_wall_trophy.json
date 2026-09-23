@@ -1,0 +1,435 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:lich_wall_trophy",
+      "register_to_creative_menu": false,
+      "states": {
+        "tf_slice:facing": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "tf_slice:powered": [
+          false,
+          true
+        ]
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:lich_trophy_model",
+          "render_method": "alpha_test",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.21875,
+            0.125,
+            0.21875
+          ],
+          "max": [
+            0.78125,
+            0.90625,
+            0.78125
+          ]
+        },
+        "clip": {
+          "min": [
+            0.21875,
+            0.125,
+            0.21875
+          ],
+          "max": [
+            0.78125,
+            0.90625,
+            0.78125
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "optionalAlpha"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/lich_trophy.json"
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.21875,
+                0.365,
+                0.46775
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                1.03025
+              ]
+            },
+            "clip": {
+              "min": [
+                0.21875,
+                0.365,
+                0.46775
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                1.03025
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ],
+            "translation": [
+              0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.46775,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                1.03025,
+                1.14625,
+                0.78125
+              ]
+            },
+            "clip": {
+              "min": [
+                0.46775,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                1.03025,
+                1.14625,
+                0.78125
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              -0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.21875,
+                0.365,
+                -0.03025
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                0.53225
+              ]
+            },
+            "clip": {
+              "min": [
+                0.21875,
+                0.365,
+                -0.03025
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                0.53225
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ],
+            "translation": [
+              -0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.03025,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                0.53225,
+                1.14625,
+                0.78125
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.03025,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                0.53225,
+                1.14625,
+                0.78125
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.21875,
+                0.365,
+                0.46775
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                1.03025
+              ]
+            },
+            "clip": {
+              "min": [
+                0.21875,
+                0.365,
+                0.46775
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                1.03025
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ],
+            "translation": [
+              0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.46775,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                1.03025,
+                1.14625,
+                0.78125
+              ]
+            },
+            "clip": {
+              "min": [
+                0.46775,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                1.03025,
+                1.14625,
+                0.78125
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              -0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.21875,
+                0.365,
+                -0.03025
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                0.53225
+              ]
+            },
+            "clip": {
+              "min": [
+                0.21875,
+                0.365,
+                -0.03025
+              ],
+              "max": [
+                0.78125,
+                1.14625,
+                0.53225
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.lich_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ],
+            "translation": [
+              -0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.03025,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                0.53225,
+                1.14625,
+                0.78125
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.03025,
+                0.365,
+                0.21875
+              ],
+              "max": [
+                0.53225,
+                1.14625,
+                0.78125
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

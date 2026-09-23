@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "tf_slice:lich_ominous_flame",
+      "basic_render_parameters": {
+        "material": "particles_blend",
+        "texture": "textures/particle/ominous_flame"
+      }
+    },
+    "components": {
+      "minecraft:emitter_rate_instant": {"num_particles": 1},
+      "minecraft:emitter_lifetime_once": {},
+      "minecraft:emitter_shape_point": {
+        "direction": [
+          "Math.random(-0.18, 0.18)",
+          "Math.random(0.15, 0.45)",
+          "Math.random(-0.18, 0.18)"
+        ]
+      },
+      "minecraft:particle_initial_speed": "Math.random(0.08, 0.2)",
+      "minecraft:particle_lifetime_expression": {
+        "max_lifetime": "Math.random(0.45, 0.8)"
+      },
+      "minecraft:particle_motion_dynamic": {
+        "linear_acceleration": [0.0, 0.12, 0.0],
+        "linear_drag_coefficient": 0.15
+      },
+      "minecraft:particle_appearance_billboard": {
+        "size": [0.16, 0.16],
+        "facing_camera_mode": "lookat_xyz",
+        "uv": {
+          "texture_width": 8,
+          "texture_height": 8,
+          "uv": [0, 0],
+          "uv_size": [8, 8]
+        }
+      },
+      "minecraft:particle_appearance_tinting": {
+        "color": [0.64, 0.18, 0.82, 0.95]
+      },
+      "minecraft:particle_appearance_lighting": {}
+    }
+  }
+}

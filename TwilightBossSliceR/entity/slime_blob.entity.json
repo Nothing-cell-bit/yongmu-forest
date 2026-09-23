@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:slime_blob",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/blocks/slime"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.slime_blob"
+      },
+      "animations": {
+        "spin": "animation.tf_slice.nature_bolt.spin"
+      },
+      "scripts": {
+        "animate": [
+          "spin"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

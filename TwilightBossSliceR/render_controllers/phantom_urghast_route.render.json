@@ -1,0 +1,96 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.knight_phantom_skeleton": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.skeleton"
+      ],
+      "part_visibility": [
+        {
+          "skeleton_head": "query.property('tf_slice:charging')"
+        },
+        {
+          "skeleton_hat": "query.property('tf_slice:charging')"
+        },
+        {
+          "skeleton_body": "query.property('tf_slice:charging')"
+        },
+        {
+          "skeleton_right_arm": "query.property('tf_slice:charging')"
+        },
+        {
+          "skeleton_left_arm": "query.property('tf_slice:charging')"
+        },
+        {
+          "skeleton_right_leg": "query.property('tf_slice:charging')"
+        },
+        {
+          "skeleton_left_leg": "query.property('tf_slice:charging')"
+        }
+      ]
+    },
+    "controller.render.tf_slice.knight_phantom_armor": {
+      "geometry": "Geometry.armor",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.armor"
+      ]
+    },
+    "controller.render.tf_slice.route_ghast": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.default",
+            "Texture.open",
+            "Texture.attack"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[query.property('tf_slice:charging') ? 2 : 0]"
+      ]
+    },
+    "controller.render.tf_slice.ur_ghast": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.default",
+            "Texture.open",
+            "Texture.attack"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Array.skins[math.clamp(query.property('tf_slice:attack_state'), 0.0, 1.0) + math.clamp(query.property('tf_slice:attack_timer') - 10.0, 0.0, 1.0)]"
+      ],
+      "color": {
+        "r": 1.0,
+        "g": "query.property('tf_slice:hurt_flash') > 0.5 ? 0.25 : 1.0",
+        "b": "query.property('tf_slice:hurt_flash') > 0.5 ? 0.25 : 1.0",
+        "a": 1.0
+      }
+    }
+  }
+}

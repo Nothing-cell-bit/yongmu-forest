@@ -1,0 +1,361 @@
+{
+  "format_version": "1.20.20",
+  "sound_definitions": {
+    "tf_slice.tiny_bird.ambient": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/mob/tiny_bird/chirp1",
+          "weight": 38
+        },
+        {
+          "name": "sounds/mob/tiny_bird/chirp2",
+          "weight": 38
+        },
+        {
+          "name": "sounds/mob/tiny_bird/chirp3",
+          "weight": 38
+        },
+        {
+          "name": "sounds/mob/tiny_bird/song1",
+          "weight": 3
+        },
+        {
+          "name": "sounds/mob/tiny_bird/song2",
+          "weight": 3
+        }
+      ]
+    },
+    "tf_slice.tiny_bird.chirp": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/tiny_bird/chirp1",
+        "sounds/mob/tiny_bird/chirp2",
+        "sounds/mob/tiny_bird/chirp3"
+      ]
+    },
+    "tf_slice.tiny_bird.hurt": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/tiny_bird/hurt1",
+        "sounds/mob/tiny_bird/hurt2"
+      ]
+    },
+    "tf_slice.tiny_bird.song": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/tiny_bird/song1",
+        "sounds/mob/tiny_bird/song2"
+      ]
+    },
+    "tf_slice.tiny_bird.takeoff": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/bat/takeoff"
+      ]
+    },
+    "tf_slice.deer.ambient": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/deer/idle1",
+        "sounds/mob/deer/idle2",
+        "sounds/mob/deer/idle3"
+      ]
+    },
+    "tf_slice.deer.hurt": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/deer/hurt1",
+        "sounds/mob/deer/hurt2"
+      ]
+    },
+    "tf_slice.deer.death": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/deer/death"
+      ]
+    },
+    "tf_slice.naga.ambient": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/naga/hiss1",
+        "sounds/mob/naga/hiss2",
+        "sounds/mob/naga/hiss3"
+      ]
+    },
+    "tf_slice.naga.hurt": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/naga/hurt1",
+        "sounds/mob/naga/hurt2",
+        "sounds/mob/naga/hurt3"
+      ]
+    },
+    "tf_slice.naga.death": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/naga/hurt1",
+        "sounds/mob/naga/hurt2",
+        "sounds/mob/naga/hurt3"
+      ]
+    },
+    "tf_slice.naga.rattle": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/naga/rattle1",
+        "sounds/mob/naga/rattle2"
+      ]
+    },
+    "tf_slice.raven.ambient": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/raven/caw1",
+        "sounds/mob/raven/caw2"
+      ]
+    },
+    "tf_slice.raven.hurt": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/raven/squawk1",
+        "sounds/mob/raven/squawk2"
+      ]
+    },
+    "tf_slice.raven.death": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/raven/squawk1",
+        "sounds/mob/raven/squawk2"
+      ]
+    },
+    "tf_slice.raven.takeoff": {
+      "category": "neutral",
+      "sounds": [
+        "sounds/mob/bat/takeoff"
+      ]
+    },
+    "tf_slice.redcap.ambient": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/mob/redcap/redcap1",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap2",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap3",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap4",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap5",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap6",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap7",
+          "weight": 1
+        }
+      ]
+    },
+    "tf_slice.redcap.hurt": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/redcap/hurt1",
+        "sounds/mob/redcap/hurt2",
+        "sounds/mob/redcap/hurt3",
+        "sounds/mob/redcap/hurt4"
+      ]
+    },
+    "tf_slice.redcap.death": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/redcap/die1",
+        "sounds/mob/redcap/die2",
+        "sounds/mob/redcap/die3"
+      ]
+    },
+    "tf_slice.redcap_sapper.ambient": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/mob/redcap/redcap1",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap2",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap3",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap4",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap5",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap6",
+          "weight": 100
+        },
+        {
+          "name": "sounds/mob/redcap/redcap7",
+          "weight": 1
+        }
+      ]
+    },
+    "tf_slice.redcap_sapper.hurt": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/redcap/hurt1",
+        "sounds/mob/redcap/hurt2",
+        "sounds/mob/redcap/hurt3",
+        "sounds/mob/redcap/hurt4"
+      ]
+    },
+    "tf_slice.redcap_sapper.death": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/redcap/die1",
+        "sounds/mob/redcap/die2",
+        "sounds/mob/redcap/die3"
+      ]
+    },
+    "tf_slice.kobold.ambient": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/kobold/ambient1",
+        "sounds/mob/kobold/ambient2",
+        "sounds/mob/kobold/ambient3",
+        "sounds/mob/kobold/ambient4",
+        "sounds/mob/kobold/ambient5",
+        "sounds/mob/kobold/ambient6"
+      ]
+    },
+    "tf_slice.kobold.hurt": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/kobold/hurt1",
+        "sounds/mob/kobold/hurt2",
+        "sounds/mob/kobold/hurt3"
+      ]
+    },
+    "tf_slice.kobold.death": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/kobold/death1",
+        "sounds/mob/kobold/death2",
+        "sounds/mob/kobold/death3"
+      ]
+    },
+    "tf_slice.kobold.munch": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/random/eat1",
+        "sounds/random/eat2"
+      ]
+    },
+    "tf_slice.hostile_wolf.ambient": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hostile_wolf/idle1",
+        "sounds/mob/hostile_wolf/idle2",
+        "sounds/mob/hostile_wolf/idle3"
+      ]
+    },
+    "tf_slice.hostile_wolf.hurt": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hostile_wolf/hurt1",
+        "sounds/mob/hostile_wolf/hurt2"
+      ]
+    },
+    "tf_slice.hostile_wolf.death": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/wolf/death"
+      ]
+    },
+    "tf_slice.hostile_wolf.target": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hostile_wolf/target"
+      ]
+    },
+    "tf_slice.wraith.ambient": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/wraith/wraith1",
+        "sounds/mob/wraith/wraith2",
+        "sounds/mob/wraith/wraith3",
+        "sounds/mob/wraith/wraith4"
+      ]
+    },
+    "tf_slice.wraith.hurt": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/wraith/wraith1",
+        "sounds/mob/wraith/wraith2",
+        "sounds/mob/wraith/wraith3",
+        "sounds/mob/wraith/wraith4"
+      ]
+    },
+    "tf_slice.wraith.death": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/wraith/wraith1",
+        "sounds/mob/wraith/wraith2",
+        "sounds/mob/wraith/wraith3",
+        "sounds/mob/wraith/wraith4"
+      ]
+    },
+    "tf_slice.hydra.ambient": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hydra/growl1",
+        "sounds/mob/hydra/growl2",
+        "sounds/mob/hydra/growl3"
+      ]
+    },
+    "tf_slice.hydra.hurt": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hydra/hurt1",
+        "sounds/mob/hydra/hurt2",
+        "sounds/mob/hydra/hurt3",
+        "sounds/mob/hydra/hurt4"
+      ]
+    },
+    "tf_slice.hydra.death": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hydra/death"
+      ]
+    },
+    "tf_slice.hydra.roar": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hydra/roar1",
+        "sounds/mob/hydra/roar2"
+      ]
+    },
+    "tf_slice.hydra.warn": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/hydra/warn"
+      ]
+    }
+  }
+}

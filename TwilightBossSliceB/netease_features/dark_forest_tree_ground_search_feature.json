@@ -1,0 +1,23 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:search_feature": {
+    "description": {
+      "identifier": "tf_slice:dark_forest_tree_ground_search_feature"
+    },
+    "places_feature": "tf_slice:dark_forest_tree_profile_feature",
+    "search_volume": {
+      "min": [
+        0,
+        -64,
+        0
+      ],
+      "max": [
+        0,
+        0,
+        0
+      ]
+    },
+    "search_axis": "-y",
+    "required_successes": 1
+  }
+}

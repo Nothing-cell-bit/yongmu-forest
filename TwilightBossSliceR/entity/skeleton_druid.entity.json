@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:skeleton_druid",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/skeleton_druid"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.skeleton_druid"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#5F6A52",
+        "overlay_color": "#D8D8C4"
+      },
+      "animations": {
+        "move": "animation.tf_slice.biped.move",
+        "look": "animation.common.look_at_target"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "look"
+        ]
+      },
+      "enable_attachables": true
+    }
+  }
+}

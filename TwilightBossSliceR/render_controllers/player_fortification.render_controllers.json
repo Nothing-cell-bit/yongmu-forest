@@ -1,0 +1,67 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.player_fortification_fill": {
+      "geometry": "Geometry.tf_fortification_layer",
+      "materials": [
+        {
+          "*": "Material.tf_fortification_material"
+        }
+      ],
+      "textures": [
+        "Texture.tf_fortification_fill"
+      ],
+      "part_visibility": [
+        {
+          "tf_fortification_shield_0": "query.mod.tf_fortification_shields >= 1"
+        },
+        {
+          "tf_fortification_shield_1": "query.mod.tf_fortification_shields >= 2"
+        },
+        {
+          "tf_fortification_shield_2": "query.mod.tf_fortification_shields >= 3"
+        },
+        {
+          "tf_fortification_shield_3": "query.mod.tf_fortification_shields >= 4"
+        },
+        {
+          "tf_fortification_shield_4": "query.mod.tf_fortification_shields >= 5"
+        },
+        {
+          "tf_fortification_shield_5": false
+        }
+      ]
+    },
+    "controller.render.tf_slice.player_fortification_frame": {
+      "geometry": "Geometry.tf_fortification_layer",
+      "materials": [
+        {
+          "*": "Material.tf_fortification_material"
+        }
+      ],
+      "textures": [
+        "Texture.tf_fortification_frame"
+      ],
+      "part_visibility": [
+        {
+          "tf_fortification_shield_0": "query.mod.tf_fortification_shields >= 1"
+        },
+        {
+          "tf_fortification_shield_1": "query.mod.tf_fortification_shields >= 2"
+        },
+        {
+          "tf_fortification_shield_2": "query.mod.tf_fortification_shields >= 3"
+        },
+        {
+          "tf_fortification_shield_3": "query.mod.tf_fortification_shields >= 4"
+        },
+        {
+          "tf_fortification_shield_4": "query.mod.tf_fortification_shields >= 5"
+        },
+        {
+          "tf_fortification_shield_5": false
+        }
+      ]
+    }
+  }
+}

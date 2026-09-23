@@ -1,0 +1,48 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "tf_slice:dark_pumpkins_feature_rule",
+      "places_feature": "tf_slice:dark_pumpkins_patch_feature"
+    },
+    "conditions": {
+      "placement_pass": "after_surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "dm33027004"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "tf_slice_dark_forest_groundcover"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "y": "(query.get_height_at(variable.worldx, variable.worldz)) + 64",
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "scatter_chance": 3.3333333333333335
+    }
+  }
+}

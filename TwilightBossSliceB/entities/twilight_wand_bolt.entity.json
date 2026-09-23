@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {"identifier": "tf_slice:twilight_wand_bolt", "is_spawnable": false, "is_summonable": true, "is_experimental": false},
+    "components": {
+      "minecraft:type_family": {"family": ["twilight_wand_bolt", "magic_projectile", "projectile"]},
+      "minecraft:collision_box": {"width": 0.2, "height": 0.2},
+      "minecraft:physics": {"has_gravity": false},
+      "minecraft:projectile": {
+        "power": 1.5,
+        "gravity": 0.0,
+        "uncertainty_base": 1.0,
+        "anchor": 1,
+        "on_hit": {"impact_damage": {"damage": 6, "knockback": false, "semi_random_diff_damage": false}, "remove_on_hit": {}}
+      }
+    }
+  }
+}

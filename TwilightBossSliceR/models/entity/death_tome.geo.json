@@ -1,0 +1,349 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.death_tome",
+        "texture_width": 64,
+        "texture_height": 32,
+        "visible_bounds_width": 3.5,
+        "visible_bounds_height": 3.5,
+        "visible_bounds_offset": [
+          0,
+          1.25,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            24,
+            0
+          ]
+        },
+        {
+          "name": "book",
+          "parent": "root",
+          "pivot": [
+            0,
+            24,
+            0
+          ]
+        },
+        {
+          "name": "pages_right",
+          "parent": "book",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                -0.99
+              ],
+              "size": [
+                5,
+                8,
+                1
+              ],
+              "uv": [
+                0,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "name": "pages_left",
+          "parent": "book",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                -0.01
+              ],
+              "size": [
+                5,
+                8,
+                1
+              ],
+              "uv": [
+                12,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "name": "flipping_page_right",
+          "parent": "book",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                0
+              ],
+              "size": [
+                5,
+                8,
+                0.005
+              ],
+              "uv": [
+                24,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "name": "flipping_page_left",
+          "parent": "book",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                0
+              ],
+              "size": [
+                5,
+                8,
+                0.005
+              ],
+              "uv": [
+                24,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "name": "cover_right",
+          "parent": "book",
+          "pivot": [
+            0,
+            24,
+            -1
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -6,
+                19,
+                -1.005
+              ],
+              "size": [
+                6,
+                10,
+                0.005
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "cover_left",
+          "parent": "book",
+          "pivot": [
+            0,
+            24,
+            1
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                19,
+                0.995
+              ],
+              "size": [
+                6,
+                10,
+                0.005
+              ],
+              "uv": [
+                16,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "book_spine",
+          "parent": "book",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "rotation": [
+            0,
+            90,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                19,
+                0
+              ],
+              "size": [
+                2,
+                10,
+                0.005
+              ],
+              "uv": [
+                12,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "paper_storm",
+          "parent": "root",
+          "pivot": [
+            0,
+            24,
+            0
+          ]
+        },
+        {
+          "name": "loose_page_0",
+          "parent": "paper_storm",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                -8
+              ],
+              "size": [
+                5,
+                8,
+                0.005
+              ],
+              "uv": [
+                24,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "name": "loose_page_1",
+          "parent": "paper_storm",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                9
+              ],
+              "size": [
+                5,
+                8,
+                0.005
+              ],
+              "uv": [
+                24,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "name": "loose_page_2",
+          "parent": "paper_storm",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                11
+              ],
+              "size": [
+                5,
+                8,
+                0.005
+              ],
+              "uv": [
+                24,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "name": "loose_page_3",
+          "parent": "paper_storm",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                0,
+                20,
+                7
+              ],
+              "size": [
+                5,
+                8,
+                0.005
+              ],
+              "uv": [
+                24,
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

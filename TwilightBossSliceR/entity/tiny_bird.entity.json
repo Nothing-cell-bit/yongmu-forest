@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:tiny_bird",
+      "materials": {"default": "entity_alphatest"},
+      "textures": {
+        "blue": "textures/entity/tf_slice/tinybirdblue",
+        "brown": "textures/entity/tf_slice/tinybirdbrown",
+        "gold": "textures/entity/tf_slice/tinybirdgold",
+        "red": "textures/entity/tf_slice/tinybirdred"
+      },
+      "geometry": {"default": "geometry.tf_slice.tiny_bird"},
+      "render_controllers": [
+        "controller.render.tf_slice.tiny_bird"
+      ],
+      "spawn_egg": {
+        "base_color": "#3D65A8",
+        "overlay_color": "#E8C85B"
+      },
+      "animations": {
+        "ground": "animation.tf_slice.raven.ground",
+        "takeoff": "animation.tf_slice.raven.takeoff",
+        "fly": "animation.tf_slice.raven.fly",
+        "flight_controller": "controller.animation.tf_slice.raven.flight",
+        "look": "animation.common.look_at_target"
+      },
+      "scripts": {
+        "animate": ["flight_controller", "look"]
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.lower_goblin_knight": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "tunic": "query.property('tf_slice:has_armor')"
+        }
+      ]
+    },
+    "controller.render.tf_slice.upper_goblin_knight": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "breastplate": "query.property('tf_slice:has_armor')"
+        },
+        {
+          "shield": "query.property('tf_slice:has_shield')"
+        }
+      ]
+    }
+  }
+}

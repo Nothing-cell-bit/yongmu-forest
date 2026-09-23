@@ -1,0 +1,217 @@
+{
+  "source_version": "4.3.2508",
+  "dead_tree_variants": [
+    {
+      "id": "v00",
+      "height": 29,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 19,
+        "y": 42,
+        "z": 14
+      }
+    },
+    {
+      "id": "v01",
+      "height": 24,
+      "branch_count": 4,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 28,
+        "y": 35,
+        "z": 22
+      }
+    },
+    {
+      "id": "v02",
+      "height": 23,
+      "branch_count": 4,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 25,
+        "y": 36,
+        "z": 23
+      }
+    },
+    {
+      "id": "v03",
+      "height": 29,
+      "branch_count": 4,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 24,
+        "y": 47,
+        "z": 19
+      }
+    },
+    {
+      "id": "v04",
+      "height": 24,
+      "branch_count": 4,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 21,
+        "y": 38,
+        "z": 22
+      }
+    },
+    {
+      "id": "v05",
+      "height": 20,
+      "branch_count": 4,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 21,
+        "y": 35,
+        "z": 21
+      }
+    },
+    {
+      "id": "v06",
+      "height": 27,
+      "branch_count": 4,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 22,
+        "y": 38,
+        "z": 24
+      }
+    },
+    {
+      "id": "v07",
+      "height": 27,
+      "branch_count": 4,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 24,
+        "y": 40,
+        "z": 24
+      }
+    },
+    {
+      "id": "v08",
+      "height": 24,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 19,
+        "y": 33,
+        "z": 18
+      }
+    },
+    {
+      "id": "v09",
+      "height": 26,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 16,
+        "y": 37,
+        "z": 16
+      }
+    },
+    {
+      "id": "v10",
+      "height": 23,
+      "branch_count": 4,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 21,
+        "y": 36,
+        "z": 23
+      }
+    },
+    {
+      "id": "v11",
+      "height": 21,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 19,
+        "y": 30,
+        "z": 15
+      }
+    },
+    {
+      "id": "v12",
+      "height": 22,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 19,
+        "y": 34,
+        "z": 15
+      }
+    },
+    {
+      "id": "v13",
+      "height": 26,
+      "branch_count": 4,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 25,
+        "y": 41,
+        "z": 17
+      }
+    },
+    {
+      "id": "v14",
+      "height": 25,
+      "branch_count": 4,
+      "branch_length": 11,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 23,
+        "y": 36,
+        "z": 27
+      }
+    },
+    {
+      "id": "v15",
+      "height": 25,
+      "branch_count": 4,
+      "branch_length": 10,
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "axis_counts": {
+        "x": 21,
+        "y": 40,
+        "z": 21
+      }
+    }
+  ],
+  "web_attempts_per_chunk": 60,
+  "web_search_depth": 32,
+  "pumpkin_lamppost_chance_percent": 10.0,
+  "fallen_log_chance_percent_each": 2.5
+}

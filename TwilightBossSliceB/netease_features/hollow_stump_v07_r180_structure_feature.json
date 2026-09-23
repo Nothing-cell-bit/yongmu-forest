@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:hollow_stump_v07_r180_structure_feature"
+    },
+    "places_structure": "tf_slice:ruins/hollow_stump/v07",
+    "rotation": 180
+  }
+}

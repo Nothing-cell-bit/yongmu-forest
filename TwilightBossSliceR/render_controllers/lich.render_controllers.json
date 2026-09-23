@@ -1,0 +1,79 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.lich_shield_fill": {
+      "geometry": "Geometry.shields",
+      "materials": [{"*": "Material.shield"}],
+      "textures": ["Texture.shield_fill"],
+      "part_visibility": [
+        {"shield_0": "query.variant >= 1"},
+        {"shield_1": "query.variant >= 2"},
+        {"shield_2": "query.variant >= 3"},
+        {"shield_3": "query.variant >= 4"},
+        {"shield_4": "query.variant >= 5"},
+        {"shield_5": "query.variant >= 6"}
+      ]
+    },
+    "controller.render.tf_slice.lich_shield_frame": {
+      "geometry": "Geometry.shields",
+      "materials": [{"*": "Material.shield"}],
+      "textures": ["Texture.shield_frame"],
+      "part_visibility": [
+        {"shield_0": "query.variant >= 1"},
+        {"shield_1": "query.variant >= 2"},
+        {"shield_2": "query.variant >= 3"},
+        {"shield_3": "query.variant >= 4"},
+        {"shield_4": "query.variant >= 5"},
+        {"shield_5": "query.variant >= 6"}
+      ]
+    },
+    "controller.render.tf_slice.fortification_shield_fill": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.shield"}],
+      "textures": ["Texture.shield_fill"],
+      "part_visibility": [
+        {"shield_0": "query.mod.tf_fortification_shields >= 1"},
+        {"shield_1": "query.mod.tf_fortification_shields >= 2"},
+        {"shield_2": "query.mod.tf_fortification_shields >= 3"},
+        {"shield_3": "query.mod.tf_fortification_shields >= 4"},
+        {"shield_4": "query.mod.tf_fortification_shields >= 5"},
+        {"shield_5": false}
+      ]
+    },
+    "controller.render.tf_slice.fortification_shield_frame": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.shield"}],
+      "textures": ["Texture.shield_frame"],
+      "part_visibility": [
+        {"shield_0": "query.mod.tf_fortification_shields >= 1"},
+        {"shield_1": "query.mod.tf_fortification_shields >= 2"},
+        {"shield_2": "query.mod.tf_fortification_shields >= 3"},
+        {"shield_3": "query.mod.tf_fortification_shields >= 4"},
+        {"shield_4": "query.mod.tf_fortification_shields >= 5"},
+        {"shield_5": false}
+      ]
+    },
+    "controller.render.tf_slice.lich_clone": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.default"]
+    },
+    "controller.render.tf_slice.lich_minion": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.default"],
+      "color": {
+        "r": "query.variant == 1 ? 0.25 : 0.5",
+        "g": 1.0,
+        "b": "query.variant == 1 ? 0.25 : 0.5",
+        "a": 1.0
+      }
+    },
+    "controller.render.tf_slice.loyal_zombie": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.default"],
+      "color": {"r": 0.25, "g": 1.0, "b": 0.25, "a": 1.0}
+    }
+  }
+}

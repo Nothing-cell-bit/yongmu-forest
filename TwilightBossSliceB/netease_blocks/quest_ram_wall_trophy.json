@@ -1,0 +1,435 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:quest_ram_wall_trophy",
+      "register_to_creative_menu": false,
+      "states": {
+        "tf_slice:facing": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "tf_slice:powered": [
+          false,
+          true
+        ]
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:quest_ram_trophy_model",
+          "render_method": "alpha_test",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            -0.2,
+            0.1875,
+            0.25
+          ],
+          "max": [
+            1.2,
+            1.164443,
+            1.0375
+          ]
+        },
+        "clip": {
+          "min": [
+            -0.2,
+            0.1875,
+            0.25
+          ],
+          "max": [
+            1.2,
+            1.164443,
+            1.0375
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "optionalAlpha"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/quest_ram_trophy.json"
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.2,
+                0.4275,
+                0.499
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                1.2865
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.2,
+                0.4275,
+                0.499
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                1.2865
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ],
+            "translation": [
+              0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.499,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                1.2865,
+                1.404443,
+                1.2
+              ]
+            },
+            "clip": {
+              "min": [
+                0.499,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                1.2865,
+                1.404443,
+                1.2
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              -0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.2,
+                0.4275,
+                -0.2865
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                0.501
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.2,
+                0.4275,
+                -0.2865
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                0.501
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ],
+            "translation": [
+              -0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.2865,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                0.501,
+                1.404443,
+                1.2
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.2865,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                0.501,
+                1.404443,
+                1.2
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.2,
+                0.4275,
+                0.499
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                1.2865
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.2,
+                0.4275,
+                0.499
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                1.2865
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ],
+            "translation": [
+              0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.499,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                1.2865,
+                1.404443,
+                1.2
+              ]
+            },
+            "clip": {
+              "min": [
+                0.499,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                1.2865,
+                1.404443,
+                1.2
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              -0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.2,
+                0.4275,
+                -0.2865
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                0.501
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.2,
+                0.4275,
+                -0.2865
+              ],
+              "max": [
+                1.2,
+                1.404443,
+                0.501
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.quest_ram_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ],
+            "translation": [
+              -0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.2865,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                0.501,
+                1.404443,
+                1.2
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.2865,
+                0.4275,
+                -0.2
+              ],
+              "max": [
+                0.501,
+                1.404443,
+                1.2
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

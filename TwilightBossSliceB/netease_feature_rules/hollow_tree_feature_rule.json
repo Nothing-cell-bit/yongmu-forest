@@ -1,0 +1,26 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "tf_slice:hollow_tree_feature_rule",
+      "places_feature": "tf_slice:hollow_tree_chunk_trigger_structure_feature"
+    },
+    "conditions": {
+      "placement_pass": "after_surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "dm33027004"
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": "((query.is_biome((math.floor(variable.originx / 32) * 32 + 16), (math.floor(variable.originz / 32) * 32 + 16), 1, 14, 15, 21, 29, 35, 129, 132) && (math.max(math.max(math.max(query.get_height_at((math.floor(variable.originx / 32) * 32 + 2), (math.floor(variable.originz / 32) * 32 + 2)), query.get_height_at((math.floor(variable.originx / 32) * 32 + 30), (math.floor(variable.originz / 32) * 32 + 2))), query.get_height_at((math.floor(variable.originx / 32) * 32 + 2), (math.floor(variable.originz / 32) * 32 + 30))), query.get_height_at((math.floor(variable.originx / 32) * 32 + 30), (math.floor(variable.originz / 32) * 32 + 30))) - math.min(math.min(math.min(query.get_height_at((math.floor(variable.originx / 32) * 32 + 2), (math.floor(variable.originz / 32) * 32 + 2)), query.get_height_at((math.floor(variable.originx / 32) * 32 + 30), (math.floor(variable.originz / 32) * 32 + 2))), query.get_height_at((math.floor(variable.originx / 32) * 32 + 2), (math.floor(variable.originz / 32) * 32 + 30))), query.get_height_at((math.floor(variable.originx / 32) * 32 + 30), (math.floor(variable.originz / 32) * 32 + 30))) <= 2)) ? 1 : 0)",
+      "coordinate_eval_order": "xzy",
+      "x": 0,
+      "y": "(query.get_height_at((math.floor(variable.originx / 32) * 32 + 16), (math.floor(variable.originz / 32) * 32 + 16)) - 10)",
+      "z": 0
+    }
+  }
+}

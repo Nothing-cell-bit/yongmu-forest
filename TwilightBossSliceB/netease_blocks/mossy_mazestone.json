@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:mossy_mazestone",
+      "register_to_creative_menu": false
+    },
+    "components": {
+      "minecraft:destroy_time": {
+        "value": 1.5
+      },
+      "minecraft:explosion_resistance": {
+        "value": 100.0
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": true
+      },
+      "netease:pathable": {
+        "value": false
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:minotaur",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:charging": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "minotaur",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:collision_box": {
+        "width": 0.7,
+        "height": 2.4
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:attack": {
+        "damage": 0
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/equipment/tf_slice/minotaur.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.025
+          }
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/minotaur.json"
+      }
+    },
+    "component_groups": {
+      "tf_slice:normal_ai": {
+        "minecraft:movement.basic": {},
+        "minecraft:navigation.walk": {
+          "can_path_over_water": true,
+          "avoid_water": true,
+          "avoid_damage_blocks": true
+        },
+        "minecraft:jump.static": {},
+        "minecraft:behavior.float": {
+          "priority": 0
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": false,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 24
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1.0,
+          "cooldown_time": 1.0,
+          "track_target": true
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 6,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 7,
+          "look_distance": 8
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 7
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        }
+      },
+      "tf_slice:start_charging": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": true
+        }
+      },
+      "tf_slice:stop_charging": {
+        "add": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": false
+        }
+      }
+    }
+  }
+}

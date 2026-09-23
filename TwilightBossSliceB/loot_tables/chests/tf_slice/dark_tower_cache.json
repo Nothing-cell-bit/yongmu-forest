@@ -1,0 +1,32 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "tf_slice:carminite",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "tf_slice:tower_key",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "tf_slice:charm_of_life_1",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "tf_slice:experiment_115",
+          "weight": 4
+        }
+      ]
+    }
+  ]
+}

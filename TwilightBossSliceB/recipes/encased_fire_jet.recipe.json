@@ -1,0 +1,37 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tf_slice:encased_fire_jet"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "ERE",
+      "RJR",
+      "LLL"
+    ],
+    "key": {
+      "E": {
+        "item": "tf_slice:encased_towerwood"
+      },
+      "R": {
+        "item": "minecraft:redstone"
+      },
+      "J": {
+        "item": "tf_slice:fire_jet"
+      },
+      "L": {
+        "item": "minecraft:lava_bucket"
+      }
+    },
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "result": {
+      "item": "tf_slice:encased_fire_jet",
+      "count": 1
+    }
+  }
+}

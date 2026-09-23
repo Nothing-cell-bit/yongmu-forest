@@ -1,0 +1,30 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:knightmetal_boots"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:knightmetal_boots.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:knightmetal_boots"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 390
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.feet",
+        "protection": 3
+      },
+      "minecraft:enchantable": {
+        "slot": "armor_feet",
+        "value": 9
+      }
+    }
+  }
+}

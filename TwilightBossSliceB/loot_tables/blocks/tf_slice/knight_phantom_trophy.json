@@ -1,0 +1,14 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "tf_slice:knight_phantom_trophy_item",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:canopy_chest",
+      "register_to_creative_menu": false
+    },
+    "components": {
+      "minecraft:destroy_time": {
+        "value": 2.0
+      },
+      "minecraft:explosion_resistance": {
+        "value": 3.0
+      },
+      "minecraft:block_light_absorption": {
+        "value": 0
+      },
+      "netease:aabb": {
+        "collision": [
+          {
+            "min": [
+              0.0625,
+              0.0,
+              0.0625
+            ],
+            "max": [
+              0.9375,
+              0.625,
+              0.9375
+            ]
+          },
+          {
+            "min": [
+              0.0625,
+              0.625,
+              0.0625
+            ],
+            "max": [
+              0.9375,
+              0.9375,
+              0.9375
+            ]
+          },
+          {
+            "min": [
+              0.4375,
+              0.4375,
+              0.0
+            ],
+            "max": [
+              0.5625,
+              0.6875,
+              0.0625
+            ]
+          }
+        ],
+        "clip": [
+          {
+            "min": [
+              0.0625,
+              0.0,
+              0.0625
+            ],
+            "max": [
+              0.9375,
+              0.625,
+              0.9375
+            ]
+          },
+          {
+            "min": [
+              0.0625,
+              0.625,
+              0.0625
+            ],
+            "max": [
+              0.9375,
+              0.9375,
+              0.9375
+            ]
+          },
+          {
+            "min": [
+              0.4375,
+              0.4375,
+              0.0
+            ],
+            "max": [
+              0.5625,
+              0.6875,
+              0.0625
+            ]
+          }
+        ]
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "netease:block_chest": {
+        "chest_capacity": 3,
+        "can_pair": true,
+        "mute": false,
+        "can_be_blocked": true
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "tf_slice:enchanted_forest_tree_profile_feature"
+    },
+    "features": [
+      [
+        "tf_slice:enchanted_regular_rainbow_tree_trigger_feature",
+        650
+      ],
+      [
+        "tf_slice:enchanted_vanilla_oak_tree_trigger_feature",
+        150
+      ],
+      [
+        "tf_slice:enchanted_vanilla_birch_tree_trigger_feature",
+        128
+      ],
+      [
+        "tf_slice:enchanted_large_rainbow_tree_trigger_feature",
+        72
+      ]
+    ]
+  }
+}

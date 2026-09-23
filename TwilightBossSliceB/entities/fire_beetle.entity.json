@@ -1,0 +1,130 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:fire_beetle",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "fire_beetle",
+          "arthropod",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 25,
+        "max": 25
+      },
+      "minecraft:movement": {
+        "value": 0.23
+      },
+      "minecraft:collision_box": {
+        "width": 1.1,
+        "height": 0.5
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/tf_slice/fire_beetle.json"
+      },
+      "minecraft:ambient_sound_interval": {
+        "value": 4.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      },
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 24
+          }
+        ]
+      }
+    },
+    "component_groups": {
+      "tf_slice:normal_ai": {
+        "minecraft:movement": {
+          "value": 0.23
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0.0
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 6,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1.0,
+          "track_target": true
+        }
+      },
+      "tf_slice:breathing": {
+        "minecraft:movement": {
+          "value": 0.0
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1.0
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["tf_slice:normal_ai"]
+        }
+      },
+      "tf_slice:start_breathing": {
+        "sequence": [
+          {"remove": {"component_groups": ["tf_slice:normal_ai"]}},
+          {"add": {"component_groups": ["tf_slice:breathing"]}}
+        ]
+      },
+      "tf_slice:stop_breathing": {
+        "sequence": [
+          {"remove": {"component_groups": ["tf_slice:breathing"]}},
+          {"add": {"component_groups": ["tf_slice:normal_ai"]}}
+        ]
+      }
+    }
+  }
+}

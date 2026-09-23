@@ -1,0 +1,138 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:mini_ghast",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:charging": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "tf_slice:boss_minion": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "mini_ghast",
+          "dark_tower",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:movement.fly": {},
+      "minecraft:navigation.fly": {
+        "can_path_from_air": true,
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 64
+          }
+        ]
+      },
+      "minecraft:behavior.random_hover": {
+        "priority": 7,
+        "xz_dist": 4,
+        "y_dist": 4,
+        "y_offset": 0,
+        "interval": 1
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/tf_slice/mini_ghast.json"
+      }
+    },
+    "events": {
+      "tf_slice:start_charging": {
+        "set_property": {
+          "tf_slice:charging": true
+        }
+      },
+      "tf_slice:stop_charging": {
+        "set_property": {
+          "tf_slice:charging": false
+        }
+      },
+      "tf_slice:make_boss_minion": {
+        "add": {
+          "component_groups": [
+            "tf_slice:boss_minion"
+          ]
+        },
+        "set_property": {
+          "tf_slice:boss_minion": true
+        }
+      }
+    },
+    "component_groups": {
+      "tf_slice:boss_minion": {
+        "minecraft:health": {
+          "value": 6,
+          "max": 6
+        },
+        "minecraft:movement": {
+          "value": 0.05
+        },
+        "minecraft:behavior.random_hover": {
+          "priority": 7,
+          "xz_dist": 1,
+          "y_dist": 1,
+          "y_offset": 0,
+          "interval": 4
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tf_slice/empty.json"
+        }
+      }
+    }
+  }
+}

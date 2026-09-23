@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "slotLocals": [
+    [2, 2],
+    [6, 2],
+    [6, 6],
+    [2, 6]
+  ],
+  "profiles": [
+    {
+      "id": "fire_route",
+      "enabled": true,
+      "homeSlot": 0,
+      "coreBiome": "fire_swamp",
+      "companionBiome": "swamp",
+      "mainLandmark": "hydra_lair",
+      "companionLandmark": "labyrinth",
+      "coreMapColor": [97, 3, 0, 255],
+      "companionMapColor": [48, 115, 112, 255],
+      "outerPhase": 0,
+      "corePhase": 0
+    },
+    {
+      "id": "dark_route",
+      "enabled": true,
+      "homeSlot": 1,
+      "coreBiome": "dark_forest_center",
+      "companionBiome": "dark_forest",
+      "mainLandmark": "dark_tower",
+      "companionLandmark": "knight_stronghold",
+      "coreMapColor": [112, 66, 27, 255],
+      "companionMapColor": [53, 66, 27, 255],
+      "outerPhase": 180,
+      "corePhase": 53
+    },
+    {
+      "id": "glacier_route",
+      "enabled": false,
+      "homeSlot": 2,
+      "coreBiome": null,
+      "companionBiome": null,
+      "mainLandmark": null,
+      "companionLandmark": null,
+      "coreMapColor": null,
+      "companionMapColor": null,
+      "fallbackProfile": "fire_route",
+      "outerPhase": 90,
+      "corePhase": 106,
+      "plannedCoreBiome": "glacier",
+      "plannedCompanionBiome": "snowy_forest",
+      "plannedMainLandmark": "aurora_palace",
+      "plannedCompanionLandmark": "yeti_cave"
+    },
+    {
+      "id": "final_highlands_route",
+      "enabled": false,
+      "homeSlot": 3,
+      "coreBiome": null,
+      "companionBiome": null,
+      "mainLandmark": null,
+      "companionLandmark": null,
+      "coreMapColor": null,
+      "companionMapColor": null,
+      "fallbackProfile": "dark_route",
+      "outerPhase": 270,
+      "corePhase": 159,
+      "plannedCoreBiome": "final_plateau",
+      "plannedCompanionBiome": "highlands",
+      "plannedMainLandmark": "final_castle",
+      "plannedCompanionLandmark": "troll_cave"
+    }
+  ]
+}

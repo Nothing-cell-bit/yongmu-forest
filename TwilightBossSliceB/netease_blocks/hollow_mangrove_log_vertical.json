@@ -1,0 +1,131 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:hollow_mangrove_log_vertical",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "minecraft:destroy_time": {
+        "value": 2.0
+      },
+      "minecraft:explosion_resistance": {
+        "value": 3.0
+      },
+      "minecraft:block_light_absorption": {
+        "value": 0
+      },
+      "netease:aabb": {
+        "collision": [
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.1875
+            ]
+          },
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.8125
+            ],
+            "max": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.1875
+            ],
+            "max": [
+              0.1875,
+              1.0,
+              0.8125
+            ]
+          },
+          {
+            "min": [
+              0.8125,
+              0.0,
+              0.1875
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.8125
+            ]
+          }
+        ],
+        "clip": [
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.1875
+            ]
+          },
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.8125
+            ],
+            "max": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.1875
+            ],
+            "max": [
+              0.1875,
+              1.0,
+              0.8125
+            ]
+          },
+          {
+            "min": [
+              0.8125,
+              0.0,
+              0.1875
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.8125
+            ]
+          }
+        ]
+      },
+      "netease:render_layer": {
+        "value": "optionalAlpha"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      }
+    }
+  }
+}

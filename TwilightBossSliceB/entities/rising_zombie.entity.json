@@ -1,0 +1,109 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:rising_zombie",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "rising_zombie",
+          "zombie",
+          "undead",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:movement": {
+        "value": 0.23
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/tf_slice/rising_zombie.json"
+      },
+      "minecraft:ambient_sound_interval": {
+        "value": 4.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      }
+    },
+    "component_groups": {
+      "tf_slice:rising": {
+        "minecraft:movement": {
+          "value": 0.0
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1.0
+        },
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": false
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 6.5,
+          "time_down_event": {
+            "event": "tf_slice:finish_rising",
+            "target": "self"
+          }
+        }
+      },
+      "tf_slice:transform": {
+        "minecraft:transformation": {
+          "into": "minecraft:zombie",
+          "keep_level": true,
+          "drop_equipment": false,
+          "drop_inventory": false,
+          "preserve_equipment": true
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "tf_slice:rising"
+          ]
+        }
+      },
+      "tf_slice:finish_rising": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:rising"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tf_slice:transform"
+          ]
+        }
+      }
+    }
+  }
+}

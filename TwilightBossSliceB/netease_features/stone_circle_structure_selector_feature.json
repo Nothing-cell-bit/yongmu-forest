@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "tf_slice:stone_circle_structure_selector_feature"
+    },
+    "features": [
+      [
+        "tf_slice:stone_circle_v00_r000_structure_feature",
+        1
+      ],
+      [
+        "tf_slice:stone_circle_v00_r090_structure_feature",
+        1
+      ],
+      [
+        "tf_slice:stone_circle_v00_r180_structure_feature",
+        1
+      ],
+      [
+        "tf_slice:stone_circle_v00_r270_structure_feature",
+        1
+      ]
+    ]
+  }
+}

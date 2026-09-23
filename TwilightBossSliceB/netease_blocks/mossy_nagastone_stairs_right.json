@@ -1,0 +1,3192 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:mossy_nagastone_stairs_right",
+      "register_to_creative_menu": true,
+      "states": {
+        "tf_slice:facing": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "tf_slice:half": [
+          "bottom",
+          "top"
+        ],
+        "tf_slice:shape": [
+          "straight",
+          "inner_left",
+          "inner_right",
+          "outer_left",
+          "outer_right"
+        ]
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 6.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_bottom",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:etched_nagastone_right_mossy",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "side": {
+          "texture": "tf_slice:etched_nagastone_right_mossy",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "middle": {
+          "texture": "tf_slice:nagastone_bare_mossy",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "end": {
+          "texture": "tf_slice:nagastone_end",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": [
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              1.0,
+              0.5,
+              1.0
+            ]
+          },
+          {
+            "min": [
+              0.0,
+              0.5,
+              0.0
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.5
+            ]
+          }
+        ],
+        "clip": [
+          {
+            "min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              1.0,
+              0.5,
+              1.0
+            ]
+          },
+          {
+            "min": [
+              0.0,
+              0.5,
+              0.0
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.5
+            ]
+          }
+        ]
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": true
+      },
+      "netease:pathable": {
+        "value": false
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'bottom' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_bottom",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  1.0,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'straight' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_straight_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_left' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'inner_right' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_inner_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_left' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_left_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.5,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.5
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:half') == 'top' && query.block_state('tf_slice:shape') == 'outer_right' && query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.courtyard_stairs_outer_right_top",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.5,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.5,
+                  0.5,
+                  0.5
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

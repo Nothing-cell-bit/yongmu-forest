@@ -1,0 +1,54 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "tf_slice:large_twilight_oak_tree_feature"
+    },
+    "fancy_trunk": {
+      "trunk_height": {
+        "base": 5,
+        "variance": 12,
+        "scale": 0.618
+      },
+      "trunk_width": 1,
+      "branches": {
+        "slope": 0.381,
+        "density": 1.0,
+        "min_altitude_factor": 0.2
+      },
+      "trunk_block": {
+        "name": "tf_slice:twilight_oak_log"
+      },
+      "width_scale": 1.0,
+      "foliage_altitude_factor": 0.3
+    },
+    "fancy_canopy": {
+      "height": 4,
+      "radius": 3,
+      "leaf_block": {
+        "name": "tf_slice:twilight_oak_leaves"
+      }
+    },
+    "base_block": [
+      "minecraft:dirt"
+    ],
+    "may_grow_on": [
+      "minecraft:grass",
+      "minecraft:grass_block",
+      "minecraft:dirt",
+      "minecraft:podzol"
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:tallgrass",
+      "minecraft:double_plant",
+      "tf_slice:twilight_oak_leaves",
+      "tf_slice:canopy_leaves"
+    ],
+    "may_grow_through": [
+      "minecraft:air",
+      "minecraft:tallgrass",
+      "minecraft:double_plant"
+    ]
+  }
+}

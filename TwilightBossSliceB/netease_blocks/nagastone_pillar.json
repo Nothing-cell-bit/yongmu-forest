@@ -1,0 +1,135 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:nagastone_pillar",
+      "register_to_creative_menu": true,
+      "states": {
+        "tf_slice:axis": [
+          "x",
+          "y",
+          "z"
+        ],
+        "tf_slice:reversed": [
+          false,
+          true
+        ]
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.5
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 6.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.courtyard_pillar",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:nagastone_pillar_side",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "side": {
+          "texture": "tf_slice:nagastone_pillar_side",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        },
+        "end": {
+          "texture": "tf_slice:nagastone_pillar_end",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "clip": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": true
+      },
+      "netease:pathable": {
+        "value": false
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:axis') == 'x'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              90
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:axis') == 'z'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              90,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:reversed')",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "tf_slice:nagastone_pillar_side_alt",
+              "render_method": "opaque",
+              "ambient_occlusion": true,
+              "face_dimming": true
+            },
+            "side": {
+              "texture": "tf_slice:nagastone_pillar_side_alt",
+              "render_method": "opaque",
+              "ambient_occlusion": true,
+              "face_dimming": true
+            },
+            "end": {
+              "texture": "tf_slice:nagastone_pillar_end",
+              "render_method": "opaque",
+              "ambient_occlusion": true,
+              "face_dimming": true
+            }
+          }
+        }
+      }
+    ]
+  }
+}

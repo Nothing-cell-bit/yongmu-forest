@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:goblin_chain_link",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/block_chain_goblin"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.goblin_chain_link"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:hydra_banner"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:hydra_banner.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:hydra_banner"
+        }
+      }
+    }
+  }
+}

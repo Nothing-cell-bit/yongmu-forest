@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "tf_slice:cracked_nagastone_pillar"
+    },
+    "tags": [
+      "furnace"
+    ],
+    "input": "tf_slice:nagastone_pillar",
+    "output": "tf_slice:cracked_nagastone_pillar"
+  }
+}

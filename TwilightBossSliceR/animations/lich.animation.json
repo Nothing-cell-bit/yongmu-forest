@@ -1,0 +1,404 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.lich.move": {
+      "loop": true,
+      "bones": {
+        "rightLeg": {
+          "rotation": [
+            -180,
+            0,
+            0
+          ]
+        },
+        "leftLeg": {
+          "rotation": [
+            -180,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_move.01": {
+      "loop": true,
+      "bones": {
+        "rightLeg": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_move.02": {
+      "loop": true,
+      "bones": {
+        "leftLeg": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.lich.source_pose": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "leftArm": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "head": {
+          "rotation": [
+            -180,
+            -180,
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            -180,
+            -180,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.01": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.02": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.03": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.04": {
+      "loop": true,
+      "bones": {
+        "leftArm": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.05": {
+      "loop": true,
+      "bones": {
+        "leftArm": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.06": {
+      "loop": true,
+      "bones": {
+        "leftArm": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.07": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_source_pose.08": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.lich.shields": {
+      "loop": true,
+      "bones": {
+        "shield_0": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_1": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_2": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_3": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_4": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_5": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.01": {
+      "loop": true,
+      "bones": {
+        "shield_0": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_1": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_2": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_3": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_4": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_5": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.02": {
+      "loop": true,
+      "bones": {
+        "shield_0": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.03": {
+      "loop": true,
+      "bones": {
+        "shield_0": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_1": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_2": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_3": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_4": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_5": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.04": {
+      "loop": true,
+      "bones": {
+        "shield_1": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.05": {
+      "loop": true,
+      "bones": {
+        "shield_2": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.06": {
+      "loop": true,
+      "bones": {
+        "shield_3": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.07": {
+      "loop": true,
+      "bones": {
+        "shield_4": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.lich_shields.08": {
+      "loop": true,
+      "bones": {
+        "shield_5": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

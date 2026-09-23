@@ -1,0 +1,10 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:fog_settings": {
+    "description": {"identifier": "tf_slice:fog_swamp"},
+    "distance": {
+      "air": {"fog_start": 0.0, "fog_end": 112.0, "fog_color": "#003F21", "render_distance_type": "fixed"},
+      "water": {"fog_start": 0.0, "fog_end": 24.0, "fog_color": "#050533", "render_distance_type": "fixed"}
+    }
+  }
+}

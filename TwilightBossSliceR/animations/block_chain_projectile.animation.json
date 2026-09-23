@@ -1,0 +1,70 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.tf_slice.block_chain_projectile.chain": {
+      "loop": true,
+      "bones": {
+        "chain_0": {
+          "scale": 0
+        },
+        "chain_1": {
+          "scale": 0
+        },
+        "chain_2": {
+          "scale": 0
+        },
+        "chain_3": {
+          "scale": 0
+        },
+        "chain_4": {
+          "scale": 0
+        }
+      }
+    },
+    "animation.tf_slice.block_chain_link.chain": {
+      "loop": true,
+      "bones": {
+        "chain_0": {
+          "position": [
+            "query.mod.tf_chain_head_x * 0.05 + query.mod.tf_chain_hand_x * 0.95",
+            "query.mod.tf_chain_head_y * 0.05 + query.mod.tf_chain_hand_y * 0.95",
+            "query.mod.tf_chain_head_z * 0.05 + query.mod.tf_chain_hand_z * 0.95"
+          ],
+          "scale": "query.mod.tf_chain_ready"
+        },
+        "chain_1": {
+          "position": [
+            "query.mod.tf_chain_head_x * 0.25 + query.mod.tf_chain_hand_x * 0.75",
+            "query.mod.tf_chain_head_y * 0.25 + query.mod.tf_chain_hand_y * 0.75",
+            "query.mod.tf_chain_head_z * 0.25 + query.mod.tf_chain_hand_z * 0.75"
+          ],
+          "scale": "query.mod.tf_chain_ready"
+        },
+        "chain_2": {
+          "position": [
+            "query.mod.tf_chain_head_x * 0.45 + query.mod.tf_chain_hand_x * 0.55",
+            "query.mod.tf_chain_head_y * 0.45 + query.mod.tf_chain_hand_y * 0.55",
+            "query.mod.tf_chain_head_z * 0.45 + query.mod.tf_chain_hand_z * 0.55"
+          ],
+          "scale": "query.mod.tf_chain_ready"
+        },
+        "chain_3": {
+          "position": [
+            "query.mod.tf_chain_head_x * 0.65 + query.mod.tf_chain_hand_x * 0.35",
+            "query.mod.tf_chain_head_y * 0.65 + query.mod.tf_chain_hand_y * 0.35",
+            "query.mod.tf_chain_head_z * 0.65 + query.mod.tf_chain_hand_z * 0.35"
+          ],
+          "scale": "query.mod.tf_chain_ready"
+        },
+        "chain_4": {
+          "position": [
+            "query.mod.tf_chain_head_x * 0.85 + query.mod.tf_chain_hand_x * 0.15",
+            "query.mod.tf_chain_head_y * 0.85 + query.mod.tf_chain_hand_y * 0.15",
+            "query.mod.tf_chain_head_z * 0.85 + query.mod.tf_chain_hand_z * 0.15"
+          ],
+          "scale": "query.mod.tf_chain_ready"
+        }
+      }
+    }
+  }
+}

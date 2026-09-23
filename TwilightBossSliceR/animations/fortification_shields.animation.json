@@ -1,0 +1,261 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.fortification_shields": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [
+            -4096,
+            -4096,
+            -4096
+          ]
+        },
+        "shield_0": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_1": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_2": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_3": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_4": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "shield_5": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.01": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [
+            8192,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.02": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [
+            0,
+            8192,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.03": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [
+            0,
+            0,
+            8192
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.04": {
+      "loop": true,
+      "bones": {
+        "shield_0": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_1": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_2": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_3": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_4": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "shield_5": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.05": {
+      "loop": true,
+      "bones": {
+        "shield_0": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.06": {
+      "loop": true,
+      "bones": {
+        "shield_0": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_1": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_2": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_3": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_4": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        },
+        "shield_5": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.07": {
+      "loop": true,
+      "bones": {
+        "shield_1": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.08": {
+      "loop": true,
+      "bones": {
+        "shield_2": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.09": {
+      "loop": true,
+      "bones": {
+        "shield_3": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.10": {
+      "loop": true,
+      "bones": {
+        "shield_4": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.fortification_shields.11": {
+      "loop": true,
+      "bones": {
+        "shield_5": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

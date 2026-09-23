@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:penguin",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/penguin"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.penguin"
+      },
+      "animations": {
+        "source_motion": "animation.tf_slice.penguin.source_motion",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "source_motion": "query.modified_move_speed"
+          },
+          "look_at_target"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#12151B",
+        "overlay_color": "#F9EDD2"
+      }
+    }
+  }
+}

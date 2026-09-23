@@ -1,0 +1,103 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:lich",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tf_slice:combat_targeting": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "must_see": false,
+          "reselect_targets": true,
+          "within_radius": 35,
+          "entity_types": [{"filters": {"test": "is_family", "subject": "other", "value": "player"}, "max_dist": 35}]
+        }
+      },
+      "tf_slice:dying": {
+        "minecraft:movement": {"value": 0.0}
+      },
+      "tf_slice:melee_phase": {
+        "minecraft:attack": {"damage": 0},
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "speed_multiplier": 0.75,
+          "track_target": true
+        }
+      },
+      "tf_slice:shield_0": {"minecraft:variant": {"value": 0}},
+      "tf_slice:shield_1": {"minecraft:variant": {"value": 1}},
+      "tf_slice:shield_2": {"minecraft:variant": {"value": 2}},
+      "tf_slice:shield_3": {"minecraft:variant": {"value": 3}},
+      "tf_slice:shield_4": {"minecraft:variant": {"value": 4}},
+      "tf_slice:shield_5": {"minecraft:variant": {"value": 5}},
+      "tf_slice:shield_6": {"minecraft:variant": {"value": 6}}
+    },
+    "components": {
+      "minecraft:type_family": {"family": ["lich", "boss", "undead", "monster", "mob"]},
+      "minecraft:nameable": {"always_show": true, "allow_name_tag_renaming": true},
+      "minecraft:variant": {"value": 6},
+      "minecraft:health": {"value": 100, "max": 100},
+      "minecraft:movement": {"value": 0.45},
+      "minecraft:attack": {"damage": 0},
+      "minecraft:collision_box": {"width": 1.1, "height": 2.1},
+      "minecraft:physics": {},
+      "minecraft:pushable": {"is_pushable": false, "is_pushable_by_piston": false},
+      "minecraft:knockback_resistance": {"value": 0.0},
+      "minecraft:persistent": {},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {"can_path_over_water": true, "avoid_damage_blocks": true},
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": {"priority": 0},
+      "minecraft:behavior.look_at_player": {"priority": 7, "look_distance": 24},
+      "minecraft:behavior.random_look_around": {"priority": 8}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {"component_groups": ["tf_slice:combat_targeting"]}
+      },
+      "tf_slice:begin_dying": {
+        "remove": {"component_groups": ["tf_slice:melee_phase", "tf_slice:combat_targeting"]},
+        "add": {"component_groups": ["tf_slice:dying"]}
+      },
+      "tf_slice:set_phase_melee": {
+        "add": {"component_groups": ["tf_slice:melee_phase", "tf_slice:combat_targeting"]}
+      },
+      "tf_slice:set_phase_ranged": {
+        "remove": {"component_groups": ["tf_slice:melee_phase"]},
+        "add": {"component_groups": ["tf_slice:combat_targeting"]}
+      },
+      "tf_slice:set_shield_0": {
+        "remove": {"component_groups": ["tf_slice:shield_1", "tf_slice:shield_2", "tf_slice:shield_3", "tf_slice:shield_4", "tf_slice:shield_5", "tf_slice:shield_6"]},
+        "add": {"component_groups": ["tf_slice:shield_0"]}
+      },
+      "tf_slice:set_shield_1": {
+        "remove": {"component_groups": ["tf_slice:shield_0", "tf_slice:shield_2", "tf_slice:shield_3", "tf_slice:shield_4", "tf_slice:shield_5", "tf_slice:shield_6"]},
+        "add": {"component_groups": ["tf_slice:shield_1"]}
+      },
+      "tf_slice:set_shield_2": {
+        "remove": {"component_groups": ["tf_slice:shield_0", "tf_slice:shield_1", "tf_slice:shield_3", "tf_slice:shield_4", "tf_slice:shield_5", "tf_slice:shield_6"]},
+        "add": {"component_groups": ["tf_slice:shield_2"]}
+      },
+      "tf_slice:set_shield_3": {
+        "remove": {"component_groups": ["tf_slice:shield_0", "tf_slice:shield_1", "tf_slice:shield_2", "tf_slice:shield_4", "tf_slice:shield_5", "tf_slice:shield_6"]},
+        "add": {"component_groups": ["tf_slice:shield_3"]}
+      },
+      "tf_slice:set_shield_4": {
+        "remove": {"component_groups": ["tf_slice:shield_0", "tf_slice:shield_1", "tf_slice:shield_2", "tf_slice:shield_3", "tf_slice:shield_5", "tf_slice:shield_6"]},
+        "add": {"component_groups": ["tf_slice:shield_4"]}
+      },
+      "tf_slice:set_shield_5": {
+        "remove": {"component_groups": ["tf_slice:shield_0", "tf_slice:shield_1", "tf_slice:shield_2", "tf_slice:shield_3", "tf_slice:shield_4", "tf_slice:shield_6"]},
+        "add": {"component_groups": ["tf_slice:shield_5"]}
+      },
+      "tf_slice:set_shield_6": {
+        "remove": {"component_groups": ["tf_slice:shield_0", "tf_slice:shield_1", "tf_slice:shield_2", "tf_slice:shield_3", "tf_slice:shield_4", "tf_slice:shield_5"]},
+        "add": {"component_groups": ["tf_slice:shield_6"]}
+      }
+    }
+  }
+}

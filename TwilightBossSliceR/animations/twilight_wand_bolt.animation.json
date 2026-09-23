@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.twilight_wand_bolt.spin": {
+      "loop": true,
+      "bones": {
+        "bolt": {
+          "rotation": [0, "query.life_time * 120", 0]
+        }
+      }
+    }
+  }
+}

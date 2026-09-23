@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {"identifier": "dm33027004_swampland_mutated"},
+    "components": {
+      "minecraft:fog_appearance": {"fog_identifier": "tf_slice:fog_fire_swamp"},
+      "minecraft:sky_color": {"sky_color": "#20224A"},
+      "minecraft:water_appearance": {"surface_color": "#6C2C2C"},
+      "minecraft:foliage_appearance": {"color": "#64260F"},
+      "minecraft:grass_appearance": {"color": "#572E23"}
+    }
+  }
+}

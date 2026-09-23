@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:druid_hut_druid_sideways_basement_shelves_r270_structure_feature"
+    },
+    "places_structure": "tf_slice:ruins/druid_hut/druid_sideways_basement_shelves",
+    "rotation": 270
+  }
+}

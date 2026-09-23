@@ -1,0 +1,63 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:huge_lily_pad",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "netease:neighborchanged_sendto_script": {"value": true},
+      "netease:random_tick": {"enable": true, "tick_to_script": true},
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.huge_lily_pad_item",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:huge_lily_pad",
+          "render_method": "alpha_test",
+          "ambient_occlusion": false,
+          "face_dimming": false
+        }
+      },
+      "netease:render_layer": {
+        "value": "optionalAlpha"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": true
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.875,
+            0.0625,
+            1.875
+          ]
+        },
+        "clip": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.875,
+            0.0625,
+            1.875
+          ]
+        }
+      }
+    }
+  }
+}

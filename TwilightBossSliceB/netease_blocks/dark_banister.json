@@ -1,0 +1,2713 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:dark_banister",
+      "register_to_creative_menu": true,
+      "states": {
+        "tf_slice:shape": [
+          "tall",
+          "connected",
+          "short"
+        ],
+        "tf_slice:extended": [
+          false,
+          true
+        ]
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 2.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_plain",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:dark_planks",
+          "render_method": "opaque",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": [
+          {
+            "min": [
+              0.0,
+              0.75,
+              0.0
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.25
+            ]
+          },
+          {
+            "min": [
+              0.15625,
+              0.0,
+              0.0
+            ],
+            "max": [
+              0.34375,
+              0.75,
+              0.1875
+            ]
+          },
+          {
+            "min": [
+              0.65625,
+              0.0,
+              0.0
+            ],
+            "max": [
+              0.84375,
+              0.75,
+              0.1875
+            ]
+          }
+        ],
+        "clip": [
+          {
+            "min": [
+              0.0,
+              0.75,
+              0.0
+            ],
+            "max": [
+              1.0,
+              1.0,
+              0.25
+            ]
+          },
+          {
+            "min": [
+              0.15625,
+              0.0,
+              0.0
+            ],
+            "max": [
+              0.34375,
+              0.75,
+              0.1875
+            ]
+          },
+          {
+            "min": [
+              0.65625,
+              0.0,
+              0.0
+            ],
+            "max": [
+              0.84375,
+              0.75,
+              0.1875
+            ]
+          }
+        ]
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "minecraft:liquid_detection": {
+        "detection_rules": [
+          {
+            "liquid_type": "water",
+            "can_contain_liquid": true,
+            "on_liquid_touches": "blocking"
+          }
+        ]
+      },
+      "netease:neighborchanged_sendto_script": {
+        "value": true
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  0.1875
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  0.1875
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.75,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.84375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.75,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.84375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.34375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.34375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  0.1875
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  0.1875
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.75,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.84375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.75,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.75,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.84375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.75,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.75,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'tall' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_tall_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.34375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.75,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.75,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.34375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  0.1875
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  0.1875
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.84375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.84375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.34375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.34375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  0.1875
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  0.1875
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.84375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  1.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.84375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  1.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'connected' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_connected_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.34375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  1.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.34375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  0.1875
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  0.1875
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.75,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.84375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.75,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.84375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == false && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_plain",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.34375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.34375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  0.1875
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  0.25
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  0.1875
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.0
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  0.1875
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.75,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.84375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.75,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.25,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.8125,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  1.0,
+                  0.0,
+                  0.84375
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  1.0
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.75
+                ],
+                "max": [
+                  1.0,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.25,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  0.0,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.25,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.65625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.84375,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.15625,
+                  -0.5,
+                  0.8125
+                ],
+                "max": [
+                  0.34375,
+                  0.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:shape') == 'short' && query.block_state('tf_slice:extended') == true && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.wood_banister_short_extended",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          },
+          "netease:aabb": {
+            "collision": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.34375
+                ]
+              }
+            ],
+            "clip": [
+              {
+                "min": [
+                  0.0,
+                  0.25,
+                  0.0
+                ],
+                "max": [
+                  0.25,
+                  0.5,
+                  1.0
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  0.0,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.25,
+                  0.34375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.65625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.84375
+                ]
+              },
+              {
+                "min": [
+                  0.0,
+                  -0.5,
+                  0.15625
+                ],
+                "max": [
+                  0.1875,
+                  0.0,
+                  0.34375
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

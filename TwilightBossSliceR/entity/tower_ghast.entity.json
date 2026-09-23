@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:tower_ghast",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/tower_ghast",
+        "open": "textures/entity/tf_slice/tower_ghast_open",
+        "attack": "textures/entity/tf_slice/tower_ghast_attack"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.tower_ghast"
+      },
+      "animations": {
+        "move": "animation.tf_slice.tower_ghast.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ],
+        "scale": "4.5"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.route_ghast"
+      ],
+      "spawn_egg": {
+        "base_color": "#3A2529",
+        "overlay_color": "#B3263E"
+      }
+    }
+  }
+}

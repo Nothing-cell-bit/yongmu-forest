@@ -1,0 +1,7446 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.naga_trophy_wearable",
+        "texture_width": 64,
+        "texture_height": 32,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "trophy_mount",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "binding": "'head'"
+        },
+        {
+          "name": "trophy_root",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "parent": "trophy_mount"
+        },
+        {
+          "name": "trophy_head",
+          "parent": "trophy_root",
+          "pivot": [
+            0.0,
+            26.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                24.0,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                8.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    -16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    48.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    48.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    16.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 0.125
+            }
+          ]
+        },
+        {
+          "name": "trophy_tongue",
+          "parent": "trophy_head",
+          "pivot": [
+            0.0,
+            26.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1.5,
+                25.5,
+                -7.0
+              ],
+              "size": [
+                3.0,
+                0.1,
+                3.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    42.0,
+                    6.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    0.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    54.0,
+                    6.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    0.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    54.0,
+                    6.0
+                  ],
+                  "uv_size": [
+                    -6.0,
+                    -6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    60.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -6.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    60.0,
+                    6.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    0.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    48.0,
+                    6.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    0.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.lich_trophy_wearable",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "trophy_mount",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "binding": "'head'"
+        },
+        {
+          "name": "trophy_root",
+          "pivot": [
+            0.0,
+            22.0,
+            0.0
+          ],
+          "parent": "trophy_mount"
+        },
+        {
+          "name": "trophy_head",
+          "parent": "trophy_root",
+          "pivot": [
+            0.0,
+            28.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                24.0,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                8.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    16.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    16.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    -8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    24.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    24.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    8.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 0.125
+            }
+          ]
+        },
+        {
+          "name": "trophy_crown",
+          "parent": "trophy_head",
+          "pivot": [
+            0.0,
+            32.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                28.0,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                8.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    32.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    48.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    48.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    -8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    56.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    56.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    40.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.minoshroom_trophy_wearable",
+        "texture_width": 128,
+        "texture_height": 32,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "trophy_mount",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "binding": "'head'"
+        },
+        {
+          "name": "trophy_root",
+          "pivot": [
+            0.0,
+            21.0,
+            -2.0
+          ],
+          "parent": "trophy_mount"
+        },
+        {
+          "name": "trophy_head",
+          "parent": "trophy_root",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                24.0,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                8.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    96.0,
+                    24.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    112.0,
+                    24.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    112.0,
+                    24.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    -8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    120.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    120.0,
+                    24.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    104.0,
+                    24.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 0.125
+            }
+          ]
+        },
+        {
+          "name": "trophy_snout",
+          "parent": "trophy_head",
+          "pivot": [
+            0.0,
+            26.0,
+            -4.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.0,
+                24.0,
+                -5.0
+              ],
+              "size": [
+                4.0,
+                3.0,
+                1.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    105.0,
+                    29.0
+                  ],
+                  "uv_size": [
+                    1.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    110.0,
+                    29.0
+                  ],
+                  "uv_size": [
+                    1.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    110.0,
+                    29.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    -1.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    114.0,
+                    28.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    1.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    111.0,
+                    29.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    106.0,
+                    29.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_right_horn_1",
+          "parent": "trophy_head",
+          "pivot": [
+            -2.5,
+            30.5,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8.0,
+                29.0,
+                -1.5
+              ],
+              "size": [
+                5.0,
+                3.0,
+                3.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -5.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    13.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -5.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    5.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    5.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0,
+            -25,
+            10
+          ]
+        },
+        {
+          "name": "trophy_right_horn_2",
+          "parent": "trophy_right_horn_1",
+          "pivot": [
+            -7.0,
+            30.5,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -10.5,
+                29.5,
+                -1.0
+              ],
+              "size": [
+                3.0,
+                2.0,
+                2.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    16.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    21.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    21.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    24.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    23.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    18.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0,
+            -15,
+            45
+          ]
+        },
+        {
+          "name": "trophy_left_horn_1",
+          "parent": "trophy_head",
+          "pivot": [
+            2.5,
+            30.5,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                29.0,
+                -1.5
+              ],
+              "size": [
+                5.0,
+                3.0,
+                3.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -5.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    13.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -5.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    5.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    5.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "mirror": true
+            }
+          ],
+          "rotation": [
+            0,
+            25,
+            -10
+          ]
+        },
+        {
+          "name": "trophy_left_horn_2",
+          "parent": "trophy_left_horn_1",
+          "pivot": [
+            7.0,
+            30.5,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                7.5,
+                29.5,
+                -1.0
+              ],
+              "size": [
+                3.0,
+                2.0,
+                2.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    16.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    21.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    21.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    24.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    23.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    18.0,
+                    2.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0,
+            15,
+            -45
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.hydra_trophy_wearable",
+        "texture_width": 512,
+        "texture_height": 256,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "trophy_mount",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "binding": "'head'"
+        },
+        {
+          "name": "trophy_root",
+          "pivot": [
+            0.0,
+            21.0,
+            -2.0
+          ],
+          "parent": "trophy_mount"
+        },
+        {
+          "name": "trophy_head",
+          "parent": "trophy_root",
+          "pivot": [
+            0.0,
+            27.5,
+            4.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                25.0,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                6.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    32.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    336.0,
+                    32.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    336.0,
+                    32.0
+                  ],
+                  "uv_size": [
+                    -32.0,
+                    -32.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    368.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -32.0,
+                    32.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    368.0,
+                    32.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    304.0,
+                    32.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 1.125
+            },
+            {
+              "origin": [
+                -3.75,
+                25.0,
+                -10.0
+              ],
+              "size": [
+                7.5,
+                3.0,
+                6.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    80.0
+                  ],
+                  "uv_size": [
+                    24.0,
+                    12.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    326.0,
+                    80.0
+                  ],
+                  "uv_size": [
+                    24.0,
+                    12.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    326.0,
+                    80.0
+                  ],
+                  "uv_size": [
+                    -30.0,
+                    -24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    356.0,
+                    56.0
+                  ],
+                  "uv_size": [
+                    -30.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    350.0,
+                    80.0
+                  ],
+                  "uv_size": [
+                    30.0,
+                    12.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    296.0,
+                    80.0
+                  ],
+                  "uv_size": [
+                    30.0,
+                    12.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -3.75,
+                23.0,
+                -1.0
+              ],
+              "size": [
+                7.5,
+                2.0,
+                4.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    148.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    318.0,
+                    148.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    318.0,
+                    148.0
+                  ],
+                  "uv_size": [
+                    -30.0,
+                    -16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    348.0,
+                    132.0
+                  ],
+                  "uv_size": [
+                    -30.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    334.0,
+                    148.0
+                  ],
+                  "uv_size": [
+                    30.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    288.0,
+                    148.0
+                  ],
+                  "uv_size": [
+                    30.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -0.5,
+                29.0,
+                1.0
+              ],
+              "size": [
+                1.0,
+                6.0,
+                6.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    128.0,
+                    224.0
+                  ],
+                  "uv_size": [
+                    24.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    156.0,
+                    224.0
+                  ],
+                  "uv_size": [
+                    24.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    156.0,
+                    224.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    -24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    160.0,
+                    200.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    180.0,
+                    224.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    152.0,
+                    224.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    24.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -3.0,
+                23.75,
+                -8.25
+              ],
+              "size": [
+                0.5,
+                1.25,
+                0.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    278.0,
+                    156.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    278.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    274.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.5,
+                23.75,
+                -8.25
+              ],
+              "size": [
+                0.5,
+                1.25,
+                0.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    278.0,
+                    156.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    278.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    274.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.0,
+                24.75,
+                -8.25
+              ],
+              "size": [
+                4.0,
+                0.5,
+                0.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    280.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    298.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    298.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    314.0,
+                    156.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    300.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    282.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.5,
+                24.75,
+                -7.25
+              ],
+              "size": [
+                0.5,
+                0.5,
+                4.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    280.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    300.0,
+                    160.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    314.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    296.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.0,
+                24.75,
+                -7.25
+              ],
+              "size": [
+                0.5,
+                0.5,
+                4.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    280.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    300.0,
+                    160.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    314.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    296.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_jaw",
+          "parent": "trophy_head",
+          "pivot": [
+            0.0,
+            25.0,
+            -1.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.75,
+                23.0,
+                -9.0
+              ],
+              "size": [
+                7.5,
+                2.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    124.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    334.0,
+                    124.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    334.0,
+                    124.0
+                  ],
+                  "uv_size": [
+                    -30.0,
+                    -32.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    364.0,
+                    92.0
+                  ],
+                  "uv_size": [
+                    -30.0,
+                    32.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    366.0,
+                    124.0
+                  ],
+                  "uv_size": [
+                    30.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    304.0,
+                    124.0
+                  ],
+                  "uv_size": [
+                    30.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.5,
+                25.0,
+                -8.25
+              ],
+              "size": [
+                0.5,
+                1.25,
+                0.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    278.0,
+                    156.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    278.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    274.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.0,
+                25.0,
+                -8.25
+              ],
+              "size": [
+                0.5,
+                1.25,
+                0.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    276.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    278.0,
+                    156.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    278.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    274.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.0,
+                24.75,
+                -8.25
+              ],
+              "size": [
+                4.0,
+                0.5,
+                0.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    280.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    298.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    298.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    -2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    314.0,
+                    156.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    300.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    282.0,
+                    158.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -2.5,
+                24.75,
+                -7.25
+              ],
+              "size": [
+                0.5,
+                0.5,
+                4.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    280.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    300.0,
+                    160.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    314.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    296.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                2.0,
+                24.75,
+                -7.25
+              ],
+              "size": [
+                0.5,
+                0.5,
+                4.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    280.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    298.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    -16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    300.0,
+                    160.0
+                  ],
+                  "uv_size": [
+                    -2.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    314.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    296.0,
+                    176.0
+                  ],
+                  "uv_size": [
+                    2.0,
+                    2.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_frill",
+          "parent": "trophy_head",
+          "pivot": [
+            0.0,
+            27.5,
+            0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -6.0,
+                25.5,
+                0.5
+              ],
+              "size": [
+                12.0,
+                12.0,
+                1.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    272.0,
+                    204.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    48.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    324.0,
+                    204.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    48.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    324.0,
+                    204.0
+                  ],
+                  "uv_size": [
+                    -48.0,
+                    -4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    372.0,
+                    200.0
+                  ],
+                  "uv_size": [
+                    -48.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    328.0,
+                    204.0
+                  ],
+                  "uv_size": [
+                    48.0,
+                    48.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    276.0,
+                    204.0
+                  ],
+                  "uv_size": [
+                    48.0,
+                    48.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            -30,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.ur_ghast_trophy_wearable",
+        "texture_width": 64,
+        "texture_height": 32,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "trophy_mount",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "binding": "'head'"
+        },
+        {
+          "name": "trophy_root",
+          "pivot": [
+            0.0,
+            15.5,
+            0.0
+          ],
+          "parent": "trophy_mount"
+        },
+        {
+          "name": "trophy_body",
+          "pivot": [
+            0.0,
+            27.5,
+            0.0
+          ],
+          "parent": "trophy_root",
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                23.5,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                8.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    -16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    48.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    48.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    16.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    16.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 0.625
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_0_base",
+          "parent": "trophy_body",
+          "pivot": [
+            2.25,
+            24.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                1.5,
+                21.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_0_extension",
+          "parent": "trophy_tentacle_0_base",
+          "pivot": [
+            2.25,
+            22.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                1.5,
+                19.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_0_extension_2",
+          "parent": "trophy_tentacle_0_extension",
+          "pivot": [
+            2.25,
+            20.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                1.5,
+                17.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_0_tip",
+          "parent": "trophy_tentacle_0_extension_2",
+          "pivot": [
+            2.25,
+            18.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                1.5,
+                15.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_1_base",
+          "parent": "trophy_body",
+          "pivot": [
+            -2.25,
+            24.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.0,
+                21.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_1_extension",
+          "parent": "trophy_tentacle_1_base",
+          "pivot": [
+            -2.25,
+            22.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.0,
+                19.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_1_extension_2",
+          "parent": "trophy_tentacle_1_extension",
+          "pivot": [
+            -2.25,
+            20.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.0,
+                17.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_1_tip",
+          "parent": "trophy_tentacle_1_extension_2",
+          "pivot": [
+            -2.25,
+            18.0,
+            2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.0,
+                15.5,
+                1.5
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_2_base",
+          "parent": "trophy_body",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.75,
+                21.5,
+                -0.75
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_2_extension",
+          "parent": "trophy_tentacle_2_base",
+          "pivot": [
+            0.0,
+            22.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.75,
+                19.5,
+                -0.75
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_2_extension_2",
+          "parent": "trophy_tentacle_2_extension",
+          "pivot": [
+            0.0,
+            20.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.75,
+                17.5,
+                -0.75
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_2_tip",
+          "parent": "trophy_tentacle_2_extension_2",
+          "pivot": [
+            0.0,
+            18.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -0.75,
+                15.5,
+                -0.75
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_3_base",
+          "parent": "trophy_body",
+          "pivot": [
+            2.75,
+            24.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                2.0,
+                21.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_3_extension",
+          "parent": "trophy_tentacle_3_base",
+          "pivot": [
+            2.75,
+            22.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                2.0,
+                19.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    12.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    12.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_3_extension_2",
+          "parent": "trophy_tentacle_3_extension",
+          "pivot": [
+            2.75,
+            20.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                2.0,
+                17.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    3.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    9.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    9.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    12.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    12.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_3_tip",
+          "parent": "trophy_tentacle_3_extension_2",
+          "pivot": [
+            2.75,
+            18.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                2.0,
+                15.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    3.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    9.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    9.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    12.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    12.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_4_base",
+          "parent": "trophy_body",
+          "pivot": [
+            -2.75,
+            24.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                21.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_4_extension",
+          "parent": "trophy_tentacle_4_base",
+          "pivot": [
+            -2.75,
+            22.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                19.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_4_extension_2",
+          "parent": "trophy_tentacle_4_extension",
+          "pivot": [
+            -2.75,
+            20.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                17.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_4_tip",
+          "parent": "trophy_tentacle_4_extension_2",
+          "pivot": [
+            -2.75,
+            18.0,
+            -2.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.5,
+                15.5,
+                -3.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_5_base",
+          "parent": "trophy_body",
+          "pivot": [
+            -3.75,
+            25.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                23.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            45.0
+          ]
+        },
+        {
+          "name": "trophy_tentacle_5_extension",
+          "parent": "trophy_tentacle_5_base",
+          "pivot": [
+            -3.75,
+            23.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                21.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_5_extension_2",
+          "parent": "trophy_tentacle_5_extension",
+          "pivot": [
+            -3.75,
+            21.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                19.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_5_tip",
+          "parent": "trophy_tentacle_5_extension_2",
+          "pivot": [
+            -3.75,
+            19.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                17.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_6_base",
+          "parent": "trophy_body",
+          "pivot": [
+            -3.75,
+            28.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                25.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            60.0
+          ]
+        },
+        {
+          "name": "trophy_tentacle_6_extension",
+          "parent": "trophy_tentacle_6_base",
+          "pivot": [
+            -3.75,
+            26.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                23.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_6_extension_2",
+          "parent": "trophy_tentacle_6_extension",
+          "pivot": [
+            -3.75,
+            24.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                21.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_6_tip",
+          "parent": "trophy_tentacle_6_extension_2",
+          "pivot": [
+            -3.75,
+            22.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.5,
+                19.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_7_base",
+          "parent": "trophy_body",
+          "pivot": [
+            3.75,
+            25.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                23.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    1.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    7.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    10.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    10.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    4.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            -45.0
+          ]
+        },
+        {
+          "name": "trophy_tentacle_7_extension",
+          "parent": "trophy_tentacle_7_base",
+          "pivot": [
+            3.75,
+            23.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                21.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    12.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    12.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_7_extension_2",
+          "parent": "trophy_tentacle_7_extension",
+          "pivot": [
+            3.75,
+            21.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                19.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    3.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    9.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    9.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    12.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    12.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_7_tip",
+          "parent": "trophy_tentacle_7_extension_2",
+          "pivot": [
+            3.75,
+            19.75,
+            -0.5
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                17.25,
+                -1.25
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    3.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    9.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    9.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    12.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    12.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_8_base",
+          "parent": "trophy_body",
+          "pivot": [
+            3.75,
+            28.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                25.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.5,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    2.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    8.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    11.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    11.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    5.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    5.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            -60.0
+          ]
+        },
+        {
+          "name": "trophy_tentacle_8_extension",
+          "parent": "trophy_tentacle_8_base",
+          "pivot": [
+            3.75,
+            26.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                23.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    3.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_8_extension_2",
+          "parent": "trophy_tentacle_8_extension",
+          "pivot": [
+            3.75,
+            24.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                21.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    4.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    7.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_tentacle_8_tip",
+          "parent": "trophy_tentacle_8_extension_2",
+          "pivot": [
+            3.75,
+            22.25,
+            1.75
+          ],
+          "cubes": [
+            {
+              "origin": [
+                3.0,
+                19.75,
+                1.0
+              ],
+              "size": [
+                1.5,
+                2.0,
+                1.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    9.0,
+                    9.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    9.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    3.0,
+                    12.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.knight_phantom_trophy_wearable",
+        "texture_width": 128,
+        "texture_height": 32,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "trophy_mount",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "binding": "'head'"
+        },
+        {
+          "name": "trophy_root",
+          "pivot": [
+            0.0,
+            22.0,
+            0.0
+          ],
+          "parent": "trophy_mount"
+        },
+        {
+          "name": "trophy_head",
+          "parent": "trophy_root",
+          "pivot": [
+            0.0,
+            28.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                24.0,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                8.0,
+                8.0
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    16.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    16.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    -8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    24.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    -8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    24.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    8.0,
+                    8.0
+                  ],
+                  "uv_size": [
+                    8.0,
+                    8.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 0.125
+            }
+          ]
+        },
+        {
+          "name": "trophy_helmet",
+          "pivot": [
+            0.0,
+            24.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.0,
+                24.0,
+                -4.0
+              ],
+              "size": [
+                8.0,
+                8.0,
+                8.0
+              ],
+              "uv": [
+                64.0,
+                0
+              ],
+              "inflate": 1.0
+            }
+          ],
+          "parent": "trophy_root"
+        },
+        {
+          "name": "trophy_right_horn_1",
+          "pivot": [
+            -4.0,
+            30.5,
+            0.0
+          ],
+          "parent": "trophy_helmet",
+          "cubes": [
+            {
+              "origin": [
+                -9.5,
+                29.0,
+                -1.5
+              ],
+              "size": [
+                5.0,
+                3.0,
+                3.0
+              ],
+              "uv": [
+                88.0,
+                0
+              ],
+              "inflate": 0.25
+            }
+          ],
+          "rotation": [
+            0,
+            -25,
+            45
+          ]
+        },
+        {
+          "name": "trophy_right_horn_2",
+          "pivot": [
+            -8.5,
+            30.5,
+            0.0
+          ],
+          "parent": "trophy_right_horn_1",
+          "cubes": [
+            {
+              "origin": [
+                -12.0,
+                29.5,
+                -1.0
+              ],
+              "size": [
+                3.0,
+                2.0,
+                2.0
+              ],
+              "uv": [
+                118.0,
+                16
+              ],
+              "inflate": 0.25
+            }
+          ],
+          "rotation": [
+            0,
+            -15,
+            45
+          ]
+        },
+        {
+          "name": "trophy_left_horn_1",
+          "pivot": [
+            4.0,
+            30.5,
+            0.0
+          ],
+          "parent": "trophy_helmet",
+          "cubes": [
+            {
+              "origin": [
+                4.5,
+                29.0,
+                -1.5
+              ],
+              "size": [
+                5.0,
+                3.0,
+                3.0
+              ],
+              "uv": [
+                88.0,
+                0
+              ],
+              "mirror": true,
+              "inflate": 0.25
+            }
+          ],
+          "rotation": [
+            0,
+            25,
+            -45
+          ]
+        },
+        {
+          "name": "trophy_left_horn_2",
+          "pivot": [
+            8.5,
+            30.5,
+            0.0
+          ],
+          "parent": "trophy_left_horn_1",
+          "cubes": [
+            {
+              "origin": [
+                9.0,
+                29.5,
+                -1.0
+              ],
+              "size": [
+                3.0,
+                2.0,
+                2.0
+              ],
+              "uv": [
+                118.0,
+                16
+              ],
+              "inflate": 0.25
+            }
+          ],
+          "rotation": [
+            0,
+            15,
+            -45
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.quest_ram_trophy_wearable",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "trophy_mount",
+          "pivot": [
+            0,
+            24,
+            0
+          ],
+          "binding": "'head'"
+        },
+        {
+          "name": "trophy_root",
+          "pivot": [
+            0.0,
+            21.85,
+            -1.25
+          ],
+          "parent": "trophy_mount"
+        },
+        {
+          "name": "trophy_head",
+          "parent": "trophy_root",
+          "pivot": [
+            0.0,
+            28.0,
+            5.25
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -4.2,
+                24.85,
+                -5.25
+              ],
+              "size": [
+                8.4,
+                6.3,
+                10.5
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    15.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    27.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    15.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    27.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    -12.0,
+                    -15.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    39.0,
+                    70.0
+                  ],
+                  "uv_size": [
+                    -12.0,
+                    15.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    42.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    12.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    15.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    12.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                }
+              },
+              "inflate": 0.975
+            },
+            {
+              "origin": [
+                3.5,
+                31.5,
+                0.35
+              ],
+              "size": [
+                2.8,
+                2.8,
+                4.2
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    10.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    10.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    -6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    14.0,
+                    94.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    16.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                4.9,
+                30.8,
+                3.85
+              ],
+              "size": [
+                2.1,
+                2.8,
+                2.8
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    20.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    27.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    27.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    30.0,
+                    96.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    31.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    24.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                5.6,
+                28.0,
+                5.25
+              ],
+              "size": [
+                2.1,
+                4.2,
+                2.1
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    34.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    40.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    40.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    43.0,
+                    95.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    43.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    37.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                6.65,
+                27.3,
+                3.85
+              ],
+              "size": [
+                2.1,
+                2.1,
+                2.1
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    46.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    52.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    52.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    55.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    55.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    49.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                7.7,
+                25.9,
+                0.35
+              ],
+              "size": [
+                2.1,
+                2.1,
+                4.2
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    58.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    67.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    67.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    70.0,
+                    95.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    73.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    64.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                8.4,
+                26.6,
+                -1.05
+              ],
+              "size": [
+                2.1,
+                4.2,
+                2.1
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    76.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    82.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    82.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    85.0,
+                    95.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    85.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    79.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                9.1,
+                30.1,
+                0.35
+              ],
+              "size": [
+                2.1,
+                2.1,
+                2.8
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    88.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    95.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    95.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    98.0,
+                    97.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    99.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    92.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -6.3,
+                31.5,
+                0.35
+              ],
+              "size": [
+                2.8,
+                2.8,
+                4.2
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    0.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    10.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    10.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    -6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    14.0,
+                    94.0
+                  ],
+                  "uv_size": [
+                    -4.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    16.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    6.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -7.0,
+                30.8,
+                3.85
+              ],
+              "size": [
+                2.1,
+                2.8,
+                2.8
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    20.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    27.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    27.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    30.0,
+                    96.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    31.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    24.0,
+                    100.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -7.7,
+                28.0,
+                5.25
+              ],
+              "size": [
+                2.1,
+                4.2,
+                2.1
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    34.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    40.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    40.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    43.0,
+                    95.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    43.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    37.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -8.75,
+                27.3,
+                3.85
+              ],
+              "size": [
+                2.1,
+                2.1,
+                2.1
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    46.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    52.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    52.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    55.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    55.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    49.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -9.8,
+                25.9,
+                0.35
+              ],
+              "size": [
+                2.1,
+                2.1,
+                4.2
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    58.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    67.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    6.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    67.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    70.0,
+                    95.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    73.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    64.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -10.5,
+                26.6,
+                -1.05
+              ],
+              "size": [
+                2.1,
+                4.2,
+                2.1
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    76.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    82.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    82.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    85.0,
+                    95.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    85.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    79.0,
+                    98.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    6.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            },
+            {
+              "origin": [
+                -11.2,
+                30.1,
+                0.35
+              ],
+              "size": [
+                2.1,
+                2.1,
+                2.8
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    88.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    95.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    95.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    -4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    98.0,
+                    97.0
+                  ],
+                  "uv_size": [
+                    -3.0,
+                    4.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    99.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    92.0,
+                    101.0
+                  ],
+                  "uv_size": [
+                    3.0,
+                    3.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "trophy_nose",
+          "parent": "trophy_head",
+          "pivot": [
+            0.0,
+            32.9,
+            4.55
+          ],
+          "rotation": [
+            30,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3.85,
+                30.1,
+                -4.55
+              ],
+              "size": [
+                7.7,
+                6.3,
+                8.4
+              ],
+              "uv": {
+                "east": {
+                  "uv": [
+                    54.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    12.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                },
+                "west": {
+                  "uv": [
+                    77.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    12.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                },
+                "up": {
+                  "uv": [
+                    77.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    -11.0,
+                    -12.0
+                  ],
+                  "material_instance": "*"
+                },
+                "down": {
+                  "uv": [
+                    88.0,
+                    73.0
+                  ],
+                  "uv_size": [
+                    -11.0,
+                    12.0
+                  ],
+                  "material_instance": "*"
+                },
+                "south": {
+                  "uv": [
+                    89.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    11.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                },
+                "north": {
+                  "uv": [
+                    66.0,
+                    85.0
+                  ],
+                  "uv_size": [
+                    11.0,
+                    9.0
+                  ],
+                  "material_instance": "*"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.forest_wyrm_head": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.head"],
+      "part_visibility": [
+        {"*": "query.variant < 3 || query.variant == 5"}
+      ]
+    },
+    "controller.render.tf_slice.forest_wyrm_head_charging": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.head_charging"],
+      "part_visibility": [
+        {"*": "query.variant == 3"}
+      ]
+    },
+    "controller.render.tf_slice.forest_wyrm_head_stunless": {
+      "geometry": "Geometry.default",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.head_charging"],
+      "part_visibility": [
+        {"*": "query.variant == 4"}
+      ],
+      "color": {
+        "r": 1.0,
+        "g": 0.35,
+        "b": 0.35,
+        "a": 1.0
+      }
+    },
+    "controller.render.tf_slice.forest_wyrm_head_dazed": {
+      "geometry": "Geometry.eyelids",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.head_dazed"],
+      "part_visibility": [
+        {"*": "query.variant == 5"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:structure_template_feature": {
+    "description": {
+      "identifier": "tf_slice:huge_lily_pad_west_structure_feature"
+    },
+    "structure_name": "tf_slice:swamp/huge_lily_pad/west",
+    "adjustment_radius": 0,
+    "facing_direction": "north",
+    "constraints": {
+      "block_intersection": {
+        "block_allowlist": [
+          "minecraft:air"
+        ]
+      }
+    }
+  }
+}

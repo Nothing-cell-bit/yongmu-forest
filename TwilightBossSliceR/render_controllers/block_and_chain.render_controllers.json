@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.block_and_chain": {
+      "geometry": "query.mod.tf_chain_active ? Geometry.thrown : Geometry.default",
+      "materials": [
+        {
+          "*": "query.is_enchanted ? Material.enchanted : Material.default"
+        }
+      ],
+      "textures": [
+        "query.mod.tf_chain_active ? Texture.thrown : Texture.default",
+        "Texture.enchanted"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "tf_slice:mushroom_mycelium_blob_r4_feature"
+    },
+    "places_feature": "tf_slice:mushroom_mycelium_surface_feature",
+    "project_input_to_floor": true,
+    "distribution": {
+      "iterations": 64,
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "triangle",
+        "extent": [
+          -4,
+          4
+        ]
+      },
+      "y": -1,
+      "z": {
+        "distribution": "triangle",
+        "extent": [
+          -4,
+          4
+        ]
+      }
+    }
+  }
+}

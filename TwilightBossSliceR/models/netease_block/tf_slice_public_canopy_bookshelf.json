@@ -1,0 +1,106 @@
+{
+  "format_version": "1.13.0",
+  "netease:block_geometry": {
+    "description": {
+      "identifier": "tf_slice:public_canopy_bookshelf",
+      "textures": [
+        "tf_slice:canopy_bookshelf",
+        "tf_slice:canopy_planks"
+      ],
+      "use_ao": true,
+      "item_texture": "tf_slice:canopy_bookshelf_item"
+    },
+    "bones": [
+      {
+        "name": "block",
+        "pivot": [
+          8.0,
+          0.0,
+          8.0
+        ],
+        "cubes": [
+          {
+            "origin": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": [
+              16.0,
+              16.0,
+              16.0
+            ],
+            "uv": {
+              "north": {
+                "texture": 0,
+                "uv": [
+                  0,
+                  0
+                ],
+                "uv_size": [
+                  16.0,
+                  16.0
+                ]
+              },
+              "south": {
+                "texture": 0,
+                "uv": [
+                  0,
+                  0
+                ],
+                "uv_size": [
+                  16.0,
+                  16.0
+                ]
+              },
+              "east": {
+                "texture": 0,
+                "uv": [
+                  0,
+                  0
+                ],
+                "uv_size": [
+                  16.0,
+                  16.0
+                ]
+              },
+              "west": {
+                "texture": 0,
+                "uv": [
+                  0,
+                  0
+                ],
+                "uv_size": [
+                  16.0,
+                  16.0
+                ]
+              },
+              "up": {
+                "texture": 1,
+                "uv": [
+                  0,
+                  0
+                ],
+                "uv_size": [
+                  16.0,
+                  16.0
+                ]
+              },
+              "down": {
+                "texture": 1,
+                "uv": [
+                  0,
+                  0
+                ],
+                "uv_size": [
+                  16.0,
+                  16.0
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "tf_slice:dark_forest_center_tree_profile_feature_rule",
+      "places_feature": "tf_slice:dark_forest_center_tree_ground_search_feature"
+    },
+    "conditions": {
+      "placement_pass": "after_surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "dm33027004"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "tf_slice_biome_dark_forest_center"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 16,
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "y": "math.min(query.get_height_at(variable.worldx, variable.worldz), (math.floor(math.min(math.max(math.max(math.max(math.max(math.max(math.max(math.max(query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 96)), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 96), (math.floor((variable.originz + 128) / 256) * 256 + 8))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 96), (math.floor((variable.originz + 128) / 256) * 256 + 8))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 96))), math.min(math.min(math.min(math.min(math.min(math.min(math.min(query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 96)), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 96), (math.floor((variable.originz + 128) / 256) * 256 + 8))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 96))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 96), (math.floor((variable.originz + 128) / 256) * 256 + 8))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 96), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 96))) + 6))) + 32)",
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      }
+    }
+  }
+}

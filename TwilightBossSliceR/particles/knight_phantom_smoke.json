@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "tf_slice:knight_phantom_smoke",
+      "basic_render_parameters": {
+        "material": "particles_blend",
+        "texture": "textures/particle/firefly"
+      }
+    },
+    "components": {
+      "minecraft:emitter_rate_instant": {
+        "num_particles": 1
+      },
+      "minecraft:emitter_lifetime_once": {},
+      "minecraft:emitter_shape_point": {
+        "direction": [
+          "Math.random(-0.12, 0.12)",
+          "Math.random(0.08, 0.24)",
+          "Math.random(-0.12, 0.12)"
+        ]
+      },
+      "minecraft:particle_initial_speed": "Math.random(0.04, 0.1)",
+      "minecraft:particle_lifetime_expression": {
+        "max_lifetime": "Math.random(0.35, 0.7)"
+      },
+      "minecraft:particle_motion_dynamic": {
+        "linear_acceleration": [
+          0.0,
+          0.04,
+          0.0
+        ],
+        "linear_drag_coefficient": 0.2
+      },
+      "minecraft:particle_appearance_billboard": {
+        "size": [
+          0.16,
+          0.16
+        ],
+        "facing_camera_mode": "lookat_xyz",
+        "uv": {
+          "texture_width": 16,
+          "texture_height": 16,
+          "uv": [
+            0,
+            0
+          ],
+          "uv_size": [
+            16,
+            16
+          ]
+        }
+      },
+      "minecraft:particle_appearance_tinting": {
+        "color": [
+          0.16,
+          0.18,
+          0.14,
+          0.58
+        ]
+      },
+      "minecraft:particle_appearance_lighting": {}
+    }
+  }
+}

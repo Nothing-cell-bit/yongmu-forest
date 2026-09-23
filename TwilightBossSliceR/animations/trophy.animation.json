@@ -1,0 +1,531 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.ur_ghast_trophy_visual.idle": {
+      "loop": true,
+      "bones": {
+        "tentacle_0_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 0.0000) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 0.0000) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_0_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 0.0000) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_0_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 0.0000) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_0_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 0.0000) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_1_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 77.3493) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 77.3493) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_1_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 85.9863) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_1_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 98.2676) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_1_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 114.6059) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_2_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 154.6986) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 154.6986) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_2_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 171.9726) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_2_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 196.5352) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_2_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 229.2118) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_3_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 232.0479) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 232.0479) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_3_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 257.9589) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_3_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 294.8028) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_3_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 343.8177) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_4_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 309.3972) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 309.3972) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_4_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 343.9452) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_4_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 393.0704) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_4_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 458.4236) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_5_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 386.7465) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 386.7465) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_5_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 429.9315) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_5_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 491.3380) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_5_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 573.0295) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_6_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 464.0958) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 464.0958) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_6_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 515.9178) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_6_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 589.6056) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_6_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 687.6354) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_7_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 541.4451) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 541.4451) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_7_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 601.9041) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_7_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 687.8732) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_7_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 802.2413) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_8_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 618.7944) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 618.7944) * 22.9183",
+            0.0
+          ]
+        },
+        "tentacle_8_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 687.8904) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_8_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 786.1408) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "tentacle_8_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 916.8472) * 17.1887",
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.trophy_wearable.hide_first_person": {
+      "loop": true,
+      "bones": {
+        "trophy_root": {
+          "scale": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.trophy_wearable.ur_ghast_idle": {
+      "loop": true,
+      "bones": {
+        "trophy_tentacle_0_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 0.0000) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 0.0000) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_0_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 0.0000) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_0_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 0.0000) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_0_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 0.0000) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_1_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 77.3493) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 77.3493) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_1_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 85.9863) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_1_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 98.2676) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_1_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 114.6059) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_2_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 154.6986) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 154.6986) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_2_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 171.9726) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_2_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 196.5352) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_2_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 229.2118) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_3_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 232.0479) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 232.0479) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_3_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 257.9589) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_3_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 294.8028) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_3_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 343.8177) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_4_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 309.3972) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 309.3972) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_4_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 343.9452) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_4_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 393.0704) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_4_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 458.4236) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_5_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 386.7465) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 386.7465) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_5_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 429.9315) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_5_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 491.3380) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_5_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 573.0295) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_6_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 464.0958) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 464.0958) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_6_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 515.9178) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_6_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 589.6056) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_6_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 687.6354) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_7_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 541.4451) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 541.4451) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_7_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 601.9041) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_7_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 687.8732) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_7_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 802.2413) * 17.1887",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_8_base": {
+          "rotation": [
+            "11.4592 + math.cos(query.life_time * 60.1606 + 618.7944) * 8.5944",
+            "math.sin(query.life_time * 27.0000 + 618.7944) * 22.9183",
+            0.0
+          ]
+        },
+        "trophy_tentacle_8_extension": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 66.8807 + 687.8904) * 11.4592",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_8_extension_2": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 76.3944 + 786.1408) * 14.3239",
+            0.0,
+            0.0
+          ]
+        },
+        "trophy_tentacle_8_tip": {
+          "rotation": [
+            "5.7296 + math.cos(query.life_time * 89.1405 + 916.8472) * 17.1887",
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  }
+}

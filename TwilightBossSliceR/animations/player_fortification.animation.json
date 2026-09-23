@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.tf_slice.player_fortification": {
+      "loop": true,
+      "bones": {
+        "tf_fortification_shield_0": {
+          "rotation": [
+            "math.sin(query.life_time * 229.1831) * 14.3239",
+            "query.life_time * 229.1831 + 0 * (360 / math.max(query.mod.tf_fortification_shields, 1))",
+            "math.cos(query.life_time * 229.1831) * 14.3239"
+          ]
+        },
+        "tf_fortification_shield_1": {
+          "rotation": [
+            "math.sin(query.life_time * 229.1831) * 14.3239",
+            "query.life_time * 229.1831 + 1 * (360 / math.max(query.mod.tf_fortification_shields, 1))",
+            "math.cos(query.life_time * 229.1831) * 14.3239"
+          ]
+        },
+        "tf_fortification_shield_2": {
+          "rotation": [
+            "math.sin(query.life_time * 229.1831) * 14.3239",
+            "query.life_time * 229.1831 + 2 * (360 / math.max(query.mod.tf_fortification_shields, 1))",
+            "math.cos(query.life_time * 229.1831) * 14.3239"
+          ]
+        },
+        "tf_fortification_shield_3": {
+          "rotation": [
+            "math.sin(query.life_time * 229.1831) * 14.3239",
+            "query.life_time * 229.1831 + 3 * (360 / math.max(query.mod.tf_fortification_shields, 1))",
+            "math.cos(query.life_time * 229.1831) * 14.3239"
+          ]
+        },
+        "tf_fortification_shield_4": {
+          "rotation": [
+            "math.sin(query.life_time * 229.1831) * 14.3239",
+            "query.life_time * 229.1831 + 4 * (360 / math.max(query.mod.tf_fortification_shields, 1))",
+            "math.cos(query.life_time * 229.1831) * 14.3239"
+          ]
+        },
+        "tf_fortification_shield_5": {
+          "rotation": [
+            "math.sin(query.life_time * 229.1831) * 14.3239",
+            "query.life_time * 229.1831 + 5 * (360 / math.max(query.mod.tf_fortification_shields, 1))",
+            "math.cos(query.life_time * 229.1831) * 14.3239"
+          ]
+        }
+      }
+    }
+  }
+}

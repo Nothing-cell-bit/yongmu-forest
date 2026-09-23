@@ -1,0 +1,79 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:rainbow_oak_sapling",
+      "register_to_creative_menu": true,
+      "states": {
+        "tf_slice:growth_stage": [
+          0,
+          1
+        ]
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.2
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.wood_sapling",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:rainbow_oak_sapling",
+          "render_method": "alpha_test",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.125,
+            0.0,
+            0.125
+          ],
+          "max": [
+            0.875,
+            0.875,
+            0.875
+          ]
+        },
+        "clip": {
+          "min": [
+            0.125,
+            0.0,
+            0.125
+          ],
+          "max": [
+            0.875,
+            0.875,
+            0.875
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "optionalAlpha"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "netease:may_place_on": {
+        "block": [
+          "minecraft:grass",
+          "minecraft:grass_block",
+          "minecraft:dirt",
+          "minecraft:podzol"
+        ]
+      },
+      "netease:random_tick": {
+        "enable": true,
+        "tick_to_script": true
+      }
+    }
+  }
+}

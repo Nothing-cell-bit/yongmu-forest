@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "tf_slice:cracked_towerwood"
+    },
+    "tags": [
+      "furnace",
+      "smoker"
+    ],
+    "input": "tf_slice:towerwood",
+    "output": "tf_slice:cracked_towerwood"
+  }
+}

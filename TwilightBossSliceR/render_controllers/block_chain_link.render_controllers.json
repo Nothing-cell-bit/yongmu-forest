@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.block_chain_link": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "chain_0": "query.mod.tf_chain_ready > 0.5"
+        },
+        {
+          "chain_1": "query.mod.tf_chain_ready > 0.5"
+        },
+        {
+          "chain_2": "query.mod.tf_chain_ready > 0.5"
+        },
+        {
+          "chain_3": "query.mod.tf_chain_ready > 0.5"
+        },
+        {
+          "chain_4": "query.mod.tf_chain_ready > 0.5"
+        }
+      ]
+    }
+  }
+}

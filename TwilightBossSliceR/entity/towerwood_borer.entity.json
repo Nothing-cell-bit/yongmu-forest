@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:towerwood_borer",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/towerwood_borer"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.towerwood_borer"
+      },
+      "animations": {
+        "move": "animation.tf_slice.towerwood_borer.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#3A2529",
+        "overlay_color": "#B3263E"
+      }
+    }
+  }
+}

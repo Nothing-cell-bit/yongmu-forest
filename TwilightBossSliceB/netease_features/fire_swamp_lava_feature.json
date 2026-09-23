@@ -1,0 +1,10 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:single_block_feature": {
+    "description": {"identifier": "tf_slice:fire_swamp_lava_feature"},
+    "places_block": "minecraft:lava",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": ["minecraft:grass", "minecraft:grass_block", "minecraft:dirt", "minecraft:clay", "minecraft:gravel"]
+  }
+}

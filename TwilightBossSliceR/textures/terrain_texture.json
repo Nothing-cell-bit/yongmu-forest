@@ -1,0 +1,1000 @@
+{
+  "resource_pack_name": "twilight_boss_slice",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "tf_slice:landmark_protected_grass_top": {
+      "textures": "textures/blocks/grass_top"
+    },
+    "tf_slice:landmark_protected_grass_side": {
+      "textures": "textures/blocks/grass_side_carried"
+    },
+    "tf_slice:landmark_protected_grass_bottom": {
+      "textures": "textures/blocks/dirt"
+    },
+    "tf_slice:twilight_oak_log": {
+      "textures": "textures/blocks/twilight_oak_log"
+    },
+    "tf_slice:twilight_oak_log_top": {
+      "textures": "textures/blocks/twilight_oak_log_top"
+    },
+    "tf_slice:twilight_oak_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/leaves_oak",
+          "tint_color": "#71A74D"
+        }
+      ]
+    },
+    "tf_slice:twilight_oak_sapling": {
+      "textures": "textures/blocks/twilight_oak_sapling"
+    },
+    "tf_slice:spooky_twilight_oak_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/leaves_oak",
+          "tint_color": "#FF8501"
+        }
+      ]
+    },
+    "tf_slice:canopy_log": {
+      "textures": "textures/blocks/canopy_log"
+    },
+    "tf_slice:canopy_log_top": {
+      "textures": "textures/blocks/canopy_log_top"
+    },
+    "tf_slice:canopy_planks": {
+      "textures": "textures/blocks/canopy_planks"
+    },
+    "tf_slice:canopy_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/leaves_spruce",
+          "tint_color": "#5BA059"
+        }
+      ]
+    },
+    "tf_slice:canopy_sapling": {
+      "textures": "textures/blocks/canopy_sapling"
+    },
+    "tf_slice:root_block": {
+      "textures": "textures/blocks/root"
+    },
+    "tf_slice:liveroot_block": {
+      "textures": "textures/blocks/liveroot_block"
+    },
+    "tf_slice:hedge": {
+      "textures": "textures/blocks/hedge"
+    },
+    "tf_slice:mazestone": {
+      "textures": "textures/blocks/mazestone"
+    },
+    "tf_slice:mayapple": {
+      "textures": "textures/blocks/mayapple"
+    },
+    "tf_slice:mayapple_side": {
+      "textures": "textures/blocks/mayapple_side"
+    },
+    "tf_slice:twilight_portal": {
+      "textures": "textures/blocks/portal"
+    },
+    "tf_slice:nagastone_top": {
+      "textures": "textures/blocks/nagastone_turn_top"
+    },
+    "tf_slice:nagastone_bottom": {
+      "textures": "textures/blocks/nagastone_bottom_long"
+    },
+    "tf_slice:nagastone_side": {
+      "textures": "textures/blocks/nagastone_long_side"
+    },
+    "tf_slice:nagastone_end": {
+      "textures": "textures/blocks/stone_tiles"
+    },
+    "tf_slice:etched_nagastone": {
+      "textures": "textures/blocks/etched_nagastone_down"
+    },
+    "tf_slice:mossy_etched_nagastone": {
+      "textures": "textures/blocks/etched_nagastone_down_mossy"
+    },
+    "tf_slice:cracked_etched_nagastone": {
+      "textures": "textures/blocks/etched_nagastone_down_weathered"
+    },
+    "tf_slice:nagastone_pillar_end": {
+      "textures": "textures/blocks/nagastone_pillar_end"
+    },
+    "tf_slice:nagastone_pillar_side": {
+      "textures": "textures/blocks/nagastone_pillar_side"
+    },
+    "tf_slice:mossy_nagastone_pillar_end": {
+      "textures": "textures/blocks/nagastone_pillar_end_mossy"
+    },
+    "tf_slice:mossy_nagastone_pillar_side": {
+      "textures": "textures/blocks/nagastone_pillar_side_mossy"
+    },
+    "tf_slice:cracked_nagastone_pillar_end": {
+      "textures": "textures/blocks/nagastone_pillar_end_weathered"
+    },
+    "tf_slice:cracked_nagastone_pillar_side": {
+      "textures": "textures/blocks/nagastone_pillar_side_weathered"
+    },
+    "tf_slice:nagastone_head_top": {
+      "textures": "textures/blocks/nagastone_top_tip"
+    },
+    "tf_slice:nagastone_head_bottom": {
+      "textures": "textures/blocks/nagastone_bottom_tip"
+    },
+    "tf_slice:nagastone_head_face": {
+      "textures": "textures/blocks/nagastone_face_front"
+    },
+    "tf_slice:nagastone_stairs_left": {
+      "textures": "textures/blocks/etched_nagastone_left"
+    },
+    "tf_slice:mossy_nagastone_stairs_left": {
+      "textures": "textures/blocks/etched_nagastone_left_mossy"
+    },
+    "tf_slice:cracked_nagastone_stairs_left": {
+      "textures": "textures/blocks/etched_nagastone_left_weathered"
+    },
+    "tf_slice:nagastone_stairs_right": {
+      "textures": "textures/blocks/etched_nagastone_right"
+    },
+    "tf_slice:mossy_nagastone_stairs_right": {
+      "textures": "textures/blocks/etched_nagastone_right_mossy"
+    },
+    "tf_slice:cracked_nagastone_stairs_right": {
+      "textures": "textures/blocks/etched_nagastone_right_weathered"
+    },
+    "tf_slice:spiral_bricks": {
+      "textures": "textures/blocks/stone_spiral_large"
+    },
+    "tf_slice:mazestone_mosaic": {
+      "textures": "textures/blocks/mazestone_mosaic"
+    },
+    "tf_slice:naga_boss_spawner": {
+      "textures": "textures/blocks/boss_spawner"
+    },
+    "tf_slice:lich_boss_spawner": {
+      "textures": "textures/blocks/boss_spawner"
+    },
+    "tf_slice:minoshroom_boss_spawner": {
+      "textures": "textures/blocks/boss_spawner"
+    },
+    "tf_slice:hydra_boss_spawner": {
+      "textures": "textures/blocks/boss_spawner"
+    },
+    "tf_slice:rainbow_oak_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#00FF80"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_sapling": {
+      "textures": "textures/blocks/rainbow_oak_sapling"
+    },
+    "tf_slice:fiddlehead": {
+      "textures": "textures/blocks/fiddlehead"
+    },
+    "tf_slice:mushgloom": {
+      "textures": "textures/blocks/mushgloom"
+    },
+    "tf_slice:mushgloom_head": {
+      "textures": "textures/blocks/mushgloom_head"
+    },
+    "tf_slice:firefly": {
+      "textures": "textures/blocks/firefly"
+    },
+    "tf_slice:firefly_model": {
+      "textures": "textures/blocks/firefly_model"
+    },
+    "tf_slice:firefly_jar": {
+      "textures": "textures/blocks/firefly_jar"
+    },
+    "tf_slice:cicada_jar": {
+      "textures": "textures/blocks/cicada_jar"
+    },
+    "tf_slice:jar_side": {
+      "textures": "textures/blocks/jar_side"
+    },
+    "tf_slice:jar_top": {
+      "textures": "textures/blocks/jar_top"
+    },
+    "tf_slice:jar_bottom": {
+      "textures": "textures/blocks/jar_bottom"
+    },
+    "tf_slice:firefly_jar_cork": {
+      "textures": "textures/blocks/firefly_jar_cork"
+    },
+    "tf_slice:cicada_jar_cork": {
+      "textures": "textures/blocks/cicada_jar_cork"
+    },
+    "tf_slice:fallen_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/fallen_leaves",
+          "tint_color": "#C45123"
+        }
+      ]
+    },
+    "tf_slice:quest_ram_trophy": {
+      "textures": "textures/blocks/quest_ram_trophy"
+    },
+    "tf_slice:rainbow_oak_leaves_00": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#00FF00"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_01": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#B010EF"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_02": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#9FDF20"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_03": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#1030CF"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_04": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#C0BF40"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_05": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#8F50AF"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_06": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#209F60"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_07": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#D0708F"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_08": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#7F7F80"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_09": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#30906F"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_10": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#E05FA0"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_11": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#6FB04F"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_12": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#403FC0"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_13": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#F0D02F"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_14": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#5F1FE0"
+        }
+      ]
+    },
+    "tf_slice:rainbow_oak_leaves_15": {
+      "textures": [
+        {
+          "path": "textures/blocks/rainbow_oak_leaves",
+          "tint_color": "#50F00F"
+        }
+      ]
+    },
+    "tf_slice:enchanted_twilight_oak_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/leaves_oak",
+          "tint_color": "#00FFFF"
+        }
+      ]
+    },
+    "tf_slice:enchanted_canopy_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/leaves_oak",
+          "tint_color": "#23CCB2"
+        }
+      ]
+    },
+    "tf_slice:nagastone_bare": {
+      "textures": "textures/blocks/nagastone_bare"
+    },
+    "tf_slice:nagastone_bare_mossy": {
+      "textures": "textures/blocks/nagastone_bare_mossy"
+    },
+    "tf_slice:nagastone_bare_weathered": {
+      "textures": "textures/blocks/nagastone_bare_weathered"
+    },
+    "tf_slice:nagastone_cross_section": {
+      "textures": "textures/blocks/nagastone_cross_section"
+    },
+    "tf_slice:nagastone_face_front": {
+      "textures": "textures/blocks/nagastone_face_front"
+    },
+    "tf_slice:nagastone_face_left": {
+      "textures": "textures/blocks/nagastone_face_left"
+    },
+    "tf_slice:nagastone_face_right": {
+      "textures": "textures/blocks/nagastone_face_right"
+    },
+    "tf_slice:nagastone_long_side": {
+      "textures": "textures/blocks/nagastone_long_side"
+    },
+    "tf_slice:nagastone_turn_top": {
+      "textures": "textures/blocks/nagastone_turn_top"
+    },
+    "tf_slice:nagastone_bottom_long": {
+      "textures": "textures/blocks/nagastone_bottom_long"
+    },
+    "tf_slice:etched_nagastone_down": {
+      "textures": "textures/blocks/etched_nagastone_down"
+    },
+    "tf_slice:etched_nagastone_up": {
+      "textures": "textures/blocks/etched_nagastone_up"
+    },
+    "tf_slice:etched_nagastone_left": {
+      "textures": "textures/blocks/etched_nagastone_left"
+    },
+    "tf_slice:etched_nagastone_right": {
+      "textures": "textures/blocks/etched_nagastone_right"
+    },
+    "tf_slice:nagastone_pillar_side_alt": {
+      "textures": "textures/blocks/nagastone_pillar_side_alt"
+    },
+    "tf_slice:etched_nagastone_down_mossy": {
+      "textures": "textures/blocks/etched_nagastone_down_mossy"
+    },
+    "tf_slice:etched_nagastone_up_mossy": {
+      "textures": "textures/blocks/etched_nagastone_up_mossy"
+    },
+    "tf_slice:etched_nagastone_left_mossy": {
+      "textures": "textures/blocks/etched_nagastone_left_mossy"
+    },
+    "tf_slice:etched_nagastone_right_mossy": {
+      "textures": "textures/blocks/etched_nagastone_right_mossy"
+    },
+    "tf_slice:nagastone_pillar_side_mossy": {
+      "textures": "textures/blocks/nagastone_pillar_side_mossy"
+    },
+    "tf_slice:nagastone_pillar_side_mossy_alt": {
+      "textures": "textures/blocks/nagastone_pillar_side_mossy_alt"
+    },
+    "tf_slice:nagastone_pillar_end_mossy": {
+      "textures": "textures/blocks/nagastone_pillar_end_mossy"
+    },
+    "tf_slice:etched_nagastone_down_weathered": {
+      "textures": "textures/blocks/etched_nagastone_down_weathered"
+    },
+    "tf_slice:etched_nagastone_up_weathered": {
+      "textures": "textures/blocks/etched_nagastone_up_weathered"
+    },
+    "tf_slice:etched_nagastone_left_weathered": {
+      "textures": "textures/blocks/etched_nagastone_left_weathered"
+    },
+    "tf_slice:etched_nagastone_right_weathered": {
+      "textures": "textures/blocks/etched_nagastone_right_weathered"
+    },
+    "tf_slice:nagastone_pillar_side_weathered": {
+      "textures": "textures/blocks/nagastone_pillar_side_weathered"
+    },
+    "tf_slice:nagastone_pillar_side_weathered_alt": {
+      "textures": "textures/blocks/nagastone_pillar_side_weathered_alt"
+    },
+    "tf_slice:nagastone_pillar_end_weathered": {
+      "textures": "textures/blocks/nagastone_pillar_end_weathered"
+    },
+    "tf_slice:root_strand": {
+      "textures": "textures/blocks/root_strand"
+    },
+    "tf_slice:torchberry_plant": {
+      "textures": "textures/blocks/torchberry_plant"
+    },
+    "tf_slice:torchberry_plant_glow": {
+      "textures": "textures/blocks/torchberry_plant_glow"
+    },
+    "tf_slice:lich_trophy": {
+      "textures": "textures/blocks/lich_trophy"
+    },
+    "tf_slice:lich_trophy_model": {
+      "textures": "textures/entity/tf_slice/trophies/lich"
+    },
+    "tf_slice:mazestone_brick": {
+      "textures": "textures/blocks/mazestone_brick"
+    },
+    "tf_slice:cut_mazestone": {
+      "textures": "textures/blocks/cut_mazestone"
+    },
+    "tf_slice:decorative_mazestone": {
+      "textures": "textures/blocks/decorative_mazestone"
+    },
+    "tf_slice:cracked_mazestone": {
+      "textures": "textures/blocks/cracked_mazestone"
+    },
+    "tf_slice:mossy_mazestone": {
+      "textures": "textures/blocks/mossy_mazestone"
+    },
+    "tf_slice:mazestone_border": {
+      "textures": "textures/blocks/mazestone_border"
+    },
+    "tf_slice:smoker": {
+      "textures": "textures/blocks/smoker"
+    },
+    "tf_slice:fire_jet": {
+      "textures": "textures/blocks/fire_jet"
+    },
+    "tf_slice:encased_smoker": {
+      "textures": "textures/blocks/encased_smoker"
+    },
+    "tf_slice:encased_fire_jet": {
+      "textures": "textures/blocks/encased_fire_jet"
+    },
+    "tf_slice:maze_slime_block": {
+      "textures": "textures/blocks/slime"
+    },
+    "tf_slice:fiery_block": {
+      "textures": "textures/blocks/fiery_block"
+    },
+    "tf_slice:huge_lily_pad": {
+      "textures": [
+        {
+          "path": "textures/blocks/huge_lily_pad_clean_v2",
+          "tint_color": "#71C35C"
+        }
+      ]
+    },
+    "tf_slice:huge_water_lily": {
+      "textures": "textures/blocks/huge_water_lily"
+    },
+    "tf_slice:minoshroom_trophy": {
+      "textures": "textures/blocks/minoshroom_trophy"
+    },
+    "tf_slice:minoshroom_wall_trophy": {
+      "textures": "textures/blocks/minoshroom_trophy"
+    },
+    "tf_slice:hydra_trophy": {
+      "textures": "textures/blocks/hydra_trophy"
+    },
+    "tf_slice:hydra_wall_trophy": {
+      "textures": "textures/blocks/hydra_trophy"
+    },
+    "tf_slice:mangrove_log": {
+      "textures": "textures/blocks/mangrove_log"
+    },
+    "tf_slice:mangrove_wood": {
+      "textures": "textures/blocks/mangrove_wood"
+    },
+    "tf_slice:stripped_mangrove_log": {
+      "textures": "textures/blocks/stripped_mangrove_log"
+    },
+    "tf_slice:stripped_mangrove_wood": {
+      "textures": "textures/blocks/stripped_mangrove_wood"
+    },
+    "tf_slice:mangrove_leaves": {
+      "textures": [
+        {
+          "path": "textures/blocks/leaves_birch",
+          "tint_color": "#497436"
+        }
+      ]
+    },
+    "tf_slice:mangrove_sapling": {
+      "textures": "textures/blocks/mangrove_sapling"
+    },
+    "tf_slice:mangrove_root": {
+      "textures": "textures/blocks/mangrove_root"
+    },
+    "tf_slice:mangrove_planks": {
+      "textures": "textures/blocks/mangrove_planks"
+    },
+    "tf_slice:hollow_mangrove_log_horizontal": {
+      "textures": "textures/blocks/hollow_mangrove_log_horizontal"
+    },
+    "tf_slice:hollow_mangrove_log_vertical": {
+      "textures": "textures/blocks/hollow_mangrove_log_vertical"
+    },
+    "tf_slice:hollow_mangrove_log_climbable": {
+      "textures": "textures/blocks/hollow_mangrove_log_climbable"
+    },
+    "tf_slice:huge_lily_pad_nw": {
+      "textures": [
+        {
+          "path": "textures/blocks/huge_lily_pad_nw_clean_v2",
+          "tint_color": "#208030"
+        }
+      ]
+    },
+    "tf_slice:huge_lily_pad_ne": {
+      "textures": [
+        {
+          "path": "textures/blocks/huge_lily_pad_ne_clean_v2",
+          "tint_color": "#208030"
+        }
+      ]
+    },
+    "tf_slice:huge_lily_pad_se": {
+      "textures": [
+        {
+          "path": "textures/blocks/huge_lily_pad_se_clean_v2",
+          "tint_color": "#208030"
+        }
+      ]
+    },
+    "tf_slice:huge_lily_pad_sw": {
+      "textures": [
+        {
+          "path": "textures/blocks/huge_lily_pad_sw_clean_v2",
+          "tint_color": "#208030"
+        }
+      ]
+    },
+    "tf_slice:mangrove_log_top": {
+      "textures": "textures/blocks/mangrove_log_top"
+    },
+    "tf_slice:encased_towerwood": {
+      "textures": "textures/blocks/encased_towerwood"
+    },
+    "tf_slice:dark_log": {
+      "textures": "textures/blocks/dark_log"
+    },
+    "tf_slice:dark_log_top": {
+      "textures": "textures/blocks/dark_log_top"
+    },
+    "tf_slice:dark_wood": {
+      "textures": "textures/blocks/dark_wood"
+    },
+    "tf_slice:dark_wood_top": {
+      "textures": "textures/blocks/dark_wood_top"
+    },
+    "tf_slice:stripped_dark_log": {
+      "textures": "textures/blocks/stripped_dark_log"
+    },
+    "tf_slice:stripped_dark_log_top": {
+      "textures": "textures/blocks/stripped_dark_log_top"
+    },
+    "tf_slice:stripped_dark_wood": {
+      "textures": "textures/blocks/stripped_dark_wood"
+    },
+    "tf_slice:stripped_dark_wood_top": {
+      "textures": "textures/blocks/stripped_dark_wood_top"
+    },
+    "tf_slice:dark_leaves": {
+      "textures": "textures/blocks/dark_leaves"
+    },
+    "tf_slice:hardened_dark_leaves": {
+      "textures": "textures/blocks/hardened_dark_leaves"
+    },
+    "tf_slice:darkwood_sapling": {
+      "textures": "textures/blocks/darkwood_sapling"
+    },
+    "tf_slice:hollow_dark_log_horizontal": {
+      "textures": "textures/blocks/hollow_dark_log_horizontal"
+    },
+    "tf_slice:hollow_dark_log_vertical": {
+      "textures": "textures/blocks/hollow_dark_log_vertical"
+    },
+    "tf_slice:hollow_dark_log_climbable": {
+      "textures": "textures/blocks/hollow_dark_log_climbable"
+    },
+    "tf_slice:dark_planks": {
+      "textures": "textures/blocks/dark_planks"
+    },
+    "tf_slice:underbrick": {
+      "textures": "textures/blocks/underbrick"
+    },
+    "tf_slice:cracked_underbrick": {
+      "textures": "textures/blocks/cracked_underbrick"
+    },
+    "tf_slice:mossy_underbrick": {
+      "textures": "textures/blocks/mossy_underbrick"
+    },
+    "tf_slice:underbrick_floor": {
+      "textures": "textures/blocks/underbrick_floor"
+    },
+    "tf_slice:knightmetal_block": {
+      "textures": "textures/blocks/knightmetal_block"
+    },
+    "tf_slice:steeleaf_block": {
+      "textures": "textures/blocks/steeleaf_block"
+    },
+    "tf_slice:stronghold_shield": {
+      "textures": "textures/blocks/stronghold_shield"
+    },
+    "tf_slice:trophy_pedestal": {
+      "textures": "textures/blocks/trophy_pedestal"
+    },
+    "tf_slice:knight_phantom_boss_spawner": {
+      "textures": "textures/blocks/knight_phantom_boss_spawner"
+    },
+    "tf_slice:towerwood": {
+      "textures": "textures/blocks/towerwood"
+    },
+    "tf_slice:cracked_towerwood": {
+      "textures": "textures/blocks/cracked_towerwood"
+    },
+    "tf_slice:mossy_towerwood": {
+      "textures": "textures/blocks/mossy_towerwood"
+    },
+    "tf_slice:infested_towerwood": {
+      "textures": "textures/blocks/infested_towerwood"
+    },
+    "tf_slice:vanishing_block": {
+      "textures": "textures/blocks/vanishing_block"
+    },
+    "tf_slice:unbreakable_vanishing_block": {
+      "textures": "textures/blocks/unbreakable_vanishing_block"
+    },
+    "tf_slice:locked_vanishing_block": {
+      "textures": "textures/blocks/locked_vanishing_block"
+    },
+    "tf_slice:reappearing_block": {
+      "textures": "textures/blocks/reappearing_block"
+    },
+    "tf_slice:carminite_builder": {
+      "textures": "textures/blocks/carminite_builder"
+    },
+    "tf_slice:carminite_antibuilder": {
+      "textures": "textures/blocks/carminite_antibuilder"
+    },
+    "tf_slice:temporary_builder_block": {
+      "textures": "textures/blocks/temporary_builder_block"
+    },
+    "tf_slice:restored_block": {
+      "textures": "textures/blocks/restored_block"
+    },
+    "tf_slice:carminite_reactor": {
+      "textures": "textures/blocks/carminite_reactor"
+    },
+    "tf_slice:reactor_debris": {
+      "textures": "textures/blocks/reactor_debris"
+    },
+    "tf_slice:fake_gold": {
+      "textures": "textures/blocks/gold_block"
+    },
+    "tf_slice:fake_diamond": {
+      "textures": "textures/blocks/diamond_block"
+    },
+    "tf_slice:ghast_trap": {
+      "textures": "textures/blocks/ghast_trap"
+    },
+    "tf_slice:carminite_block": {
+      "textures": "textures/blocks/carminite_block"
+    },
+    "tf_slice:experiment_115": {
+      "textures": "textures/blocks/experiment_115"
+    },
+    "tf_slice:tower_key_door": {
+      "textures": "textures/blocks/tower_key_door"
+    },
+    "tf_slice:ur_ghast_boss_spawner": {
+      "textures": "textures/blocks/ur_ghast_boss_spawner"
+    },
+    "tf_slice:hardened_dark_leaves_center": {
+      "textures": "textures/blocks/hardened_dark_leaves_center"
+    },
+    "tf_slice:dark_log_vertical": {
+      "textures": "textures/blocks/dark_log_vertical"
+    },
+    "tf_slice:dark_log_vertical_top": {
+      "textures": "textures/blocks/dark_log_vertical_top"
+    },
+    "tf_slice:trophy_pedestal_north_latent": {
+      "textures": "textures/blocks/trophy_pedestal_north_latent"
+    },
+    "tf_slice:trophy_pedestal_south_latent": {
+      "textures": "textures/blocks/trophy_pedestal_south_latent"
+    },
+    "tf_slice:trophy_pedestal_east_latent": {
+      "textures": "textures/blocks/trophy_pedestal_east_latent"
+    },
+    "tf_slice:trophy_pedestal_west_latent": {
+      "textures": "textures/blocks/trophy_pedestal_west_latent"
+    },
+    "tf_slice:trophy_pedestal_north_active": {
+      "textures": "textures/blocks/trophy_pedestal_north_active"
+    },
+    "tf_slice:trophy_pedestal_south_active": {
+      "textures": "textures/blocks/trophy_pedestal_south_active"
+    },
+    "tf_slice:trophy_pedestal_east_active": {
+      "textures": "textures/blocks/trophy_pedestal_east_active"
+    },
+    "tf_slice:trophy_pedestal_west_active": {
+      "textures": "textures/blocks/trophy_pedestal_west_active"
+    },
+    "tf_slice:trophy_pedestal_top_latent": {
+      "textures": "textures/blocks/trophy_pedestal_top_latent"
+    },
+    "tf_slice:trophy_pedestal_top_active": {
+      "textures": "textures/blocks/trophy_pedestal_top_active"
+    },
+    "tf_slice:stripped_mangrove_log_top": {
+      "textures": "textures/blocks/stripped_mangrove_log_top"
+    },
+    "tf_slice:quest_ram_trophy_model": {
+      "textures": "textures/entity/tf_slice/trophies/quest_ram"
+    },
+    "tf_slice:minoshroom_trophy_model": {
+      "textures": "textures/entity/tf_slice/trophies/minoshroom"
+    },
+    "tf_slice:hydra_trophy_model": {
+      "textures": "textures/entity/tf_slice/trophies/hydra"
+    },
+    "dark_oak_planks": {
+      "textures": "textures/blocks/dark_planks"
+    },
+    "wood_big_oak": {
+      "textures": "textures/blocks/dark_planks"
+    },
+    "darkoak_sign": {
+      "textures": "textures/blocks/dark_planks"
+    },
+    "dark_oak_trapdoor": {
+      "textures": "textures/blocks/dark_trapdoor"
+    },
+    "mangrove_planks": {
+      "textures": "textures/blocks/mangrove_planks"
+    },
+    "mangrove_sign": {
+      "textures": "textures/blocks/mangrove_planks"
+    },
+    "mangrove_trapdoor": {
+      "textures": "textures/blocks/mangrove_trapdoor"
+    },
+    "mangrove_door_bottom": {
+      "textures": "textures/blocks/mangrove_door_lower"
+    },
+    "mangrove_door_top": {
+      "textures": "textures/blocks/mangrove_door_upper"
+    },
+    "door_lower": {
+      "textures": [
+        "textures/blocks/door_wood_lower",
+        "textures/blocks/door_spruce_lower",
+        "textures/blocks/door_birch_lower",
+        "textures/blocks/door_jungle_lower",
+        "textures/blocks/door_acacia_lower",
+        "textures/blocks/dark_door_lower",
+        "textures/blocks/door_iron_lower"
+      ]
+    },
+    "door_upper": {
+      "textures": [
+        "textures/blocks/door_wood_upper",
+        "textures/blocks/door_spruce_upper",
+        "textures/blocks/door_birch_upper",
+        "textures/blocks/door_jungle_upper",
+        "textures/blocks/door_acacia_upper",
+        "textures/blocks/dark_door_upper",
+        "textures/blocks/door_iron_upper"
+      ]
+    },
+    "tf_slice:firejet_side": {
+      "textures": "textures/blocks/firejet_side"
+    },
+    "tf_slice:firejet_top": {
+      "textures": "textures/blocks/firejet_top"
+    },
+    "tf_slice:firejet_bottom": {
+      "textures": "textures/blocks/grass_top"
+    },
+    "tf_slice:encased_smoker_side_off": {
+      "textures": "textures/blocks/encased_smoker_side_off"
+    },
+    "tf_slice:encased_smoker_top_off": {
+      "textures": "textures/blocks/encased_smoker_top_off"
+    },
+    "tf_slice:encased_smoker_side_on": {
+      "textures": "textures/blocks/encased_smoker_side_on"
+    },
+    "tf_slice:encased_smoker_top_on": {
+      "textures": "textures/blocks/encased_smoker_top_on"
+    },
+    "tf_slice:encased_fire_jet_side_off": {
+      "textures": "textures/blocks/encased_fire_jet_side_off"
+    },
+    "tf_slice:encased_fire_jet_top_off": {
+      "textures": "textures/blocks/encased_fire_jet_top_off"
+    },
+    "tf_slice:encased_fire_jet_side_on": {
+      "textures": "textures/blocks/encased_fire_jet_side_on"
+    },
+    "tf_slice:encased_fire_jet_top_on": {
+      "textures": "textures/blocks/encased_fire_jet_top_on"
+    },
+    "tf_slice:nagastone_top_tip": {
+      "textures": "textures/blocks/nagastone_top_tip"
+    },
+    "tf_slice:carminite_reactor_active": {
+      "textures": "textures/blocks/carminite_reactor_active"
+    },
+    "tf_slice:carminite_builder_active": {
+      "textures": "textures/blocks/carminite_builder_active"
+    },
+    "tf_slice:carminite_builder_timeout": {
+      "textures": "textures/blocks/carminite_builder_timeout"
+    },
+    "tf_slice:temporary_builder_block_active": {
+      "textures": "textures/blocks/temporary_builder_block_active"
+    },
+    "tf_slice:naga_trophy_model": {
+      "textures": "textures/entity/tf_slice/trophies/naga"
+    },
+    "tf_slice:naga_trophy": {
+      "textures": "textures/blocks/naga_trophy"
+    },
+    "tf_slice:ur_ghast_trophy_model": {
+      "textures": "textures/entity/tf_slice/trophies/ur_ghast"
+    },
+    "tf_slice:ur_ghast_trophy": {
+      "textures": "textures/blocks/ur_ghast_trophy"
+    },
+    "tf_slice:knight_phantom_trophy_model": {
+      "textures": "textures/entity/tf_slice/trophies/knight_phantom"
+    },
+    "tf_slice:knight_phantom_trophy": {
+      "textures": "textures/blocks/knight_phantom_trophy"
+    },
+    "tf_slice:naga_wall_trophy": {
+      "textures": "textures/blocks/naga_trophy"
+    },
+    "tf_slice:lich_wall_trophy": {
+      "textures": "textures/blocks/lich_trophy"
+    },
+    "tf_slice:ur_ghast_wall_trophy": {
+      "textures": "textures/blocks/ur_ghast_trophy"
+    },
+    "tf_slice:knight_phantom_wall_trophy": {
+      "textures": "textures/blocks/knight_phantom_trophy"
+    },
+    "tf_slice:quest_ram_wall_trophy": {
+      "textures": "textures/blocks/quest_ram_trophy"
+    },
+    "tf_slice:dark_door_lower": {
+      "textures": "textures/blocks/dark_door_lower"
+    },
+    "tf_slice:dark_door_upper": {
+      "textures": "textures/blocks/dark_door_upper"
+    },
+    "tf_slice:mangrove_door_lower": {
+      "textures": "textures/blocks/mangrove_door_lower"
+    },
+    "tf_slice:mangrove_door_upper": {
+      "textures": "textures/blocks/mangrove_door_upper"
+    },
+    "tf_slice:reappearing_block_active": {
+      "textures": "textures/blocks/reappearing_block_active"
+    },
+    "tf_slice:reappearing_trace_off": {
+      "textures": "textures/blocks/reappearing_trace_off"
+    },
+    "tf_slice:reappearing_trace_on": {
+      "textures": "textures/blocks/reappearing_trace_on"
+    },
+    "tf_slice:hollow_dark_log_horizontal_item": {
+      "textures": "textures/blocks/item_icons/hollow_dark_log_horizontal"
+    },
+    "tf_slice:hollow_dark_log_vertical_item": {
+      "textures": "textures/blocks/item_icons/hollow_dark_log_vertical"
+    },
+    "tf_slice:hollow_dark_log_climbable_item": {
+      "textures": "textures/blocks/item_icons/hollow_dark_log_climbable"
+    },
+    "tf_slice:hollow_mangrove_log_horizontal_item": {
+      "textures": "textures/blocks/item_icons/hollow_mangrove_log_horizontal"
+    },
+    "tf_slice:hollow_mangrove_log_vertical_item": {
+      "textures": "textures/blocks/item_icons/hollow_mangrove_log_vertical"
+    },
+    "tf_slice:hollow_mangrove_log_climbable_item": {
+      "textures": "textures/blocks/item_icons/hollow_mangrove_log_climbable"
+    },
+    "tf_slice:tower_key_door_unlocked": {
+      "textures": "textures/blocks/tower_key_door_unlocked"
+    },
+    "tf_slice:stripped_canopy_log": {
+      "textures": "textures/blocks/stripped_canopy_log"
+    },
+    "tf_slice:stripped_canopy_log_top": {
+      "textures": "textures/blocks/stripped_canopy_log_top"
+    },
+    "tf_slice:canopy_door_lower": {
+      "textures": "textures/blocks/canopy_door_lower"
+    },
+    "tf_slice:canopy_door_upper": {
+      "textures": "textures/blocks/canopy_door_upper"
+    },
+    "tf_slice:canopy_bookshelf": {
+      "textures": "textures/blocks/canopy_bookshelf"
+    },
+    "tf_slice:canopy_bookshelf_item": {
+      "textures": "textures/blocks/item_icons/canopy_bookshelf"
+    },
+    "tf_slice:canopy_chest_item": {
+      "textures": "textures/blocks/item_icons/canopy_chest"
+    },
+    "cherry_planks": {
+      "textures": "textures/blocks/canopy_planks"
+    },
+    "cherry_trapdoor": {
+      "textures": "textures/blocks/canopy_trapdoor"
+    },
+    "cherry_door_bottom": {
+      "textures": "textures/blocks/canopy_door_lower"
+    },
+    "cherry_door_top": {
+      "textures": "textures/blocks/canopy_door_upper"
+    },
+    "tf_slice:trophy_anchor_transparent": {
+      "textures": "textures/blocks/trophy_anchor_transparent"
+    }
+  }
+}

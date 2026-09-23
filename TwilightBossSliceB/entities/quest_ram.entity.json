@@ -1,0 +1,95 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:quest_ram",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["quest_ram", "animal", "mob"]
+      },
+      "minecraft:nameable": {},
+      "minecraft:persistent": {},
+      "minecraft:health": {"value": 70, "max": 70},
+      "minecraft:movement": {"value": 0.23},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:scale": {"value": 0.8},
+      "minecraft:collision_box": {"width": 1.45, "height": 2.1},
+      "minecraft:breathable": {"total_supply": 15, "suffocate_time": 0},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:leashable": {},
+      "minecraft:home": {"restriction_radius": 13},
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              }
+            },
+            "use_item": false,
+            "interact_text": "action.interact.feed"
+          }
+        ]
+      },
+      "minecraft:ambient_sound_interval": {
+        "value": 8.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      },
+      "minecraft:behavior.float": {"priority": 0},
+      "minecraft:behavior.panic": {
+        "priority": 1,
+        "speed_multiplier": 1.38
+      },
+      "minecraft:behavior.tempt": {
+        "priority": 3,
+        "speed_multiplier": 1.0,
+        "can_get_scared": false,
+        "items": [
+          "minecraft:white_wool",
+          "minecraft:orange_wool",
+          "minecraft:magenta_wool",
+          "minecraft:light_blue_wool",
+          "minecraft:yellow_wool",
+          "minecraft:lime_wool",
+          "minecraft:pink_wool",
+          "minecraft:gray_wool",
+          "minecraft:light_gray_wool",
+          "minecraft:cyan_wool",
+          "minecraft:purple_wool",
+          "minecraft:blue_wool",
+          "minecraft:brown_wool",
+          "minecraft:green_wool",
+          "minecraft:red_wool",
+          "minecraft:black_wool"
+        ]
+      },
+      "minecraft:behavior.move_towards_home_restriction": {
+        "priority": 4,
+        "speed_multiplier": 1.0,
+        "control_flags": ["move"]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.random_look_around": {"priority": 6}
+    }
+  }
+}

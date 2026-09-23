@@ -1,0 +1,11 @@
+{
+  "format_version": 1,
+  "tf_slice:enchantment": {
+    "identifier": "tf_slice:destruction",
+    "max_level": 3,
+    "compatible_items": [
+      "tf_slice:block_and_chain"
+    ],
+    "effect": "increase_flail_block_break_radius"
+  }
+}

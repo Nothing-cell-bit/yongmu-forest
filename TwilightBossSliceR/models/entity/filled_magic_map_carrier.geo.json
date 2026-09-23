@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tf_magic_map_carrier",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0, 0]
+      },
+      "bones": [
+        {
+          "name": "magic_map_carrier",
+          "binding": "q.item_slot_to_bone_name(c.item_slot)",
+          "pivot": [0, 0, 0]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "tf_slice:maze_map_cloning_8"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "tf_slice:filled_maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      },
+      {
+        "item": "tf_slice:maze_map"
+      }
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "result": {
+      "item": "tf_slice:filled_maze_map",
+      "count": 9
+    }
+  }
+}

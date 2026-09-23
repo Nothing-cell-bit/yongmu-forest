@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:redcap",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/redcap"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.redcap"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#3B3A6C",
+        "overlay_color": "#AB1E14"
+      },
+      "animations": {
+        "move": "animation.tf_slice.redcap.move",
+        "look": "animation.tf_slice.redcap.look",
+        "attack": "animation.tf_slice.redcap.attack",
+        "equipment": "animation.tf_slice.redcap.equipment"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "look",
+          "attack",
+          "equipment"
+        ],
+        "initialize": [
+          "variable.redcap_walk_amount = 0.0;",
+          "variable.redcap_walk_phase = 0.0;"
+        ],
+        "pre_animation": [
+          "temp.redcap_dt = math.clamp(query.delta_time, 0.0, 0.1); temp.redcap_walk_target = math.clamp(query.ground_speed * 0.2, 0.0, 1.0); temp.redcap_walk_previous = variable.redcap_walk_amount; variable.redcap_walk_amount = variable.redcap_walk_amount + (temp.redcap_walk_target - variable.redcap_walk_amount) * (1.0 - math.pow(0.6, temp.redcap_dt * 20.0)); variable.redcap_walk_phase = variable.redcap_walk_phase + (temp.redcap_walk_previous + variable.redcap_walk_amount) * 0.5 * temp.redcap_dt * 763.4263; variable.redcap_walk_phase = variable.redcap_walk_phase - math.floor(variable.redcap_walk_phase / 360.0) * 360.0;"
+        ]
+      },
+      "enable_attachables": true
+    }
+  }
+}

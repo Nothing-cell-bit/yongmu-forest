@@ -1,0 +1,23 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:search_feature": {
+    "description": {
+      "identifier": "tf_slice:twilight_mangrove_tree_water_search_feature"
+    },
+    "places_feature": "tf_slice:twilight_mangrove_tree_feature",
+    "search_volume": {
+      "min": [
+        0,
+        -6,
+        0
+      ],
+      "max": [
+        0,
+        0,
+        0
+      ]
+    },
+    "search_axis": "-y",
+    "required_successes": 1
+  }
+}

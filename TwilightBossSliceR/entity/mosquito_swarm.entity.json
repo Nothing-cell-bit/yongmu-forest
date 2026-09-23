@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:mosquito_swarm",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/mosquitoswarm"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.mosquito_swarm"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "animations": {
+        "main": "animation.tf_slice.mosquito_swarm.spin"
+      },
+      "scripts": {
+        "animate": [
+          "main"
+        ]
+      },
+      "spawn_egg": {
+        "base_color": "#17110D",
+        "overlay_color": "#7C2D22"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "tf_slice:enchanted_canopy_tree_selector_feature"
+    },
+    "features": [
+      [
+        "tf_slice:enchanted_canopy_tree_feature",
+        3
+      ],
+      [
+        "tf_slice:enchanted_twilight_oak_tree_feature",
+        2
+      ]
+    ]
+  }
+}

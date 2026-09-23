@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:maze_slime",
+      "materials": {
+        "inner": "entity_alphatest",
+        "outer": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/entity/mazeslime"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.maze_slime"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.maze_slime"
+      ],
+      "animations": {
+        "main": "animation.tf_slice.maze_slime.squash"
+      },
+      "scripts": {
+        "animate": [
+          "main"
+        ]
+      },
+      "spawn_egg": {
+        "base_color": "#2D5139",
+        "overlay_color": "#A68A58"
+      }
+    }
+  }
+}

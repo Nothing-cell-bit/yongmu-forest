@@ -1,0 +1,24 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:knightmetal_shield"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:knightmetal_shield.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:knightmetal_shield"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:allow_off_hand": true,
+      "minecraft:durability": {
+        "max_durability": 1024
+      },
+      "minecraft:use_animation": "block"
+    }
+  }
+}

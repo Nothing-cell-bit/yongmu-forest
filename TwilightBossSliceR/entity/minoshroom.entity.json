@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:minoshroom",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/minoshroomtaur"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.minoshroom"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "animations": {
+        "main": "animation.tf_slice.minoshroom.move",
+        "attack": "animation.tf_slice.minoshroom.attack",
+        "slam": "animation.tf_slice.minoshroom.slam",
+        "slam_recover": "animation.tf_slice.minoshroom.slam_recover"
+      },
+      "scripts": {
+        "animate": [
+          "main",
+          "attack",
+          {
+            "slam": "query.property('tf_slice:ground_attack')"
+          },
+          {
+            "slam_recover": "query.property('tf_slice:ground_attack_recovering')"
+          }
+        ]
+      },
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#8B1818",
+        "overlay_color": "#E7D8B4"
+      }
+    }
+  }
+}

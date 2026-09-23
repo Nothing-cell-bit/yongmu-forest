@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tf_slice.raven.flight": {
+      "initial_state": "grounded",
+      "states": {
+        "grounded": {
+          "animations": [
+            "ground"
+          ],
+          "transitions": [
+            {
+              "takeoff": "!query.is_on_ground"
+            }
+          ]
+        },
+        "takeoff": {
+          "animations": [
+            "takeoff"
+          ],
+          "transitions": [
+            {
+              "grounded": "query.is_on_ground"
+            },
+            {
+              "flying": "query.all_animations_finished"
+            }
+          ]
+        },
+        "flying": {
+          "animations": [
+            "fly"
+          ],
+          "transitions": [
+            {
+              "grounded": "query.is_on_ground"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:fiery_ingot"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:fiery_ingot.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:fiery_ingot"
+        }
+      },
+      "minecraft:fire_resistant": {
+        "value": true
+      }
+    }
+  }
+}

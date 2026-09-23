@@ -1,0 +1,32 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "tf_slice:huge_lily_pad_nw_block_feature"
+    },
+    "places_block": [
+      {
+        "block": {
+          "name": "tf_slice:huge_lily_pad_nw",
+          "states": {
+            "tf_slice:facing": "north"
+          }
+        },
+        "weight": 1
+      }
+    ],
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:air"
+    ],
+    "may_attach_to": {
+      "auto_rotate": false,
+      "min_sides_must_attach": 1,
+      "bottom": [
+        "minecraft:water",
+        "minecraft:flowing_water"
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:scatter_feature": {
+    "description": {"identifier": "tf_slice:fire_swamp_lava_lake_feature"},
+    "places_feature": "tf_slice:fire_swamp_lava_feature",
+    "iterations": 32,
+    "coordinate_eval_order": "xzy",
+    "x": {"distribution": "uniform", "extent": [-3, 3]},
+    "y": 0,
+    "z": {"distribution": "uniform", "extent": [-3, 3]}
+  }
+}

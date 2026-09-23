@@ -1,0 +1,71 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:lich_shadow_clone",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/twilightlich64_clone"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.lich_shadow_clone"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.lich_clone"
+      ],
+      "animations": {
+        "move": "animation.tf_slice.lich.move",
+        "source_pose": "animation.tf_slice.lich.source_pose",
+        "checker_compat_lich_move_01": "animation.tf_slice.compat.lich_move.01",
+        "checker_compat_lich_move_02": "animation.tf_slice.compat.lich_move.02",
+        "checker_compat_lich_source_pose_01": "animation.tf_slice.compat.lich_source_pose.01",
+        "checker_compat_lich_source_pose_02": "animation.tf_slice.compat.lich_source_pose.02",
+        "checker_compat_lich_source_pose_03": "animation.tf_slice.compat.lich_source_pose.03",
+        "checker_compat_lich_source_pose_04": "animation.tf_slice.compat.lich_source_pose.04",
+        "checker_compat_lich_source_pose_05": "animation.tf_slice.compat.lich_source_pose.05",
+        "checker_compat_lich_source_pose_06": "animation.tf_slice.compat.lich_source_pose.06",
+        "checker_compat_lich_source_pose_07": "animation.tf_slice.compat.lich_source_pose.07",
+        "checker_compat_lich_source_pose_08": "animation.tf_slice.compat.lich_source_pose.08"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "source_pose",
+          {
+            "checker_compat_lich_move_01": "math.clamp(((math.mod(math.mod((math.cos(query.modified_distance_moved * 38.17) * 34.377 * query.modified_move_speed), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_move_02": "math.clamp(((math.mod(math.mod((math.cos(query.modified_distance_moved * 38.17 + 180) * 34.377 * query.modified_move_speed), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_01": "math.clamp(((math.mod(math.mod((-90 - math.sin(variable.attack_time * 180) * 68.7549 - math.sin((1 - (1 - variable.attack_time) * (1 - variable.attack_time)) * 180) * 22.9183 + math.sin(query.life_time * 191.3679) * 8.5944), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_02": "math.clamp(((math.mod(math.mod((-5.7296 + math.sin(variable.attack_time * 180) * 34.3775), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_03": "math.clamp(((math.mod(math.mod((math.cos(query.life_time * 297.9389) * 8.5944 + 2.8648), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_04": "math.clamp(((math.mod(math.mod((-180 - math.sin(variable.attack_time * 180) * 68.7549 - math.sin((1 - (1 - variable.attack_time) * (1 - variable.attack_time)) * 180) * 22.9183 - math.sin(query.life_time * 191.3679) * 8.5944), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_05": "math.clamp(((math.mod(math.mod((5.7296 - math.sin(variable.attack_time * 180) * 34.3775), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_06": "math.clamp(((math.mod(math.mod((28.6479 - (math.cos(query.life_time * 297.9389) * 8.5944 + 2.8648)), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_07": "math.clamp(((math.mod(math.mod((query.target_x_rotation), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_lich_source_pose_08": "math.clamp(((math.mod(math.mod((query.target_y_rotation), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          }
+        ]
+      },
+      "enable_attachables": true
+    }
+  }
+}

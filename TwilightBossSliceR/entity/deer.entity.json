@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:deer",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/wilddeer"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.deer"
+      },
+      "animations": {
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "walk": "query.modified_move_speed"
+          },
+          "look_at_target"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.deer"
+      ],
+      "spawn_egg": {
+        "base_color": "#6A3F24",
+        "overlay_color": "#D8B27A"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "tf_slice:ironwood_ingot"
+    },
+    "tags": [
+      "furnace",
+      "blast_furnace"
+    ],
+    "input": "tf_slice:raw_ironwood",
+    "output": "tf_slice:ironwood_ingot"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {"identifier": "tf_slice:lifedrain_scepter_recharge"},
+    "tags": ["crafting_table"],
+    "ingredients": [{"item": "tf_slice:lifedrain_scepter"}, {"item": "minecraft:fermented_spider_eye"}],
+    "unlock": {"context": "AlwaysUnlocked"},
+    "result": {"item": "tf_slice:lifedrain_scepter", "count": 1}
+  }
+}

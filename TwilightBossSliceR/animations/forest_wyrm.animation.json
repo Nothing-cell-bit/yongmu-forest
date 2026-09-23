@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.forest_wyrm.circle": {
+      "loop": true,
+      "animation_length": 1.6,
+      "bones": {
+        "head": {
+          "position": [0, 0, 0],
+          "rotation": [0, 0, 0]
+        }
+      }
+    },
+    "animation.tf_slice.forest_wyrm.intimidate": {
+      "loop": true,
+      "animation_length": 0.8,
+      "bones": {
+        "head": {
+          "position": [0, 0, 0],
+          "rotation": [0, "math.sin(query.anim_time * 900.0) * 5.0", 0]
+        }
+      }
+    },
+    "animation.tf_slice.forest_wyrm.crumble": {
+      "loop": true,
+      "animation_length": 0.4,
+      "bones": {
+        "head": {"rotation": ["-8.0 + math.sin(query.anim_time * 720.0) * 4.0", 0, 0]}
+      }
+    },
+    "animation.tf_slice.forest_wyrm.charge": {
+      "loop": true,
+      "animation_length": 0.4,
+      "bones": {
+        "head": {"rotation": [0, 0, 0]}
+      }
+    },
+    "animation.tf_slice.forest_wyrm.daze": {
+      "loop": true,
+      "animation_length": 0.8,
+      "bones": {
+        "head": {
+          "position": [0, 0, 0],
+          "rotation": [0, 0, 0]
+        }
+      }
+    }
+  }
+}

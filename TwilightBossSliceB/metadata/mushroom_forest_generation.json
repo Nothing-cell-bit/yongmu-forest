@@ -1,0 +1,774 @@
+{
+  "source_version": "4.3.2508",
+  "brown_canopy_variants": [
+    {
+      "id": "v00",
+      "kind": "brown",
+      "height": 12,
+      "branch_count": 4,
+      "branch_length": 8,
+      "branch_lengths": [
+        8,
+        8,
+        8,
+        9
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v01",
+      "kind": "brown",
+      "height": 10,
+      "branch_count": 3,
+      "branch_length": 8,
+      "branch_lengths": [
+        8,
+        8,
+        9
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v02",
+      "kind": "brown",
+      "height": 10,
+      "branch_count": 4,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        8,
+        9,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v03",
+      "kind": "brown",
+      "height": 13,
+      "branch_count": 3,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        9,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v04",
+      "kind": "brown",
+      "height": 12,
+      "branch_count": 4,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        9,
+        8,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v05",
+      "kind": "brown",
+      "height": 9,
+      "branch_count": 3,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        8,
+        9
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v06",
+      "kind": "brown",
+      "height": 10,
+      "branch_count": 3,
+      "branch_length": 8,
+      "branch_lengths": [
+        8,
+        8,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v07",
+      "kind": "brown",
+      "height": 11,
+      "branch_count": 4,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v08",
+      "kind": "brown",
+      "height": 9,
+      "branch_count": 3,
+      "branch_length": 8,
+      "branch_lengths": [
+        8,
+        8,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v09",
+      "kind": "brown",
+      "height": 10,
+      "branch_count": 3,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        9,
+        9
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v10",
+      "kind": "brown",
+      "height": 12,
+      "branch_count": 4,
+      "branch_length": 8,
+      "branch_lengths": [
+        8,
+        9,
+        9,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v11",
+      "kind": "brown",
+      "height": 10,
+      "branch_count": 3,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        8,
+        9
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v12",
+      "kind": "brown",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        9,
+        9
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v13",
+      "kind": "brown",
+      "height": 10,
+      "branch_count": 3,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        9,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v14",
+      "kind": "brown",
+      "height": 10,
+      "branch_count": 4,
+      "branch_length": 8,
+      "branch_lengths": [
+        8,
+        9,
+        8,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v15",
+      "kind": "brown",
+      "height": 13,
+      "branch_count": 3,
+      "branch_length": 9,
+      "branch_lengths": [
+        9,
+        8,
+        8
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 5,
+      "cap_style": "flat",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    }
+  ],
+  "red_canopy_variants": [
+    {
+      "id": "v00",
+      "kind": "red",
+      "height": 14,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v01",
+      "kind": "red",
+      "height": 15,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        11,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v02",
+      "kind": "red",
+      "height": 14,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v03",
+      "kind": "red",
+      "height": 13,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        10,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "smooth",
+      "cap_radius": 3,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v04",
+      "kind": "red",
+      "height": 13,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v05",
+      "kind": "red",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        11,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "smooth",
+      "cap_radius": 3,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v06",
+      "kind": "red",
+      "height": 14,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "smooth",
+      "cap_radius": 3,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v07",
+      "kind": "red",
+      "height": 15,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v08",
+      "kind": "red",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        11,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "vanilla",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v09",
+      "kind": "red",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        11,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "vanilla",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v10",
+      "kind": "red",
+      "height": 16,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "smooth",
+      "cap_radius": 3,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v11",
+      "kind": "red",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        11,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "vanilla",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    },
+    {
+      "id": "v12",
+      "kind": "red",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "vanilla",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v13",
+      "kind": "red",
+      "height": 14,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        11,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "smooth",
+      "cap_radius": 3,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v14",
+      "kind": "red",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "smooth",
+      "cap_radius": 3,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v15",
+      "kind": "red",
+      "height": 14,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        11,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v16",
+      "kind": "red",
+      "height": 13,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        11,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v17",
+      "kind": "red",
+      "height": 16,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        11,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v18",
+      "kind": "red",
+      "height": 14,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v19",
+      "kind": "red",
+      "height": 13,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "smooth",
+      "cap_radius": 3,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 2
+    },
+    {
+      "id": "v20",
+      "kind": "red",
+      "height": 16,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        10,
+        10
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "vanilla",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v21",
+      "kind": "red",
+      "height": 13,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        11,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "vanilla",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v22",
+      "kind": "red",
+      "height": 12,
+      "branch_count": 3,
+      "branch_length": 10,
+      "branch_lengths": [
+        10,
+        11,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "vanilla",
+      "cap_radius": 2,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 0
+    },
+    {
+      "id": "v23",
+      "kind": "red",
+      "height": 15,
+      "branch_count": 3,
+      "branch_length": 11,
+      "branch_lengths": [
+        11,
+        11,
+        11
+      ],
+      "branch_pitch": 0.2,
+      "horizontal_reach": 6,
+      "cap_style": "spheroid",
+      "cap_radius": 4,
+      "branch_geometry": "horizontal_then_vertical",
+      "firefly_count": 1
+    }
+  ],
+  "selector_weights": {
+    "sparse": {
+      "brown": 60,
+      "red": 17,
+      "dummy": 323
+    },
+    "dense": {
+      "brown": 1080,
+      "red": 117,
+      "dummy": 403
+    }
+  },
+  "placement": "noop 1x1 trigger plus deferred chunk-piece placement",
+  "attempts": {
+    "sparse": "3 + 10% chance of 1",
+    "dense": "5 + 10% chance of 1"
+  },
+  "mycelium_blob": {
+    "chance": "1/3",
+    "radius": [
+      4,
+      5,
+      6
+    ],
+    "source_half_height": 3,
+    "implementation": "surface-conforming scatter patch"
+  },
+  "huge_mushroom_bits": {
+    "cap": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "stem": 10
+  }
+}

@@ -21,8 +21,8 @@ PATTERNS = {
     # `test` is an existing synthetic fixture, not a workstation user's path.
     'personal-windows-path': re.compile(r'[A-Za-z]:[/\\]{1,2}Users[/\\]{1,2}(?!Public\b|Default\b|test\b)[^/\\\s\"\']+'),
 }
-ALLOWED_SUFFIXES = {'.py', '.md', '.txt', '.json', '.yml', '.yaml'}
-IGNORED_PARTS = {'.git', '__pycache__', '.pytest_cache', '.ruff_cache', '.venv'}
+ALLOWED_SUFFIXES = {'.py', '.md', '.txt', '.json', '.yml', '.yaml', '.lang'}
+IGNORED_PARTS = {'.git', '__pycache__', '.pytest_cache', '.ruff_cache', '.venv', 'dist'}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -31,6 +31,9 @@ def main():
     asset_file = ROOT / 'ASSET_MANIFEST.json'
     asset_manifest = json.loads(asset_file.read_text(encoding='utf-8')) if asset_file.is_file() else {'included': []}
     assets = {item['path']: item for item in asset_manifest['included']}
+    pack_file = ROOT / 'PACK_SNAPSHOT.json'
+    pack_manifest = json.loads(pack_file.read_text(encoding='utf-8')) if pack_file.is_file() else {'files': []}
+    pack_paths = {item['path'] for item in pack_manifest['files']}
     findings = []
     checked = 0
     python3_parsed = 0
@@ -40,6 +43,16 @@ def main():
             continue
         if path.is_symlink():
             findings.append({'path':rel.as_posix(),'rule':'symlink'})
+            continue
+        if path.suffix in {'.ogg', '.mcstructure'}:
+            if rel.as_posix() not in pack_paths:
+                findings.append({'path': rel.as_posix(), 'rule': 'unlisted-pack-binary'})
+            raw = path.read_bytes()
+            if not raw or (path.suffix == '.ogg' and not raw.startswith(b'OggS')):
+                findings.append({'path': rel.as_posix(), 'rule': 'invalid-pack-binary'})
+            if len(raw) >= 100_000_000:
+                findings.append({'path': rel.as_posix(), 'rule': 'github-file-size-limit'})
+            checked += 1
             continue
         if path.suffix == '.png':
             item = assets.get(rel.as_posix())

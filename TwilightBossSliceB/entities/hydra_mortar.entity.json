@@ -1,0 +1,733 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:hydra_mortar",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:mortar_fuse": {
+          "type": "int",
+          "range": [
+            0,
+            100
+          ],
+          "default": 80,
+          "client_sync": true
+        },
+        "tf_slice:mortar_flash": {
+          "type": "float",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "default": 1.0,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "hydra_mortar",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:physics": {
+        "has_gravity": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:projectile": {
+        "power": 0.5,
+        "gravity": 0.05,
+        "uncertainty_base": 1.0,
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": false,
+            "semi_random_diff_damage": false
+          }
+        }
+      }
+    },
+    "component_groups": {
+      "tf_slice:landed": {
+        "minecraft:physics": {
+          "has_gravity": false,
+          "has_collision": true
+        }
+      },
+      "tf_slice:normal_explosion": {
+        "minecraft:explode": {
+          "fuse_length": 0.0,
+          "fuse_lit": true,
+          "power": 0.1,
+          "breaks_blocks": false
+        }
+      },
+      "tf_slice:mega_explosion": {
+        "minecraft:explode": {
+          "fuse_length": 0.0,
+          "fuse_lit": true,
+          "power": 4.0,
+          "breaks_blocks": true
+        }
+      }
+    },
+    "events": {
+      "tf_slice:landed": {
+        "add": {
+          "component_groups": [
+            "tf_slice:landed"
+          ]
+        }
+      },
+      "tf_slice:launched": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:landed"
+          ]
+        }
+      },
+      "tf_slice:explode": {
+        "add": {
+          "component_groups": [
+            "tf_slice:normal_explosion"
+          ]
+        }
+      },
+      "tf_slice:explode_mega": {
+        "add": {
+          "component_groups": [
+            "tf_slice:mega_explosion"
+          ]
+        }
+      },
+      "tf_slice:mortar_fuse_0": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 0,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_1": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 1,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_2": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 2,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_3": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 3,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_4": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 4,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_5": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 5,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_6": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 6,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_7": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 7,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_8": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 8,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_9": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 9,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_10": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 10,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_11": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 11,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_12": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 12,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_13": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 13,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_14": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 14,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_15": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 15,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_16": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 16,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_17": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 17,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_18": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 18,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_19": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 19,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_20": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 20,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_21": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 21,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_22": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 22,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_23": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 23,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_24": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 24,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_25": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 25,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_26": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 26,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_27": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 27,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_28": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 28,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_29": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 29,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_30": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 30,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_31": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 31,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_32": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 32,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_33": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 33,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_34": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 34,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_35": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 35,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_36": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 36,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_37": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 37,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_38": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 38,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_39": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 39,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_40": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 40,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_41": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 41,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_42": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 42,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_43": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 43,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_44": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 44,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_45": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 45,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_46": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 46,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_47": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 47,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_48": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 48,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_49": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 49,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_50": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 50,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_51": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 51,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_52": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 52,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_53": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 53,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_54": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 54,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_55": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 55,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_56": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 56,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_57": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 57,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_58": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 58,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_59": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 59,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_60": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 60,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_61": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 61,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_62": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 62,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_63": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 63,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_64": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 64,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_65": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 65,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_66": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 66,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_67": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 67,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_68": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 68,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_69": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 69,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_70": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 70,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_71": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 71,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_72": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 72,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_73": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 73,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_74": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 74,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_75": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 75,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_76": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 76,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_77": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 77,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_78": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 78,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_79": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 79,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_80": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 80,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_81": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 81,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_82": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 82,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_83": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 83,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_84": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 84,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_85": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 85,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_86": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 86,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_87": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 87,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_88": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 88,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_89": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 89,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_90": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 90,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_91": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 91,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_92": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 92,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_93": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 93,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_94": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 94,
+          "tf_slice:mortar_flash": 1.0
+        }
+      },
+      "tf_slice:mortar_fuse_95": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 95,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_96": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 96,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_97": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 97,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_98": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 98,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_99": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 99,
+          "tf_slice:mortar_flash": 0.0
+        }
+      },
+      "tf_slice:mortar_fuse_100": {
+        "set_property": {
+          "tf_slice:mortar_fuse": 100,
+          "tf_slice:mortar_flash": 1.0
+        }
+      }
+    }
+  }
+}

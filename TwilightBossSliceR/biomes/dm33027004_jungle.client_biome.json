@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "dm33027004_jungle"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "tf_slice:fog_twilight_forest"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#20224A"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#005522"
+      },
+      "minecraft:foliage_appearance": {
+        "color": "#4F9A43"
+      },
+      "minecraft:grass_appearance": {
+        "color": "#59AE30"
+      }
+    }
+  }
+}

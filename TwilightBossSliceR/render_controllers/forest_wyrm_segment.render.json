@@ -1,0 +1,11 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.forest_wyrm_segment": {
+      "arrays": {"geometries": {"Array.body_shapes": ["Geometry.default", "Geometry.taper", "Geometry.tail"]}},
+      "geometry": "Array.body_shapes[math.clamp(query.variant, 0, 2)]",
+      "materials": [{"*": "Material.default"}],
+      "textures": ["Texture.default"]
+    }
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:knight_phantom",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:charging": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "tf_slice:guarding": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "tf_slice:dying_hidden": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "tf_slice:weapon_role": {
+          "type": "int",
+          "range": [
+            0,
+            2
+          ],
+          "default": 0,
+          "client_sync": true
+        }
+      }
+    },
+    "component_groups": {
+      "tf_slice:charging_combat": {
+        "minecraft:attack": {
+          "damage": 8
+        },
+        "minecraft:collision_box": {
+          "width": 1.75,
+          "height": 4.0
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 0.0,
+          "cooldown_time": 1.0,
+          "track_target": true
+        }
+      },
+      "tf_slice:dying_hidden": {
+        "minecraft:collision_box": {
+          "width": 0.1,
+          "height": 0.1
+        },
+        "minecraft:physics": {
+          "has_gravity": false,
+          "has_collision": false
+        }
+      },
+      "tf_slice:noclip": {
+        "minecraft:physics": {
+          "has_gravity": false,
+          "has_collision": false
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "knight_phantom",
+          "knight_stronghold",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:persistent": {},
+      "minecraft:ambient_sound_interval": {
+        "value": 4.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      },
+      "minecraft:health": {
+        "value": 35,
+        "max": 35
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:collision_box": {
+        "width": 1.25,
+        "height": 2.5
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "suffocation",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:movement.fly": {},
+      "minecraft:navigation.fly": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": false,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 30
+          }
+        ]
+      }
+    },
+    "events": {
+      "tf_slice:start_charging": {
+        "add": {
+          "component_groups": [
+            "tf_slice:charging_combat"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": true
+        }
+      },
+      "tf_slice:stop_charging": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:charging_combat"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": false
+        }
+      },
+      "tf_slice:start_guarding": {
+        "set_property": {
+          "tf_slice:guarding": true
+        }
+      },
+      "tf_slice:stop_guarding": {
+        "set_property": {
+          "tf_slice:guarding": false
+        }
+      },
+      "tf_slice:hide_dying": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:charging_combat"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tf_slice:dying_hidden"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": false,
+          "tf_slice:guarding": false,
+          "tf_slice:dying_hidden": true
+        }
+      },
+      "tf_slice:restart_dying": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:dying_hidden"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": false,
+          "tf_slice:guarding": false,
+          "tf_slice:dying_hidden": false
+        }
+      },
+      "tf_slice:enable_noclip": {
+        "add": {
+          "component_groups": [
+            "tf_slice:noclip"
+          ]
+        }
+      },
+      "tf_slice:disable_noclip": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:noclip"
+          ]
+        }
+      },
+      "tf_slice:set_weapon_role_sword": {
+        "set_property": {
+          "tf_slice:weapon_role": 0
+        }
+      },
+      "tf_slice:set_weapon_role_axe": {
+        "set_property": {
+          "tf_slice:weapon_role": 1
+        }
+      },
+      "tf_slice:set_weapon_role_pickaxe": {
+        "set_property": {
+          "tf_slice:weapon_role": 2
+        }
+      }
+    }
+  }
+}

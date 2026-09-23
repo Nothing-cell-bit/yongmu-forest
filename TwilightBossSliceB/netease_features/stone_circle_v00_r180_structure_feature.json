@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:stone_circle_v00_r180_structure_feature"
+    },
+    "places_structure": "tf_slice:ruins/stone_circle/v00",
+    "rotation": 180
+  }
+}

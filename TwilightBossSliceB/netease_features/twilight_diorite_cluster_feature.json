@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "tf_slice:twilight_diorite_cluster_feature"
+    },
+    "places_feature": "tf_slice:twilight_diorite_cluster_ore_feature",
+    "project_input_to_floor": false,
+    "distribution": {
+      "iterations": 5,
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "y": {
+        "distribution": "triangle",
+        "extent": [
+          -64,
+          64
+        ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      }
+    }
+  }
+}

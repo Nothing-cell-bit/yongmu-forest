@@ -1,0 +1,43 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "tf_slice:twilight_diorite_cluster_feature_rule",
+      "places_feature": "tf_slice:twilight_diorite_cluster_feature"
+    },
+    "conditions": {
+      "placement_pass": "underground_pass",
+      "minecraft:biome_filter": [
+        {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "dm33027004"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "y": 0,
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "scatter_chance": 10.0
+    }
+  }
+}

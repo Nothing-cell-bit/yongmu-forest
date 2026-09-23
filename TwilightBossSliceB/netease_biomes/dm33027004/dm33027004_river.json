@@ -1,0 +1,37 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "dm33027004_river",
+      "inherits": "river"
+    },
+    "components": {
+      "minecraft:climate": {
+        "temperature": 0.5,
+        "downfall": 0.1,
+        "snow_accumulation": [
+          0.0,
+          0.0
+        ]
+      },
+      "minecraft:overworld_height": {
+        "noise_params": [
+          -0.1,
+          0.0
+        ]
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 5,
+        "sea_floor_material": "minecraft:gravel",
+        "foundation_material": "minecraft:stone",
+        "mid_material": "minecraft:dirt",
+        "top_material": "minecraft:grass",
+        "sea_material": "minecraft:water"
+      },
+      "dm33027004": {},
+      "tf_slice_twilight_forest": {},
+      "tf_slice_default_creatures": {},
+      "tf_slice_biome_stream": {}
+    }
+  }
+}

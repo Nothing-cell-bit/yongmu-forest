@@ -1,0 +1,25 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:twilight_oak_log_x",
+      "register_to_creative_menu": false
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {"seconds_to_destroy": 2.0},
+      "minecraft:destructible_by_explosion": {"explosion_resistance": 2.0},
+      "minecraft:geometry": "geometry.tf_slice.log_x",
+      "minecraft:material_instances": {
+        "side": {"texture": "tf_slice:twilight_oak_log", "render_method": "opaque"},
+        "end": {"texture": "tf_slice:twilight_oak_log_top", "render_method": "opaque"}
+      },
+      "netease:aabb": {
+        "collision": {"min": [0.0, 0.0, 0.0], "max": [1.0, 1.0, 1.0]},
+        "clip": {"min": [0.0, 0.0, 0.0], "max": [1.0, 1.0, 1.0]}
+      },
+      "netease:render_layer": {"value": "opaque"},
+      "netease:solid": {"value": true},
+      "netease:pathable": {"value": false}
+    }
+  }
+}

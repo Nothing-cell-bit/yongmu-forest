@@ -1,0 +1,23 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:search_feature": {
+    "description": {
+      "identifier": "tf_slice:swamp_waterlily_water_search_feature"
+    },
+    "places_feature": "tf_slice:swamp_waterlily_feature",
+    "search_volume": {
+      "min": [
+        0,
+        -2,
+        0
+      ],
+      "max": [
+        0,
+        8,
+        0
+      ]
+    },
+    "search_axis": "-y",
+    "required_successes": 1
+  }
+}

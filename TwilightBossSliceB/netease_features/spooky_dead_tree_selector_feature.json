@@ -1,0 +1,74 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "tf_slice:spooky_dead_tree_selector_feature"
+    },
+    "features": [
+      [
+        "tf_slice:spooky_dead_tree_v00_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v01_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v02_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v03_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v04_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v05_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v06_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v07_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v08_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v09_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v10_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v11_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v12_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v13_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v14_sequence_feature",
+        1
+      ],
+      [
+        "tf_slice:spooky_dead_tree_v15_sequence_feature",
+        1
+      ]
+    ]
+  }
+}

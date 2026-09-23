@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:rising_zombie",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/zombie/zombie"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.rising_zombie"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#315234",
+        "overlay_color": "#688A56"
+      },
+      "animations": {
+        "rise": "animation.tf_slice.rising_zombie.rise"
+      },
+      "scripts": {
+        "animate": [
+          "rise"
+        ]
+      }
+    }
+  }
+}

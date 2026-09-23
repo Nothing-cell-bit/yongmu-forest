@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:hydra",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/hydra4"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.hydra"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.hydra_hurt"
+      ],
+      "animations": {
+        "main": "animation.tf_slice.hydra.move"
+      },
+      "scripts": {
+        "animate": [
+          "main"
+        ]
+      },
+      "spawn_egg": {
+        "base_color": "#36150C",
+        "overlay_color": "#D07B18"
+      }
+    }
+  }
+}

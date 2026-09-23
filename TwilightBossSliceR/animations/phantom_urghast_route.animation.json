@@ -1,0 +1,796 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.lower_goblin_knight.move": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "right_arm": {
+          "rotation": [
+            "0 - (math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958)",
+            0,
+            0
+          ]
+        },
+        "left_arm": {
+          "rotation": [
+            "0 + (math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958)",
+            0,
+            0
+          ]
+        },
+        "right_leg": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141",
+            0,
+            0
+          ]
+        },
+        "left_leg": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.knight_phantom.move": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "right_arm": {
+          "rotation": [
+            "-18 - (math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 28.6479) + math.sin(query.life_time * 76.7764) * 2.8648",
+            0,
+            "math.cos(query.life_time * 103.1324) * 2.8648 + 2.8648"
+          ]
+        },
+        "left_arm": {
+          "rotation": [
+            "query.property('tf_slice:guarding') ? -72 : (math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958 - math.sin(query.life_time * 76.7764) * 2.8648)",
+            "query.property('tf_slice:guarding') ? 30 : 0",
+            "query.property('tf_slice:guarding') ? 0 : -(math.cos(query.life_time * 103.1324) * 2.8648 + 2.8648)"
+          ]
+        },
+        "right_leg": {
+          "rotation": [
+            "22.9183 + math.sin(query.life_time * 343.7747) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "left_leg": {
+          "rotation": [
+            "22.9183 + math.sin(query.life_time * 343.7747) * 11.4592",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.block_chain_goblin.move": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "right_arm": {
+          "rotation": [
+            "180 - (math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958)",
+            0,
+            0
+          ]
+        },
+        "left_arm": {
+          "rotation": [
+            "180 + (math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958)",
+            0,
+            0
+          ]
+        },
+        "right_leg": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141",
+            0,
+            0
+          ]
+        },
+        "left_leg": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        },
+        "chain_0": {
+          "rotation": [
+            "math.sin(query.life_time * 180) * 18",
+            "query.life_time * 286.4789",
+            0
+          ],
+          "scale": "query.property('tf_slice:chain_external') ? 0.0 : 1.0"
+        }
+      }
+    },
+    "animation.tf_slice.upper_goblin_knight.move": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "right_arm": {
+          "rotation": [
+            "-136.8 - (query.is_riding ? 18 : 0) - math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 28.6479 - ((60.0 - query.property('tf_slice:spear_timer')) <= 10 ? (60.0 - query.property('tf_slice:spear_timer')) : ((60.0 - query.property('tf_slice:spear_timer')) <= 30 ? 10 : ((60.0 - query.property('tf_slice:spear_timer')) <= 33 ? ((60.0 - query.property('tf_slice:spear_timer')) - 30) * -8 + 10 : ((60.0 - query.property('tf_slice:spear_timer')) <= 50 ? -15 : (60 - (60.0 - query.property('tf_slice:spear_timer'))) * -1.5)))) + math.sin(query.life_time * 76.7763) * 2.8648",
+            0,
+            "math.cos(query.life_time * 103.1324) * 2.8648 + 2.8648"
+          ]
+        },
+        "left_arm": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * (query.property('tf_slice:has_shield') ? 0.2 : query.modified_move_speed) * 57.2958 - (query.is_riding ? 36 : 0)",
+            0,
+            "query.property('tf_slice:shield_disabled') ? 22.9183 - math.cos(query.life_time * 3724.2257) * 1.2566 : math.cos(query.life_time * 103.1324) * 2.8648 + 2.8648"
+          ]
+        },
+        "right_leg": {
+          "rotation": [
+            "query.is_riding ? 0 : (math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        },
+        "left_leg": {
+          "rotation": [
+            "query.is_riding ? 0 : (-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141))",
+            0,
+            0
+          ]
+        },
+        "shield": {
+          "rotation": [
+            "270 - (math.cos(query.modified_distance_moved * 38.1709) * (query.property('tf_slice:has_shield') ? 0.2 : query.modified_move_speed) * 57.2958 - (query.is_riding ? 36 : 0))",
+            0,
+            0
+          ]
+        },
+        "root": {
+          "rotation": [
+            "((60.0 - query.property('tf_slice:spear_timer')) <= 10 ? (60.0 - query.property('tf_slice:spear_timer')) * 3 : ((60.0 - query.property('tf_slice:spear_timer')) <= 30 ? 30 : ((60.0 - query.property('tf_slice:spear_timer')) <= 33 ? ((60.0 - query.property('tf_slice:spear_timer')) - 30) * -25 + 30 : ((60.0 - query.property('tf_slice:spear_timer')) <= 50 ? -45 : (60 - (60.0 - query.property('tf_slice:spear_timer'))) * -4.5))))",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.helmet_crab.move": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "leg_1": {
+          "rotation": [
+            0,
+            "math.cos(query.modified_distance_moved * 76.3418 + 0) * query.modified_move_speed * 22.9183",
+            "math.abs(math.sin(query.modified_distance_moved * 38.1709 + 0)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_2": {
+          "rotation": [
+            0,
+            "math.cos(query.modified_distance_moved * 76.3418 + 90) * query.modified_move_speed * 22.9183",
+            "math.abs(math.sin(query.modified_distance_moved * 38.1709 + 90)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_3": {
+          "rotation": [
+            0,
+            "math.cos(query.modified_distance_moved * 76.3418 + 180) * query.modified_move_speed * 22.9183",
+            "math.abs(math.sin(query.modified_distance_moved * 38.1709 + 180)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_4": {
+          "rotation": [
+            0,
+            "math.cos(query.modified_distance_moved * 76.3418 + 270) * query.modified_move_speed * 22.9183",
+            "math.abs(math.sin(query.modified_distance_moved * 38.1709 + 270)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_5": {
+          "rotation": [
+            0,
+            "math.cos(query.modified_distance_moved * 76.3418 + 360) * query.modified_move_speed * 22.9183",
+            "math.abs(math.sin(query.modified_distance_moved * 38.1709 + 360)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "right_arm": {
+          "rotation": [
+            0,
+            "-75.603 + math.cos(query.modified_distance_moved * 38.1709 + 180) * query.modified_move_speed * 57.2958",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.carminite_golem.move": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "hat": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        },
+        "right_arm": {
+          "rotation": [
+            "variable.attack_time > 0.0 ? -114.5916 : math.cos(query.modified_distance_moved * 14.3239) * query.modified_move_speed * 85.9437",
+            0,
+            0
+          ]
+        },
+        "left_arm": {
+          "rotation": [
+            "variable.attack_time > 0.0 ? -114.5916 : -math.cos(query.modified_distance_moved * 14.3239) * query.modified_move_speed * 85.9437",
+            0,
+            0
+          ]
+        },
+        "right_leg": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141",
+            0,
+            0
+          ]
+        },
+        "left_leg": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.tower_broodling.move": {
+      "loop": true,
+      "bones": {
+        "leg_0": {
+          "rotation": [
+            0,
+            "-1 * math.cos(query.modified_distance_moved * 76.3418 + 0) * query.modified_move_speed * 22.9183",
+            "-1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 0)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_1": {
+          "rotation": [
+            0,
+            "1 * math.cos(query.modified_distance_moved * 76.3418 + 0) * query.modified_move_speed * 22.9183",
+            "1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 0)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_2": {
+          "rotation": [
+            0,
+            "-1 * math.cos(query.modified_distance_moved * 76.3418 + 90) * query.modified_move_speed * 22.9183",
+            "-1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 90)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_3": {
+          "rotation": [
+            0,
+            "1 * math.cos(query.modified_distance_moved * 76.3418 + 90) * query.modified_move_speed * 22.9183",
+            "1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 90)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_4": {
+          "rotation": [
+            0,
+            "-1 * math.cos(query.modified_distance_moved * 76.3418 + 180) * query.modified_move_speed * 22.9183",
+            "-1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 180)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_5": {
+          "rotation": [
+            0,
+            "1 * math.cos(query.modified_distance_moved * 76.3418 + 180) * query.modified_move_speed * 22.9183",
+            "1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 180)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_6": {
+          "rotation": [
+            0,
+            "-1 * math.cos(query.modified_distance_moved * 76.3418 + 270) * query.modified_move_speed * 22.9183",
+            "-1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 270)) * query.modified_move_speed * 22.9183"
+          ]
+        },
+        "leg_7": {
+          "rotation": [
+            0,
+            "1 * math.cos(query.modified_distance_moved * 76.3418 + 270) * query.modified_move_speed * 22.9183",
+            "1 * math.abs(math.sin(query.modified_distance_moved * 38.1709 + 270)) * query.modified_move_speed * 22.9183"
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.mini_ghast.move": {
+      "loop": true,
+      "bones": {
+        "tentacle_0": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 0) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_1": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 57) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_2": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 114) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_3": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 171) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_4": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 228) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_5": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 285) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_6": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 342) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_7": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 399) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_8": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 456) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.tower_ghast.move": {
+      "loop": true,
+      "bones": {
+        "tentacle_0": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 0) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_1": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 57) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_2": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 114) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_3": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 171) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_4": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 228) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_5": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 285) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_6": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 342) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_7": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 399) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        },
+        "tentacle_8": {
+          "rotation": [
+            "math.sin(query.life_time * 108 + 456) * 11.4592 + 22.9183",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.towerwood_borer.move": {
+      "loop": true,
+      "bones": {
+        "segment_0": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 0) * 1.5",
+            0
+          ]
+        },
+        "segment_1": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 36) * 3",
+            0
+          ]
+        },
+        "segment_2": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 72) * 4.5",
+            0
+          ]
+        },
+        "segment_3": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 108) * 6",
+            0
+          ]
+        },
+        "segment_4": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 144) * 7.5",
+            0
+          ]
+        },
+        "segment_5": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 180) * 9",
+            0
+          ]
+        },
+        "segment_6": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 216) * 10.5",
+            0
+          ]
+        },
+        "fin_0": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 0) * 8",
+            0
+          ]
+        },
+        "fin_1": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 65) * 8",
+            0
+          ]
+        },
+        "fin_2": {
+          "rotation": [
+            0,
+            "math.cos(query.life_time * 286.4789 + 130) * 8",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.ur_ghast.move": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "scale": [
+            "1.0 + 0.08 * ((math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0))",
+            "(24.0 + 1.0 / (2.0 * ((math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0)) + 1.0)) / 25.0",
+            "1.0 + 0.08 * ((math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0) * (math.clamp(query.property('tf_slice:attack_timer'), 0.0, 20.0) / 20.0))"
+          ]
+        },
+        "pose_root": {
+          "rotation": [
+            "query.property('tf_slice:visual_pitch')",
+            0,
+            0
+          ]
+        },
+        "tentacle_0": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 0) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_0_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 0) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_0_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 0) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_1": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 9) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_1_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 9) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_1_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 9) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_2": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 18) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_2_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 18) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_2_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 18) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_3": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 27) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_3_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 27) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_3_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 27) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_4": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 36) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_4_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 36) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_4_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 36) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_5": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 45) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_5_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 45) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_5_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 45) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_6": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 54) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_6_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 54) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_6_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 54) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_7": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 63) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_7_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 63) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_7_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 63) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        },
+        "tentacle_8": {
+          "rotation": [
+            0,
+            "22.9183 * math.sin(((query.life_time * 20 + 72) / 2) * 0.3 * 57.2958)",
+            0
+          ]
+        },
+        "tentacle_8_extension": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 72) / 2) * 0.3335 * 57.2958) * 8.5944",
+            0,
+            0
+          ]
+        },
+        "tentacle_8_tip": {
+          "rotation": [
+            "5.7296 + math.cos(((query.life_time * 20 + 72) / 2) * 0.4445 * 57.2958) * 11.4592",
+            0,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

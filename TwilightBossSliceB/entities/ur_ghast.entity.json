@@ -1,0 +1,144 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:ur_ghast",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:attack_state": {
+          "type": "float",
+          "range": [
+            0.0,
+            2.0
+          ],
+          "default": 0.0,
+          "client_sync": true
+        },
+        "tf_slice:attack_timer": {
+          "type": "float",
+          "range": [
+            -40.0,
+            20.0
+          ],
+          "default": 0.0,
+          "client_sync": true
+        },
+        "tf_slice:hurt_flash": {
+          "type": "float",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "default": 0.0,
+          "client_sync": true
+        },
+        "tf_slice:visual_pitch": {
+          "type": "float",
+          "range": [
+            -90.0,
+            90.0
+          ],
+          "default": 0.0,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "ur_ghast",
+          "dark_tower",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:persistent": {},
+      "minecraft:health": {
+        "value": 250,
+        "max": 250
+      },
+      "minecraft:attack": {
+        "damage": 16
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:collision_box": {
+        "width": 14.0,
+        "height": 18.0
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 12.5,
+            "height": 12.5,
+            "pivot": [
+              0,
+              12.5,
+              0
+            ]
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:movement.fly": {},
+      "minecraft:navigation.fly": {
+        "can_path_from_air": true,
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      }
+    },
+    "events": {
+      "tf_slice:attack_normal": {
+        "set_property": {
+          "tf_slice:attack_state": 0.0
+        }
+      },
+      "tf_slice:attack_tracking": {
+        "set_property": {
+          "tf_slice:attack_state": 1.0
+        }
+      },
+      "tf_slice:attack_charging": {
+        "set_property": {
+          "tf_slice:attack_state": 2.0
+        }
+      },
+      "tf_slice:hurt_on": {
+        "set_property": {
+          "tf_slice:hurt_flash": 1.0
+        }
+      },
+      "tf_slice:hurt_off": {
+        "set_property": {
+          "tf_slice:hurt_flash": 0.0
+        }
+      },
+      "tf_slice:visual_pitch_down": {
+        "set_property": {
+          "tf_slice:visual_pitch": 90.0
+        }
+      },
+      "tf_slice:visual_pitch_reset": {
+        "set_property": {
+          "tf_slice:visual_pitch": 0.0
+        }
+      }
+    }
+  }
+}

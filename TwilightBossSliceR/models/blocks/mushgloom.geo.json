@@ -1,0 +1,113 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.mushgloom",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 1,
+        "visible_bounds_offset": [0, 0.4375, 0]
+      },
+      "bones": [
+        {
+          "name": "stem_a",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -0.06],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, 45, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "stem"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "stem"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "stem_b",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -0.06],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, -45, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "stem"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "stem"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "head_a",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -0.04],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, 45, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "head"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "head"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "head_b",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -0.04],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, -45, 0],
+              "uv": {
+                "north": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "head"
+                },
+                "south": {
+                  "uv": [0, 0],
+                  "uv_size": [16, 16],
+                  "material_instance": "head"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

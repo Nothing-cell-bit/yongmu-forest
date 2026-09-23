@@ -1,0 +1,151 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.root_strand",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0.5, 0]
+      },
+      "bones": [
+        {
+          "name": "roots",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-4.05, 0, -8],
+              "size": [0.1, 16, 16],
+              "uv": {
+                "west": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"},
+                "east": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"}
+              }
+            },
+            {
+              "origin": [3.95, 0, -8],
+              "size": [0.1, 16, 16],
+              "uv": {
+                "west": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"},
+                "east": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"}
+              }
+            },
+            {
+              "origin": [-8, 0, -4.05],
+              "size": [16, 16, 0.1],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"}
+              }
+            },
+            {
+              "origin": [-8, 0, 3.95],
+              "size": [16, 16, 0.1],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "root"}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.torchberry_plant",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0.5, 0]
+      },
+      "bones": [
+        {
+          "name": "plant",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -0.08],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, 45, 0],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"}
+              }
+            },
+            {
+              "origin": [-8, 0, -0.08],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, -45, 0],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"}
+              }
+            },
+            {
+              "origin": [-8, 0, 0.04],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, 45, 0],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "glow"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "glow"}
+              }
+            },
+            {
+              "origin": [-8, 0, 0.04],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, -45, 0],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "glow"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "glow"}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.torchberry_plant_empty",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0.5, 0]
+      },
+      "bones": [
+        {
+          "name": "plant",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-8, 0, -0.05],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, 45, 0],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"}
+              }
+            },
+            {
+              "origin": [-8, 0, -0.05],
+              "size": [16, 16, 0.1],
+              "pivot": [0, 0, 0],
+              "rotation": [0, -45, 0],
+              "uv": {
+                "north": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"},
+                "south": {"uv": [0, 0], "uv_size": [16, 16], "material_instance": "plant"}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "tf_slice:darkwood_tree_feature"
+    },
+    "fancy_trunk": {
+      "trunk_width": 1,
+      "trunk_height": {
+        "base": 16,
+        "variance": 8,
+        "scale": 1.0
+      },
+      "trunk_block": {
+        "name": "tf_slice:dark_log_vertical"
+      },
+      "branches": {
+        "slope": 0.2,
+        "density": 0.35,
+        "min_altitude_factor": 0.65
+      },
+      "width_scale": 1.0,
+      "foliage_altitude_factor": 0.65
+    },
+    "fancy_canopy": {
+      "height": 4,
+      "radius": 6,
+      "leaf_block": {
+        "name": "tf_slice:hardened_dark_leaves"
+      }
+    },
+    "base_block": [
+      "minecraft:dirt"
+    ],
+    "may_grow_on": [
+      "minecraft:grass",
+      "minecraft:grass_block",
+      "minecraft:dirt",
+      "minecraft:podzol"
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:tallgrass",
+      "minecraft:double_plant",
+      "tf_slice:fallen_leaves",
+      "tf_slice:dark_leaves",
+      "tf_slice:hardened_dark_leaves",
+      "tf_slice:hardened_dark_leaves_center"
+    ],
+    "may_grow_through": [
+      "minecraft:air",
+      "minecraft:tallgrass",
+      "minecraft:double_plant",
+      "tf_slice:fallen_leaves",
+      "tf_slice:dark_leaves",
+      "tf_slice:hardened_dark_leaves",
+      "tf_slice:hardened_dark_leaves_center"
+    ]
+  }
+}

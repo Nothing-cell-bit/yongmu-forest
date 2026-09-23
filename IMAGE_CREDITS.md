@@ -1,6 +1,6 @@
 # 图片许可与署名
 
-本次发布的439张PNG图片位于`TwilightBossSliceR/textures/`，逐文件来源与校验值见[ASSET_MANIFEST.json](ASSET_MANIFEST.json)。
+本次发布的441张PNG图片位于`TwilightBossSliceR/textures/`，逐文件来源与校验值见[ASSET_MANIFEST.json](ASSET_MANIFEST.json)。
 
 ## The Twilight Forest 图片与改制内容
 
@@ -18,7 +18,7 @@
 
 ## 本项目生成的图片
 
-另有34张由本项目代码生成的贴图或UI图片，包括蛇形角色色彩图集、星空、调色板与玩家标记等。创作者记为 **Yongmu Forest contributors**，维护者账号为 [Nothing-cell-bit](https://github.com/Nothing-cell-bit)。按维护者本次发布要求，这些图片同样以**CC BY-NC-SA 4.0**提供。涉及上游渲染思路的条目在清单中保留实现参考说明。
+另有36张由本项目代码生成或维护者确认自行制作的贴图或UI图片，包括蛇形角色色彩图集、星空、调色板与玩家标记等。创作者记为 **Yongmu Forest contributors**，维护者账号为 [Nothing-cell-bit](https://github.com/Nothing-cell-bit)。按维护者本次发布要求，这些图片同样以**CC BY-NC-SA 4.0**提供。涉及上游渲染思路的条目在清单中保留实现参考说明。
 
 ## 使用条件
 
@@ -28,9 +28,6 @@
 
 源码的LGPL许可与图片的CC许可分别适用。非商业目的本身不会给来源不明的其他文件赋予CC许可。
 
-## 暂未纳入的两张图片
+## 本次补全的图片
 
-- `textures/environment/33027004_clouds.png`
-- `textures/ui/tf_slice/magic_map_frame_v2.png`
-
-目前能确认代码引用了它们，但还没有建立可核对的图片来源。因此它们不在本次公开目录和CC授权声明范围内，原工作区文件保留。其他类型的游戏资产也不因本说明获得重新授权。
+维护者于 2026-09-23 确认 `textures/environment/33027004_clouds.png`（云层）与 `textures/ui/tf_slice/magic_map_frame_v2.png`（地图边框）由其自行制作或生成，现已纳入发布和图片清单，按同一 CC BY-NC-SA 4.0 条件提供。

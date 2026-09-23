@@ -18,11 +18,6 @@ tmp/
 .codex_tmp/
 *.mp4
 *.wav
-*.ogg
 *.jpg
 *.jar
-*.mcstructure
-/TwilightBossSliceR/*
-!/TwilightBossSliceR/textures/
-!/TwilightBossSliceR/README.md
 source_locks/

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:knight_phantom",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "skeleton": "textures/entity/tf_slice/knight_phantom_skeleton",
+        "armor": "textures/entity/tf_slice/knight_phantom_armor"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.knight_phantom",
+        "armor": "geometry.tf_slice.knight_phantom_armor"
+      },
+      "animations": {
+        "move": "animation.tf_slice.knight_phantom.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ],
+        "scale": "query.property('tf_slice:dying_hidden') ? 0.0 : (query.property('tf_slice:charging') ? 1.8 : 1.2)"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.knight_phantom_skeleton",
+        "controller.render.tf_slice.knight_phantom_armor"
+      ],
+      "spawn_egg": {
+        "base_color": "#2A2A32",
+        "overlay_color": "#8D7F67"
+      },
+      "enable_attachables": true
+    }
+  }
+}

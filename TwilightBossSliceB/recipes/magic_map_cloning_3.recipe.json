@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "tf_slice:magic_map_cloning_3"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "tf_slice:filled_magic_map"
+      },
+      {
+        "item": "tf_slice:magic_map"
+      },
+      {
+        "item": "tf_slice:magic_map"
+      },
+      {
+        "item": "tf_slice:magic_map"
+      }
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "result": {
+      "item": "tf_slice:filled_magic_map",
+      "count": 4
+    }
+  }
+}

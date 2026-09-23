@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:fiery_leggings"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:fiery_leggings.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:fiery_leggings"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 375
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.legs",
+        "protection": 7
+      },
+      "minecraft:enchantable": {
+        "slot": "armor_legs",
+        "value": 10
+      },
+      "minecraft:fire_resistant": {
+        "value": true
+      }
+    }
+  }
+}

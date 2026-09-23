@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:forest_wyrm_segment",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/nagasegment"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.forest_wyrm_segment",
+        "taper": "geometry.tf_slice.forest_wyrm_segment_taper",
+        "tail": "geometry.tf_slice.forest_wyrm_segment_tail"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.forest_wyrm_segment"
+      ]
+    }
+  }
+}

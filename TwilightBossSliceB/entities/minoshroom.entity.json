@@ -1,0 +1,196 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:minoshroom",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:charging": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "tf_slice:ground_attack": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "tf_slice:ground_attack_recovering": {
+          "type": "bool",
+          "default": false,
+          "client_sync": true
+        },
+        "tf_slice:slam_duration": {
+          "type": "int",
+          "range": [
+            1,
+            59
+          ],
+          "default": 30,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "minoshroom",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 120,
+        "max": 120
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:collision_box": {
+        "width": 1.4,
+        "height": 2.8
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:persistent": {},
+      "minecraft:attack": {
+        "damage": 0
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/equipment/tf_slice/minoshroom.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.0
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.5
+      }
+    },
+    "component_groups": {
+      "tf_slice:normal_ai": {
+        "minecraft:movement.basic": {},
+        "minecraft:navigation.walk": {
+          "can_path_over_water": true,
+          "avoid_water": true,
+          "avoid_damage_blocks": true
+        },
+        "minecraft:jump.static": {},
+        "minecraft:behavior.float": {
+          "priority": 0
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": false,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 24
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1.0,
+          "cooldown_time": 1.0,
+          "track_target": true
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 6,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 7,
+          "look_distance": 8
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 7
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        }
+      },
+      "tf_slice:start_charging": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": true
+        }
+      },
+      "tf_slice:stop_charging": {
+        "add": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": false
+        }
+      },
+      "tf_slice:start_ground_attack": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        },
+        "set_property": {
+          "tf_slice:charging": false,
+          "tf_slice:ground_attack": true,
+          "tf_slice:ground_attack_recovering": false
+        }
+      },
+      "tf_slice:stop_ground_attack": {
+        "add": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        },
+        "set_property": {
+          "tf_slice:ground_attack": false,
+          "tf_slice:ground_attack_recovering": false
+        }
+      },
+      "tf_slice:impact_ground_attack": {
+        "add": {
+          "component_groups": [
+            "tf_slice:normal_ai"
+          ]
+        },
+        "set_property": {
+          "tf_slice:ground_attack": false,
+          "tf_slice:ground_attack_recovering": true
+        }
+      },
+      "tf_slice:finish_ground_recovery": {
+        "set_property": {
+          "tf_slice:ground_attack_recovering": false
+        }
+      }
+    }
+  }
+}

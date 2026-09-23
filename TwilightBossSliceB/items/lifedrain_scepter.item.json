@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:lifedrain_scepter"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:lifedrain_scepter.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:lifedrain_scepter"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:durability": {
+        "max_durability": 99
+      },
+      "minecraft:use_animation": "bow",
+      "minecraft:use_modifiers": {
+        "use_duration": 3600.0,
+        "movement_modifier": 0.2
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "namespace": "fire_react",
+  "armor_button": {
+    "type": "button",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [212, 28],
+    "layer": 3,
+    "controls": [
+      {
+        "armor_label": {
+          "type": "label",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [198, 20],
+          "text": "",
+          "text_alignment": "center",
+          "font_scale_factor": 0.85,
+          "color": [1.0, 0.86, 0.45],
+          "layer": 4
+        }
+      }
+    ]
+  },
+  "main": {
+    "type": "screen",
+    "absorbs_input": true,
+    "always_accepts_input": false,
+    "force_render_below": false,
+    "is_showing_menu": true,
+    "render_game_behind": true,
+    "render_only_when_topmost": true,
+    "controls": [
+      {
+        "dim_background": {
+          "type": "image",
+          "texture": "textures/ui/white",
+          "color": [0.02, 0.015, 0.01],
+          "alpha": 0.72,
+          "size": ["100%", "100%"],
+          "layer": 0
+        }
+      },
+      {
+        "panel": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [246, 196],
+          "texture": "textures/ui/white",
+          "color": [0.16, 0.09, 0.035],
+          "alpha": 0.96,
+          "layer": 1,
+          "controls": [
+            {
+              "title": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [0, 9],
+                "size": [190, 18],
+                "text": "火焰反击",
+                "text_alignment": "center",
+                "font_scale_factor": 1.15,
+                "color": [1.0, 0.55, 0.16],
+                "layer": 3
+              }
+            },
+            {
+              "cost": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [0, 30],
+                "size": [210, 14],
+                "text": "",
+                "text_alignment": "center",
+                "font_scale_factor": 0.75,
+                "color": [0.9, 0.83, 0.68],
+                "layer": 3
+              }
+            },
+            { "armor_0@fire_react.armor_button": { "offset": [0, 49] } },
+            { "armor_1@fire_react.armor_button": { "offset": [0, 81] } },
+            { "armor_2@fire_react.armor_button": { "offset": [0, 113] } },
+            { "armor_3@fire_react.armor_button": { "offset": [0, 145] } },
+            {
+              "close_button": {
+                "type": "button",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [-7, 7],
+                "size": [16, 16],
+                "layer": 6,
+                "controls": [
+                  {
+                    "close_label": {
+                      "type": "label",
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "text": "X",
+                      "text_alignment": "center",
+                      "font_scale_factor": 1.0,
+                      "color": [1.0, 0.8, 0.6],
+                      "layer": 7
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

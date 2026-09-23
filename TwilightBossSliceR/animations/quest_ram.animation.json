@@ -1,0 +1,50 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.quest_ram.walk": {
+      "loop": true,
+      "bones": {
+        "leg0": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.17) * 70.0 * math.min(query.modified_move_speed, 0.4)",
+            0,
+            0
+          ]
+        },
+        "leg1": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.17) * 70.0 * math.min(query.modified_move_speed, 0.4))",
+            0,
+            0
+          ]
+        },
+        "leg2": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.17) * 70.0 * math.min(query.modified_move_speed, 0.4))",
+            0,
+            0
+          ]
+        },
+        "leg3": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.17) * 70.0 * math.min(query.modified_move_speed, 0.4)",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.quest_ram.look": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "math.clamp(query.target_x_rotation, -20.0, 20.0)",
+            "math.clamp(query.target_y_rotation, -35.0, 35.0)",
+            0
+          ]
+        }
+      }
+    }
+  }
+}

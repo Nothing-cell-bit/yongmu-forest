@@ -1,0 +1,87 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:ur_ghast_fireball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "ur_ghast_fireball",
+          "projectile",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 32,
+        "max": 32
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 2.5,
+            "height": 2.5,
+            "pivot": [
+              0,
+              1.25,
+              0
+            ]
+          }
+        ]
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:projectile": {
+        "power": 0.0,
+        "gravity": 0.0,
+        "uncertainty_base": 0.0,
+        "anchor": 1,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 0,
+            "knockback": false,
+            "semi_random_diff_damage": false
+          }
+        }
+      }
+    },
+    "component_groups": {
+      "tf_slice:explode": {
+        "minecraft:explode": {
+          "fuse_length": 0.0,
+          "fuse_lit": true,
+          "power": 1,
+          "breaks_blocks": false,
+          "causes_fire": false
+        }
+      }
+    },
+    "events": {
+      "tf_slice:explode": {
+        "add": {
+          "component_groups": [
+            "tf_slice:explode"
+          ]
+        }
+      }
+    }
+  }
+}

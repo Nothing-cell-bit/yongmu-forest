@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.tf_slice.block_and_chain.grip": {
+      "loop": true,
+      "bones": {
+        "rightitem": {
+          "position": [
+            "c.is_first_person ? -5.5 : -2.584032362",
+            "c.is_first_person ? -3.0 : 1.07263356",
+            "c.is_first_person ? -3.0 : -4.651442985"
+          ],
+          "rotation": [
+            "c.is_first_person ? 38.0 : 16.384463419",
+            "c.is_first_person ? -120.0 : -5.969980099",
+            "c.is_first_person ? -63.0 : 3.774393805"
+          ],
+          "scale": [
+            "c.is_first_person ? 1 : 0.9444444444444444",
+            "c.is_first_person ? 1 : 0.9444444444444444",
+            "c.is_first_person ? 1 : 0.9444444444444444"
+          ]
+        }
+      }
+    }
+  }
+}

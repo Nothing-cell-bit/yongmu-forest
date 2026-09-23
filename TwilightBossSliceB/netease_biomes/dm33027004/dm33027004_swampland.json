@@ -1,0 +1,35 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "dm33027004_swampland",
+      "inherits": "swampland"
+    },
+    "components": {
+      "minecraft:climate": {
+        "temperature": 0.8,
+        "downfall": 0.9,
+        "snow_accumulation": [0.0, 0.0]
+      },
+      "minecraft:overworld_height": {
+        "noise_params": [-0.1, 0.15]
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 4,
+        "sea_floor_material": "minecraft:clay",
+        "foundation_material": "minecraft:stone",
+        "mid_material": "minecraft:dirt",
+        "top_material": "minecraft:grass",
+        "sea_material": "minecraft:water"
+      },
+      "dm33027004": {},
+      "tf_slice_twilight_forest": {},
+      "tf_slice_large_landmarks": {},
+      "tf_slice_small_ruins": {},
+      "tf_slice_terrestrial_groundcover": {},
+      "tf_slice_biome_swamp": {},
+      "tf_slice_swamp_ecology": {},
+      "tf_slice_has_underground_roots": {}
+    }
+  }
+}

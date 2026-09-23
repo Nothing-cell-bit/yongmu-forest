@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:minotaur",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/minotaur"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.minotaur"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "animations": {
+        "main": "animation.tf_slice.minotaur.move",
+        "attack": "animation.tf_slice.minotaur.attack"
+      },
+      "scripts": {
+        "animate": [
+          "main",
+          "attack"
+        ]
+      },
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#6A452B",
+        "overlay_color": "#D0B05A"
+      }
+    }
+  }
+}

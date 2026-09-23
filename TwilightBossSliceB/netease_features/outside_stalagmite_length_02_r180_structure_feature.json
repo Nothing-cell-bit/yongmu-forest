@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:outside_stalagmite_length_02_r180_structure_feature"
+    },
+    "places_structure": "tf_slice:ruins/outside_stalagmite/length_02",
+    "rotation": 180
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:slime_blob",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "slime_blob",
+          "projectile"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:projectile": {
+        "power": 0.6,
+        "gravity": 0.006,
+        "uncertainty_base": 6.0,
+        "anchor": 1,
+        "offset": [
+          0,
+          -0.1,
+          0
+        ],
+        "on_hit": {
+          "impact_damage": {
+            "damage": 4,
+            "knockback": false,
+            "semi_random_diff_damage": false
+          },
+          "remove_on_hit": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:tower_key_door",
+      "register_to_creative_menu": false,
+      "states": {
+        "tf_slice:locked": [
+          true,
+          false
+        ]
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.tf_slice.courtyard_cube",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:tower_key_door",
+          "render_method": "opaque"
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "clip": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": true
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "minecraft:destructible_by_mining": false,
+      "minecraft:destructible_by_explosion": false,
+      "netease:block_entity": {
+        "tick": true,
+        "movable": false
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:locked') == false",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "tf_slice:tower_key_door_unlocked",
+              "render_method": "opaque"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

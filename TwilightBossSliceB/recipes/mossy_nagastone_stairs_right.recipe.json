@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tf_slice:mossy_nagastone_stairs_right"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "###",
+      " ##",
+      "  #"
+    ],
+    "key": {
+      "#": {
+        "item": "tf_slice:mossy_etched_nagastone"
+      }
+    },
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "result": {
+      "item": "tf_slice:mossy_nagastone_stairs_right",
+      "count": 8
+    }
+  }
+}

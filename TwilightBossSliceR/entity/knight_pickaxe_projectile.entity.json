@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:knight_pickaxe_projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/knightmetal_pickaxe"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.knight_pickaxe_projectile"
+      },
+      "animations": {
+        "spin": "animation.tf_slice.knight_weapon_projectile.spin"
+      },
+      "scripts": {
+        "animate": [
+          "spin"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

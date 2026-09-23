@@ -1,0 +1,375 @@
+{
+  "format_version": "1.14.0",
+  "netease:dimension_info": {
+    "components": {
+      "netease:dimension_type": "minecraft:overworld",
+      "netease:generator_noise": {},
+      "netease:ban_vanilla_feature": {},
+      "netease:ban_vanilla_structure": {},
+      "netease:spawn_biomes": [
+        "dm33027004_plains",
+        "dm33027004_jungle",
+        "dm33027004_savanna",
+        "dm33027004_mushroom_island_shore",
+        "dm33027004_flower_forest",
+        "dm33027004_mushroom_island",
+        "dm33027004_birch_forest_mutated",
+        "dm33027004_sunflower_plains",
+        "dm33027004_roofed_forest",
+        "dm33027004_swampland",
+        "dm33027004_swampland_mutated",
+        "dm33027004_roofed_forest_mutated",
+        "dm33027004_redwood_taiga_mutated",
+        "dm33027004_ocean"
+      ],
+      "netease:biome_source": [
+        {
+          "type": "random_with_weight",
+          "pool": [
+            {
+              "biome_type": "dm33027004_plains",
+              "weight": 14
+            },
+            {
+              "biome_type": "dm33027004_jungle",
+              "weight": 14
+            },
+            {
+              "biome_type": "dm33027004_savanna",
+              "weight": 14
+            },
+            {
+              "biome_type": "dm33027004_mushroom_island_shore",
+              "weight": 14
+            },
+            {
+              "biome_type": "dm33027004_flower_forest",
+              "weight": 14
+            },
+            {
+              "biome_type": "dm33027004_mushroom_island",
+              "weight": 1
+            },
+            {
+              "biome_type": "dm33027004_birch_forest_mutated",
+              "weight": 1
+            },
+            {
+              "biome_type": "dm33027004_sunflower_plains",
+              "weight": 1
+            },
+            {
+              "biome_type": "dm33027004_roofed_forest",
+              "weight": 1
+            }
+          ]
+        },
+        {
+          "type": "vanilla_zoom_2x"
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 32); temp.region_z = math.floor(variable.worldz / 32); temp.local_x = variable.worldx - (temp.region_x * 32); temp.local_z = variable.worldz - (temp.region_z * 32); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); return (((temp.variant==0)?(((temp.local_x==4)&&(temp.local_z==8))||((temp.local_x==8)&&(temp.local_z==4))||((temp.local_x==8)&&(temp.local_z==12))||((temp.local_x==12)&&(temp.local_z==8))||((temp.local_x==20)&&(temp.local_z==24))||((temp.local_x==24)&&(temp.local_z==20))||((temp.local_x==24)&&(temp.local_z==28))||((temp.local_x==28)&&(temp.local_z==24))):(((temp.variant==1)?(((temp.local_x==20)&&(temp.local_z==8))||((temp.local_x==24)&&(temp.local_z==4))||((temp.local_x==24)&&(temp.local_z==12))||((temp.local_x==28)&&(temp.local_z==8))||((temp.local_x==4)&&(temp.local_z==24))||((temp.local_x==8)&&(temp.local_z==20))||((temp.local_x==8)&&(temp.local_z==28))||((temp.local_x==12)&&(temp.local_z==24))):(((temp.variant==2)?(((temp.local_x==20)&&(temp.local_z==24))||((temp.local_x==24)&&(temp.local_z==20))||((temp.local_x==24)&&(temp.local_z==28))||((temp.local_x==28)&&(temp.local_z==24))||((temp.local_x==4)&&(temp.local_z==8))||((temp.local_x==8)&&(temp.local_z==4))||((temp.local_x==8)&&(temp.local_z==12))||((temp.local_x==12)&&(temp.local_z==8))):(((temp.local_x==4)&&(temp.local_z==24))||((temp.local_x==8)&&(temp.local_z==20))||((temp.local_x==8)&&(temp.local_z==28))||((temp.local_x==12)&&(temp.local_z==24))||((temp.local_x==20)&&(temp.local_z==8))||((temp.local_x==24)&&(temp.local_z==4))||((temp.local_x==24)&&(temp.local_z==12))||((temp.local_x==28)&&(temp.local_z==8))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_swampland"
+          ]
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 32); temp.region_z = math.floor(variable.worldz / 32); temp.local_x = variable.worldx - (temp.region_x * 32); temp.local_z = variable.worldz - (temp.region_z * 32); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); return (((temp.variant==0)?(((temp.local_x==8)&&(temp.local_z==8))||((temp.local_x==24)&&(temp.local_z==24))):(((temp.variant==1)?(((temp.local_x==24)&&(temp.local_z==8))||((temp.local_x==8)&&(temp.local_z==24))):(((temp.variant==2)?(((temp.local_x==24)&&(temp.local_z==24))||((temp.local_x==8)&&(temp.local_z==8))):(((temp.local_x==8)&&(temp.local_z==24))||((temp.local_x==24)&&(temp.local_z==8))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_swampland_mutated"
+          ]
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 32); temp.region_z = math.floor(variable.worldz / 32); temp.local_x = variable.worldx - (temp.region_x * 32); temp.local_z = variable.worldz - (temp.region_z * 32); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); return (((temp.variant==0)?(((temp.local_x==20)&&(temp.local_z==8))||((temp.local_x==24)&&(temp.local_z==4))||((temp.local_x==24)&&(temp.local_z==12))||((temp.local_x==28)&&(temp.local_z==8))||((temp.local_x==4)&&(temp.local_z==24))||((temp.local_x==8)&&(temp.local_z==20))||((temp.local_x==8)&&(temp.local_z==28))||((temp.local_x==12)&&(temp.local_z==24))):(((temp.variant==1)?(((temp.local_x==20)&&(temp.local_z==24))||((temp.local_x==24)&&(temp.local_z==20))||((temp.local_x==24)&&(temp.local_z==28))||((temp.local_x==28)&&(temp.local_z==24))||((temp.local_x==4)&&(temp.local_z==8))||((temp.local_x==8)&&(temp.local_z==4))||((temp.local_x==8)&&(temp.local_z==12))||((temp.local_x==12)&&(temp.local_z==8))):(((temp.variant==2)?(((temp.local_x==4)&&(temp.local_z==24))||((temp.local_x==8)&&(temp.local_z==20))||((temp.local_x==8)&&(temp.local_z==28))||((temp.local_x==12)&&(temp.local_z==24))||((temp.local_x==20)&&(temp.local_z==8))||((temp.local_x==24)&&(temp.local_z==4))||((temp.local_x==24)&&(temp.local_z==12))||((temp.local_x==28)&&(temp.local_z==8))):(((temp.local_x==4)&&(temp.local_z==8))||((temp.local_x==8)&&(temp.local_z==4))||((temp.local_x==8)&&(temp.local_z==12))||((temp.local_x==12)&&(temp.local_z==8))||((temp.local_x==20)&&(temp.local_z==24))||((temp.local_x==24)&&(temp.local_z==20))||((temp.local_x==24)&&(temp.local_z==28))||((temp.local_x==28)&&(temp.local_z==24))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_roofed_forest_mutated"
+          ]
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 32); temp.region_z = math.floor(variable.worldz / 32); temp.local_x = variable.worldx - (temp.region_x * 32); temp.local_z = variable.worldz - (temp.region_z * 32); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); return (((temp.variant==0)?(((temp.local_x==24)&&(temp.local_z==8))||((temp.local_x==8)&&(temp.local_z==24))):(((temp.variant==1)?(((temp.local_x==24)&&(temp.local_z==24))||((temp.local_x==8)&&(temp.local_z==8))):(((temp.variant==2)?(((temp.local_x==8)&&(temp.local_z==24))||((temp.local_x==24)&&(temp.local_z==8))):(((temp.local_x==8)&&(temp.local_z==8))||((temp.local_x==24)&&(temp.local_z==24))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_redwood_taiga_mutated"
+          ]
+        },
+        {
+          "type": "vanilla_zoom_2x"
+        },
+        {
+          "type": "vanilla_zoom_2x"
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 128); temp.region_z = math.floor(variable.worldz / 128); temp.local_x = variable.worldx - (temp.region_x * 128); temp.local_z = variable.worldz - (temp.region_z * 128); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); temp.outer_radius_sq = math.max(291.5, (285.0 + (math.sin(((variable.worldx * 7) + (variable.worldz * 11) + 29)) * 40.0) + (math.sin(((variable.worldx * -17) + (variable.worldz * 5) + 103)) * 25.0) + (math.sin(((variable.worldx * 29) + (variable.worldz * -31) + 211)) * 15.0))); return (((temp.variant==0)?(((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq))):(((temp.variant==1)?(((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq))):(((temp.variant==2)?(((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq))):(((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_swampland"
+          ]
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 128); temp.region_z = math.floor(variable.worldz / 128); temp.local_x = variable.worldx - (temp.region_x * 128); temp.local_z = variable.worldz - (temp.region_z * 128); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); temp.radius_squared = (48.5 + (math.sin(((variable.worldx * 31) + (variable.worldz * 17) + 47)) * 5.6) + (math.sin(((variable.worldx * 11) + (variable.worldz * -29) + 113)) * 2.8)); return (((temp.variant==0)?(((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared))):(((temp.variant==1)?(((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared))):(((temp.variant==2)?(((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared))):(((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_swampland_mutated"
+          ]
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 128); temp.region_z = math.floor(variable.worldz / 128); temp.local_x = variable.worldx - (temp.region_x * 128); temp.local_z = variable.worldz - (temp.region_z * 128); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); temp.outer_radius_sq = math.max(291.5, (285.0 + (math.sin(((variable.worldx * 7) + (variable.worldz * 11) + 209)) * 40.0) + (math.sin(((variable.worldx * -17) + (variable.worldz * 5) + 283)) * 25.0) + (math.sin(((variable.worldx * 29) + (variable.worldz * -31) + 391)) * 15.0))); return (((temp.variant==0)?(((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq))):(((temp.variant==1)?(((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq))):(((temp.variant==2)?(((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq))):(((math.abs((temp.local_x - 32)) < 19) && (math.abs((temp.local_z - 32)) < 19) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32))) < temp.outer_radius_sq)) || ((math.abs((temp.local_x - 96)) < 19) && (math.abs((temp.local_z - 96)) < 19) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96))) < temp.outer_radius_sq))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_roofed_forest_mutated"
+          ]
+        },
+        {
+          "type": "condition",
+          "condition": "temp.region_x = math.floor(variable.worldx / 128); temp.region_z = math.floor(variable.worldz / 128); temp.local_x = variable.worldx - (temp.region_x * 128); temp.local_z = variable.worldz - (temp.region_z * 128); temp.parity_x = temp.region_x - (math.floor(temp.region_x / 2) * 2); temp.parity_z = temp.region_z - (math.floor(temp.region_z / 2) * 2); temp.route_hash = (temp.region_x * 3) + temp.region_z + ((temp.parity_x * temp.parity_z) * 2); temp.variant = temp.route_hash - (math.floor(temp.route_hash / 4) * 4); temp.radius_squared = (48.5 + (math.sin(((variable.worldx * 31) + (variable.worldz * 17) + 100)) * 5.6) + (math.sin(((variable.worldx * 11) + (variable.worldz * -29) + 166)) * 2.8)); return (((temp.variant==0)?(((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared))):(((temp.variant==1)?(((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared))):(((temp.variant==2)?(((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared))):(((math.abs((temp.local_x - 32)) < 8) && (math.abs((temp.local_z - 32)) < 8) && ((((temp.local_x - 32) * (temp.local_x - 32)) + ((temp.local_z - 32) * (temp.local_z - 32)) + ((temp.local_x - 32) * 1.25) + ((temp.local_z - 32) * -0.75)) < temp.radius_squared)) || ((math.abs((temp.local_x - 96)) < 8) && (math.abs((temp.local_z - 96)) < 8) && ((((temp.local_x - 96) * (temp.local_x - 96)) + ((temp.local_z - 96) * (temp.local_z - 96)) + ((temp.local_x - 96) * 1.25) + ((temp.local_z - 96) * -0.75)) < temp.radius_squared))))))))) ? 0 : -1;",
+          "pool": [
+            "dm33027004_redwood_taiga_mutated"
+          ]
+        },
+        {
+          "type": "vanilla_zoom_2x"
+        },
+        {
+          "type": "vanilla_zoom_2x"
+        },
+        {
+          "type": "vanilla_zoom_2x"
+        },
+        {
+          "type": "vanilla_zoom_2x"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_plains",
+          "biome_b": "dm33027004_jungle",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_plains",
+          "biome_b": "dm33027004_mushroom_island_shore",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_plains",
+          "biome_b": "dm33027004_flower_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_plains",
+          "biome_b": "dm33027004_mushroom_island",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_plains",
+          "biome_b": "dm33027004_birch_forest_mutated",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_plains",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_jungle",
+          "biome_b": "dm33027004_mushroom_island_shore",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_jungle",
+          "biome_b": "dm33027004_flower_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_jungle",
+          "biome_b": "dm33027004_mushroom_island",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_jungle",
+          "biome_b": "dm33027004_birch_forest_mutated",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_jungle",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_mushroom_island_shore",
+          "biome_b": "dm33027004_flower_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_mushroom_island_shore",
+          "biome_b": "dm33027004_birch_forest_mutated",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_mushroom_island_shore",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_flower_forest",
+          "biome_b": "dm33027004_mushroom_island",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_flower_forest",
+          "biome_b": "dm33027004_birch_forest_mutated",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_flower_forest",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_mushroom_island",
+          "biome_b": "dm33027004_birch_forest_mutated",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_mushroom_island",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_birch_forest_mutated",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_plains",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_jungle",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_savanna",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_mushroom_island_shore",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_flower_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_mushroom_island",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_birch_forest_mutated",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_sunflower_plains",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_swampland",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_plains",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_jungle",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_mushroom_island_shore",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_flower_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_mushroom_island",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_birch_forest_mutated",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_roofed_forest",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_swampland",
+          "biome_transition": "dm33027004_river"
+        },
+        {
+          "type": "transition",
+          "biome_a": "dm33027004_roofed_forest_mutated",
+          "biome_b": "dm33027004_swampland_mutated",
+          "biome_transition": "dm33027004_river"
+        }
+      ]
+    }
+  }
+}

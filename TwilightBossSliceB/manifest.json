@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "Twilight Boss Slice - Behavior",
+    "description": "NetEase Twilight slice: portal, Naga, Lich, Labyrinth, Minoshroom and Hydra route",
+    "uuid": "8b8df0d2-33a4-4b23-b1d4-2fe84c4b7a11",
+    "version": [
+      0,
+      12,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "22fd19e7-fabc-43a3-9b19-4ab0bb052f17",
+      "version": [
+        0,
+        12,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "cf9ac2fa-4bca-4cc9-8a78-92d62579e9d4",
+      "version": [
+        0,
+        12,
+        0
+      ]
+    }
+  ]
+}

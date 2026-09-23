@@ -1,0 +1,435 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:naga_wall_trophy",
+      "register_to_creative_menu": false,
+      "states": {
+        "tf_slice:facing": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "tf_slice:powered": [
+          false,
+          true
+        ]
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:naga_trophy_model",
+          "render_method": "alpha_test",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.25,
+            0.0,
+            0.0625
+          ],
+          "max": [
+            0.75,
+            0.5,
+            0.75
+          ]
+        },
+        "clip": {
+          "min": [
+            0.25,
+            0.0,
+            0.0625
+          ],
+          "max": [
+            0.75,
+            0.5,
+            0.75
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "optionalAlpha"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/naga_trophy.json"
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.25,
+                0.24,
+                0.3115
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.999
+              ]
+            },
+            "clip": {
+              "min": [
+                0.25,
+                0.24,
+                0.3115
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.999
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ],
+            "translation": [
+              0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.3115,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.999,
+                0.74,
+                0.75
+              ]
+            },
+            "clip": {
+              "min": [
+                0.3115,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.999,
+                0.74,
+                0.75
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              -0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.25,
+                0.24,
+                0.001
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.6885
+              ]
+            },
+            "clip": {
+              "min": [
+                0.25,
+                0.24,
+                0.001
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.6885
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ],
+            "translation": [
+              -0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.001,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.6885,
+                0.74,
+                0.75
+              ]
+            },
+            "clip": {
+              "min": [
+                0.001,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.6885,
+                0.74,
+                0.75
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.25,
+                0.24,
+                0.3115
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.999
+              ]
+            },
+            "clip": {
+              "min": [
+                0.25,
+                0.24,
+                0.3115
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.999
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ],
+            "translation": [
+              0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.3115,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.999,
+                0.74,
+                0.75
+              ]
+            },
+            "clip": {
+              "min": [
+                0.3115,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.999,
+                0.74,
+                0.75
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ],
+            "translation": [
+              0.0,
+              0.24,
+              -0.249
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.25,
+                0.24,
+                0.001
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.6885
+              ]
+            },
+            "clip": {
+              "min": [
+                0.25,
+                0.24,
+                0.001
+              ],
+              "max": [
+                0.75,
+                0.74,
+                0.6885
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:facing') == 'north' && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.naga_trophy",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ],
+            "translation": [
+              -0.249,
+              0.24,
+              0.0
+            ]
+          },
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.001,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.6885,
+                0.74,
+                0.75
+              ]
+            },
+            "clip": {
+              "min": [
+                0.001,
+                0.24,
+                0.25
+              ],
+              "max": [
+                0.6885,
+                0.74,
+                0.75
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "namespace": "portal_loading",
+  "main": {
+    "type": "screen",
+    "render_game_behind": true,
+    "is_showing_menu": false,
+    "absorbs_input": false,
+    "controls": [
+      {
+        "overlay": {
+          "type": "image",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": ["100%", "100%"],
+          "texture": "textures/ui/white",
+          "color": [0.015, 0.025, 0.035],
+          "alpha": 0.98,
+          "keep_ratio": false,
+          "visible": false,
+          "layer": 400,
+          "controls": [
+            {
+              "title": {
+                "type": "label",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [0, -14],
+                "size": [260, 24],
+                "text": "正在进入暮色森林……",
+                "color": [0.72, 0.86, 0.74],
+                "font_scale_factor": 1.15,
+                "text_alignment": "center",
+                "layer": 401
+              }
+            },
+            {
+              "hint": {
+                "type": "label",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [0, 16],
+                "size": [300, 18],
+                "text": "正在准备地形与返程门，请稍候",
+                "color": [0.62, 0.69, 0.65],
+                "font_scale_factor": 0.8,
+                "text_alignment": "center",
+                "layer": 401
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

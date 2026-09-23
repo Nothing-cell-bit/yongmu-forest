@@ -1,0 +1,100 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:death_tome",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/enchanting_table_book"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.death_tome"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "animations": {
+        "fly": "animation.tf_slice.death_tome.fly",
+        "checker_compat_death_tome_fly_01": "animation.tf_slice.compat.death_tome_fly.01",
+        "checker_compat_death_tome_fly_02": "animation.tf_slice.compat.death_tome_fly.02",
+        "checker_compat_death_tome_fly_03": "animation.tf_slice.compat.death_tome_fly.03",
+        "checker_compat_death_tome_fly_04": "animation.tf_slice.compat.death_tome_fly.04",
+        "checker_compat_death_tome_fly_05": "animation.tf_slice.compat.death_tome_fly.05",
+        "checker_compat_death_tome_fly_06": "animation.tf_slice.compat.death_tome_fly.06",
+        "checker_compat_death_tome_fly_07": "animation.tf_slice.compat.death_tome_fly.07",
+        "checker_compat_death_tome_fly_08": "animation.tf_slice.compat.death_tome_fly.08",
+        "checker_compat_death_tome_fly_09": "animation.tf_slice.compat.death_tome_fly.09",
+        "checker_compat_death_tome_fly_10": "animation.tf_slice.compat.death_tome_fly.10",
+        "checker_compat_death_tome_fly_11": "animation.tf_slice.compat.death_tome_fly.11",
+        "checker_compat_death_tome_fly_12": "animation.tf_slice.compat.death_tome_fly.12",
+        "checker_compat_death_tome_fly_13": "animation.tf_slice.compat.death_tome_fly.13",
+        "checker_compat_death_tome_fly_14": "animation.tf_slice.compat.death_tome_fly.14",
+        "checker_compat_death_tome_fly_15": "animation.tf_slice.compat.death_tome_fly.15",
+        "checker_compat_death_tome_fly_16": "animation.tf_slice.compat.death_tome_fly.16",
+        "checker_compat_death_tome_fly_17": "animation.tf_slice.compat.death_tome_fly.17"
+      },
+      "scripts": {
+        "animate": [
+          "fly",
+          {
+            "checker_compat_death_tome_fly_01": "math.clamp((((-8 - math.sin(query.life_time * 343.7747) * 2)) + 4096) / 8192, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_02": "math.clamp(((math.mod(math.mod((query.life_time * 20 + 90), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_03": "math.clamp((((math.sin(((math.sin(query.life_time * 458.3662) * 0.3 + 1.25) * 51.5662) * 0.017453292))) + 4096) / 8192, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_04": "math.clamp(((math.mod(math.mod(((math.sin(query.life_time * 458.3662) * 0.3 + 1.25) * 51.5662), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_05": "math.clamp(((math.mod(math.mod((-((math.sin(query.life_time * 458.3662) * 0.3 + 1.25) * 51.5662)), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_06": "math.clamp(((math.mod(math.mod((180 + ((math.sin(query.life_time * 458.3662) * 0.3 + 1.25) * 51.5662)), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_07": "math.clamp(((math.mod(math.mod((((math.sin(query.life_time * 458.3662) * 0.3 + 1.25) * 51.5662) * math.sin(query.life_time * 720 + 90)), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_08": "math.clamp(((math.mod(math.mod((((math.sin(query.life_time * 458.3662) * 0.3 + 1.25) * 51.5662) * math.sin(query.life_time * 720 + 270)), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_09": "math.clamp(((math.mod(math.mod((math.sin(query.life_time * 229.1831) * 19.0986), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_10": "math.clamp(((math.mod(math.mod((query.life_time * 286.4789), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_11": "math.clamp(((math.mod(math.mod((math.cos(query.life_time * 229.1831) * 11.4592), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_12": "math.clamp(((math.mod(math.mod((query.life_time * 381.9719), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_13": "math.clamp(((math.mod(math.mod((math.cos(query.life_time * 229.1831) * 14.3239 + 114.5916), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_14": "math.clamp(((math.mod(math.mod((-math.sin(query.life_time * 229.1831) * 19.0986), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_15": "math.clamp(((math.mod(math.mod((math.cos(query.life_time * 229.1831) * 11.4592 - 57.2958), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_16": "math.clamp(((math.mod(math.mod((-math.sin(query.life_time * 572.9578) * 14.3239), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_death_tome_fly_17": "math.clamp(((math.mod(math.mod((math.cos(query.life_time * 163.7022) * 11.4592), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          }
+        ]
+      },
+      "spawn_egg": {
+        "base_color": "#79512D",
+        "overlay_color": "#E8D8A8"
+      }
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "source_version": "4.3.2508",
+  "rainbow_leaf_colors": [
+    "#00FF00",
+    "#B010EF",
+    "#9FDF20",
+    "#1030CF",
+    "#C0BF40",
+    "#8F50AF",
+    "#209F60",
+    "#D0708F",
+    "#7F7F80",
+    "#30906F",
+    "#E05FA0",
+    "#6FB04F",
+    "#403FC0",
+    "#F0D02F",
+    "#5F1FE0",
+    "#50F00F"
+  ],
+  "grass_color_approximation": "#00FF80",
+  "root_placement": {
+    "upstream": "terrain_aware_underground_only",
+    "implementation": "omit_static_roots",
+    "reason": "mcstructure cannot reproduce traceRoot/canRootGrowIn without exposing roots on slopes"
+  },
+  "tree_variants": {
+    "regular": [
+      {
+        "id": "v00",
+        "height": 5,
+        "root_count": 0,
+        "leaf_phase": 0
+      },
+      {
+        "id": "v01",
+        "height": 6,
+        "root_count": 0,
+        "leaf_phase": 1
+      },
+      {
+        "id": "v02",
+        "height": 6,
+        "root_count": 0,
+        "leaf_phase": 2
+      },
+      {
+        "id": "v03",
+        "height": 6,
+        "root_count": 0,
+        "leaf_phase": 3
+      },
+      {
+        "id": "v04",
+        "height": 4,
+        "root_count": 0,
+        "leaf_phase": 4
+      },
+      {
+        "id": "v05",
+        "height": 6,
+        "root_count": 0,
+        "leaf_phase": 5
+      },
+      {
+        "id": "v06",
+        "height": 4,
+        "root_count": 0,
+        "leaf_phase": 6
+      },
+      {
+        "id": "v07",
+        "height": 6,
+        "root_count": 0,
+        "leaf_phase": 7
+      },
+      {
+        "id": "v08",
+        "height": 4,
+        "root_count": 0,
+        "leaf_phase": 8
+      },
+      {
+        "id": "v09",
+        "height": 5,
+        "root_count": 0,
+        "leaf_phase": 9
+      },
+      {
+        "id": "v10",
+        "height": 6,
+        "root_count": 0,
+        "leaf_phase": 10
+      },
+      {
+        "id": "v11",
+        "height": 4,
+        "root_count": 0,
+        "leaf_phase": 11
+      },
+      {
+        "id": "v12",
+        "height": 5,
+        "root_count": 0,
+        "leaf_phase": 12
+      },
+      {
+        "id": "v13",
+        "height": 5,
+        "root_count": 0,
+        "leaf_phase": 13
+      },
+      {
+        "id": "v14",
+        "height": 5,
+        "root_count": 0,
+        "leaf_phase": 14
+      },
+      {
+        "id": "v15",
+        "height": 5,
+        "root_count": 0,
+        "leaf_phase": 15
+      }
+    ],
+    "large": [
+      {
+        "id": "v00",
+        "height": 8,
+        "root_count": 0,
+        "branch_count": 4,
+        "leaf_phase": 0
+      },
+      {
+        "id": "v01",
+        "height": 12,
+        "root_count": 0,
+        "branch_count": 3,
+        "leaf_phase": 1
+      },
+      {
+        "id": "v02",
+        "height": 7,
+        "root_count": 0,
+        "branch_count": 2,
+        "leaf_phase": 2
+      },
+      {
+        "id": "v03",
+        "height": 13,
+        "root_count": 0,
+        "branch_count": 3,
+        "leaf_phase": 3
+      },
+      {
+        "id": "v04",
+        "height": 14,
+        "root_count": 0,
+        "branch_count": 4,
+        "leaf_phase": 4
+      },
+      {
+        "id": "v05",
+        "height": 8,
+        "root_count": 0,
+        "branch_count": 2,
+        "leaf_phase": 5
+      },
+      {
+        "id": "v06",
+        "height": 10,
+        "root_count": 0,
+        "branch_count": 3,
+        "leaf_phase": 6
+      },
+      {
+        "id": "v07",
+        "height": 5,
+        "root_count": 0,
+        "branch_count": 4,
+        "leaf_phase": 7
+      },
+      {
+        "id": "v08",
+        "height": 11,
+        "root_count": 0,
+        "branch_count": 3,
+        "leaf_phase": 8
+      },
+      {
+        "id": "v09",
+        "height": 5,
+        "root_count": 0,
+        "branch_count": 4,
+        "leaf_phase": 9
+      },
+      {
+        "id": "v10",
+        "height": 3,
+        "root_count": 0,
+        "branch_count": 4,
+        "leaf_phase": 10
+      },
+      {
+        "id": "v11",
+        "height": 13,
+        "root_count": 0,
+        "branch_count": 3,
+        "leaf_phase": 11
+      },
+      {
+        "id": "v12",
+        "height": 14,
+        "root_count": 0,
+        "branch_count": 2,
+        "leaf_phase": 12
+      },
+      {
+        "id": "v13",
+        "height": 8,
+        "root_count": 0,
+        "branch_count": 2,
+        "leaf_phase": 13
+      },
+      {
+        "id": "v14",
+        "height": 4,
+        "root_count": 0,
+        "branch_count": 2,
+        "leaf_phase": 14
+      },
+      {
+        "id": "v15",
+        "height": 13,
+        "root_count": 0,
+        "branch_count": 4,
+        "leaf_phase": 15
+      }
+    ]
+  },
+  "tree_selector_weights": {
+    "regular_rainbow": 650,
+    "oak": 150,
+    "birch": 128,
+    "large_rainbow": 72
+  },
+  "placement": "noop_1x1_trigger_deferred_root_anchor",
+  "fiddlehead_attempts_per_chunk": 96
+}

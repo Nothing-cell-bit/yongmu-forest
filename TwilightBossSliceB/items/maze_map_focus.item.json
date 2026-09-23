@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:maze_map_focus"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:maze_map_focus.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:maze_map_focus"
+        }
+      }
+    }
+  }
+}

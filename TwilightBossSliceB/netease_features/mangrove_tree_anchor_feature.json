@@ -1,0 +1,44 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "tf_slice:mangrove_tree_anchor_feature"
+    },
+    "places_block": [
+      {
+        "block": "tf_slice:mangrove_log",
+        "weight": 1
+      }
+    ],
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:water",
+      "minecraft:flowing_water",
+      "minecraft:tallgrass",
+      "minecraft:short_grass",
+      "minecraft:vine"
+    ],
+    "may_attach_to": {
+      "auto_rotate": false,
+      "min_sides_must_attach": 2,
+      "bottom": [
+        "minecraft:grass",
+        "minecraft:grass_block",
+        "minecraft:dirt",
+        "minecraft:clay",
+        "minecraft:podzol",
+        "minecraft:mycelium"
+      ],
+      "top": [
+        "minecraft:air",
+        "minecraft:water",
+        "minecraft:flowing_water",
+        "minecraft:tallgrass",
+        "minecraft:short_grass",
+        "minecraft:vine"
+      ]
+    }
+  }
+}

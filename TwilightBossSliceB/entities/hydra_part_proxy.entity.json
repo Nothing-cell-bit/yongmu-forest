@@ -1,0 +1,83 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:hydra_part_proxy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "hydra_part_proxy",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 1000000,
+        "max": 1000000
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "component_groups": {
+      "tf_slice:body": {
+        "minecraft:collision_box": {
+          "width": 6.0,
+          "height": 6.0
+        }
+      },
+      "tf_slice:leg": {
+        "minecraft:collision_box": {
+          "width": 2.0,
+          "height": 3.0
+        }
+      },
+      "tf_slice:tail": {
+        "minecraft:collision_box": {
+          "width": 6.0,
+          "height": 2.0
+        }
+      }
+    },
+    "events": {
+      "tf_slice:set_body": {
+        "add": {
+          "component_groups": [
+            "tf_slice:body"
+          ]
+        }
+      },
+      "tf_slice:set_leg": {
+        "add": {
+          "component_groups": [
+            "tf_slice:leg"
+          ]
+        }
+      },
+      "tf_slice:set_tail": {
+        "add": {
+          "component_groups": [
+            "tf_slice:tail"
+          ]
+        }
+      }
+    }
+  }
+}

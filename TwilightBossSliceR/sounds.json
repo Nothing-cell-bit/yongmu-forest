@@ -1,0 +1,362 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "tf_slice:ur_ghast": {
+        "volume": 16.0,
+        "pitch": [
+          0.45,
+          0.65
+        ],
+        "events": {
+          "ambient": "mob.ghast.moan",
+          "hurt": "mob.ghast.scream",
+          "death": "mob.ghast.death",
+          "shoot": "mob.ghast.fireball"
+        }
+      },
+      "tf_slice:knight_phantom": {
+        "volume": 1.0,
+        "pitch": [
+          0.8,
+          1.0
+        ],
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "hurt": "mob.skeleton.hurt",
+          "death": "mob.skeleton.death"
+        }
+      },
+      "tf_slice:lich": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.blaze.breathe",
+          "hurt": "mob.blaze.hit",
+          "death": "mob.blaze.death",
+          "shoot": "mob.ghast.fireball",
+          "teleport": "mob.chorusfruit.teleport"
+        }
+      },
+      "tf_slice:lich_shadow_clone": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "hurt": "random.fizz",
+          "shoot": "mob.ghast.fireball",
+          "teleport": "mob.chorusfruit.teleport"
+        }
+      },
+      "tf_slice:lich_minion": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.zombie.say",
+          "hurt": "mob.zombie.hurt",
+          "death": "mob.zombie.death",
+          "step": "mob.zombie.step"
+        }
+      },
+      "tf_slice:bighorn_sheep": {
+        "volume": 1.0,
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "events": {
+          "ambient": "mob.sheep.say",
+          "hurt": "mob.sheep.say",
+          "death": "mob.sheep.say",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.sheep.step",
+            "volume": 0.4
+          }
+        }
+      },
+      "tf_slice:boar": {
+        "volume": 1.0,
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "events": {
+          "ambient": "mob.pig.say",
+          "hurt": "mob.pig.say",
+          "death": "mob.pig.death",
+          "step": "mob.pig.step"
+        }
+      },
+      "tf_slice:deer": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.deer.ambient",
+          "hurt": "tf_slice.deer.hurt",
+          "death": "tf_slice.deer.death",
+          "step": ""
+        }
+      },
+      "tf_slice:forest_wyrm": {
+        "volume": 1.1,
+        "pitch": [
+          0.92,
+          1.08
+        ],
+        "events": {
+          "ambient": "tf_slice.naga.ambient",
+          "hurt": "tf_slice.naga.hurt",
+          "death": "tf_slice.naga.death",
+          "step": ""
+        }
+      },
+      "tf_slice:raven": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.raven.ambient",
+          "hurt": "tf_slice.raven.hurt",
+          "death": "tf_slice.raven.death",
+          "step": ""
+        }
+      },
+      "tf_slice:quest_ram": {
+        "volume": 1.0,
+        "pitch": [
+          0.6,
+          0.8
+        ],
+        "events": {
+          "ambient": "mob.sheep.say",
+          "hurt": "mob.sheep.say",
+          "death": "mob.sheep.say",
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.sheep.step",
+            "volume": 0.15
+          }
+        }
+      },
+      "tf_slice:tiny_bird": {
+        "volume": 1.0,
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "events": {
+          "ambient": "tf_slice.tiny_bird.ambient",
+          "hurt": "tf_slice.tiny_bird.hurt",
+          "death": "tf_slice.tiny_bird.hurt",
+          "step": ""
+        }
+      },
+      "tf_slice:dwarf_rabbit": {
+        "volume": 1.0,
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "events": {
+          "ambient": "mob.rabbit.idle",
+          "hurt": "mob.rabbit.hurt",
+          "death": "mob.rabbit.death",
+          "step": "mob.rabbit.hop"
+        }
+      },
+      "tf_slice:skeleton_druid": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.stray.ambient",
+          "hurt": "mob.stray.hurt",
+          "death": "mob.stray.death",
+          "shoot": "mob.ghast.fireball",
+          "step": "mob.skeleton.step"
+        }
+      },
+      "tf_slice:swarm_spider": {
+        "volume": 1.0,
+        "pitch": [
+          1.3,
+          1.7
+        ],
+        "events": {
+          "ambient": "mob.spider.say",
+          "hurt": "mob.spider.say",
+          "death": "mob.spider.death",
+          "step": "mob.spider.step"
+        }
+      },
+      "tf_slice:hedge_spider": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.spider.say",
+          "hurt": "mob.spider.say",
+          "death": "mob.spider.death",
+          "step": "mob.spider.step"
+        }
+      },
+      "tf_slice:hostile_wolf": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.hostile_wolf.ambient",
+          "hurt": "tf_slice.hostile_wolf.hurt",
+          "death": "tf_slice.hostile_wolf.death",
+          "step": "mob.wolf.step"
+        }
+      },
+      "tf_slice:wraith": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.wraith.ambient",
+          "hurt": "tf_slice.wraith.hurt",
+          "death": "tf_slice.wraith.death",
+          "step": ""
+        }
+      },
+      "tf_slice:rising_zombie": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.zombie.say",
+          "hurt": "mob.zombie.hurt",
+          "death": "mob.zombie.death",
+          "step": "mob.zombie.step"
+        }
+      },
+      "tf_slice:redcap": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.redcap.ambient",
+          "hurt": "tf_slice.redcap.hurt",
+          "death": "tf_slice.redcap.death",
+          "step": "mob.zombie.step"
+        }
+      },
+      "tf_slice:redcap_sapper": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.redcap_sapper.ambient",
+          "hurt": "tf_slice.redcap_sapper.hurt",
+          "death": "tf_slice.redcap_sapper.death",
+          "step": "mob.zombie.step"
+        }
+      },
+      "tf_slice:kobold": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.kobold.ambient",
+          "hurt": "tf_slice.kobold.hurt",
+          "death": "tf_slice.kobold.death",
+          "step": "mob.zombie.step"
+        }
+      },
+      "tf_slice:slime_beetle": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.silverfish.say",
+          "hurt": "mob.silverfish.hit",
+          "death": "mob.silverfish.kill",
+          "step": "mob.silverfish.step"
+        }
+      },
+      "tf_slice:fire_beetle": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.silverfish.say",
+          "hurt": "mob.silverfish.hit",
+          "death": "mob.silverfish.kill",
+          "step": "mob.silverfish.step"
+        }
+      },
+      "tf_slice:pinch_beetle": {
+        "volume": 1.0,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "mob.silverfish.say",
+          "hurt": "mob.silverfish.hit",
+          "death": "mob.silverfish.kill",
+          "step": "mob.silverfish.step"
+        }
+      },
+      "tf_slice:mosquito_swarm": {
+        "volume": 0.8,
+        "pitch": [
+          1.35,
+          1.55
+        ],
+        "events": {
+          "ambient": "mob.silverfish.say"
+        }
+      },
+      "tf_slice:hydra": {
+        "volume": 1.5,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "tf_slice.hydra.ambient",
+          "hurt": "tf_slice.hydra.hurt",
+          "death": "tf_slice.hydra.death",
+          "step": ""
+        }
+      }
+    }
+  }
+}

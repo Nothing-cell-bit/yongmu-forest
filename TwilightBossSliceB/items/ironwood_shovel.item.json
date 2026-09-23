@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:ironwood_shovel"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:ironwood_shovel.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:ironwood_shovel"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:durability": {
+        "max_durability": 512
+      },
+      "minecraft:damage": 3,
+      "minecraft:enchantable": {
+        "slot": "shovel",
+        "value": 15
+      }
+    }
+  }
+}

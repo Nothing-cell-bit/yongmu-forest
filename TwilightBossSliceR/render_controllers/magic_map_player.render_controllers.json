@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_magic_map_arms": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "rightArm": "(query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map'))"
+        },
+        {
+          "rightSleeve": "(query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map'))"
+        },
+        {
+          "rightArmDown": "(query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map'))"
+        },
+        {
+          "leftArm": "((query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map')) && !query.is_item_name_any('slot.weapon.offhand', 'minecraft:shield')) || (query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map'))"
+        },
+        {
+          "leftSleeve": "((query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map')) && !query.is_item_name_any('slot.weapon.offhand', 'minecraft:shield')) || (query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map'))"
+        },
+        {
+          "leftArmDown": "((query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map')) && !query.is_item_name_any('slot.weapon.offhand', 'minecraft:shield')) || (query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map'))"
+        }
+      ]
+    }
+  }
+}

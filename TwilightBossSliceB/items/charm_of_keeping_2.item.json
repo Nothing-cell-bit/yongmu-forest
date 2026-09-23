@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:charm_of_keeping_2"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:charm_of_keeping_2.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:charm_of_keeping_2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tf_magic_map_pose": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "one_hand": "(query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map')) || query.is_item_name_any('slot.weapon.offhand', 'minecraft:shield')"
+            },
+            {
+              "two_hand": "!(query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map')) && !query.is_item_name_any('slot.weapon.offhand', 'minecraft:shield')"
+            }
+          ]
+        },
+        "one_hand": {
+          "animations": [
+            {
+              "first_person_map_hold_main_hand": "(query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map'))"
+            },
+            {
+              "first_person_map_hold_off_hand": "(query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map'))"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "!(query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map')) && !(query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map'))"
+            },
+            {
+              "two_hand": "!(query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map')) && !query.is_item_name_any('slot.weapon.offhand', 'minecraft:shield')"
+            }
+          ]
+        },
+        "two_hand": {
+          "animations": [
+            "first_person_map_hold",
+            "first_person_map_hold_attack"
+          ],
+          "transitions": [
+            {
+              "default": "!(query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.mainhand', 'tf_slice:filled_maze_map')) && !(query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map'))"
+            },
+            {
+              "one_hand": "(query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_magic_map') || query.is_item_name_any('slot.weapon.offhand', 'tf_slice:filled_maze_map')) || query.is_item_name_any('slot.weapon.offhand', 'minecraft:shield')"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:forest_wyrm",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "head": "textures/entity/nagahead",
+        "head_charging": "textures/entity/nagahead_charging",
+        "head_dazed": "textures/entity/nagahead_dazed"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.forest_wyrm",
+        "eyelids": "geometry.tf_slice.forest_wyrm_eyelids"
+      },
+      "animations": {
+        "circle": "animation.tf_slice.forest_wyrm.circle",
+        "intimidate": "animation.tf_slice.forest_wyrm.intimidate",
+        "crumble": "animation.tf_slice.forest_wyrm.crumble",
+        "charge": "animation.tf_slice.forest_wyrm.charge",
+        "daze": "animation.tf_slice.forest_wyrm.daze",
+        "controller": "controller.animation.tf_slice.forest_wyrm"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.forest_wyrm_head",
+        "controller.render.tf_slice.forest_wyrm_head_charging",
+        "controller.render.tf_slice.forest_wyrm_head_stunless",
+        "controller.render.tf_slice.forest_wyrm_head_dazed"
+      ],
+      "spawn_egg": {
+        "base_color": "#17152C",
+        "overlay_color": "#D6762D"
+      }
+    }
+  }
+}

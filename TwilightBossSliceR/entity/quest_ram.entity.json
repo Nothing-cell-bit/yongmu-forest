@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:quest_ram",
+      "materials": {"default": "entity_alphatest"},
+      "textures": {
+        "default": "textures/entity/tf_slice/quest_ram"
+      },
+      "geometry": {"default": "geometry.tf_slice.quest_ram"},
+      "animations": {
+        "walk": "animation.tf_slice.quest_ram.walk",
+        "look_at_target": "animation.tf_slice.quest_ram.look"
+      },
+      "scripts": {
+        "animate": [
+          {"walk": "query.modified_move_speed"},
+          "look_at_target"
+        ]
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#F2EFE6",
+        "overlay_color": "#55D6D0"
+      }
+    }
+  }
+}

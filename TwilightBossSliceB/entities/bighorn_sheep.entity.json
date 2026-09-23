@@ -1,0 +1,481 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:bighorn_sheep",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tf_slice:adult": {
+        "minecraft:behavior.breed": {
+          "priority": 2,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:breedable": {
+          "require_tame": false,
+          "breeds_with": {
+            "mate_type": "tf_slice:bighorn_sheep",
+            "baby_type": "tf_slice:bighorn_sheep",
+            "breed_event": {
+              "event": "minecraft:entity_born",
+              "target": "baby"
+            }
+          },
+          "breed_items": [
+            "minecraft:wheat"
+          ]
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/bighorn_sheep.json"
+        },
+        "minecraft:behavior.eat_block": {
+          "priority": 3,
+          "success_chance": 0.001,
+          "time_until_eat": 1.8,
+          "eat_and_replace_block_pairs": [
+            {
+              "eat_block": "grass",
+              "replace_block": "dirt"
+            },
+            {
+              "eat_block": "tallgrass",
+              "replace_block": "air"
+            }
+          ],
+          "on_eat": {
+            "event": "tf_slice:regrow_wool",
+            "target": "self"
+          }
+        }
+      },
+      "tf_slice:baby": {
+        "minecraft:is_baby": {},
+        "minecraft:scale": {
+          "value": 0.5
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "feed_items": [
+            "minecraft:wheat"
+          ],
+          "grow_up": {
+            "event": "tf_slice:grow_up",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.follow_parent": {
+          "priority": 4,
+          "speed_multiplier": 1.1
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tf_slice/empty.json"
+        }
+      },
+      "tf_slice:sheared": {
+        "minecraft:is_sheared": {},
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tf_slice/bighorn_sheep_sheared.json"
+        }
+      },
+      "tf_slice:fleece_0": {
+        "minecraft:color": {
+          "value": 0
+        }
+      },
+      "tf_slice:fleece_1": {
+        "minecraft:color": {
+          "value": 1
+        }
+      },
+      "tf_slice:fleece_2": {
+        "minecraft:color": {
+          "value": 2
+        }
+      },
+      "tf_slice:fleece_3": {
+        "minecraft:color": {
+          "value": 3
+        }
+      },
+      "tf_slice:fleece_4": {
+        "minecraft:color": {
+          "value": 4
+        }
+      },
+      "tf_slice:fleece_5": {
+        "minecraft:color": {
+          "value": 5
+        }
+      },
+      "tf_slice:fleece_6": {
+        "minecraft:color": {
+          "value": 6
+        }
+      },
+      "tf_slice:fleece_7": {
+        "minecraft:color": {
+          "value": 7
+        }
+      },
+      "tf_slice:fleece_8": {
+        "minecraft:color": {
+          "value": 8
+        }
+      },
+      "tf_slice:fleece_9": {
+        "minecraft:color": {
+          "value": 9
+        }
+      },
+      "tf_slice:fleece_10": {
+        "minecraft:color": {
+          "value": 10
+        }
+      },
+      "tf_slice:fleece_11": {
+        "minecraft:color": {
+          "value": 11
+        }
+      },
+      "tf_slice:fleece_12": {
+        "minecraft:color": {
+          "value": 12
+        }
+      },
+      "tf_slice:fleece_13": {
+        "minecraft:color": {
+          "value": 13
+        }
+      },
+      "tf_slice:fleece_14": {
+        "minecraft:color": {
+          "value": 14
+        }
+      },
+      "tf_slice:fleece_15": {
+        "minecraft:color": {
+          "value": 15
+        }
+      },
+      "tf_slice:woolly": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/bighorn_sheep.json"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "tf_slice_forest_animal",
+          "bighorn_sheep",
+          "animal",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 8,
+        "max": 8
+      },
+      "minecraft:movement": {
+        "value": 0.23
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 1.3
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/bighorn_sheep.json"
+      },
+      "minecraft:leashable": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.panic": {
+        "priority": 1,
+        "speed_multiplier": 1.25
+      },
+      "minecraft:behavior.tempt": {
+        "priority": 3,
+        "speed_multiplier": 1.2,
+        "items": [
+          "minecraft:wheat"
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 0.8
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "cooldown": 2.5,
+            "use_item": false,
+            "swing": true,
+            "hurt_item": 1,
+            "spawn_items": {
+              "table": "loot_tables/entities/sheep_shear.json"
+            },
+            "play_sounds": "shear",
+            "interact_text": "action.interact.shear",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "shears"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_component",
+                    "operator": "!=",
+                    "value": "minecraft:is_baby"
+                  },
+                  {
+                    "test": "has_component",
+                    "operator": "!=",
+                    "value": "minecraft:is_sheared"
+                  }
+                ]
+              },
+              "event": "tf_slice:shear",
+              "target": "self"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "tf_slice:adult",
+                "tf_slice:woolly"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_0"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_1"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_2"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_3"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_4"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_5"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_6"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_7"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_8"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_9"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_10"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_11"
+                  ]
+                }
+              },
+              {
+                "weight": 17,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_12"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_13"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_14"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:fleece_15"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:entity_born": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:adult",
+            "tf_slice:woolly",
+            "tf_slice:sheared"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tf_slice:baby"
+          ]
+        }
+      },
+      "tf_slice:grow_up": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:baby"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tf_slice:adult",
+            "tf_slice:woolly"
+          ]
+        }
+      },
+      "tf_slice:shear": {
+        "add": {
+          "component_groups": [
+            "tf_slice:sheared"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "tf_slice:woolly"
+          ]
+        }
+      },
+      "tf_slice:regrow_wool": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:sheared"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tf_slice:woolly"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:forest_wyrm_segment",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tf_slice:visual_body": {"minecraft:variant": {"value": 0}},
+      "tf_slice:visual_taper": {"minecraft:variant": {"value": 1}},
+      "tf_slice:visual_tail": {"minecraft:variant": {"value": 2}}
+    },
+    "events": {
+      "tf_slice:visual_body": {
+        "remove": {"component_groups": ["tf_slice:visual_taper", "tf_slice:visual_tail"]},
+        "add": {"component_groups": ["tf_slice:visual_body"]}
+      },
+      "tf_slice:visual_taper": {
+        "remove": {"component_groups": ["tf_slice:visual_body", "tf_slice:visual_tail"]},
+        "add": {"component_groups": ["tf_slice:visual_taper"]}
+      },
+      "tf_slice:visual_tail": {
+        "remove": {"component_groups": ["tf_slice:visual_body", "tf_slice:visual_taper"]},
+        "add": {"component_groups": ["tf_slice:visual_tail"]}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["tf_slice_naga_segment", "mob"]
+      },
+      "minecraft:health": {
+        "value": 1000,
+        "max": 1000
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:scale": {
+        "value": 2.0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    }
+  }
+}

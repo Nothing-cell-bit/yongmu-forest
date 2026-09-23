@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:upper_goblin_knight",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/upper_goblin_knight"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.upper_goblin_knight"
+      },
+      "animations": {
+        "move": "animation.tf_slice.upper_goblin_knight.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.upper_goblin_knight"
+      ],
+      "spawn_egg": {
+        "base_color": "#2A2A32",
+        "overlay_color": "#8D7F67"
+      }
+    }
+  }
+}

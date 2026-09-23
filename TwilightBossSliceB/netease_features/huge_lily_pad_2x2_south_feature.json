@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:sequence_feature": {
+    "description": {
+      "identifier": "tf_slice:huge_lily_pad_2x2_south_feature"
+    },
+    "features": [
+      "tf_slice:huge_lily_pad_clearance_nw_position_feature",
+      "tf_slice:huge_lily_pad_clearance_ne_position_feature",
+      "tf_slice:huge_lily_pad_clearance_se_position_feature",
+      "tf_slice:huge_lily_pad_clearance_sw_position_feature",
+      "tf_slice:huge_lily_pad_clearance_west_position_feature",
+      "tf_slice:huge_lily_pad_clearance_northwest_position_feature",
+      "tf_slice:huge_lily_pad_clearance_north_position_feature",
+      "tf_slice:huge_lily_pad_clearance_northeast_position_feature",
+      "tf_slice:huge_lily_pad_clearance_southwest_position_feature",
+      "tf_slice:huge_lily_pad_south_structure_feature"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:hydra",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "tf_slice:hurt_flash": {
+          "type": "float",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "default": 0.0,
+          "client_sync": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "hydra",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 360,
+        "max": 360
+      },
+      "minecraft:movement": {
+        "value": 0.28
+      },
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:persistent": {},
+      "minecraft:fire_immune": {},
+      "minecraft:ambient_sound_interval": {
+        "value": 4.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      }
+    },
+    "events": {
+      "tf_slice:hurt_on": {
+        "set_property": {
+          "tf_slice:hurt_flash": 1.0
+        }
+      },
+      "tf_slice:hurt_off": {
+        "set_property": {
+          "tf_slice:hurt_flash": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:redcap_sapper",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "redcap_sapper",
+          "redcap",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:movement": {
+        "value": 0.28
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 1.4
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/tf_slice/redcap_sapper.json"
+      },
+      "minecraft:ambient_sound_interval": {
+        "value": 4.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      },
+      "minecraft:attack": {
+        "damage": 2
+      },
+      "minecraft:armor": {
+        "value": 2
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/equipment/tf_slice/redcap_sapper.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.2
+          },
+          {
+            "slot": "slot.armor.feet",
+            "drop_chance": 0.2
+          }
+        ]
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 24
+          }
+        ]
+      },
+      "minecraft:behavior.look_at_target": {
+        "priority": 6,
+        "probability": 1.0,
+        "look_distance": 8,
+        "control_flags": [
+          "look"
+        ]
+      }
+    },
+    "component_groups": {
+      "tf_slice:redcap_normal": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 5,
+          "speed_multiplier": 1.0,
+          "track_target": true
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 6,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 7,
+          "look_distance": 8
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 7
+        },
+        "minecraft:behavior.avoid_mob_type": {
+          "priority": 1,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "tnt"
+              },
+              "max_dist": 2,
+              "walk_speed_multiplier": 1.0,
+              "sprint_speed_multiplier": 2.0
+            }
+          ]
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "tf_slice:redcap_normal"
+          ]
+        }
+      },
+      "tf_slice:redcap_normal": {
+        "add": {
+          "component_groups": [
+            "tf_slice:redcap_normal"
+          ]
+        }
+      },
+      "tf_slice:redcap_special": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:redcap_normal"
+          ]
+        }
+      }
+    }
+  }
+}

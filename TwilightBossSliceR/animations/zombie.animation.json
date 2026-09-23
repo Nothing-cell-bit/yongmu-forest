@@ -1,0 +1,122 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.zombie.move": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            -180,
+            0,
+            0
+          ]
+        },
+        "leftArm": {
+          "rotation": [
+            -180,
+            0,
+            0
+          ]
+        },
+        "rightLeg": {
+          "rotation": [
+            -180,
+            0,
+            0
+          ]
+        },
+        "leftLeg": {
+          "rotation": [
+            -180,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.zombie_move.01": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.zombie_move.02": {
+      "loop": true,
+      "bones": {
+        "leftArm": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.zombie_move.03": {
+      "loop": true,
+      "bones": {
+        "rightLeg": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.zombie_move.04": {
+      "loop": true,
+      "bones": {
+        "leftLeg": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.zombie.look": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            -180,
+            -180,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.zombie_look.01": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.zombie_look.02": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,911 @@
+{
+  "tf_slice:landmark_protected_grass": {
+    "textures": {
+      "up": "tf_slice:landmark_protected_grass_top",
+      "down": "tf_slice:landmark_protected_grass_bottom",
+      "side": "tf_slice:landmark_protected_grass_side"
+    },
+    "sound": "grass"
+  },
+  "format_version": [
+    1,
+    1,
+    0
+  ],
+  "tf_slice:twilight_oak_log": {
+    "textures": {
+      "up": "tf_slice:twilight_oak_log_top",
+      "down": "tf_slice:twilight_oak_log_top",
+      "side": "tf_slice:twilight_oak_log"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:twilight_oak_leaves": {
+    "textures": "tf_slice:twilight_oak_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:twilight_oak_sapling": {
+    "textures": "tf_slice:twilight_oak_sapling",
+    "sound": "grass"
+  },
+  "tf_slice:spooky_twilight_oak_leaves": {
+    "textures": "tf_slice:spooky_twilight_oak_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:twilight_oak_log_x": {
+    "textures": "tf_slice:twilight_oak_log",
+    "sound": "wood"
+  },
+  "tf_slice:twilight_oak_log_z": {
+    "textures": "tf_slice:twilight_oak_log",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_log": {
+    "textures": {
+      "up": "tf_slice:canopy_log_top",
+      "down": "tf_slice:canopy_log_top",
+      "side": "tf_slice:canopy_log"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:canopy_planks": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_log_x": {
+    "textures": "tf_slice:canopy_log",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_log_z": {
+    "textures": "tf_slice:canopy_log",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_leaves": {
+    "textures": "tf_slice:canopy_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:canopy_sapling": {
+    "textures": "tf_slice:canopy_sapling",
+    "sound": "grass"
+  },
+  "tf_slice:root_block": {
+    "textures": "tf_slice:root_block",
+    "sound": "wood"
+  },
+  "tf_slice:liveroot_block": {
+    "textures": "tf_slice:liveroot_block",
+    "sound": "wood"
+  },
+  "tf_slice:hedge": {
+    "textures": "tf_slice:hedge",
+    "sound": "grass"
+  },
+  "tf_slice:mazestone": {
+    "textures": "tf_slice:mazestone",
+    "sound": "stone"
+  },
+  "tf_slice:mayapple": {
+    "textures": "tf_slice:mayapple",
+    "sound": "grass"
+  },
+  "tf_slice:twilight_portal": {
+    "textures": "tf_slice:twilight_portal",
+    "sound": "glass"
+  },
+  "tf_slice:nagastone": {
+    "textures": {
+      "up": "tf_slice:nagastone_top",
+      "down": "tf_slice:nagastone_bottom",
+      "side": "tf_slice:nagastone_side"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:etched_nagastone": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:etched_nagastone"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:mossy_etched_nagastone": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:mossy_etched_nagastone"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:cracked_etched_nagastone": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:cracked_etched_nagastone"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:nagastone_pillar": {
+    "textures": {
+      "up": "tf_slice:nagastone_pillar_end",
+      "down": "tf_slice:nagastone_pillar_end",
+      "side": "tf_slice:nagastone_pillar_side"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:mossy_nagastone_pillar": {
+    "textures": {
+      "up": "tf_slice:mossy_nagastone_pillar_end",
+      "down": "tf_slice:mossy_nagastone_pillar_end",
+      "side": "tf_slice:mossy_nagastone_pillar_side"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:cracked_nagastone_pillar": {
+    "textures": {
+      "up": "tf_slice:cracked_nagastone_pillar_end",
+      "down": "tf_slice:cracked_nagastone_pillar_end",
+      "side": "tf_slice:cracked_nagastone_pillar_side"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:nagastone_head": {
+    "textures": {
+      "up": "tf_slice:nagastone_head_top",
+      "down": "tf_slice:nagastone_head_bottom",
+      "side": "tf_slice:nagastone_head_face"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:nagastone_stairs_left": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:nagastone_stairs_left"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:mossy_nagastone_stairs_left": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:mossy_nagastone_stairs_left"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:cracked_nagastone_stairs_left": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:cracked_nagastone_stairs_left"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:nagastone_stairs_right": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:nagastone_stairs_right"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:mossy_nagastone_stairs_right": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:mossy_nagastone_stairs_right"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:cracked_nagastone_stairs_right": {
+    "textures": {
+      "up": "tf_slice:nagastone_end",
+      "down": "tf_slice:nagastone_end",
+      "side": "tf_slice:cracked_nagastone_stairs_right"
+    },
+    "sound": "stone"
+  },
+  "tf_slice:spiral_bricks": {
+    "textures": "tf_slice:spiral_bricks",
+    "sound": "stone"
+  },
+  "tf_slice:mazestone_mosaic": {
+    "textures": "tf_slice:mazestone_mosaic",
+    "sound": "stone"
+  },
+  "tf_slice:naga_boss_spawner": {
+    "textures": "tf_slice:naga_boss_spawner",
+    "sound": "stone"
+  },
+  "tf_slice:lich_boss_spawner": {
+    "textures": "tf_slice:lich_boss_spawner",
+    "sound": "stone"
+  },
+  "tf_slice:minoshroom_boss_spawner": {
+    "textures": "tf_slice:minoshroom_boss_spawner",
+    "sound": "stone"
+  },
+  "tf_slice:hydra_boss_spawner": {
+    "textures": "tf_slice:hydra_boss_spawner",
+    "sound": "stone"
+  },
+  "tf_slice:rainbow_oak_leaves": {
+    "textures": "tf_slice:rainbow_oak_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_sapling": {
+    "textures": "tf_slice:rainbow_oak_sapling",
+    "sound": "grass"
+  },
+  "tf_slice:fiddlehead": {
+    "textures": "tf_slice:fiddlehead",
+    "sound": "grass"
+  },
+  "tf_slice:mushgloom": {
+    "textures": "tf_slice:mushgloom",
+    "sound": "grass"
+  },
+  "tf_slice:firefly": {
+    "textures": "tf_slice:firefly",
+    "sound": "glass"
+  },
+  "tf_slice:firefly_jar": {
+    "textures": "tf_slice:firefly_jar",
+    "sound": "glass"
+  },
+  "tf_slice:cicada_jar": {
+    "textures": "tf_slice:cicada_jar",
+    "sound": "glass"
+  },
+  "tf_slice:fallen_leaves": {
+    "textures": "tf_slice:fallen_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:quest_ram_trophy": {
+    "textures": "tf_slice:quest_ram_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:rainbow_oak_leaves_00": {
+    "textures": "tf_slice:rainbow_oak_leaves_00",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_01": {
+    "textures": "tf_slice:rainbow_oak_leaves_01",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_02": {
+    "textures": "tf_slice:rainbow_oak_leaves_02",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_03": {
+    "textures": "tf_slice:rainbow_oak_leaves_03",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_04": {
+    "textures": "tf_slice:rainbow_oak_leaves_04",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_05": {
+    "textures": "tf_slice:rainbow_oak_leaves_05",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_06": {
+    "textures": "tf_slice:rainbow_oak_leaves_06",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_07": {
+    "textures": "tf_slice:rainbow_oak_leaves_07",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_08": {
+    "textures": "tf_slice:rainbow_oak_leaves_08",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_09": {
+    "textures": "tf_slice:rainbow_oak_leaves_09",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_10": {
+    "textures": "tf_slice:rainbow_oak_leaves_10",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_11": {
+    "textures": "tf_slice:rainbow_oak_leaves_11",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_12": {
+    "textures": "tf_slice:rainbow_oak_leaves_12",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_13": {
+    "textures": "tf_slice:rainbow_oak_leaves_13",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_14": {
+    "textures": "tf_slice:rainbow_oak_leaves_14",
+    "sound": "grass"
+  },
+  "tf_slice:rainbow_oak_leaves_15": {
+    "textures": "tf_slice:rainbow_oak_leaves_15",
+    "sound": "grass"
+  },
+  "tf_slice:enchanted_twilight_oak_leaves": {
+    "textures": "tf_slice:enchanted_twilight_oak_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:enchanted_canopy_leaves": {
+    "textures": "tf_slice:enchanted_canopy_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:root_strand": {
+    "textures": "tf_slice:root_strand",
+    "sound": "grass"
+  },
+  "tf_slice:torchberry_plant": {
+    "textures": "tf_slice:torchberry_plant",
+    "sound": "grass"
+  },
+  "tf_slice:torchberry_plant_empty": {
+    "textures": "tf_slice:torchberry_plant",
+    "sound": "grass"
+  },
+  "tf_slice:lich_trophy": {
+    "textures": "tf_slice:lich_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:mazestone_brick": {
+    "textures": "tf_slice:mazestone_brick",
+    "sound": "stone"
+  },
+  "tf_slice:cut_mazestone": {
+    "textures": "tf_slice:cut_mazestone",
+    "sound": "stone"
+  },
+  "tf_slice:decorative_mazestone": {
+    "textures": "tf_slice:decorative_mazestone",
+    "sound": "stone"
+  },
+  "tf_slice:cracked_mazestone": {
+    "textures": "tf_slice:cracked_mazestone",
+    "sound": "stone"
+  },
+  "tf_slice:mossy_mazestone": {
+    "textures": "tf_slice:mossy_mazestone",
+    "sound": "stone"
+  },
+  "tf_slice:mazestone_border": {
+    "textures": "tf_slice:mazestone_border",
+    "sound": "stone"
+  },
+  "tf_slice:smoker": {
+    "textures": "tf_slice:smoker",
+    "sound": "wood"
+  },
+  "tf_slice:fire_jet": {
+    "textures": "tf_slice:fire_jet",
+    "sound": "wood"
+  },
+  "tf_slice:encased_smoker": {
+    "textures": "tf_slice:encased_smoker",
+    "sound": "wood"
+  },
+  "tf_slice:encased_fire_jet": {
+    "textures": "tf_slice:encased_fire_jet",
+    "sound": "wood"
+  },
+  "tf_slice:maze_slime_block": {
+    "textures": "tf_slice:maze_slime_block",
+    "sound": "stone"
+  },
+  "tf_slice:fiery_block": {
+    "textures": "tf_slice:fiery_block",
+    "sound": "stone"
+  },
+  "tf_slice:huge_lily_pad": {
+    "textures": "tf_slice:huge_lily_pad",
+    "sound": "grass"
+  },
+  "tf_slice:huge_water_lily": {
+    "textures": "tf_slice:huge_water_lily",
+    "sound": "grass"
+  },
+  "tf_slice:minoshroom_trophy": {
+    "textures": "tf_slice:minoshroom_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:minoshroom_wall_trophy": {
+    "textures": "tf_slice:minoshroom_wall_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:hydra_trophy": {
+    "textures": "tf_slice:hydra_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:hydra_wall_trophy": {
+    "textures": "tf_slice:hydra_wall_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:mangrove_log": {
+    "textures": {
+      "up": "tf_slice:mangrove_log_top",
+      "down": "tf_slice:mangrove_log_top",
+      "side": "tf_slice:mangrove_log"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:mangrove_wood": {
+    "textures": "tf_slice:mangrove_wood",
+    "sound": "wood"
+  },
+  "tf_slice:stripped_mangrove_log": {
+    "textures": "tf_slice:stripped_mangrove_log",
+    "sound": "wood"
+  },
+  "tf_slice:stripped_mangrove_wood": {
+    "textures": "tf_slice:stripped_mangrove_wood",
+    "sound": "wood"
+  },
+  "tf_slice:mangrove_leaves": {
+    "textures": "tf_slice:mangrove_leaves",
+    "sound": "wood"
+  },
+  "tf_slice:mangrove_sapling": {
+    "textures": "tf_slice:mangrove_sapling",
+    "sound": "wood"
+  },
+  "tf_slice:mangrove_root": {
+    "textures": "tf_slice:mangrove_root",
+    "sound": "wood"
+  },
+  "tf_slice:mangrove_planks": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "tf_slice:mangrove_banister": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "tf_slice:hollow_mangrove_log_horizontal": {
+    "netease_model": "tf_slice:public_hollow_mangrove_log_horizontal",
+    "sound": "wood"
+  },
+  "tf_slice:hollow_mangrove_log_vertical": {
+    "netease_model": "tf_slice:public_hollow_mangrove_log_vertical",
+    "sound": "wood"
+  },
+  "tf_slice:hollow_mangrove_log_climbable": {
+    "netease_model": "tf_slice:public_hollow_mangrove_log_climbable",
+    "sound": "wood"
+  },
+  "tf_slice:huge_lily_pad_nw": {
+    "textures": "tf_slice:huge_lily_pad_nw",
+    "sound": "grass"
+  },
+  "tf_slice:huge_lily_pad_ne": {
+    "textures": "tf_slice:huge_lily_pad_ne",
+    "sound": "grass"
+  },
+  "tf_slice:huge_lily_pad_se": {
+    "textures": "tf_slice:huge_lily_pad_se",
+    "sound": "grass"
+  },
+  "tf_slice:huge_lily_pad_sw": {
+    "textures": "tf_slice:huge_lily_pad_sw",
+    "sound": "grass"
+  },
+  "tf_slice:mangrove_log_x": {
+    "textures": "tf_slice:mangrove_log",
+    "sound": "wood"
+  },
+  "tf_slice:mangrove_log_z": {
+    "textures": "tf_slice:mangrove_log",
+    "sound": "wood"
+  },
+  "tf_slice:encased_towerwood": {
+    "textures": "tf_slice:encased_towerwood",
+    "sound": "wood"
+  },
+  "tf_slice:dark_log": {
+    "textures": {
+      "up": "tf_slice:dark_log_top",
+      "down": "tf_slice:dark_log_top",
+      "side": "tf_slice:dark_log"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:dark_wood": {
+    "textures": {
+      "up": "tf_slice:dark_wood_top",
+      "down": "tf_slice:dark_wood_top",
+      "side": "tf_slice:dark_wood"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:stripped_dark_log": {
+    "textures": {
+      "up": "tf_slice:stripped_dark_log_top",
+      "down": "tf_slice:stripped_dark_log_top",
+      "side": "tf_slice:stripped_dark_log"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:stripped_dark_wood": {
+    "textures": {
+      "up": "tf_slice:stripped_dark_wood_top",
+      "down": "tf_slice:stripped_dark_wood_top",
+      "side": "tf_slice:stripped_dark_wood"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:dark_leaves": {
+    "textures": "tf_slice:dark_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:hardened_dark_leaves": {
+    "textures": "tf_slice:hardened_dark_leaves",
+    "sound": "grass"
+  },
+  "tf_slice:darkwood_sapling": {
+    "textures": "tf_slice:darkwood_sapling",
+    "sound": "wood"
+  },
+  "tf_slice:hollow_dark_log_horizontal": {
+    "netease_model": "tf_slice:public_hollow_dark_log_horizontal",
+    "sound": "wood"
+  },
+  "tf_slice:hollow_dark_log_vertical": {
+    "netease_model": "tf_slice:public_hollow_dark_log_vertical",
+    "sound": "wood"
+  },
+  "tf_slice:hollow_dark_log_climbable": {
+    "netease_model": "tf_slice:public_hollow_dark_log_climbable",
+    "sound": "wood"
+  },
+  "tf_slice:dark_planks": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "tf_slice:dark_banister": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "tf_slice:underbrick": {
+    "textures": "tf_slice:underbrick",
+    "sound": "stone"
+  },
+  "tf_slice:cracked_underbrick": {
+    "textures": "tf_slice:cracked_underbrick",
+    "sound": "stone"
+  },
+  "tf_slice:mossy_underbrick": {
+    "textures": "tf_slice:mossy_underbrick",
+    "sound": "stone"
+  },
+  "tf_slice:underbrick_floor": {
+    "textures": "tf_slice:underbrick_floor",
+    "sound": "stone"
+  },
+  "tf_slice:knightmetal_block": {
+    "textures": "tf_slice:knightmetal_block",
+    "sound": "metal"
+  },
+  "tf_slice:steeleaf_block": {
+    "textures": "tf_slice:steeleaf_block",
+    "sound": "metal"
+  },
+  "tf_slice:stronghold_shield": {
+    "textures": "tf_slice:stronghold_shield",
+    "sound": "stone"
+  },
+  "tf_slice:trophy_pedestal": {
+    "textures": "tf_slice:trophy_pedestal_top_latent",
+    "sound": "stone"
+  },
+  "tf_slice:knight_phantom_boss_spawner": {
+    "textures": "tf_slice:knight_phantom_boss_spawner",
+    "sound": "stone"
+  },
+  "tf_slice:towerwood": {
+    "textures": "tf_slice:towerwood",
+    "sound": "wood"
+  },
+  "tf_slice:cracked_towerwood": {
+    "textures": "tf_slice:cracked_towerwood",
+    "sound": "wood"
+  },
+  "tf_slice:mossy_towerwood": {
+    "textures": "tf_slice:mossy_towerwood",
+    "sound": "wood"
+  },
+  "tf_slice:infested_towerwood": {
+    "textures": "tf_slice:infested_towerwood",
+    "sound": "wood"
+  },
+  "tf_slice:vanishing_block": {
+    "textures": "tf_slice:vanishing_block",
+    "sound": "stone"
+  },
+  "tf_slice:unbreakable_vanishing_block": {
+    "textures": "tf_slice:unbreakable_vanishing_block",
+    "sound": "stone"
+  },
+  "tf_slice:locked_vanishing_block": {
+    "textures": "tf_slice:locked_vanishing_block",
+    "sound": "stone"
+  },
+  "tf_slice:reappearing_block": {
+    "textures": "tf_slice:reappearing_block",
+    "sound": "stone"
+  },
+  "tf_slice:carminite_builder": {
+    "textures": "tf_slice:carminite_builder",
+    "sound": "stone"
+  },
+  "tf_slice:carminite_antibuilder": {
+    "textures": "tf_slice:carminite_antibuilder",
+    "sound": "stone"
+  },
+  "tf_slice:temporary_builder_block": {
+    "textures": "tf_slice:temporary_builder_block",
+    "sound": "stone"
+  },
+  "tf_slice:restored_block": {
+    "textures": "tf_slice:restored_block",
+    "sound": "stone"
+  },
+  "tf_slice:carminite_reactor": {
+    "textures": "tf_slice:carminite_reactor",
+    "sound": "stone"
+  },
+  "tf_slice:reactor_debris": {
+    "textures": "tf_slice:reactor_debris",
+    "sound": "stone"
+  },
+  "tf_slice:fake_gold": {
+    "textures": "tf_slice:fake_gold",
+    "sound": "stone"
+  },
+  "tf_slice:fake_diamond": {
+    "textures": "tf_slice:fake_diamond",
+    "sound": "stone"
+  },
+  "tf_slice:ghast_trap": {
+    "textures": "tf_slice:ghast_trap",
+    "sound": "stone"
+  },
+  "tf_slice:carminite_block": {
+    "textures": "tf_slice:carminite_block",
+    "sound": "stone"
+  },
+  "tf_slice:experiment_115": {
+    "textures": "tf_slice:experiment_115",
+    "sound": "stone"
+  },
+  "tf_slice:tower_key_door": {
+    "textures": "tf_slice:tower_key_door",
+    "sound": "stone"
+  },
+  "tf_slice:ur_ghast_boss_spawner": {
+    "textures": "tf_slice:ur_ghast_boss_spawner",
+    "sound": "stone"
+  },
+  "tf_slice:hardened_dark_leaves_center": {
+    "textures": "tf_slice:hardened_dark_leaves_center",
+    "sound": "grass"
+  },
+  "tf_slice:dark_log_vertical": {
+    "textures": {
+      "up": "tf_slice:dark_log_vertical_top",
+      "down": "tf_slice:dark_log_vertical_top",
+      "side": "tf_slice:dark_log_vertical"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:naga_trophy": {
+    "textures": "tf_slice:naga_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:naga_wall_trophy": {
+    "textures": "tf_slice:naga_wall_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:lich_wall_trophy": {
+    "textures": "tf_slice:lich_wall_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:ur_ghast_trophy": {
+    "textures": "tf_slice:ur_ghast_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:ur_ghast_wall_trophy": {
+    "textures": "tf_slice:ur_ghast_wall_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:knight_phantom_trophy": {
+    "textures": "tf_slice:knight_phantom_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:knight_phantom_wall_trophy": {
+    "textures": "tf_slice:knight_phantom_wall_trophy",
+    "sound": "stone"
+  },
+  "tf_slice:quest_ram_wall_trophy": {
+    "textures": "tf_slice:quest_ram_wall_trophy",
+    "sound": "stone"
+  },
+  "dark_oak_stairs": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_slab": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_button": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_fence": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_fence_gate": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_pressure_plate": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_sign": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_wall_sign": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_hanging_sign": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_wall_hanging_sign": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "dark_oak_trapdoor": {
+    "textures": "dark_oak_trapdoor",
+    "sound": "wood"
+  },
+  "dark_oak_door": {
+    "textures": {
+      "up": "tf_slice:dark_door_lower",
+      "down": "tf_slice:dark_door_lower",
+      "side": "tf_slice:dark_door_upper"
+    },
+    "sound": "wood"
+  },
+  "mangrove_stairs": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_slab": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_button": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_fence": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_fence_gate": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_pressure_plate": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_sign": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_wall_sign": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_hanging_sign": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_wall_hanging_sign": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "mangrove_trapdoor": {
+    "textures": "mangrove_trapdoor",
+    "sound": "wood"
+  },
+  "mangrove_door": {
+    "textures": {
+      "up": "tf_slice:mangrove_door_lower",
+      "down": "tf_slice:mangrove_door_lower",
+      "side": "tf_slice:mangrove_door_upper"
+    },
+    "sound": "wood"
+  },
+  "tf_slice:canopy_wood": {
+    "textures": "tf_slice:canopy_log",
+    "sound": "wood"
+  },
+  "tf_slice:stripped_canopy_log": {
+    "textures": "tf_slice:stripped_canopy_log",
+    "sound": "wood"
+  },
+  "tf_slice:stripped_canopy_wood": {
+    "textures": "tf_slice:stripped_canopy_log",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_banister": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_bookshelf": {
+    "netease_model": "tf_slice:public_canopy_bookshelf",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_chest": {
+    "netease_model": "tf_slice:public_canopy_chest",
+    "sound": "wood"
+  },
+  "dark_oak_double_slab": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "mangrove_double_slab": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "cherry_stairs": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "cherry_slab": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "cherry_button": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "cherry_fence": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "cherry_fence_gate": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "cherry_pressure_plate": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "cherry_double_slab": {
+    "textures": "tf_slice:canopy_planks",
+    "sound": "wood"
+  },
+  "cherry_trapdoor": {
+    "textures": "cherry_trapdoor",
+    "sound": "wood"
+  },
+  "cherry_door": {
+    "textures": {
+      "up": "tf_slice:canopy_door_lower",
+      "down": "tf_slice:canopy_door_lower",
+      "side": "tf_slice:canopy_door_upper"
+    },
+    "sound": "wood"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:lighting_settings": {
+    "description": {
+      "identifier": "tf_slice:twilight_forest_lighting"
+    },
+    "directional_lights": {
+      "orbital": {
+        "sun": {
+          "illuminance": {
+            "0.000000": 0.0,
+            "1.000000": 0.0
+          },
+          "color": {
+            "0.000000": [164, 171, 214],
+            "1.000000": [164, 171, 214]
+          }
+        },
+        "moon": {
+          "illuminance": {
+            "0.000000": 0.0,
+            "1.000000": 0.0
+          },
+          "color": {
+            "0.000000": [164, 171, 214],
+            "1.000000": [164, 171, 214]
+          }
+        },
+        "orbital_offset_degrees": 0.0
+      },
+      "flash": {
+        "illuminance": 0.0,
+        "color": [164, 171, 214]
+      }
+    },
+    "emissive": {
+      "desaturation": 0.0
+    },
+    "ambient": {
+      "color": "#A4ABD6",
+      "illuminance": 0.25
+    },
+    "sky": {
+      "intensity": 0.25
+    }
+  }
+}

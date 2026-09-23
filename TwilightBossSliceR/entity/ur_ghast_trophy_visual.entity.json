@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:ur_ghast_trophy_visual",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/trophies/ur_ghast"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.ur_ghast_trophy_visual"
+      },
+      "animations": {
+        "idle": "animation.tf_slice.ur_ghast_trophy_visual.idle"
+      },
+      "scripts": {
+        "animate": [
+          "idle"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:knight_phantom_trophy",
+      "register_to_creative_menu": false,
+      "states": {
+        "tf_slice:rotation": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "tf_slice:powered": [
+          false,
+          true
+        ]
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3.0
+      },
+      "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_0",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:knight_phantom_trophy_model",
+          "render_method": "alpha_test",
+          "ambient_occlusion": true,
+          "face_dimming": true
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            -0.090333,
+            0.0625,
+            0.172811
+          ],
+          "max": [
+            1.090333,
+            0.6875,
+            0.8125
+          ]
+        },
+        "clip": {
+          "min": [
+            -0.090333,
+            0.0625,
+            0.172811
+          ],
+          "max": [
+            1.090333,
+            0.6875,
+            0.8125
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "optionalAlpha"
+      },
+      "netease:solid": {
+        "value": false
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/knight_phantom_trophy.json"
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 0",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_0",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.172811
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.8125
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.172811
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.8125
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 4",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_4",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.172811,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.8125,
+                0.6875,
+                1.090333
+              ]
+            },
+            "clip": {
+              "min": [
+                0.172811,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.8125,
+                0.6875,
+                1.090333
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 8",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_8",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.1875
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.827189
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.1875
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.827189
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 12",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_12",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.1875,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.827189,
+                0.6875,
+                1.090333
+              ]
+            },
+            "clip": {
+              "min": [
+                0.1875,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.827189,
+                0.6875,
+                1.090333
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 0 && query.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_0",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.172811
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.8125
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.172811
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.8125
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 0 && query.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_4",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.172811,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.8125,
+                0.6875,
+                1.090333
+              ]
+            },
+            "clip": {
+              "min": [
+                0.172811,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.8125,
+                0.6875,
+                1.090333
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 0 && query.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_8",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.1875
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.827189
+              ]
+            },
+            "clip": {
+              "min": [
+                -0.090333,
+                0.0625,
+                0.1875
+              ],
+              "max": [
+                1.090333,
+                0.6875,
+                0.827189
+              ]
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('tf_slice:rotation') == 0 && query.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": "geometry.tf_slice.knight_phantom_trophy_rotation_12",
+          "netease:aabb": {
+            "collision": {
+              "min": [
+                0.1875,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.827189,
+                0.6875,
+                1.090333
+              ]
+            },
+            "clip": {
+              "min": [
+                0.1875,
+                0.0625,
+                -0.090333
+              ],
+              "max": [
+                0.827189,
+                0.6875,
+                1.090333
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

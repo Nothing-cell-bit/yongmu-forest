@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:mangrove_tree_v03_structure_feature"
+    },
+    "places_structure": "tf_slice:swamp/trees/mangrove/v03",
+    "rotation": 0
+  }
+}

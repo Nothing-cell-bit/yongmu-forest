@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:transformation_powder"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:transformation_powder.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:transformation_powder"
+        }
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

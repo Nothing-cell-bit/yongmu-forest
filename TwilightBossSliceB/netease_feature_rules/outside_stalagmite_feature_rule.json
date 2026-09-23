@@ -1,0 +1,47 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "tf_slice:outside_stalagmite_feature_rule",
+      "places_feature": "tf_slice:outside_stalagmite_scatter_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "dm33027004"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "tf_slice_small_ruins"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": "((math.abs(variable.originx - (math.floor((variable.originx + 128) / 256) * 256)) <= 80 && math.abs(variable.originz - (math.floor((variable.originz + 128) / 256) * 256)) <= 80) ? 0 : (1))",
+      "coordinate_eval_order": "xzy",
+      "x": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      },
+      "y": "query.get_height_at(variable.worldx, variable.worldz)",
+      "z": {
+        "distribution": "uniform",
+        "extent": [
+          0,
+          15
+        ]
+      }
+    }
+  }
+}

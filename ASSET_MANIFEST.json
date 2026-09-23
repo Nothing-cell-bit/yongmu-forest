@@ -7452,16 +7452,37 @@
       "upstream_paths": [],
       "changes": "Locally drawn directional/off-map marker pixel shapes.",
       "evidence": "Original generate_magic_map_hud_pool.ps1: playerPixels"
-    }
-  ],
-  "excluded": [
+    },
     {
       "path": "TwilightBossSliceR/textures/environment/33027004_clouds.png",
-      "reason": "The available code references this file but does not establish its image source."
+      "sha256": "4f57cfe866779ef82be0058e244a77b0a279ee75e9eb40ac9ce6eb372445adc8",
+      "bytes": 8927,
+      "width": 256,
+      "height": 256,
+      "license": "CC-BY-NC-SA-4.0",
+      "origin": "maintainer-confirmed-original",
+      "creators": [
+        "Yongmu Forest contributors"
+      ],
+      "upstream_paths": [],
+      "changes": "Original locally created/generated image; copied without byte changes.",
+      "evidence": "Maintainer explicitly confirmed original creation/generation on 2026-09-23."
     },
     {
       "path": "TwilightBossSliceR/textures/ui/tf_slice/magic_map_frame_v2.png",
-      "reason": "The UI references this revision; its creation source is not established and it is not a pixel-equivalent resize of the documented frame."
+      "sha256": "34481eaf0a004c3347a3382a97f66d0e28b365dc627b2675587aca8a3f84e4d3",
+      "bytes": 3641,
+      "width": 64,
+      "height": 64,
+      "license": "CC-BY-NC-SA-4.0",
+      "origin": "maintainer-confirmed-original",
+      "creators": [
+        "Yongmu Forest contributors"
+      ],
+      "upstream_paths": [],
+      "changes": "Original locally created/generated image; copied without byte changes.",
+      "evidence": "Maintainer explicitly confirmed original creation/generation on 2026-09-23."
     }
-  ]
+  ],
+  "excluded": []
 }

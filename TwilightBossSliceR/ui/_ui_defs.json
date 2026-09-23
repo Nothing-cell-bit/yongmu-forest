@@ -1,0 +1,13 @@
+{
+  "ui_defs": [
+    "ui/magic_map.json",
+    "ui/magic_map_hud.json",
+    "ui/fire_react.json",
+    "ui/lich_boss_hud.json",
+    "ui/naga_boss_hud.json",
+    "ui/hud_screen.json",
+    "ui/minoshroom_boss_hud.json",
+    "ui/hydra_boss_hud.json",
+    "ui/portal_loading.json"
+  ]
+}

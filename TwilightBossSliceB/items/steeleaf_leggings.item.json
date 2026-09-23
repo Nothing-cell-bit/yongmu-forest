@@ -1,0 +1,30 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:steeleaf_leggings"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:steeleaf_leggings.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:steeleaf_leggings"
+        }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 150
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.legs",
+        "protection": 6
+      },
+      "minecraft:enchantable": {
+        "slot": "armor_legs",
+        "value": 9
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:skeleton_druid",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "skeleton_druid",
+          "skeleton",
+          "undead",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.99
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/tf_slice/skeleton_druid.json"
+      },
+      "minecraft:ambient_sound_interval": {
+        "value": 4.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      },
+      "minecraft:attack": {
+        "damage": 2
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/equipment/tf_slice/skeleton_druid.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.2
+          },
+          {
+            "slot": "slot.armor.feet",
+            "drop_chance": 0.2
+          }
+        ]
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 7,
+        "speed_multiplier": 0.9
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8,
+        "probability": 0.04
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 9
+      },
+      "minecraft:burns_in_daylight": {},
+      "minecraft:shooter": {
+        "def": "tf_slice:nature_bolt"
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 24
+          }
+        ]
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 3,
+        "attack_interval_min": 3.0,
+        "attack_interval_max": 3.0,
+        "attack_radius": 5.0,
+        "speed_multiplier": 1.25
+      }
+    },
+    "component_groups": {
+      "tf_slice:baby": {
+        "minecraft:is_baby": {},
+        "minecraft:scale": {
+          "value": 0.5
+        },
+        "minecraft:movement": {
+          "value": 0.375
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/equipment/tf_slice/skeleton_druid_baby.json"
+        },
+        "minecraft:shooter": {
+          "def": "minecraft:arrow"
+        }
+      }
+    },
+    "events": {
+      "tf_slice:make_baby": {
+        "add": {
+          "component_groups": [
+            "tf_slice:baby"
+          ]
+        }
+      }
+    }
+  }
+}

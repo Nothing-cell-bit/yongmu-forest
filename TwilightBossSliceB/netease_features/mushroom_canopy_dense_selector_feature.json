@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "tf_slice:mushroom_canopy_dense_selector_feature"
+    },
+    "features": [
+      [
+        "tf_slice:brown_canopy_mushroom_trigger_feature",
+        1080
+      ],
+      [
+        "tf_slice:red_canopy_mushroom_trigger_feature",
+        117
+      ],
+      [
+        "tf_slice:mushroom_canopy_dummy_feature",
+        403
+      ]
+    ]
+  }
+}

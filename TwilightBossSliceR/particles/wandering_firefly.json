@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "tf_slice:wandering_firefly",
+      "basic_render_parameters": {
+        "material": "particles_blend",
+        "texture": "textures/particle/firefly"
+      }
+    },
+    "components": {
+      "minecraft:emitter_rate_instant": {
+        "num_particles": 1
+      },
+      "minecraft:emitter_lifetime_once": {},
+      "minecraft:emitter_shape_point": {
+        "direction": [
+          "Math.random(-0.25, 0.25)",
+          "Math.random(-0.12, 0.18)",
+          "Math.random(-0.25, 0.25)"
+        ]
+      },
+      "minecraft:particle_initial_speed": "Math.random(0.08, 0.16)",
+      "minecraft:particle_lifetime_expression": {
+        "max_lifetime": "Math.random(1.5, 2.5)"
+      },
+      "minecraft:particle_motion_dynamic": {
+        "linear_acceleration": [0.0, 0.015, 0.0],
+        "linear_drag_coefficient": 0.35
+      },
+      "minecraft:particle_appearance_billboard": {
+        "size": [
+          "0.10 + variable.particle_random_1 * 0.06",
+          "0.10 + variable.particle_random_1 * 0.06"
+        ],
+        "facing_camera_mode": "lookat_xyz",
+        "uv": {
+          "texture_width": 16,
+          "texture_height": 16,
+          "uv": [0, 0],
+          "uv_size": [16, 16]
+        }
+      },
+      "minecraft:particle_appearance_tinting": {
+        "color": [
+          "0.50 + variable.particle_random_1 * 0.25",
+          "0.60 + variable.particle_random_2 * 0.25",
+          0.0,
+          "Math.clamp(Math.sin(variable.particle_age * 10.0) * 0.25 + 0.75, 0.25, 1.0) * Math.clamp((variable.particle_lifetime - variable.particle_age) * 3.0, 0.0, 1.0)"
+        ]
+      },
+      "minecraft:particle_appearance_lighting": {}
+    }
+  }
+}

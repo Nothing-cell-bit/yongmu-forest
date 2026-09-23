@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:enchanted_vanilla_oak_tree_trigger_feature"
+    },
+    "places_structure": "tf_slice:enchanted/tree_trigger/vanilla_oak",
+    "rotation": 0
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "tf_slice:forest_vanilla_birch_tree_feature"
+    },
+    "trunk": {
+      "trunk_height": {
+        "range_min": 5,
+        "range_max": 8
+      },
+      "trunk_block": {
+        "name": "minecraft:birch_log"
+      }
+    },
+    "canopy": {
+      "canopy_offset": {
+        "min": -1,
+        "max": 0
+      },
+      "variation_chance": [
+        1,
+        3
+      ],
+      "leaf_block": {
+        "name": "minecraft:birch_leaves"
+      },
+      "canopy_slope": {
+        "rise": 2,
+        "run": 3
+      },
+      "canopy_radius": 2,
+      "min_width": 1
+    },
+    "base_block": [
+      "minecraft:dirt"
+    ],
+    "may_grow_on": [
+      "minecraft:grass",
+      "minecraft:grass_block",
+      "minecraft:dirt",
+      "minecraft:podzol",
+      "minecraft:mycelium"
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:tallgrass",
+      "minecraft:double_plant",
+      "tf_slice:fallen_leaves"
+    ],
+    "may_grow_through": [
+      "minecraft:air",
+      "minecraft:tallgrass",
+      "minecraft:double_plant"
+    ]
+  }
+}

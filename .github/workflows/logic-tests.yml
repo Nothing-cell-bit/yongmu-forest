@@ -11,4 +11,5 @@ jobs:
         with:
           python-version: '3.11'
       - run: python tools/check_public_snapshot.py
+      - run: python tools/check_runtime_packs.py
       - run: python tools/run_public_tests.py

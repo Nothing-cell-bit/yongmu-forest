@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:foundation_v10_r180_structure_feature"
+    },
+    "places_structure": "tf_slice:ruins/foundation/v10",
+    "rotation": 180
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "tf_slice:block_and_chain"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "tf_slice:knightmetal_block"
+      },
+      {
+        "item": "tf_slice:knightmetal_ingot"
+      },
+      {
+        "item": "tf_slice:knightmetal_ingot"
+      },
+      {
+        "item": "tf_slice:knightmetal_ingot"
+      },
+      {
+        "item": "tf_slice:knightmetal_ring"
+      }
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "result": {
+      "item": "tf_slice:block_and_chain",
+      "count": 1
+    }
+  }
+}

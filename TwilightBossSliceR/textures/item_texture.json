@@ -1,0 +1,366 @@
+{
+  "resource_pack_name": "twilight_boss_slice",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "tf_slice:raw_venison": {
+      "textures": "textures/items/raw_venison"
+    },
+    "tf_slice:cooked_venison": {
+      "textures": "textures/items/cooked_venison"
+    },
+    "tf_slice:naga_scale": {
+      "textures": "textures/items/naga_scale"
+    },
+    "tf_slice:naga_chestplate": {
+      "textures": "textures/items/naga_chestplate"
+    },
+    "tf_slice:naga_leggings": {
+      "textures": "textures/items/naga_leggings"
+    },
+    "tf_slice:naga_trophy": {
+      "textures": "textures/blocks/naga_trophy"
+    },
+    "tf_slice:raven_feather": {
+      "textures": "textures/items/raven_feather"
+    },
+    "tf_slice:torchberries": {
+      "textures": "textures/items/torchberries"
+    },
+    "tf_slice:ironwood_pickaxe": {
+      "textures": "textures/items/ironwood_pickaxe"
+    },
+    "tf_slice:ironwood_boots": {
+      "textures": "textures/items/ironwood_boots"
+    },
+    "tf_slice:crumble_horn": {
+      "textures": "textures/items/crumble_horn"
+    },
+    "tf_slice:magic_map_focus": {
+      "textures": "textures/items/magic_map_focus"
+    },
+    "tf_slice:magic_map": {
+      "textures": "textures/items/magic_map"
+    },
+    "tf_slice:filled_magic_map": {
+      "textures": "textures/items/filled_magic_map"
+    },
+    "tf_slice:twilight_scepter": {
+      "textures": "textures/items/twilight_scepter"
+    },
+    "tf_slice:lifedrain_scepter": {
+      "textures": "textures/items/lifedrain_scepter"
+    },
+    "tf_slice:zombie_scepter": {
+      "textures": "textures/items/zombie_scepter"
+    },
+    "tf_slice:fortification_scepter": {
+      "textures": "textures/items/fortification_scepter"
+    },
+    "tf_slice:lich_trophy": {
+      "textures": "textures/blocks/lich_trophy"
+    },
+    "tf_slice:raw_meef": {
+      "textures": "textures/items/raw_meef"
+    },
+    "tf_slice:cooked_meef": {
+      "textures": "textures/items/cooked_meef"
+    },
+    "tf_slice:meef_stroganoff": {
+      "textures": "textures/items/meef_stroganoff"
+    },
+    "tf_slice:maze_wafer": {
+      "textures": "textures/items/maze_wafer"
+    },
+    "tf_slice:hydra_chop": {
+      "textures": "textures/items/hydra_chop"
+    },
+    "tf_slice:fiery_blood": {
+      "textures": "textures/items/fiery_blood"
+    },
+    "tf_slice:fiery_ingot": {
+      "textures": "textures/items/fiery_ingot"
+    },
+    "tf_slice:ironwood_ingot": {
+      "textures": "textures/items/ironwood_ingot"
+    },
+    "tf_slice:liveroot": {
+      "textures": "textures/items/liveroot"
+    },
+    "tf_slice:raw_ironwood": {
+      "textures": "textures/items/raw_ironwood"
+    },
+    "tf_slice:steeleaf_ingot": {
+      "textures": "textures/items/steeleaf_ingot"
+    },
+    "tf_slice:cicada": {
+      "textures": "textures/items/cicada"
+    },
+    "tf_slice:transformation_powder": {
+      "textures": "textures/items/transformation_powder"
+    },
+    "tf_slice:red_thread": {
+      "textures": "textures/items/red_thread"
+    },
+    "tf_slice:maze_map_focus": {
+      "textures": "textures/items/maze_map_focus"
+    },
+    "tf_slice:maze_map": {
+      "textures": "textures/items/maze_map"
+    },
+    "tf_slice:filled_maze_map": {
+      "textures": "textures/items/filled_maze_map"
+    },
+    "tf_slice:charm_of_keeping_1": {
+      "textures": "textures/items/charm_of_keeping_1"
+    },
+    "tf_slice:charm_of_keeping_2": {
+      "textures": "textures/items/charm_of_keeping_2"
+    },
+    "tf_slice:charm_of_keeping_3": {
+      "textures": "textures/items/charm_of_keeping_3"
+    },
+    "tf_slice:gold_minotaur_axe": {
+      "textures": "textures/items/gold_minotaur_axe"
+    },
+    "tf_slice:diamond_minotaur_axe": {
+      "textures": "textures/items/diamond_minotaur_axe"
+    },
+    "tf_slice:mazebreaker_pickaxe": {
+      "textures": "textures/items/mazebreaker_pickaxe"
+    },
+    "tf_slice:ironwood_sword": {
+      "textures": "textures/items/ironwood_sword"
+    },
+    "tf_slice:ironwood_axe": {
+      "textures": "textures/items/ironwood_axe"
+    },
+    "tf_slice:ironwood_shovel": {
+      "textures": "textures/items/ironwood_shovel"
+    },
+    "tf_slice:ironwood_hoe": {
+      "textures": "textures/items/ironwood_hoe"
+    },
+    "tf_slice:ironwood_helmet": {
+      "textures": "textures/items/ironwood_helmet"
+    },
+    "tf_slice:ironwood_chestplate": {
+      "textures": "textures/items/ironwood_chestplate"
+    },
+    "tf_slice:ironwood_leggings": {
+      "textures": "textures/items/ironwood_leggings"
+    },
+    "tf_slice:steeleaf_sword": {
+      "textures": "textures/items/steeleaf_sword"
+    },
+    "tf_slice:steeleaf_axe": {
+      "textures": "textures/items/steeleaf_axe"
+    },
+    "tf_slice:steeleaf_pickaxe": {
+      "textures": "textures/items/steeleaf_pickaxe"
+    },
+    "tf_slice:steeleaf_shovel": {
+      "textures": "textures/items/steeleaf_shovel"
+    },
+    "tf_slice:steeleaf_hoe": {
+      "textures": "textures/items/steeleaf_hoe"
+    },
+    "tf_slice:steeleaf_helmet": {
+      "textures": "textures/items/steeleaf_helmet"
+    },
+    "tf_slice:steeleaf_chestplate": {
+      "textures": "textures/items/steeleaf_chestplate"
+    },
+    "tf_slice:steeleaf_leggings": {
+      "textures": "textures/items/steeleaf_leggings"
+    },
+    "tf_slice:steeleaf_boots": {
+      "textures": "textures/items/steeleaf_boots"
+    },
+    "tf_slice:fiery_sword": {
+      "textures": "textures/items/fiery_sword"
+    },
+    "tf_slice:fiery_pickaxe": {
+      "textures": "textures/items/fiery_pickaxe"
+    },
+    "tf_slice:fiery_helmet": {
+      "textures": "textures/items/fiery_helmet"
+    },
+    "tf_slice:fiery_chestplate": {
+      "textures": "textures/items/fiery_chestplate"
+    },
+    "tf_slice:fiery_leggings": {
+      "textures": "textures/items/fiery_leggings"
+    },
+    "tf_slice:fiery_boots": {
+      "textures": "textures/items/fiery_boots"
+    },
+    "tf_slice:minoshroom_banner": {
+      "textures": "textures/items/minoshroom_banner"
+    },
+    "tf_slice:hydra_banner": {
+      "textures": "textures/items/hydra_banner"
+    },
+    "tf_slice:mangrove_boat": {
+      "textures": "textures/items/mangrove_boat"
+    },
+    "tf_slice:mangrove_chest_boat": {
+      "textures": "textures/items/mangrove_chest_boat"
+    },
+    "tf_slice:fire_react_book_1": {
+      "textures": "textures/items/book_enchanted"
+    },
+    "tf_slice:fire_react_book_2": {
+      "textures": "textures/items/book_enchanted"
+    },
+    "tf_slice:fire_react_book_3": {
+      "textures": "textures/items/book_enchanted"
+    },
+    "tf_slice:dark_boat": {
+      "textures": "textures/items/dark_boat"
+    },
+    "tf_slice:dark_chest_boat": {
+      "textures": "textures/items/dark_chest_boat"
+    },
+    "tf_slice:armor_shard": {
+      "textures": "textures/items/armor_shard"
+    },
+    "tf_slice:armor_shard_cluster": {
+      "textures": "textures/items/armor_shard_cluster"
+    },
+    "tf_slice:knightmetal_ingot": {
+      "textures": "textures/items/knightmetal_ingot"
+    },
+    "tf_slice:knightmetal_ring": {
+      "textures": "textures/items/knightmetal_ring"
+    },
+    "tf_slice:knightmetal_sword": {
+      "textures": "textures/items/knightmetal_sword"
+    },
+    "tf_slice:knightmetal_pickaxe": {
+      "textures": "textures/items/knightmetal_pickaxe"
+    },
+    "tf_slice:knightmetal_axe": {
+      "textures": "textures/items/knightmetal_axe"
+    },
+    "tf_slice:block_and_chain": {
+      "textures": "textures/items/block_and_chain"
+    },
+    "tf_slice:knightmetal_shield": {
+      "textures": "textures/items/knightmetal_shield_icon"
+    },
+    "tf_slice:phantom_helmet": {
+      "textures": "textures/items/phantom_helmet"
+    },
+    "tf_slice:phantom_chestplate": {
+      "textures": "textures/items/phantom_chestplate"
+    },
+    "tf_slice:knightmetal_helmet": {
+      "textures": "textures/items/knightmetal_helmet"
+    },
+    "tf_slice:knightmetal_chestplate": {
+      "textures": "textures/items/knightmetal_chestplate"
+    },
+    "tf_slice:knightmetal_leggings": {
+      "textures": "textures/items/knightmetal_leggings"
+    },
+    "tf_slice:knightmetal_boots": {
+      "textures": "textures/items/knightmetal_boots"
+    },
+    "tf_slice:tower_key": {
+      "textures": "textures/items/tower_key"
+    },
+    "tf_slice:carminite": {
+      "textures": "textures/items/carminite"
+    },
+    "tf_slice:fiery_tears": {
+      "textures": "textures/items/fiery_tears"
+    },
+    "tf_slice:charm_of_life_1": {
+      "textures": "textures/items/charm_of_life_1"
+    },
+    "tf_slice:ur_ghast_trophy": {
+      "textures": "textures/blocks/ur_ghast_trophy"
+    },
+    "tf_slice:ur_ghast_banner": {
+      "textures": "textures/items/ur_ghast_banner"
+    },
+    "tf_slice:knight_phantom_trophy": {
+      "textures": "textures/blocks/knight_phantom_trophy"
+    },
+    "dark_oak_door": {
+      "textures": "textures/items/dark_door"
+    },
+    "sign_darkoak": {
+      "textures": "textures/items/dark_sign"
+    },
+    "sign_darkoak_hanging": {
+      "textures": "textures/items/dark_hanging_sign"
+    },
+    "mangrove_door": {
+      "textures": "textures/items/mangrove_door"
+    },
+    "mangrove_sign": {
+      "textures": "textures/items/mangrove_sign"
+    },
+    "sign_mangrove_hanging": {
+      "textures": "textures/items/mangrove_hanging_sign"
+    },
+    "tf_slice:hydra_trophy": {
+      "textures": "textures/blocks/hydra_trophy"
+    },
+    "tf_slice:minoshroom_trophy": {
+      "textures": "textures/blocks/minoshroom_trophy"
+    },
+    "tf_slice:quest_ram_trophy": {
+      "textures": "textures/blocks/quest_ram_trophy"
+    },
+    "tf_slice:naga_wall_trophy": {
+      "textures": "textures/blocks/naga_trophy"
+    },
+    "tf_slice:lich_wall_trophy": {
+      "textures": "textures/blocks/lich_trophy"
+    },
+    "tf_slice:hydra_wall_trophy": {
+      "textures": "textures/blocks/hydra_trophy"
+    },
+    "tf_slice:ur_ghast_wall_trophy": {
+      "textures": "textures/blocks/ur_ghast_trophy"
+    },
+    "tf_slice:knight_phantom_wall_trophy": {
+      "textures": "textures/blocks/knight_phantom_trophy"
+    },
+    "tf_slice:minoshroom_wall_trophy": {
+      "textures": "textures/blocks/minoshroom_trophy"
+    },
+    "tf_slice:quest_ram_wall_trophy": {
+      "textures": "textures/blocks/quest_ram_trophy"
+    },
+    "cherry_door": {
+      "textures": "textures/items/canopy_door"
+    },
+    "tf_slice:naga_trophy_item": {
+      "textures": "textures/blocks/naga_trophy"
+    },
+    "tf_slice:lich_trophy_item": {
+      "textures": "textures/blocks/lich_trophy"
+    },
+    "tf_slice:hydra_trophy_item": {
+      "textures": "textures/blocks/hydra_trophy"
+    },
+    "tf_slice:ur_ghast_trophy_item": {
+      "textures": "textures/blocks/ur_ghast_trophy"
+    },
+    "tf_slice:knight_phantom_trophy_item": {
+      "textures": "textures/blocks/knight_phantom_trophy"
+    },
+    "tf_slice:minoshroom_trophy_item": {
+      "textures": "textures/blocks/minoshroom_trophy"
+    },
+    "tf_slice:quest_ram_trophy_item": {
+      "textures": "textures/blocks/quest_ram_trophy"
+    },
+    "tf_slice:borer_essence": {
+      "textures": "textures/items/borer_essence"
+    }
+  }
+}

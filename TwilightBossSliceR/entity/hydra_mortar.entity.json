@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:hydra_mortar",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+        "default": "textures/entity/hydramortar"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.hydra_mortar"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.hydra_mortar"
+      ],
+      "animations": {
+        "main": "animation.tf_slice.hydra_mortar.fuse"
+      },
+      "scripts": {
+        "animate": [
+          "main"
+        ]
+      }
+    }
+  }
+}

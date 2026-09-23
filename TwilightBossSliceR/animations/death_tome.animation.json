@@ -1,0 +1,379 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.death_tome.fly": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": [
+            0,
+            90,
+            0
+          ]
+        },
+        "book": {
+          "position": [
+            0,
+            -4096,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -50
+          ]
+        },
+        "paper_storm": {
+          "rotation": [
+            0,
+            -180,
+            50
+          ]
+        },
+        "pages_right": {
+          "position": [
+            -4096,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            -180,
+            0
+          ]
+        },
+        "pages_left": {
+          "position": [
+            -4096,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            -180,
+            0
+          ]
+        },
+        "cover_right": {
+          "rotation": [
+            0,
+            -180,
+            0
+          ]
+        },
+        "cover_left": {
+          "rotation": [
+            0,
+            -180,
+            0
+          ]
+        },
+        "flipping_page_right": {
+          "position": [
+            -4096,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            -180,
+            0
+          ]
+        },
+        "flipping_page_left": {
+          "position": [
+            -4096,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            -180,
+            0
+          ]
+        },
+        "loose_page_0": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "loose_page_1": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "loose_page_2": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        },
+        "loose_page_3": {
+          "rotation": [
+            -180,
+            -180,
+            -180
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.01": {
+      "loop": true,
+      "bones": {
+        "book": {
+          "position": [
+            0,
+            8192,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.02": {
+      "loop": true,
+      "bones": {
+        "paper_storm": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.03": {
+      "loop": true,
+      "bones": {
+        "pages_right": {
+          "position": [
+            8192,
+            0,
+            0
+          ]
+        },
+        "pages_left": {
+          "position": [
+            8192,
+            0,
+            0
+          ]
+        },
+        "flipping_page_right": {
+          "position": [
+            8192,
+            0,
+            0
+          ]
+        },
+        "flipping_page_left": {
+          "position": [
+            8192,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.04": {
+      "loop": true,
+      "bones": {
+        "pages_right": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.05": {
+      "loop": true,
+      "bones": {
+        "pages_left": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        },
+        "cover_left": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.06": {
+      "loop": true,
+      "bones": {
+        "cover_right": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.07": {
+      "loop": true,
+      "bones": {
+        "flipping_page_right": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.08": {
+      "loop": true,
+      "bones": {
+        "flipping_page_left": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.09": {
+      "loop": true,
+      "bones": {
+        "loose_page_0": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        },
+        "loose_page_1": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.10": {
+      "loop": true,
+      "bones": {
+        "loose_page_0": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        },
+        "loose_page_2": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        },
+        "loose_page_3": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.11": {
+      "loop": true,
+      "bones": {
+        "loose_page_0": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.12": {
+      "loop": true,
+      "bones": {
+        "loose_page_1": {
+          "rotation": [
+            0,
+            360,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.13": {
+      "loop": true,
+      "bones": {
+        "loose_page_1": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.14": {
+      "loop": true,
+      "bones": {
+        "loose_page_2": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.15": {
+      "loop": true,
+      "bones": {
+        "loose_page_2": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.16": {
+      "loop": true,
+      "bones": {
+        "loose_page_3": {
+          "rotation": [
+            360,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.compat.death_tome_fly.17": {
+      "loop": true,
+      "bones": {
+        "loose_page_3": {
+          "rotation": [
+            0,
+            0,
+            360
+          ]
+        }
+      }
+    }
+  }
+}

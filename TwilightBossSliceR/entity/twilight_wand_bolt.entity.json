@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:twilight_wand_bolt",
+      "materials": {"default": "entity_emissive_alpha"},
+      "textures": {"default": "textures/items/twilight_orb"},
+      "geometry": {"default": "geometry.tf_slice.twilight_wand_bolt"},
+      "animations": {"spin": "animation.tf_slice.twilight_wand_bolt.spin"},
+      "scripts": {"animate": ["spin"]},
+      "render_controllers": ["controller.render.default"]
+    }
+  }
+}

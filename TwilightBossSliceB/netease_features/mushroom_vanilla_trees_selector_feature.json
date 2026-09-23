@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "tf_slice:mushroom_vanilla_trees_selector_feature"
+    },
+    "features": [
+      [
+        "tf_slice:mushroom_vanilla_oak_tree_feature",
+        3
+      ],
+      [
+        "tf_slice:mushroom_vanilla_birch_tree_feature",
+        4
+      ],
+      [
+        "tf_slice:mushroom_twilight_oak_tree_feature",
+        9
+      ]
+    ]
+  }
+}

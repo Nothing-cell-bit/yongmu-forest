@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:spooky_dead_tree_v04_feature"
+    },
+    "places_structure": "tf_slice:spooky/dead_tree/v04",
+    "rotation": 0
+  }
+}

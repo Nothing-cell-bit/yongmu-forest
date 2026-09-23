@@ -1,0 +1,16 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "tf_slice:spooky_dead_tree_v02_offset_feature"
+    },
+    "places_feature": "tf_slice:spooky_dead_tree_v02_feature",
+    "distribution": {
+      "iterations": 1,
+      "coordinate_eval_order": "xzy",
+      "x": -9,
+      "y": -5,
+      "z": -9
+    }
+  }
+}

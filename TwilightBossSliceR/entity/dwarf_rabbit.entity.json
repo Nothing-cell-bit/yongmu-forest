@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:dwarf_rabbit",
+      "materials": {"default": "entity_alphatest"},
+      "textures": {
+        "brown": "textures/entity/tf_slice/bunnybrown",
+        "dutch": "textures/entity/tf_slice/bunnydutch",
+        "white": "textures/entity/tf_slice/bunnywhite"
+      },
+      "geometry": {"default": "geometry.tf_slice.dwarf_rabbit"},
+      "animations": {
+        "walk": "animation.quadruped.walk",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "scripts": {
+        "animate": [
+          {"walk": "query.modified_move_speed"},
+          "look_at_target"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.dwarf_rabbit"
+      ],
+      "spawn_egg": {
+        "base_color": "#A77755",
+        "overlay_color": "#F0E5D0"
+      }
+    }
+  }
+}

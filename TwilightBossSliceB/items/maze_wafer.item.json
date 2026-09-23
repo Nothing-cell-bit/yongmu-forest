@@ -1,0 +1,32 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:maze_wafer"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:maze_wafer.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:maze_wafer"
+        }
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_food"
+        ]
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:use_modifiers": {
+        "use_duration": 1.6,
+        "movement_modifier": 0.35
+      },
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": 0.6
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:ruin_landmark_surface_enchanted_structure_feature"
+    },
+    "places_structure": "tf_slice:ruin_landmark_surface_enchanted",
+    "rotation": 0
+  }
+}

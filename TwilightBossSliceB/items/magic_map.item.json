@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:magic_map"
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "item.tf_slice:magic_map.name"
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "tf_slice:magic_map"
+        }
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:use_animation": "bow",
+      "minecraft:use_duration": 1
+    }
+  }
+}

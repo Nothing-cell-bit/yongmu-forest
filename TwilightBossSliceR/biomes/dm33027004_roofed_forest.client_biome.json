@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "dm33027004_roofed_forest"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "tf_slice:fog_spooky_forest"
+      },
+      "minecraft:sky_color": {
+        "sky_color": "#20224A"
+      },
+      "minecraft:water_appearance": {
+        "surface_color": "#BC8857"
+      },
+      "minecraft:foliage_appearance": {
+        "color": "#FF8501"
+      },
+      "minecraft:grass_appearance": {
+        "color": "#C45123"
+      }
+    }
+  }
+}

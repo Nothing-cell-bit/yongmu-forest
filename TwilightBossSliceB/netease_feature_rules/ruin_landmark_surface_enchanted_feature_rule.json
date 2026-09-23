@@ -1,0 +1,31 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "tf_slice:ruin_landmark_surface_enchanted_feature_rule",
+      "places_feature": "tf_slice:ruin_landmark_surface_enchanted_structure_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "dm33027004"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": "((query.is_biome(math.floor((variable.originx + 128) / 256) * 256 + 8, math.floor((variable.originz + 128) / 256) * 256 + 8, 155) && math.abs(variable.originx - (math.floor((variable.originx + 128) / 256) * 256 + 8 - 8)) <= 128 && math.abs(variable.originz - (math.floor((variable.originz + 128) / 256) * 256 + 8 - 8)) <= 128) ? 1 : 0)",
+      "coordinate_eval_order": "xzy",
+      "scatter_chance": 100.0,
+      "x": 0,
+      "y": "math.floor(math.min(math.max(math.max(math.max(math.max(math.max(math.max(math.max(math.max(query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 64), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 64)), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 64), (math.floor((variable.originz + 128) / 256) * 256 + 8))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 - 64), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 64))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 64))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8), (math.floor((variable.originz + 128) / 256) * 256 + 8))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 64))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 64), (math.floor((variable.originz + 128) / 256) * 256 + 8 - 64))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 64), (math.floor((variable.originz + 128) / 256) * 256 + 8))), query.get_height_at((math.floor((variable.originx + 128) / 256) * 256 + 8 + 64), (math.floor((variable.originz + 128) / 256) * 256 + 8 + 64))), query.get_height_at(math.floor((variable.originx + 128) / 256) * 256 + 8, math.floor((variable.originz + 128) / 256) * 256 + 8) + 3)) - 17",
+      "z": 0
+    }
+  }
+}

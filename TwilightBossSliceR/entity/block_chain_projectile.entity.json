@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:block_chain_projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/block_chain_goblin"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.block_chain_projectile"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "animations": {
+        "chain": "animation.tf_slice.block_chain_projectile.chain"
+      },
+      "scripts": {
+        "animate": [
+          "chain"
+        ]
+      }
+    }
+  }
+}

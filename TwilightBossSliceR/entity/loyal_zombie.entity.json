@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:loyal_zombie",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/zombie/zombie"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.rising_zombie"
+      },
+      "render_controllers": [
+        "controller.render.tf_slice.loyal_zombie"
+      ],
+      "animations": {
+        "move": "animation.tf_slice.zombie.move",
+        "look": "animation.tf_slice.zombie.look",
+        "checker_compat_zombie_move_01": "animation.tf_slice.compat.zombie_move.01",
+        "checker_compat_zombie_move_02": "animation.tf_slice.compat.zombie_move.02",
+        "checker_compat_zombie_move_03": "animation.tf_slice.compat.zombie_move.03",
+        "checker_compat_zombie_move_04": "animation.tf_slice.compat.zombie_move.04",
+        "checker_compat_zombie_look_01": "animation.tf_slice.compat.zombie_look.01",
+        "checker_compat_zombie_look_02": "animation.tf_slice.compat.zombie_look.02"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "look",
+          {
+            "checker_compat_zombie_move_01": "math.clamp(((math.mod(math.mod((-80 + math.cos(query.modified_distance_moved * 38.17 + 180) * 14 * query.modified_move_speed), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_zombie_move_02": "math.clamp(((math.mod(math.mod((-80 + math.cos(query.modified_distance_moved * 38.17) * 14 * query.modified_move_speed), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_zombie_move_03": "math.clamp(((math.mod(math.mod((math.cos(query.modified_distance_moved * 38.17) * 34.377 * query.modified_move_speed), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_zombie_move_04": "math.clamp(((math.mod(math.mod((math.cos(query.modified_distance_moved * 38.17 + 180) * 34.377 * query.modified_move_speed), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_zombie_look_01": "math.clamp(((math.mod(math.mod((query.target_x_rotation), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          },
+          {
+            "checker_compat_zombie_look_02": "math.clamp(((math.mod(math.mod((query.target_y_rotation), 360) + 540, 360) - 180) + 180) / 360, 0, 1)"
+          }
+        ]
+      }
+    }
+  }
+}

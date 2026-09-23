@@ -1,0 +1,146 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:squirrel",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["tf_slice_forest_animal", "squirrel", "animal", "mob"]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {"value": 1, "max": 1},
+      "minecraft:movement": {"value": 0.3},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:collision_box": {"width": 0.4, "height": 0.5},
+      "minecraft:breathable": {"total_supply": 15, "suffocate_time": 0},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:preferred_path": {
+        "default_block_cost": 20,
+        "jump_cost": 0,
+        "max_fall_blocks": 3,
+        "preferred_path_blocks": [
+          {
+            "blocks": [
+              "minecraft:oak_log",
+              "minecraft:spruce_log",
+              "minecraft:birch_log",
+              "minecraft:jungle_log",
+              "minecraft:acacia_log",
+              "minecraft:dark_oak_log"
+            ],
+            "cost": 0
+          },
+          {
+            "blocks": [
+              "minecraft:oak_leaves",
+              "minecraft:spruce_leaves",
+              "minecraft:birch_leaves",
+              "minecraft:jungle_leaves",
+              "minecraft:acacia_leaves",
+              "minecraft:dark_oak_leaves"
+            ],
+            "cost": 3
+          },
+          {
+            "blocks": ["minecraft:dirt", "minecraft:grass"],
+            "cost": 10
+          }
+        ]
+      },
+      "minecraft:behavior.float": {"priority": 0},
+      "minecraft:behavior.panic": {
+        "priority": 1,
+        "speed_multiplier": 1.38
+      },
+      "minecraft:behavior.tempt": {
+        "priority": 2,
+        "speed_multiplier": 1.0,
+        "items": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ]
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 2,
+            "walk_speed_multiplier": 0.8,
+            "sprint_speed_multiplier": 1.4
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "wolf"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 0.8,
+            "sprint_speed_multiplier": 1.4
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "cat"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 0.8,
+            "sprint_speed_multiplier": 1.4
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "ocelot"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 0.8,
+            "sprint_speed_multiplier": 1.4
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "fox"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 0.8,
+            "sprint_speed_multiplier": 1.4
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.05
+      },
+      "minecraft:behavior.random_look_around": {"priority": 8}
+    }
+  }
+}

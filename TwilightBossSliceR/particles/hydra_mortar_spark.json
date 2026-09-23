@@ -1,0 +1,17 @@
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {"identifier": "tf_slice:hydra_mortar_spark", "basic_render_parameters": {"material": "particles_add", "texture": "textures/particle/firefly"}},
+    "components": {
+      "minecraft:emitter_rate_instant": {"num_particles": 3},
+      "minecraft:emitter_lifetime_once": {},
+      "minecraft:emitter_shape_point": {"direction": ["Math.random(-0.3, 0.3)", "Math.random(-0.1, 0.35)", "Math.random(-0.3, 0.3)"]},
+      "minecraft:particle_initial_speed": "Math.random(0.12, 0.4)",
+      "minecraft:particle_lifetime_expression": {"max_lifetime": "Math.random(0.25, 0.55)"},
+      "minecraft:particle_motion_dynamic": {"linear_acceleration": [0, -0.06, 0], "linear_drag_coefficient": 0.08},
+      "minecraft:particle_appearance_billboard": {"size": [0.08, 0.08], "facing_camera_mode": "lookat_xyz", "uv": {"texture_width": 16, "texture_height": 16, "uv": [0, 0], "uv_size": [16, 16]}},
+      "minecraft:particle_appearance_tinting": {"color": [0.95, 0.72, 0.12, 0.95]},
+      "minecraft:particle_appearance_lighting": {}
+    }
+  }
+}

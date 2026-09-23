@@ -1,0 +1,147 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:forest_wyrm",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tf_slice:idle_ai": {
+        "minecraft:behavior.random_stroll": {
+          "priority": 8,
+          "speed_multiplier": 1.0,
+          "interval": 1
+        }
+      },
+      "tf_slice:state_0": {"minecraft:variant": {"value": 0}},
+      "tf_slice:state_1": {"minecraft:variant": {"value": 1}},
+      "tf_slice:state_2": {"minecraft:variant": {"value": 2}},
+      "tf_slice:state_3": {"minecraft:variant": {"value": 3}},
+      "tf_slice:state_4": {"minecraft:variant": {"value": 4}},
+      "tf_slice:state_5": {"minecraft:variant": {"value": 5}}
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["tf_slice_boss", "monster", "mob"]
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:persistent": {},
+      "minecraft:ambient_sound_interval": {
+        "value": 4.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      },
+      "minecraft:health": {
+        "value": 200,
+        "max": 200
+      },
+      "minecraft:attack": {
+        "damage": 5
+      },
+      "minecraft:movement": {
+        "value": 0.52
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "avoid_water": false,
+        "can_path_over_water": true,
+        "can_open_doors": false
+      },
+      "minecraft:follow_range": {
+        "value": 80,
+        "max": 80
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.25
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.5
+      },
+      "minecraft:scale": {
+        "value": 2.0
+      },
+      "minecraft:physics": {},
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "suffocation",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 80,
+        "must_see": false,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 80
+          }
+        ]
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 32,
+        "probability": 0.08
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      }
+    },
+    "events": {
+      "tf_slice:enable_idle_ai": {
+        "add": {"component_groups": ["tf_slice:idle_ai"]}
+      },
+      "tf_slice:disable_idle_ai": {
+        "remove": {"component_groups": ["tf_slice:idle_ai"]}
+      },
+      "tf_slice:set_state_0": {
+        "remove": {"component_groups": ["tf_slice:state_1", "tf_slice:state_2", "tf_slice:state_3", "tf_slice:state_4", "tf_slice:state_5"]},
+        "add": {"component_groups": ["tf_slice:state_0"]}
+      },
+      "tf_slice:set_state_1": {
+        "remove": {"component_groups": ["tf_slice:state_0", "tf_slice:state_2", "tf_slice:state_3", "tf_slice:state_4", "tf_slice:state_5"]},
+        "add": {"component_groups": ["tf_slice:state_1"]}
+      },
+      "tf_slice:set_state_2": {
+        "remove": {"component_groups": ["tf_slice:state_0", "tf_slice:state_1", "tf_slice:state_3", "tf_slice:state_4", "tf_slice:state_5"]},
+        "add": {"component_groups": ["tf_slice:state_2"]}
+      },
+      "tf_slice:set_state_3": {
+        "remove": {"component_groups": ["tf_slice:state_0", "tf_slice:state_1", "tf_slice:state_2", "tf_slice:state_4", "tf_slice:state_5"]},
+        "add": {"component_groups": ["tf_slice:state_3"]}
+      },
+      "tf_slice:set_state_4": {
+        "remove": {"component_groups": ["tf_slice:state_0", "tf_slice:state_1", "tf_slice:state_2", "tf_slice:state_3", "tf_slice:state_5"]},
+        "add": {"component_groups": ["tf_slice:state_4"]}
+      },
+      "tf_slice:set_state_5": {
+        "remove": {"component_groups": ["tf_slice:state_0", "tf_slice:state_1", "tf_slice:state_2", "tf_slice:state_3", "tf_slice:state_4"]},
+        "add": {"component_groups": ["tf_slice:state_5"]}
+      }
+    }
+  }
+}

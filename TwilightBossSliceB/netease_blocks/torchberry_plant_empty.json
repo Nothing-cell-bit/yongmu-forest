@@ -1,0 +1,39 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:torchberry_plant_empty",
+      "register_to_creative_menu": false
+    },
+    "components": {
+      "netease:neighborchanged_sendto_script": {"value": true},
+      "netease:random_tick": {"enable": true, "tick_to_script": true},
+      "minecraft:destructible_by_mining": {"seconds_to_destroy": 0.0},
+      "minecraft:destructible_by_explosion": {"explosion_resistance": 0.0},
+      "minecraft:light_dampening": 0,
+      "minecraft:collision_box": false,
+      "minecraft:selection_box": {
+        "origin": [-7, 2, -7],
+        "size": [14, 14, 14]
+      },
+      "minecraft:geometry": "geometry.tf_slice.torchberry_plant_empty",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tf_slice:torchberry_plant",
+          "render_method": "alpha_test",
+          "ambient_occlusion": false,
+          "face_dimming": false
+        },
+        "plant": {
+          "texture": "tf_slice:torchberry_plant",
+          "render_method": "alpha_test",
+          "ambient_occlusion": false,
+          "face_dimming": false
+        }
+      },
+      "netease:render_layer": {"value": "optionalAlpha"},
+      "netease:solid": {"value": false},
+      "netease:pathable": {"value": true}
+    }
+  }
+}

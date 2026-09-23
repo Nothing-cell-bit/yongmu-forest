@@ -1,0 +1,123 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tf_slice:trophy_pedestal",
+      "register_to_creative_menu": false,
+      "states": {
+        "tf_slice:active": [
+          false,
+          true
+        ]
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.tf_slice.trophy_pedestal",
+      "minecraft:material_instances": {
+        "north": {
+          "texture": "tf_slice:trophy_pedestal_north_latent",
+          "render_method": "opaque"
+        },
+        "south": {
+          "texture": "tf_slice:trophy_pedestal_south_latent",
+          "render_method": "opaque"
+        },
+        "east": {
+          "texture": "tf_slice:trophy_pedestal_east_latent",
+          "render_method": "opaque"
+        },
+        "west": {
+          "texture": "tf_slice:trophy_pedestal_west_latent",
+          "render_method": "opaque"
+        },
+        "top": {
+          "texture": "tf_slice:trophy_pedestal_top_latent",
+          "render_method": "opaque"
+        },
+        "bottom": {
+          "texture": "tf_slice:trophy_pedestal_top_latent",
+          "render_method": "opaque"
+        }
+      },
+      "netease:aabb": {
+        "collision": {
+          "min": [
+            0.0625,
+            0.0,
+            0.0625
+          ],
+          "max": [
+            0.9375,
+            1.0,
+            0.9375
+          ]
+        },
+        "clip": {
+          "min": [
+            0.0625,
+            0.0,
+            0.0625
+          ],
+          "max": [
+            0.9375,
+            1.0,
+            0.9375
+          ]
+        }
+      },
+      "netease:render_layer": {
+        "value": "opaque"
+      },
+      "netease:solid": {
+        "value": true
+      },
+      "netease:pathable": {
+        "value": false
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 5.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 6.0
+      },
+      "netease:block_entity": {
+        "tick": true,
+        "movable": false
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_state('tf_slice:active') == true",
+        "components": {
+          "minecraft:light_emission": 10,
+          "minecraft:material_instances": {
+            "north": {
+              "texture": "tf_slice:trophy_pedestal_north_active",
+              "render_method": "opaque"
+            },
+            "south": {
+              "texture": "tf_slice:trophy_pedestal_south_active",
+              "render_method": "opaque"
+            },
+            "east": {
+              "texture": "tf_slice:trophy_pedestal_east_active",
+              "render_method": "opaque"
+            },
+            "west": {
+              "texture": "tf_slice:trophy_pedestal_west_active",
+              "render_method": "opaque"
+            },
+            "top": {
+              "texture": "tf_slice:trophy_pedestal_top_active",
+              "render_method": "opaque"
+            },
+            "bottom": {
+              "texture": "tf_slice:trophy_pedestal_top_active",
+              "render_method": "opaque"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

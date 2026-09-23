@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tf_slice.bighorn_sheep": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "left_horn": "!query.is_baby"
+        },
+        {
+          "right_horn": "!query.is_baby"
+        }
+      ]
+    },
+    "controller.render.tf_slice.deer": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default"
+      ],
+      "part_visibility": [
+        {
+          "left_antler": "!query.is_baby"
+        },
+        {
+          "right_antler": "!query.is_baby"
+        }
+      ]
+    }
+  }
+}

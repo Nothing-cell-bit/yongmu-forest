@@ -1,0 +1,10 @@
+{
+  "format_version": "1.14.0",
+  "netease:structure_feature": {
+    "description": {
+      "identifier": "tf_slice:spooky_pumpkin_lamppost_h2_feature"
+    },
+    "places_structure": "tf_slice:spooky/pumpkin_lamppost/h2",
+    "rotation": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "tf_slice:raven",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/raven"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.raven"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "base_color": "#1D1D1D",
+        "overlay_color": "#696969"
+      },
+      "animations": {
+        "ground": "animation.tf_slice.raven.ground",
+        "takeoff": "animation.tf_slice.raven.takeoff",
+        "fly": "animation.tf_slice.raven.fly",
+        "flight_controller": "controller.animation.tf_slice.raven.flight",
+        "look": "animation.common.look_at_target"
+      },
+      "scripts": {
+        "animate": [
+          "flight_controller",
+          "look"
+        ]
+      },
+      "sound_effects": {
+        "takeoff": "tf_slice.raven.takeoff"
+      }
+    }
+  }
+}

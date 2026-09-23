@@ -1,0 +1,96 @@
+{
+  "namespace": "naga_boss_hud",
+  "main": {
+    "type": "screen",
+    "render_game_behind": true,
+    "is_showing_menu": false,
+    "absorbs_input": false,
+    "controls": [
+      {
+        "boss_root": {
+          "type": "panel",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [0, 0],
+          "size": [182, 20],
+          "layer": 300,
+          "visible": false,
+          "controls": [
+            {
+              "title": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [0, 0],
+                "size": [182, 10],
+                "text": "娜迦",
+                "color": [1.0, 1.0, 1.0],
+                "text_alignment": "center",
+                "shadow": true,
+                "layer": 303
+              }
+            },
+            {
+              "bar_frame": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [0, 10],
+                "size": [182, 5],
+                "layer": 301,
+                "controls": [
+                  {
+                    "bar_empty": {
+                      "type": "image",
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "size": [182, 5],
+                      "texture": "textures/ui/empty_progress_bar",
+                      "keep_ratio": false,
+                      "layer": 301
+                    }
+                  },
+                  {
+                    "bar_fill_clip": {
+                      "type": "panel",
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "offset": [0, 0],
+                      "size": [182, 5],
+                      "clips_children": true,
+                      "layer": 302,
+                      "controls": [
+                        {
+                          "bar_fill": {
+                            "type": "image",
+                            "anchor_from": "left_middle",
+                            "anchor_to": "left_middle",
+                            "offset": [0, 0],
+                            "size": [182, 5],
+                            "texture": "textures/ui/filled_progress_bar",
+                            "color": [0.0, 1.0, 0.0],
+                            "keep_ratio": false,
+                            "layer": 302
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {"notch_1": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [18, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_2": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [36, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_3": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [54, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_4": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [73, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_5": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [91, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_6": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [109, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_7": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [127, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_8": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [146, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}},
+                  {"notch_9": {"type": "image", "anchor_from": "left_middle", "anchor_to": "left_middle", "offset": [164, 0], "size": [1, 5], "texture": "textures/ui/white", "color": [0.0, 0.0, 0.0], "layer": 303}}
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

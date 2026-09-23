@@ -1,0 +1,38 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.twilight_wand_bolt",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 0.5,
+        "visible_bounds_height": 0.5,
+        "visible_bounds_offset": [0, 0, 0]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "bolt",
+          "parent": "root",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-2, -2, 0],
+              "size": [4, 4, 0],
+              "uv": [0, 0]
+            },
+            {
+              "origin": [0, -2, -2],
+              "size": [0, 4, 4],
+              "uv": [0, 0]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

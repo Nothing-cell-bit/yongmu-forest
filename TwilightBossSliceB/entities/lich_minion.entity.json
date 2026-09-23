@@ -1,0 +1,62 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:lich_minion",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tf_slice:strengthened": {"minecraft:variant": {"value": 1}}
+    },
+    "components": {
+      "minecraft:type_family": {"family": ["lich_minion", "lich_ally", "zombie", "undead", "monster", "mob"]},
+      "minecraft:health": {"value": 20, "max": 20},
+      "minecraft:movement": {"value": 0.23},
+      "minecraft:attack": {"damage": 3},
+      "minecraft:armor": {"value": 2},
+      "minecraft:collision_box": {"width": 0.6, "height": 1.95},
+      "minecraft:physics": {},
+      "minecraft:pushable": {"is_pushable": true, "is_pushable_by_piston": true},
+      "minecraft:burns_in_daylight": {},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {"can_path_over_water": true, "avoid_damage_blocks": true},
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": {"priority": 0},
+      "minecraft:behavior.hurt_by_target": {"priority": 1},
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "within_radius": 24,
+        "entity_types": [
+          {"filters": {"test": "is_family", "subject": "other", "value": "player"}, "max_dist": 24},
+          {"filters": {"test": "is_family", "subject": "other", "value": "villager"}, "max_dist": 24},
+          {"filters": {"test": "is_family", "subject": "other", "value": "iron_golem"}, "max_dist": 24},
+          {
+            "filters": {
+              "all_of": [
+                {"test": "is_family", "subject": "other", "value": "turtle"},
+                {"test": "is_baby", "subject": "other", "value": true}
+              ]
+            },
+            "max_dist": 10
+          }
+        ]
+      },
+      "minecraft:behavior.melee_attack": {"priority": 3, "speed_multiplier": 1.0, "track_target": true},
+      "minecraft:behavior.random_stroll": {"priority": 7, "speed_multiplier": 0.8},
+      "minecraft:behavior.look_at_player": {"priority": 8, "look_distance": 8},
+      "minecraft:behavior.random_look_around": {"priority": 9},
+      "minecraft:variant": {"value": 0}
+    },
+    "events": {
+      "tf_slice:set_strengthened": {
+        "add": {"component_groups": ["tf_slice:strengthened"]}
+      },
+      "tf_slice:clear_strengthened": {
+        "remove": {"component_groups": ["tf_slice:strengthened"]}
+      }
+    }
+  }
+}

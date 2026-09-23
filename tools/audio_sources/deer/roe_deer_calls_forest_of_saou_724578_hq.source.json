@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "title": "Roe Deer calls Forest of Saou",
+  "recordist": "Sacha.Julien",
+  "description": "Roe deer field recording captured in Aubenasson, Drome, France with an ORTF AT4041 setup and MixPre-6 recorder.",
+  "sourcePage": "https://freesound.org/people/Sacha.Julien/sounds/724578/",
+  "downloadUrl": "https://cdn.freesound.org/previews/724/724578_14889307-hq.mp3",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "sourceFormat": {
+    "container": "MP3 preview",
+    "sampleRate": 48000,
+    "channels": 2,
+    "durationSeconds": 122.33175
+  },
+  "sha256": "ae5294dc9aa810abb03f1e9b6680488a18ea3b06226b7fc17ba75db4d8ec5b1b",
+  "changes": "The formal deer generator extracts six fixed call windows, converts them to mono 44.1 kHz, reduces stationary field noise, applies a smooth 120-5200 Hz band limit, trims around call activity, and adds short fades. Hurt calls are shortened and the death call is gently lowered without adding synthetic animal vocals."
+}

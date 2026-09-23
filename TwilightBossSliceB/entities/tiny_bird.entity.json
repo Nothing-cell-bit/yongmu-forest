@@ -1,0 +1,253 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tf_slice:tiny_bird",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tf_slice:blue": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "tf_slice:brown": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "tf_slice:gold": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "tf_slice:red": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "tf_slice:landed": {
+        "minecraft:movement.basic": {},
+        "minecraft:navigation.walk": {
+          "can_path_over_water": true,
+          "avoid_water": true,
+          "avoid_damage_blocks": true
+        },
+        "minecraft:jump.static": {}
+      },
+      "tf_slice:flying": {
+        "minecraft:movement.fly": {},
+        "minecraft:navigation.fly": {
+          "can_path_from_air": true,
+          "can_path_over_water": true,
+          "can_pass_doors": true
+        },
+        "minecraft:can_fly": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "tf_slice_forest_animal",
+          "tiny_bird",
+          "animal",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:movement": {
+        "value": 0.2
+      },
+      "minecraft:collision_box": {
+        "width": 0.35,
+        "height": 0.45
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:preferred_path": {
+        "default_block_cost": 20,
+        "jump_cost": 0,
+        "max_fall_blocks": 3,
+        "preferred_path_blocks": [
+          {
+            "blocks": [
+              "minecraft:oak_leaves",
+              "minecraft:spruce_leaves",
+              "minecraft:birch_leaves",
+              "minecraft:jungle_leaves",
+              "minecraft:acacia_leaves",
+              "minecraft:dark_oak_leaves"
+            ],
+            "cost": 0
+          },
+          {
+            "blocks": [
+              "minecraft:oak_log",
+              "minecraft:spruce_log",
+              "minecraft:birch_log",
+              "minecraft:jungle_log",
+              "minecraft:acacia_log",
+              "minecraft:dark_oak_log"
+            ],
+            "cost": 5
+          },
+          {
+            "blocks": [
+              "minecraft:dirt",
+              "minecraft:grass"
+            ],
+            "cost": 9
+          }
+        ]
+      },
+      "minecraft:ambient_sound_interval": {
+        "value": 5.0,
+        "range": 8.0,
+        "event_name": "ambient"
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.panic": {
+        "priority": 0,
+        "speed_multiplier": 1.5
+      },
+      "minecraft:behavior.tempt": {
+        "priority": 3,
+        "speed_multiplier": 1.0,
+        "items": [
+          "minecraft:wheat_seeds",
+          "minecraft:pumpkin_seeds",
+          "minecraft:melon_seeds",
+          "minecraft:beetroot_seeds"
+        ]
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 4,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "cat"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 1.0,
+            "sprint_speed_multiplier": 1.25
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "ocelot"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 1.0,
+            "sprint_speed_multiplier": 1.25
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 6,
+        "probability": 0.05
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/tf_slice/tiny_bird.json"
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "tf_slice:landed"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:blue"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:brown"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:gold"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "tf_slice:red"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "tf_slice:take_off": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:landed"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tf_slice:flying"
+          ]
+        }
+      },
+      "tf_slice:land": {
+        "remove": {
+          "component_groups": [
+            "tf_slice:flying"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tf_slice:landed"
+          ]
+        }
+      }
+    }
+  }
+}

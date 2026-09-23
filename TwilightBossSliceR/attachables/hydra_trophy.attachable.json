@@ -1,0 +1,38 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "tf_slice:hydra_trophy_item",
+      "item": {
+        "tf_slice:hydra_trophy_item": "query.is_item_name_any('slot.armor.head', 'tf_slice:hydra_trophy_item')"
+      },
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/entity/tf_slice/trophies/hydra",
+        "enchanted": "textures/misc/enchanted_actor_glint"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.hydra_trophy_wearable"
+      },
+      "scripts": {
+        "parent_setup": "variable.helmet_layer_visible = (query.is_item_name_any('slot.armor.head', 'tf_slice:hydra_trophy_item')) ? 0.0 : variable.helmet_layer_visible;",
+        "animate": [
+          {
+            "hide_first_person": "context.is_first_person == 1.0"
+          }
+        ]
+      },
+      "animations": {
+        "hide_first_person": "animation.tf_slice.trophy_wearable.hide_first_person"
+      },
+      "render_controllers": [
+        {
+          "controller.render.armor": "query.is_item_name_any('slot.armor.head', 'tf_slice:hydra_trophy_item')"
+        }
+      ]
+    }
+  }
+}

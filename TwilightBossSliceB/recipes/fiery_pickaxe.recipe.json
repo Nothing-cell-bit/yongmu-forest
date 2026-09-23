@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "tf_slice:fiery_pickaxe"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "###",
+      " S ",
+      " S "
+    ],
+    "key": {
+      "#": {
+        "item": "tf_slice:fiery_ingot"
+      },
+      "S": {
+        "item": "minecraft:blaze_rod"
+      }
+    },
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "result": {
+      "item": "tf_slice:fiery_pickaxe",
+      "count": 1
+    }
+  }
+}

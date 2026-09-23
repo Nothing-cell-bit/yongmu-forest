@@ -1,0 +1,40 @@
+{
+  "source_version": "4.3.2508",
+  "fire_swamp_seed_core": [
+    1,
+    1
+  ],
+  "swamp_companion_offsets": [
+    [
+      -1,
+      0
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "mangrove_attempts": "90% 3 / 10% 4",
+  "swampy_oak_attempts": "90% 4 / 10% 5",
+  "mangrove_water_depth": 6,
+  "tree_root_placement": {
+    "upstream": "terrain_aware_trace_exposed_root",
+    "implementation": "omit_static_roots"
+  },
+  "huge_lily_pad": "1/2 chunks x 1 single-block 30px visual candidate with 3x3 water clearance, floor search y -2..+8",
+  "huge_water_lily": "1/25 chunks x 5 candidates, floor search y -2..+8",
+  "fallen_mangrove": "1/40 chunks",
+  "fire_swamp_devices": {
+    "source_candidates_per_feature": 4,
+    "surface_profile": "5x3x5 atomic structure",
+    "reservoir": "3x3 lava with stone wall and floor"
+  }
+}

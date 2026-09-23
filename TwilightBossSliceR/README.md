@@ -1,7 +1,5 @@
-# 图片资源
+# 永暮之森资源包
 
-本目录发布439张PNG贴图与图标，不是完整资源包。
+包含本次发布时本地全部运行资源：模型、动画、贴图、UI、声音、语言与包清单。请与 `TwilightBossSliceB` 一起在网易 ModSDK 环境加载。
 
-来源、改动与许可见仓库根目录`ASSET_MANIFEST.json`和`IMAGE_CREDITS.md`。图片适用CC BY-NC-SA 4.0；代码仍按各自代码许可证分发。
-
-这里没有补齐模型、动画、声音、粒子定义或资源包清单。代码中的其他资源引用仍可能缺失。
+运行方法见仓库根目录 README；图片、其他美术资产和音效分别见 `IMAGE_CREDITS.md`、`ASSET_CREDITS.md`、`AUDIO_CREDITS.md`。

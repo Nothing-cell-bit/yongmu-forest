@@ -1,0 +1,434 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.minotaur.move": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958)",
+            0,
+            0
+          ]
+        },
+        "leftArm": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958",
+            0,
+            0
+          ]
+        },
+        "rightLeg": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141",
+            0,
+            0
+          ]
+        },
+        "leftLeg": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.minotaur.attack": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            0,
+            "math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592",
+            0
+          ]
+        },
+        "rightArm": {
+          "position": [
+            "5.0 * (1.0 - math.cos(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592))",
+            0,
+            "math.sin(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592) * 5.0"
+          ],
+          "rotation": [
+            "-math.sin((1.0 - (1.0 - math.clamp(variable.attack_time, 0.0, 1.0)) * (1.0 - math.clamp(variable.attack_time, 0.0, 1.0)) * (1.0 - math.clamp(variable.attack_time, 0.0, 1.0)) * (1.0 - math.clamp(variable.attack_time, 0.0, 1.0))) * 180.0) * 68.7549 + math.sin(math.clamp(variable.attack_time, 0.0, 1.0) * 180.0) * (query.target_x_rotation - 40.1070) * 0.75",
+            "(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592) * 3.0",
+            "-math.sin(math.clamp(variable.attack_time, 0.0, 1.0) * 180.0) * 22.9183"
+          ]
+        },
+        "leftArm": {
+          "position": [
+            "-(5.0 * (1.0 - math.cos(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592)))",
+            0,
+            "-(math.sin(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592) * 5.0)"
+          ],
+          "rotation": [
+            "math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592",
+            "math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.minoshroom.move": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958)",
+            0,
+            0
+          ]
+        },
+        "leftArm": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 57.2958",
+            0,
+            0
+          ]
+        },
+        "leg_1": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141",
+            0,
+            0
+          ]
+        },
+        "leg_2": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        },
+        "leg_3": {
+          "position": [
+            0,
+            0,
+            1
+          ],
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        },
+        "leg_4": {
+          "position": [
+            0,
+            0,
+            1
+          ],
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141",
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rotation": [
+            "query.target_x_rotation",
+            "query.target_y_rotation",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.minoshroom.attack": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            0,
+            "math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592",
+            0
+          ]
+        },
+        "rightArm": {
+          "position": [
+            "5.0 * (1.0 - math.cos(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592))",
+            0,
+            "math.sin(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592) * 5.0"
+          ],
+          "rotation": [
+            "-math.sin((1.0 - (1.0 - math.clamp(variable.attack_time, 0.0, 1.0)) * (1.0 - math.clamp(variable.attack_time, 0.0, 1.0)) * (1.0 - math.clamp(variable.attack_time, 0.0, 1.0)) * (1.0 - math.clamp(variable.attack_time, 0.0, 1.0))) * 180.0) * 68.7549 + math.sin(math.clamp(variable.attack_time, 0.0, 1.0) * 180.0) * (query.target_x_rotation - 40.1070) * 0.75",
+            "(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592) * 3.0",
+            "-math.sin(math.clamp(variable.attack_time, 0.0, 1.0) * 180.0) * 22.9183"
+          ]
+        },
+        "leftArm": {
+          "position": [
+            "-(5.0 * (1.0 - math.cos(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592)))",
+            0,
+            "-(math.sin(math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592) * 5.0)"
+          ],
+          "rotation": [
+            "math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592",
+            "math.sin(math.sqrt(math.clamp(variable.attack_time, 0.0, 1.0)) * 360.0) * 11.4592",
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.minoshroom.slam": {
+      "animation_length": 1.0,
+      "anim_time_update": "math.min(query.anim_time + query.delta_time * 20.0 / math.max(query.property('tf_slice:slam_duration'), 1.0), 1.0)",
+      "bones": {
+        "leg_3": {
+          "position": [
+            0,
+            "query.anim_time * query.anim_time * 7",
+            "query.anim_time * query.anim_time * -5.8"
+          ],
+          "rotation": [
+            "query.anim_time * query.anim_time * -54",
+            0,
+            0
+          ]
+        },
+        "leg_4": {
+          "position": [
+            0,
+            "query.anim_time * query.anim_time * 7",
+            "query.anim_time * query.anim_time * -5.8"
+          ],
+          "rotation": [
+            "query.anim_time * query.anim_time * -54",
+            0,
+            0
+          ]
+        },
+        "body": {
+          "position": [
+            0,
+            "query.anim_time * query.anim_time * 3",
+            0
+          ]
+        },
+        "rightArm": {
+          "position": [
+            0,
+            "query.anim_time * query.anim_time",
+            "query.anim_time * query.anim_time"
+          ],
+          "rotation": [
+            "query.anim_time * query.anim_time * -103.1324",
+            0,
+            "query.anim_time * query.anim_time * -11.4592"
+          ]
+        },
+        "leftArm": {
+          "position": [
+            0,
+            "query.anim_time * query.anim_time",
+            "query.anim_time * query.anim_time"
+          ]
+        },
+        "cow_body": {
+          "rotation": [
+            "query.anim_time * query.anim_time * -36",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.minoshroom.slam_recover": {
+      "animation_length": 0.3,
+      "bones": {
+        "leg_3": {
+          "position": [
+            0,
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * 7",
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * -5.8"
+          ],
+          "rotation": [
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * -54",
+            0,
+            0
+          ]
+        },
+        "leg_4": {
+          "position": [
+            0,
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * 7",
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * -5.8"
+          ],
+          "rotation": [
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * -54",
+            0,
+            0
+          ]
+        },
+        "body": {
+          "position": [
+            0,
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * 3",
+            0
+          ]
+        },
+        "rightArm": {
+          "position": [
+            0,
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0))",
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0))"
+          ],
+          "rotation": [
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * -103.1324",
+            0,
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * -11.4592"
+          ]
+        },
+        "leftArm": {
+          "position": [
+            0,
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0))",
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0))"
+          ]
+        },
+        "cow_body": {
+          "rotation": [
+            "(math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * (math.clamp(1.0 - query.anim_time / 0.3, 0.0, 1.0)) * -36",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.maze_slime.squash": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "scale": [
+            "query.property('tf_slice:slime_size') * (1 + (math.sin(query.life_time * 720) * math.clamp(query.modified_move_speed * 8, 0, 1)) * 0.05)",
+            "query.property('tf_slice:slime_size') * (1 - (math.sin(query.life_time * 720) * math.clamp(query.modified_move_speed * 8, 0, 1)) * 0.08)",
+            "query.property('tf_slice:slime_size') * (1 + (math.sin(query.life_time * 720) * math.clamp(query.modified_move_speed * 8, 0, 1)) * 0.05)"
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.mosquito_swarm.spin": {
+      "loop": true,
+      "bones": {
+        "core": {
+          "rotation": [
+            "math.sin(query.life_time * 229.183) * 14.3239",
+            "query.life_time * 229.183",
+            "math.cos(query.life_time * 229.183) * 14.3239"
+          ]
+        },
+        "group_1": {
+          "rotation": [
+            "query.life_time * 111",
+            "query.life_time * 139",
+            "query.life_time * 97"
+          ]
+        },
+        "group_2": {
+          "rotation": [
+            "query.life_time * 142",
+            "query.life_time * 158",
+            "query.life_time * 134"
+          ]
+        },
+        "group_3": {
+          "rotation": [
+            "query.life_time * 173",
+            "query.life_time * 177",
+            "query.life_time * 171"
+          ]
+        },
+        "group_4": {
+          "rotation": [
+            "query.life_time * 204",
+            "query.life_time * 196",
+            "query.life_time * 208"
+          ]
+        },
+        "group_5": {
+          "rotation": [
+            "query.life_time * 235",
+            "query.life_time * 215",
+            "query.life_time * 245"
+          ]
+        },
+        "group_6": {
+          "rotation": [
+            "query.life_time * 266",
+            "query.life_time * 234",
+            "query.life_time * 282"
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.hydra.move": {
+      "loop": true,
+      "bones": {
+        "leg_1": {
+          "rotation": [
+            "math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141",
+            0,
+            0
+          ]
+        },
+        "leg_2": {
+          "rotation": [
+            "-(math.cos(query.modified_distance_moved * 38.1709) * query.modified_move_speed * 80.2141)",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.hydra_head.state": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "rotation": [
+            "-variable.hydra_mouth_render * 15",
+            0,
+            0
+          ]
+        },
+        "jaw": {
+          "rotation": [
+            "variable.hydra_mouth_render * 60",
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.hydra_neck.pose": {
+      "loop": true,
+      "bones": {
+        "neck": {
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "animation.tf_slice.hydra_mortar.fuse": {
+      "loop": true,
+      "bones": {
+        "mortar": {
+          "scale": [
+            "1.0 + (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * 0.3",
+            "1.0 + (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * 0.3",
+            "1.0 + (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * (math.clamp(1.0 - ((query.property('tf_slice:mortar_fuse') + 1.0) / 10.0), 0.0, 1.0)) * 0.3"
+          ]
+        }
+      }
+    }
+  }
+}

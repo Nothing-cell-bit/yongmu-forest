@@ -1,0 +1,35 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "tf_slice:twilight_flower_feature"
+    },
+    "places_block": [
+      {"block": "minecraft:white_tulip", "weight": 1},
+      {"block": "minecraft:pink_tulip", "weight": 1},
+      {"block": "minecraft:orange_tulip", "weight": 1},
+      {"block": "minecraft:red_tulip", "weight": 1},
+      {"block": "minecraft:dandelion", "weight": 1},
+      {"block": "minecraft:poppy", "weight": 1},
+      {"block": "minecraft:oxeye_daisy", "weight": 1},
+      {"block": "minecraft:azure_bluet", "weight": 1},
+      {"block": "minecraft:allium", "weight": 1},
+      {"block": "minecraft:blue_orchid", "weight": 1},
+      {"block": "minecraft:lily_of_the_valley", "weight": 1},
+      {"block": "minecraft:cornflower", "weight": 1}
+    ],
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": ["minecraft:air"],
+    "may_attach_to": {
+      "auto_rotate": false,
+      "min_sides_must_attach": 1,
+      "bottom": [
+        "minecraft:grass",
+        "minecraft:grass_block",
+        "minecraft:dirt",
+        "minecraft:podzol"
+      ]
+    }
+  }
+}
