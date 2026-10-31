@@ -214,7 +214,7 @@ class BiomeAnimalsExpansionContractTests(unittest.TestCase):
             )
         )
 
-    def test_spooky_vanilla_mobs_are_only_allowed_in_spooky_forest(self):
+    def test_spooky_bats_stay_native_and_monsters_use_the_controlled_pool(self):
         for identifier in (
             "minecraft:bat",
             "minecraft:spider",
@@ -225,7 +225,8 @@ class BiomeAnimalsExpansionContractTests(unittest.TestCase):
                 "realIdentifier": identifier,
                 "dimensionId": DIMENSION_ID,
             }
-            self.assertFalse(
+            self.assertEqual(
+                identifier != "minecraft:bat",
                 spawn_policy.should_cancel_twilight_spawn(
                     args,
                     DIMENSION_ID,

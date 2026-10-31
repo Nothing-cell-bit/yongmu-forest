@@ -19,28 +19,6 @@ FEATURES = ROOT / "TwilightBossSliceB" / "netease_features"
 RULES = ROOT / "TwilightBossSliceB" / "netease_feature_rules"
 
 TREE_PROFILES = {
-    "dense_forest": {
-        "iterations": 6,
-        "features": [
-            ["tf_slice:canopy_tree_selector_feature", 5],
-            ["tf_slice:twilight_tree_mix_selector_feature", 2],
-        ],
-    },
-    "oak_savannah": {
-        "iterations": 2,
-        "features": [
-            ["tf_slice:twilight_oak_tree_feature", 5],
-            ["tf_slice:large_twilight_oak_tree_feature", 2],
-            ["tf_slice:canopy_tree_feature", 1],
-        ],
-    },
-    "firefly_forest": {
-        "iterations": 4,
-        "features": [
-            ["tf_slice:canopy_tree_selector_feature", 3],
-            ["tf_slice:twilight_tree_mix_selector_feature", 2],
-        ],
-    },
     "enchanted_forest": {
         "iterations": "5 + (math.random_integer(0, 9) == 0 ? 1 : 0)",
         "features": [
@@ -54,6 +32,11 @@ TREE_PROFILES = {
 
 
 def write_json(path, document):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    document = normalize_resource_document(path, document)
     path.write_text(
         json.dumps(document, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -542,6 +525,8 @@ def main():
     build_enchanted_forest(ROOT)
     build_mushroom_forest(ROOT)
     build_swamp_features(ROOT)
+    from forest_tree_parity import build as build_forest_tree_parity
+    build_forest_tree_parity(ROOT)
     tree_feature_count = ensure_tree_features_grow_on_native_landmark_grass()
     surface_projection = normalize_landmark_surface_decorations(ROOT)
     structure_safety = guard_native_structure_rules(ROOT)

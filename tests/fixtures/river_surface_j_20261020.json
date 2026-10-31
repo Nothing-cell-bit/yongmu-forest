@@ -1,0 +1,82 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "dm33027004_river",
+      "inherits": "river"
+    },
+    "components": {
+      "minecraft:climate": {
+        "temperature": 0.5,
+        "downfall": 0.1,
+        "snow_accumulation": [
+          0.0,
+          0.0
+        ]
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "river"
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 5,
+        "sea_floor_material": "minecraft:gravel",
+        "foundation_material": "minecraft:stone",
+        "mid_material": "minecraft:dirt",
+        "top_material": "minecraft:grass",
+        "sea_material": "minecraft:water"
+      },
+      "dm33027004": {},
+      "tf_slice_twilight_forest": {},
+      "tf_slice_default_creatures": {},
+      "tf_slice_biome_stream": {},
+      "netease:overworld_surface": {
+        "adjustments": [
+          {
+            "type": "replace",
+            "min_height": 63,
+            "max_height": "math.max(63, math.min(255, variable.height))",
+            "percentage": 1.0,
+            "from_block_pool": [
+              "minecraft:sand",
+              "minecraft:gravel",
+              "minecraft:dirt",
+              "minecraft:grass_block",
+              "minecraft:stone",
+              "minecraft:clay",
+              "minecraft:podzol",
+              "minecraft:mycelium"
+            ],
+            "pool": [
+              {
+                "fill_block": "minecraft:air",
+                "weight": 1
+              }
+            ]
+          },
+          {
+            "type": "replace",
+            "min_height": 61,
+            "max_height": 62,
+            "percentage": 1.0,
+            "from_block_pool": [
+              "minecraft:sand",
+              "minecraft:gravel",
+              "minecraft:dirt",
+              "minecraft:grass_block",
+              "minecraft:stone",
+              "minecraft:clay",
+              "minecraft:podzol",
+              "minecraft:mycelium"
+            ],
+            "pool": [
+              {
+                "fill_block": "minecraft:water",
+                "weight": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

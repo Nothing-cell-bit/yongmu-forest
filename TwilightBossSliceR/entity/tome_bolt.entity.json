@@ -4,7 +4,7 @@
     "description": {
       "identifier": "tf_slice:tome_bolt",
       "materials": {"default": "entity_emissive_alpha"},
-      "textures": {"default": "textures/entity/enchanting_table_book"},
+      "textures": {"default": "textures/tf_beautified/entities/mobs/enchanting_table_book"},
       "geometry": {"default": "geometry.tf_slice.nature_bolt"},
       "animations": {"spin": "animation.tf_slice.nature_bolt.spin"},
       "scripts": {"animate": ["spin"]},

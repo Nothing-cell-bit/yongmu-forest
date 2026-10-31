@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:hollow_dark_log_climbable",
-      "register_to_creative_menu": true
+      "register_to_creative_menu": false
     },
     "components": {
       "minecraft:destroy_time": {
@@ -152,6 +152,11 @@
       },
       "netease:face_directional": {
         "type": "direction"
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

@@ -1,7 +1,7 @@
 {
   "format_version": "1.10.0",
   "particle_effect": {
-    "description": {"identifier": "tf_slice:fire_swamp_ash", "basic_render_parameters": {"material": "particles_blend", "texture": "textures/particle/ominous_flame"}},
+    "description": {"identifier": "tf_slice:fire_swamp_ash", "basic_render_parameters": {"material": "particles_blend", "texture": "textures/tf_beautified/remaining/particle/ominous_flame"}},
     "components": {
       "minecraft:emitter_rate_instant": {"num_particles": 1},
       "minecraft:emitter_lifetime_once": {},

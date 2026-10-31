@@ -1,0 +1,38 @@
+{
+  "sourceVideo": "20260831-0724-37.6772105.mp4",
+  "sourceFrameSha256": "e46f167687eb738fc05c5ee47010ea80db51aac3b6ca2e1323596cd9750a8eb8",
+  "sourceFrameTimeSeconds": 3.7,
+  "acceptedFrom": "The native mangrove item icons visible after every slot had been selected",
+  "acceptedDate": "2026-09-01",
+  "crop": {
+    "sourceSize": [2488, 252],
+    "slotCenters": {
+      "stairs": [803, 180],
+      "slab": [904, 180],
+      "button": [1005, 180],
+      "fence": [1106, 180],
+      "fence_gate": [1207, 180],
+      "pressure_plate": [1308, 180]
+    },
+    "windowSize": [104, 104],
+    "windowTop": 128,
+    "outputSize": [64, 64],
+    "resize": "nearest"
+  },
+  "mask": {
+    "seed": "r >= 70 and r-g >= 5 and g-b >= 12",
+    "component": "largest 8-connected seed component",
+    "outlineExpansionIterations": 2,
+    "outlinePredicate": "max(rgb) < 48 or (r-g >= 4 and r >= 40 and g-b >= 5)"
+  },
+  "suffixSource": {
+    "stairs": "stairs",
+    "slab": "slab",
+    "button": "button",
+    "fence": "fence",
+    "fence_gate": "fence_gate",
+    "pressure_plate": "pressure_plate",
+    "banister": "fence"
+  },
+  "policy": "These are the actual light mangrove icons from the formerly correct post-selection state. Use them as the initial mangrove inventory icons without requiring any item-ID conversion."
+}

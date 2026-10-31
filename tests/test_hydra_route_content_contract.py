@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 if str(BP) not in sys.path:
     sys.path.insert(0, str(BP))
 
@@ -120,7 +121,7 @@ class HydraRouteBiomeTests(unittest.TestCase):
     def test_swamp_and_fire_swamp_files_exist_on_both_sides(self):
         for identifier in ("dm33027004_swampland", "dm33027004_swampland_mutated"):
             self.assertTrue((BP / "netease_biomes" / "dm33027004" / (identifier + ".json")).is_file())
-            self.assertTrue((RP / "biomes" / (identifier + ".client_biome.json")).is_file())
+            self.assertTrue((BIOME_PROFILES / (identifier + ".client_biome.json")).is_file())
 
     def test_internal_swamp_boundary_has_no_stream_transition(self):
         dimension = json.loads((BP / "netease_dimension" / "dm33027004.json").read_text("utf-8"))
@@ -160,7 +161,8 @@ class HydraRouteResourceTests(unittest.TestCase):
         self.assertNotIn("mangrove_chest", catalog["mangroveBlocks"])
         self.assertGreaterEqual(len(catalog["items"]), 45)
         for identifier in catalog["items"]:
-            self.assertTrue((BP / "items" / (identifier + ".item.json")).is_file(), identifier)
+            paths = [BP / folder / (identifier + ".item.json") for folder in ("items", "netease_items_beh")]
+            self.assertEqual(1, sum(path.is_file() for path in paths), identifier)
 
     def test_boss_huds_are_registered(self):
         defs = json.loads((RP / "ui" / "_ui_defs.json").read_text("utf-8"))

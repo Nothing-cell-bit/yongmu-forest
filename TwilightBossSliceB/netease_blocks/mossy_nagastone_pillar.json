@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:mossy_nagastone_pillar",
-      "register_to_creative_menu": true,
+      "register_to_creative_menu": false,
       "states": {
         "tf_slice:axis": [
           "x",
@@ -78,6 +78,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "pickaxe",
+        "destroy_special": true,
+        "level": 0
       }
     },
     "permutations": [

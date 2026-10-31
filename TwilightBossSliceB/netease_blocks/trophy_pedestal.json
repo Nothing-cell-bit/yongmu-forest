@@ -75,7 +75,7 @@
         "value": false
       },
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 5.0
+        "seconds_to_destroy": 2.0
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 6.0
@@ -83,6 +83,11 @@
       "netease:block_entity": {
         "tick": true,
         "movable": false
+      },
+      "netease:tier": {
+        "digger": "pickaxe",
+        "destroy_special": true,
+        "level": 0
       }
     },
     "permutations": [

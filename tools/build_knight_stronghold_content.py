@@ -11,6 +11,10 @@ from pathlib import Path
 from build_phantom_urghast_models import build as build_route_models
 from build_creative_catalog import normalize_creative_catalog
 from build_localization import build_localization
+try:
+    from native_armor import ARMOR as NATIVE_ARMOR, write_armor
+except ImportError:
+    from tools.native_armor import ARMOR as NATIVE_ARMOR, write_armor
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,14 +61,14 @@ ITEMS = {
     "knightmetal_axe": (1, 9, 512),
     "block_and_chain": (1, None, 99),
     "knightmetal_shield": (1, None, 1024),
-    "phantom_helmet": (1, None, 363),
-    "phantom_chestplate": (1, None, 528),
+    "phantom_helmet": (1, None, 330),
+    "phantom_chestplate": (1, None, 480),
 }
 ARMOR = {
-    "knightmetal_helmet": ("slot.armor.head", 3, 330),
-    "knightmetal_chestplate": ("slot.armor.chest", 8, 480),
-    "knightmetal_leggings": ("slot.armor.legs", 6, 450),
-    "knightmetal_boots": ("slot.armor.feet", 3, 390),
+    "knightmetal_helmet": ("slot.armor.head", 3, 220),
+    "knightmetal_chestplate": ("slot.armor.chest", 8, 320),
+    "knightmetal_leggings": ("slot.armor.legs", 6, 300),
+    "knightmetal_boots": ("slot.armor.feet", 3, 260),
 }
 ENTITY_STATS = {
     "block_chain_goblin": (20, 8, 0.28, 0.9, 1.4, "model/blockgoblin.png"),
@@ -85,6 +89,11 @@ def _load(path):
 
 
 def _write(path, value):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    value = normalize_resource_document(path, value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(value, ensure_ascii=False, indent=2) + "\n",
@@ -608,7 +617,7 @@ def _armor(identifier, slot, protection, durability):
             "slot.armor.legs": "armor_legs",
             "slot.armor.feet": "armor_feet",
         }[slot],
-        "value": 9,
+        "value": 8,
     }
     return value
 
@@ -1120,6 +1129,15 @@ def _append_language(path, lines):
     path.write_text("\n".join(existing_lines) + "\n", encoding="utf-8")
 
 
+def write_item_definition(identifier, values):
+    if identifier in NATIVE_ARMOR:
+        write_armor(BP, RP, identifier, _write)
+    elif identifier in ARMOR:
+        _write(BP / "items" / (identifier + ".item.json"), _armor(identifier, *ARMOR[identifier]))
+    else:
+        _write(BP / "items" / (identifier + ".item.json"), _item(identifier, *values))
+
+
 def build():
     terrain = _load(RP / "textures" / "terrain_texture.json")
     legacy_blocks = _load(RP / "blocks.json")
@@ -1160,12 +1178,7 @@ def build():
     item_atlas = _load(RP / "textures" / "item_texture.json")
     item_texture_data = item_atlas["texture_data"]
     for identifier, values in dict(ITEMS, **dict((key, (1, None, value[2])) for key, value in ARMOR.items())).items():
-        if identifier in ARMOR:
-            slot, protection, durability = ARMOR[identifier]
-            document = _armor(identifier, slot, protection, durability)
-        else:
-            document = _item(identifier, *values)
-        _write(BP / "items" / (identifier + ".item.json"), document)
+        write_item_definition(identifier, values)
         source_name = identifier
         source_path = UPSTREAM / "textures" / "item" / (source_name + ".png")
         if identifier == "knightmetal_shield":

@@ -13,6 +13,7 @@ from tools import validate_slice as release_validator
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 CATALOG_PATH = BP / "structures" / "tf_slice" / "ruins" / "structure_catalog_v1.json"
 CURRENT_NETEASE_BLOCK_VERSION = 0x01153C21
 
@@ -2807,7 +2808,7 @@ class SpecialBiomeContractTests(unittest.TestCase):
             server = load_json(
                 BP / "netease_biomes" / "dm33027004" / ("%s.json" % biome_id)
             )
-            client = load_json(RP / "biomes" / ("%s.client_biome.json" % biome_id))
+            client = load_json(BIOME_PROFILES / ("%s.client_biome.json" % biome_id))
             self.assertEqual(
                 server["minecraft:biome"]["description"]["identifier"],
                 biome_id,

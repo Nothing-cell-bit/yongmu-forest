@@ -47,6 +47,7 @@ class MushroomWorldgenService(object):
         self._catalog = _load_catalog()
         self._world_seed = self._load_world_seed()
         self._ledger = self._load_ledger()
+        self._refresh_pending_jobs()
         self._handoffs = collections.deque()
         self._handoff_keys = set()
         self._sequence = max(
@@ -82,8 +83,18 @@ class MushroomWorldgenService(object):
             result[str(key)] = copied
         return result
 
+    def _refresh_pending_jobs(self):
+        # Terminal records remain in the durable ledger for duplicate rejection,
+        # but do not belong in the per-tick scheduling scan. Rebuild only on
+        # load or mutation; keep references so placement progress stays current.
+        self._pending_jobs = [
+            (key, job) for key, job in self._ledger.items()
+            if job.get("state") in ("planned", "placing")
+        ]
+
     def _persist(self):
         self._prune_ledger()
+        self._refresh_pending_jobs()
         try:
             self._extra.SetExtraData(
                 LEDGER_KEY,
@@ -416,7 +427,7 @@ class MushroomWorldgenService(object):
         jobs = sorted(
             (
                 (key, job)
-                for key, job in self._ledger.items()
+                for key, job in self._pending_jobs
                 if job.get("state") in ("planned", "placing")
                 and self._near_player(job, players)
             ),

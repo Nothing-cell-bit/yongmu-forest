@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:destroy_time": {
-        "value": 1.5
+        "value": 0.0
       },
       "minecraft:explosion_resistance": {
         "value": 100.0

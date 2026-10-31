@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:mangrove_banister",
-      "register_to_creative_menu": true,
+      "register_to_creative_menu": false,
       "states": {
         "tf_slice:shape": [
           "tall",
@@ -137,6 +137,11 @@
       },
       "netease:neighborchanged_sendto_script": {
         "value": true
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     },
     "permutations": [

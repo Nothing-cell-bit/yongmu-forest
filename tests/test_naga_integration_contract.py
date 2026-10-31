@@ -390,7 +390,7 @@ class NagaServerAdapterContractTests(unittest.TestCase):
         self.assertIn("CreateEngineEntityByTypeStr(", self.source)
         self.assertIn('"segmentIds"', self.source)
         self.assertIn("segment_destruction_schedule(", self.source)
-        self.assertIn("self.DestroyEntity(segmentId)", self.source)
+        self.assertIn("self.DestroyEntity(str(segmentId))", self.source)
         self.assertIn('"NagaSegmentBurst"', self.source)
         self.assertIn('"minecraft:large_explosion"', client_source)
         self.assertIn('"positions"', self.source)
@@ -408,15 +408,18 @@ class NagaServerAdapterContractTests(unittest.TestCase):
     def test_failed_segment_removal_keeps_ownership_and_is_retried(self):
         handler = self.source[self.source.index("    def _destroy_segment") :]
         handler = handler[: handler.index("    def _destroy_all_segments")]
-        self.assertIn("result = self.DestroyEntity(segmentId)", handler)
+        self.assertIn("result = self.DestroyEntity(str(segmentId))", handler)
         self.assertIn("if result is False:", handler)
         self.assertLess(
             handler.index("if result is False:"),
-            handler.index("self._segment_owners.pop(segmentId, None)"),
+            handler.rindex("self._forget_naga_segment(state, index, segmentId)"),
         )
         update = self.source[self.source.index("    def _update_boss_segments") :]
         update = update[: update.index("    def _remove_excess_boss")]
-        self.assertIn("config.SEGMENT_REMOVAL_RETRY_TICKS", update)
+        self.assertIn("self._naga_segment_retry_tick(state, index)", update)
+        retry = self.source[self.source.index("    def _naga_segment_retry_tick"):]
+        retry = retry[:retry.index("    def _destroy_all_segments")]
+        self.assertIn("config.SEGMENT_REMOVAL_RETRY_TICKS", retry)
 
     def test_final_death_forces_all_segments_out_before_the_head(self):
         finalizer = self.source[self.source.index("    def _finalize_naga_death") :]
@@ -429,7 +432,7 @@ class NagaServerAdapterContractTests(unittest.TestCase):
         cleanup = self.source[self.source.index("    def _destroy_all_segments") :]
         cleanup = cleanup[: cleanup.index("    def _mark_boss_dead")]
         self.assertIn("if not removed:", cleanup)
-        self.assertIn("config.SEGMENT_REMOVAL_RETRY_TICKS", cleanup)
+        self.assertIn("self._naga_segment_retry_tick(state, index)", cleanup)
         self.assertNotIn('state.get("segmentBurstTicks", {}).clear()', cleanup)
 
     def test_short_body_holds_formation_while_the_head_turns_in_place(self):
@@ -584,7 +587,8 @@ class NagaServerAdapterContractTests(unittest.TestCase):
         handler = handler[: handler.index("    def OnActuallyHurtServerEvent")]
         self.assertIn("naga_logic.naga_damage_is_blocked(", handler)
         self.assertIn("_damage_entity_inside_home(", handler)
-        self.assertIn("segmentOwner = self._segment_owners.get(entityId)", handler)
+        self.assertIn("segmentOwner = self._segment_owners.get(segmentKey)", handler)
+        self.assertIn("self._segment_owners, entityId", handler)
         self.assertIn('args["cancel"] = True', handler)
 
     def test_death_delegates_to_staged_idempotent_finalizer(self):

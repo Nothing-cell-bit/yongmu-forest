@@ -1,0 +1,48 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tf_slice.forest_wyrm_art_v1_eyelids",
+        "texture_width": 64,
+        "texture_height": 32,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [
+          0,
+          1,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "head",
+          "pivot": [
+            0,
+            8,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8.0,
+                0,
+                -8.0
+              ],
+              "size": [
+                16,
+                16,
+                16
+              ],
+              "uv": [
+                0,
+                0
+              ],
+              "inflate": 0.015
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

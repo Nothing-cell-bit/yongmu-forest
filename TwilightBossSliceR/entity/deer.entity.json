@@ -7,21 +7,27 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/wilddeer"
+        "default": "textures/tf_beautified/entities/deer_v1"
       },
       "geometry": {
-        "default": "geometry.tf_slice.deer"
+        "default": "geometry.tf_slice.deer_art_v1"
       },
       "animations": {
         "walk": "animation.quadruped.walk",
-        "look_at_target": "animation.common.look_at_target"
+        "look_at_target": "animation.common.look_at_target",
+        "art_details": "animation.tf_slice.deer_art.details",
+        "art_walk": "animation.tf_slice.deer_art.walk_tail"
       },
       "scripts": {
         "animate": [
           {
             "walk": "query.modified_move_speed"
           },
-          "look_at_target"
+          "look_at_target",
+          "art_details",
+          {
+            "art_walk": "math.clamp(query.modified_move_speed * 4, 0, 1)"
+          }
         ]
       },
       "render_controllers": [

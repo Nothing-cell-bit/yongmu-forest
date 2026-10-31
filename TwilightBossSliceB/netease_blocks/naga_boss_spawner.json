@@ -22,7 +22,8 @@
       },
       "netease:pathable": {
         "value": false
-      }
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/no_mining_drop.json"
     }
   }
 }

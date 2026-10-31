@@ -7,21 +7,23 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/penguin"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__penguin"
       },
       "geometry": {
-        "default": "geometry.tf_slice.penguin"
+        "default": "geometry.tf_slice.penguin_art_v1"
       },
       "animations": {
         "source_motion": "animation.tf_slice.penguin.source_motion",
-        "look_at_target": "animation.common.look_at_target"
+        "look_at_target": "animation.common.look_at_target",
+        "art_details": "animation.tf_slice.penguin_art.details"
       },
       "scripts": {
         "animate": [
           {
             "source_motion": "query.modified_move_speed"
           },
-          "look_at_target"
+          "look_at_target",
+          "art_details"
         ]
       },
       "render_controllers": [

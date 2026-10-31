@@ -10,9 +10,14 @@ import TwilightBossSlice.config as config
 from TwilightBossSlice.item_effects import ItemEffects
 import TwilightBossSlice.reward_delivery as reward_delivery
 import TwilightBossSlice.entry_diagnostics as entry_diagnostics
+import TwilightBossSlice.chunk_latency_probe as chunk_latency_probe
 import TwilightBossSlice.entity_registry_logic as entity_registry_logic
 import TwilightBossSlice.forest_animal_logic as forest_animal_logic
 import TwilightBossSlice.fire_swamp_logic as fire_swamp_logic
+import TwilightBossSlice.device_scan as device_scan
+import TwilightBossSlice.entity_spawn_guard as entity_spawn_guard
+import TwilightBossSlice.water_marker_cleanup as water_marker_cleanup
+import TwilightBossSlice.native_world_diagnostics as native_world_diagnostics
 import TwilightBossSlice.flight_logic as flight_logic
 import TwilightBossSlice.leaf_decay_logic as leaf_decay_logic
 import TwilightBossSlice.magic_map_logic as magic_map_logic
@@ -33,6 +38,7 @@ import TwilightBossSlice.ur_ghast_logic as ur_ghast_logic
 import TwilightBossSlice.ur_ghast_effect_logic as ur_ghast_effect_logic
 import TwilightBossSlice.route_progression_logic as route_progression_logic
 import TwilightBossSlice.portal_logic as portal_logic
+import TwilightBossSlice.twilight_session as twilight_session
 import TwilightBossSlice.public_block_logic as public_block_logic
 import TwilightBossSlice.banister_logic as banister_logic
 import TwilightBossSlice.vanilla_block_adapter_logic as vanilla_block_adapter_logic
@@ -126,6 +132,11 @@ CARMINITE_GOLEM_IDENTIFIER = "tf_slice:carminite_golem"
 TOWER_BROODLING_IDENTIFIER = "tf_slice:tower_broodling"
 TOWER_GHAST_IDENTIFIER = "tf_slice:tower_ghast"
 TOWERWOOD_BORER_IDENTIFIER = "tf_slice:towerwood_borer"
+INITIAL_MOB_SPAWN_KEY = "tf_slice:initial_mob_spawn_v1"
+INITIAL_MOB_SPAWN_TYPES = frozenset((spider_logic.SWARM_SPIDER, spider_logic.KING_SPIDER, TOWER_BROODLING_IDENTIFIER))
+MAX_INITIAL_MOB_SPAWNS = 128
+INITIAL_MOB_SPAWNS_PER_TICK = 8
+INITIAL_MOB_SPAWN_WAIT_TICKS = 200
 PHANTOM_UR_GHAST_MOB_IDENTIFIERS = set(
     (
         BLOCK_CHAIN_GOBLIN_IDENTIFIER,
@@ -358,7 +369,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         self._knight_phantoms = {}
         self._phantom_urghast_mobs = {}
         self._goblin_combat = goblin_combat.GoblinCombat(self, CF, LEVEL_ID)
-        self._pending_broodling_children = 0
+        self._pending_initial_mob_spawns = {}
+        self._unmarked_initial_mob_children = set()
         self._block_chain_projectiles = {}
         self._knightmetal_shield_users = {}
         self._knight_projectiles = {}
@@ -381,10 +393,14 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         self._hydra_heads = {}
         self._hydra_necks = {}
         self._hydra_parts = {}
+        self._hydra_attachment_rescan = True
+        self._hydra_attachment_scan_tick = -20
+        self._hydra_legacy_necks = {}
         self._hydra_mortars = {}
         self._pending_hydra_player_attacks = {}
         self._fire_swamp_devices = {}
         self._fire_swamp_discovery_queue = []
+        self._fire_swamp_discovery_height_bands = {}
         self._fire_swamp_discovery_ready_ticks = {}
         self._dimension_change_in_progress = set()
         self._dimension_worldgen_ready_ticks = {}
@@ -409,16 +425,18 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         self._portal_background_preload_keys = set()
         self._portal_background_preload_inflight = None
         self._worldgen_perf_counters = {}
+        self._water_marker_cleanup = water_marker_cleanup.WaterMarkerCleanup(config.DIMENSION_ID)
+        self._native_world_diag = native_world_diagnostics.NativeWorldDiagnostics(config.DIMENSION_ID)
         self._worldgen_perf_structure_counts = {}
         self._pending_portal_recovery_players = set()
         self._portal_area_sequence = 0
         self._portal_fire_cleanups = []
         self._known_players = set()
         self._ruin_mobs = {}
-        self._pending_swarm_children = 0
         self._magic_map_extra = CF.CreateExtraData(LEVEL_ID)
         self._progress_extra = CF.CreateExtraData(LEVEL_ID)
         self._portal_extra = CF.CreateExtraData(LEVEL_ID)
+        self._twilight_session = twilight_session.TwilightSession(self, config.DIMENSION_ID)
         self._leaf_decay_queue = {}
         self._leaf_decay_bridge_propagated = set()
         self._persistent_leaf_positions = (
@@ -618,6 +636,11 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         )
         self._listen_engine(
             "ClientLoadAddonsFinishServerEvent", self.OnClientReady
+        )
+        self._listen_engine("DelServerPlayerEvent", self.OnTwilightPlayerLeave)
+        self.ListenForEvent(
+            config.ModName, config.ClientSystemName, "TwilightSessionReady",
+            self, self.OnTwilightSessionReady,
         )
         self._listen_engine(
             "LoadServerAddonScriptsAfter",
@@ -865,6 +888,19 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             print "[TwilightBossSlice] Fire Swamp climate failed:", error
 
     def Destroy(self):
+        session = getattr(self, "_twilight_session", None)
+        if session is not None:
+            session.flush()
+        diagnostic = getattr(self, "_native_world_diag", None)
+        if diagnostic is not None:
+            diagnostic.close(self._emit_native_world_diag)
+        cleanup = getattr(self, "_water_marker_cleanup", None)
+        if cleanup is not None:
+            cleanup.close()
+            print "[TwilightBossSlice] water marker cleanup:", dict(cleanup.counters)
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None:
+            probe.stop("server_destroy")
         self._configure_twilight_weather()
         if self._magic_map_dirty:
             self._persist_magic_map_records()
@@ -3202,6 +3238,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         # A queued column can belong to terrain that is unloading while the
         # player changes dimension. Rebuild only after the arrival grace.
         self._fire_swamp_discovery_queue = []
+        self._fire_swamp_discovery_height_bands = {}
 
     def _fire_swamp_chunk_ready(self, x, z):
         checker = getattr(self._chunk_comp, "CheckChunkState", None)
@@ -3230,6 +3267,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
 
     def _queue_fire_swamp_discovery_columns(self):
         columns = set()
+        heightBands = {}
         onlinePlayers = set(self._get_online_players())
         for playerId in onlinePlayers:
             if self._get_dimension(playerId) != config.DIMENSION_ID:
@@ -3262,16 +3300,21 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 continue
             centerX = int(math.floor(playerPos[0]))
             centerZ = int(math.floor(playerPos[2]))
+            playerY = int(math.floor(playerPos[1]))
             radius = FIRE_SWAMP_DISCOVERY_RADIUS
             for x in range(centerX - radius, centerX + radius + 1):
                 for z in range(centerZ - radius, centerZ + radius + 1):
                     columns.add((x, z))
+                    heightBands.setdefault((x, z), set()).add(playerY)
         for playerId in list(self._fire_swamp_discovery_ready_ticks):
             if playerId not in onlinePlayers:
                 self._fire_swamp_discovery_ready_ticks.pop(playerId, None)
         self._fire_swamp_discovery_queue = sorted(columns, reverse=True)
+        self._fire_swamp_discovery_height_bands = heightBands
 
     def _discover_fire_swamp_devices(self):
+        if getattr(self, "_dimension_change_in_progress", set()):
+            return
         if (
             not self._fire_swamp_discovery_queue
             and self._tick % FIRE_SWAMP_DISCOVERY_INTERVAL_TICKS == 1
@@ -3279,6 +3322,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             self._queue_fire_swamp_discovery_columns()
         readyChunks = {}
         budget = FIRE_SWAMP_DISCOVERY_COLUMNS_PER_TICK
+        columns = []
         while self._fire_swamp_discovery_queue and budget > 0:
             budget -= 1
             x, z = self._fire_swamp_discovery_queue.pop()
@@ -3297,15 +3341,30 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 # dimension entry. Stop touching this chunk for the tick.
                 readyChunks[chunk] = False
                 continue
-            for y in range(int(top), int(top) - 7, -1):
-                position = (x, y, z)
-                blockName = self._block_name(
-                    self._get_block(position, config.DIMENSION_ID)
-                )
-                if blockName in fire_swamp_logic.DEVICE_BLOCKS:
-                    self._register_fire_swamp_device(
-                        blockName, position, config.DIMENSION_ID
-                    )
+            heights = sorted(getattr(
+                self, "_fire_swamp_discovery_height_bands", {}
+            ).get((x, z), ()))
+            if heights:
+                # Highest-block height includes canopy leaves. Scan the
+                # bounded band around a nearby player's feet instead, capped
+                # at the actual top in open terrain. Rotate stacked players
+                # without increasing the per-tick column/read budget.
+                phase = self._tick // FIRE_SWAMP_DISCOVERY_INTERVAL_TICKS
+                scanTop = min(int(top), heights[phase % len(heights)] + 3)
+            else:
+                scanTop = int(top)
+            columns.append((x, z, scanTop))
+        if not columns:
+            return
+        try:
+            paletteComponent = CF.CreateBlock(LEVEL_ID)
+        except Exception:
+            paletteComponent = None
+        for position, blockName in device_scan.scan(
+            columns, config.DIMENSION_ID, paletteComponent,
+            lambda pos: self._block_name(self._get_block(pos, config.DIMENSION_ID)),
+        ):
+            self._register_fire_swamp_device(blockName, position, config.DIMENSION_ID)
 
     def _fire_swamp_device_powered(self, position, dimensionId):
         return self._adjacent_redstone_powered(
@@ -3891,6 +3950,13 @@ class ServerSystem(serverApi.GetServerSystemCls()):
     def _relocate_staged_portal_entry(
         self, playerId, request, targetFootPos
     ):
+        if request.get("directEntry"):
+            acknowledgedTick = request.get("clientEngineReadyAcknowledgedTick")
+            if (not request.get("clientEngineReady")
+                    or request.get("clientEngineReadyFallback")
+                    or acknowledgedTick is None
+                    or self._tick <= acknowledgedTick):
+                return False
         targetFootPos = tuple(float(value) for value in targetFootPos)
         if request.get("directEntry"):
             enteredAt = request.get("directEntryFootPos")
@@ -4070,6 +4136,12 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                     "[TwilightBossSlice] portal recovery reused:",
                     playerId,
                     portalOrigin,
+                )
+                # No pending request exists in this fast path, so no later
+                # arrival tick can close the overlay or confirm the sky gate.
+                self.NotifyToClient(
+                    playerId, "PortalArrivalFinished",
+                    {"cancelled": False, "reused": True},
                 )
                 return True
 
@@ -4932,9 +5004,12 @@ class ServerSystem(serverApi.GetServerSystemCls()):
     def _get_health(self, entityId, fallback):
         try:
             attrType = serverApi.GetMinecraftEnum().AttrType.HEALTH
-            return max(
-                0.0, float(CF.CreateAttr(entityId).GetAttrValue(attrType))
-            )
+            value = float(CF.CreateAttr(entityId).GetAttrValue(attrType))
+            # ModSDK returns -1 when the attribute is unavailable (including
+            # detached actors). It is not a zero-health/death observation.
+            if value < 0.0 or math.isnan(value) or math.isinf(value):
+                return float(fallback)
+            return value
         except Exception:
             return float(fallback)
 
@@ -5290,9 +5365,23 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         except Exception:
             return (0.0, 0.0)
 
+    def _create_loaded_entity(self, identifier, position, rotation, dimensionId,
+                              isNpc=False, isGlobal=False):
+        gate = getattr(self, "_entity_spawn_gate", None)
+        if gate is None:
+            gate = entity_spawn_guard.SpawnGate()
+            self._entity_spawn_gate = gate
+        checker = getattr(getattr(self, "_chunk_comp", None), "CheckChunkState", None)
+        return gate.create(
+            int(getattr(self, "_tick", 0)),
+            (identifier, tuple(position), tuple(rotation), int(dimensionId), isNpc, isGlobal),
+            checker, self.CreateEngineEntityByTypeStr,
+            getattr(self, "_worldgen_perf_increment", None),
+        )
+
     def _spawn_segment(self, bossId, state, index, pos, yaw):
         try:
-            segmentId = self.CreateEngineEntityByTypeStr(
+            segmentId = self._create_loaded_entity(
                 SEGMENT_IDENTIFIER,
                 tuple(pos),
                 (0.0, float(yaw)),
@@ -5311,7 +5400,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
 
     def _spawn_ruin_entity(self, identifier, pos, yaw, dimensionId):
         try:
-            entityId = self.CreateEngineEntityByTypeStr(
+            entityId = self._create_loaded_entity(
                 str(identifier),
                 tuple(pos),
                 (0.0, float(yaw)),
@@ -6311,23 +6400,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         count = phantom_urghast_mob_logic.broodling_companion_count(
             True, random.randrange(2)
         )
-        self._pending_broodling_children += count
-        for index in range(count):
-            offset = -0.55 if index == 0 else 0.55
-            childId = self._spawn_ruin_entity(
-                TOWER_BROODLING_IDENTIFIER,
-                (
-                    float(position[0]) + offset,
-                    float(position[1]),
-                    float(position[2]) - offset * 0.5,
-                ),
-                random.uniform(0.0, 360.0),
-                dimensionId,
-            )
-            if childId is None:
-                self._pending_broodling_children = max(
-                    0, self._pending_broodling_children - 1
-                )
+        self._spawn_initial_companions(TOWER_BROODLING_IDENTIFIER, position, dimensionId, count)
 
     def _register_phantom_urghast_mob(
         self, entityId, entityType, dimensionId
@@ -6376,15 +6449,6 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                         dimensionId,
                     )
                     self._mount_goblin_knight(entityId, upperId)
-        elif entityType == TOWER_BROODLING_IDENTIFIER:
-            if self._pending_broodling_children > 0:
-                self._pending_broodling_children -= 1
-            else:
-                position = self._get_foot_pos(entityId)
-                if position is not None:
-                    self._spawn_broodling_companions(
-                        position, int(dimensionId)
-                    )
         return state
 
     def _launch_goblin_chain(self, ownerId, state, origin, target):
@@ -8977,12 +9041,14 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             state = self._hydras[key]
             state["actorLoaded"] = True
             state["dimensionId"] = int(dimensionId)
+            self._hydra_attachment_rescan = True
             return state
         state = self._load_hydra_state(entityId)
         if state is None:
             state = self._new_hydra_state(entityId, dimensionId)
         state["actorLoaded"] = True
         self._hydras[entityId] = state
+        self._hydra_attachment_rescan = True
         self._set_health_max(entityId, hydra_logic.MAX_HEALTH)
         self._set_health(entityId, max(1.0, state["health"]))
         self._save_hydra_state(entityId, state)
@@ -9040,6 +9106,10 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         ):
             return False
         state = self._hydras[ownerKey]
+        oldId = state.setdefault("partIds", {}).get(partKind)
+        if oldId is not None and str(oldId) != str(partId):
+            self.DestroyEntity(partId)
+            return True
         state.setdefault("partIds", {})[partKind] = partId
         self._bind_hydra_part(partId, ownerKey, partKind)
         return True
@@ -9295,9 +9365,11 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             return False
         head = self._hydras[ownerKey]["heads"][index]
         oldId = head.get("entityId")
-        if oldId not in (None, headId):
-            self.DestroyEntity(oldId)
-            self._hydra_heads.pop(oldId, None)
+        if oldId is not None and str(oldId) != str(headId):
+            # Keep the already bound actor; remove only a proven duplicate
+            # with the same persistent owner and slot.
+            self.DestroyEntity(headId)
+            return True
         if not head.get("alive") and int(head.get("deadTicks", -1)) < 0:
             try:
                 self.DestroyEntity(headId)
@@ -9307,6 +9379,98 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         head["entityId"] = headId
         self._bind_hydra_head(headId, ownerKey, index)
         return True
+
+    def _bind_hydra_neck(self, neckId, hydraId, index, segmentIndex):
+        self._hydra_necks[neckId] = (hydraId, int(index), int(segmentIndex))
+        try:
+            extra = CF.CreateExtraData(neckId)
+            extra.SetExtraData("tf_slice:hydra_neck_owner_v1", {
+                "ownerId": str(hydraId), "index": int(index),
+                "segment": int(segmentIndex),
+            }, False)
+            extra.SaveExtraData()
+        except Exception:
+            pass
+
+    def _restore_hydra_neck_owner(self, neckId):
+        try:
+            value = CF.CreateExtraData(neckId).GetExtraData(
+                "tf_slice:hydra_neck_owner_v1")
+            if not isinstance(value, dict):
+                return False
+            ownerKey = entity_registry_logic.matching_entity_key(
+                self._hydras, value.get("ownerId"))
+            index, segment = int(value.get("index")), int(value.get("segment"))
+        except (TypeError, ValueError):
+            return False
+        except Exception:
+            return False
+        if (ownerKey is None or not 0 <= index < HYDRA_HEAD_COUNT
+                or not 0 <= segment < HYDRA_NECK_COUNT):
+            return False
+        head = self._hydras[ownerKey]["heads"][index]
+        if not head.get("alive") and int(head.get("deadTicks", -1)) < 0:
+            self.DestroyEntity(neckId)
+            return True
+        neckIds = list(head.get("neckIds") or ())[:HYDRA_NECK_COUNT]
+        neckIds += [None] * (HYDRA_NECK_COUNT - len(neckIds))
+        oldId = neckIds[segment]
+        if oldId is not None and str(oldId) != str(neckId):
+            self.DestroyEntity(neckId)
+            return True
+        neckIds[segment] = neckId
+        head["neckIds"] = neckIds
+        self._bind_hydra_neck(neckId, ownerKey, index, segment)
+        return True
+
+    def _recover_hydra_attachments(self):
+        # AddEntity is not ordered parent-before-child on world/chunk reload.
+        # Inventory reconciliation must run before any replacement is spawned.
+        if (not self._hydra_attachment_rescan
+                and self._tick - self._hydra_attachment_scan_tick < 20):
+            return
+        self._hydra_attachment_rescan = False
+        self._hydra_attachment_scan_tick = self._tick
+        actors = []
+        for entityId, actor in self._loaded_actors():
+            kind = actor.get("identifier") if isinstance(actor, dict) else None
+            actors.append((entityId, kind or self._get_engine_type(entityId)))
+        for entityId, kind in actors:
+            if (kind == HYDRA_IDENTIFIER
+                    and entity_registry_logic.matching_entity_key(
+                        self._hydras, entityId) is None):
+                dimension = self._get_dimension(entityId)
+                if dimension is not None:
+                    self._register_hydra(entityId, dimension)
+        legacy = {}
+        for entityId, kind in sorted(actors, key=lambda pair: str(pair[0])):
+            if kind == HYDRA_HEAD_IDENTIFIER:
+                self._restore_hydra_head_owner(entityId)
+            elif kind == HYDRA_PART_PROXY_IDENTIFIER:
+                self._restore_hydra_part_owner(entityId)
+            elif kind == HYDRA_NECK_IDENTIFIER:
+                if self._restore_hydra_neck_owner(entityId):
+                    continue
+                key = entity_registry_logic.matching_entity_key(
+                    self._hydra_necks, entityId)
+                if key is not None:
+                    self._bind_hydra_neck(entityId, *self._hydra_necks[key])
+                    continue
+                # Old neck proxies had no persistent owner at all. They are
+                # disposable visuals, never a Boss or a damage projectile.
+                try:
+                    value = CF.CreateExtraData(entityId).GetExtraData(
+                        "tf_slice:hydra_neck_owner_v1")
+                except Exception:
+                    continue
+                if isinstance(value, dict):
+                    continue  # Owner may still be in an unloaded chunk.
+                first = self._hydra_legacy_necks.get(str(entityId), self._tick)
+                if self._tick - first >= 60:
+                    self.DestroyEntity(entityId)
+                else:
+                    legacy[str(entityId)] = first
+        self._hydra_legacy_necks = legacy
 
     def _ensure_hydra_heads(self, hydraId, state):
         if self._tick < int(state.get("ensureAfter", 0)):
@@ -9385,11 +9549,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                         neckId, hydra_logic.PART_ACTOR_HEALTH
                     )
                     self._set_full_motion(neckId, (0.0, 0.0, 0.0))
-                    self._hydra_necks[neckId] = (
-                        hydraId,
-                        int(index),
-                        int(segmentIndex),
-                    )
+                    self._bind_hydra_neck(neckId, hydraId, index, segmentIndex)
                     if state.get("hurtActive"):
                         self._trigger_entity_event(neckId, "tf_slice:hurt_on")
                     try:
@@ -10601,6 +10761,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             pass
 
     def _drive_hydras(self):
+        self._recover_hydra_attachments()
         for hydraId, state in list(self._hydras.items()):
             if state.get("dead"):
                 continue
@@ -11779,7 +11940,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         }
         self._pending_courtyard_nagas.append(pending)
         try:
-            bossId = self.CreateEngineEntityByTypeStr(
+            bossId = self._create_loaded_entity(
                 identifier,
                 tuple(pos),
                 (0.0, float(yaw)),
@@ -11866,30 +12027,95 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             ]
         return identifier
 
+    def _forget_naga_segment(self, state, index, segmentId):
+        """Release only this actor, never a replacement in the same slot."""
+        ownerKey = entity_registry_logic.matching_entity_key(
+            self._segment_owners, segmentId
+        )
+        if ownerKey is not None:
+            self._segment_owners.pop(ownerKey, None)
+        current = state["segmentIds"][index]
+        if current is not None and str(current) == str(segmentId):
+            state["segmentIds"][index] = None
+        failures = state.get("segmentRemovalFailures", {})
+        failure = failures.get(index)
+        if failure is not None and failure["entityId"] == str(segmentId):
+            failures.pop(index, None)
+
+    def _naga_segment_is_absent(self, segmentId, position):
+        if not self._valid_entity_id(segmentId):
+            return True
+        # A missing position alone can mean an unavailable SDK query. Require
+        # independent absence observations; unknown results retain ownership.
+        if position is not None or self._get_engine_type(segmentId):
+            return False
+        try:
+            return CF.CreateGame(LEVEL_ID).IsEntityAlive(str(segmentId)) is False
+        except Exception:
+            return False
+
     def _destroy_segment(self, state, index):
         segmentId = state["segmentIds"][index]
         if segmentId is None:
             return (True, None)
+        failures = state.setdefault("segmentRemovalFailures", {})
+        failure = failures.get(index)
+        if failure is not None and failure["entityId"] != str(segmentId):
+            failures.pop(index, None)
+            failure = None
+        if failure is not None and self._tick < failure["nextTick"]:
+            return (False, None)
         position = self._get_foot_pos(segmentId)
+        error = None
         try:
-            result = self.DestroyEntity(segmentId)
+            result = self.DestroyEntity(str(segmentId))
         except Exception as exc:
-            print "[TwilightBossSlice] Naga segment removal failed:", exc
-            return (False, position)
+            result = False
+            error = str(exc)
         if result is False:
-            print "[TwilightBossSlice] Naga segment removal returned false:", index
+            current = state["segmentIds"][index]
+            # DestroyEntity may race with RemoveEntityServerEvent, or be
+            # called for an actor that has already streamed out/disappeared.
+            if (
+                current is None or str(current) != str(segmentId)
+                or self._naga_segment_is_absent(
+                    segmentId, self._get_foot_pos(segmentId)
+                )
+            ):
+                self._forget_naga_segment(state, index, segmentId)
+                return (True, None)
+            attempts = int(failure.get("attempts", 0)) + 1 if failure else 1
+            delay = min(
+                config.SEGMENT_REMOVAL_MAX_RETRY_TICKS,
+                config.SEGMENT_REMOVAL_RETRY_TICKS * (2 ** min(attempts - 1, 7)),
+            )
+            nextLogTick = int(failure.get("nextLogTick", 0)) if failure else 0
+            if failure is None or self._tick >= nextLogTick:
+                print "[TwilightBossSlice] Naga segment removal pending:", (
+                    str(segmentId), index, attempts, delay, error
+                )
+                nextLogTick = self._tick + config.SEGMENT_REMOVAL_LOG_INTERVAL_TICKS
+            failures[index] = {
+                "entityId": str(segmentId), "attempts": attempts,
+                "nextTick": self._tick + delay, "nextLogTick": nextLogTick,
+            }
             return (False, position)
-        self._segment_owners.pop(segmentId, None)
-        if state["segmentIds"][index] == segmentId:
-            state["segmentIds"][index] = None
+        self._forget_naga_segment(state, index, segmentId)
         return (True, position)
+
+    def _naga_segment_retry_tick(self, state, index):
+        failure = state.get("segmentRemovalFailures", {}).get(index) or {}
+        return max(
+            self._tick + config.SEGMENT_REMOVAL_RETRY_TICKS,
+            int(failure.get("nextTick", 0)),
+        )
 
     def _destroy_all_segments(self, state):
         for index in range(naga_logic.MAX_SEGMENTS):
             removed, _position = self._destroy_segment(state, index)
             if not removed:
                 state["segmentBurstTicks"][index] = (
-                    self._tick + config.SEGMENT_REMOVAL_RETRY_TICKS
+                    self._naga_segment_retry_tick(state, index)
                 )
                 continue
             state.get("segmentBurstTicks", {}).pop(index, None)
@@ -12034,8 +12260,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 continue
             segmentPos = self._get_foot_pos(segmentId)
             if segmentPos is None:
-                self._segment_owners.pop(segmentId, None)
-                state["segmentIds"][index] = None
+                self._forget_naga_segment(state, index, segmentId)
                 continue
             destination, segmentYaw, segmentPitch = naga_logic.follow_segment(
                 leader_pos=leaderPos,
@@ -12069,7 +12294,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 removed, position = self._destroy_segment(state, index)
                 if not removed:
                     state["segmentBurstTicks"][index] = (
-                        self._tick + config.SEGMENT_REMOVAL_RETRY_TICKS
+                        self._naga_segment_retry_tick(state, index)
                     )
                     continue
                 state["segmentBurstTicks"].pop(index, None)
@@ -12079,6 +12304,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 bossId, state["dimensionId"], burstPositions
             )
             if state["health"] > 0.0:
+                if not state.get("actorLoaded", True):
+                    continue
                 if self._naga_segment_pose_is_held(state):
                     if not self._apply_naga_segment_pose(bossId, state):
                         self._ensure_segment_chain(bossId, state)
@@ -12347,32 +12574,113 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             return False
 
     def _spawn_swarm_companions(self, entityId, pos, dimensionId):
-        """Reproduce SwarmSpider.finalizeSpawn's one-to-two companions."""
+        """Reproduce SwarmSpider's first server tick, never an entity rebind."""
         if pos is None or dimensionId is None:
             return
-        count = random.randint(1, 2)
-        self._pending_swarm_children += count
-        for index in range(count):
-            offset = (
-                float(pos[0]) + (-0.55 if index == 0 else 0.55),
-                float(pos[1]),
-                float(pos[2]) + (0.45 if index == 0 else -0.45),
-            )
-            try:
-                childId = self.CreateEngineEntityByTypeStr(
-                    "tf_slice:swarm_spider",
-                    offset,
-                    (0.0, random.uniform(0.0, 360.0)),
-                    int(dimensionId),
-                    False,
-                    False,
-                )
-            except Exception:
-                childId = None
-            if not childId:
-                self._pending_swarm_children = max(
-                    0, self._pending_swarm_children - 1
-                )
+        self._spawn_initial_companions(spider_logic.SWARM_SPIDER, pos, dimensionId, random.randint(1, 2))
+
+    def _claim_initial_mob_spawn(self, entityId, child=False):
+        """Claim before side effects; None means persistence was unavailable."""
+        try:
+            extra = CF.CreateExtraData(entityId)
+            previous = extra.GetExtraData(INITIAL_MOB_SPAWN_KEY)
+            if isinstance(previous, dict) and previous.get("initialized"):
+                return False
+            value = {"version": 1, "initialized": True, "child": bool(child)}
+            if not extra.SetExtraData(INITIAL_MOB_SPAWN_KEY, value, True):
+                return None
+            if extra.GetExtraData(INITIAL_MOB_SPAWN_KEY) != value:
+                return None
+            return True
+        except Exception:
+            return None
+
+    def _queue_initial_mob_spawn(self, args):
+        identifier = args.get("realIdentifier") or args.get("identifier")
+        entityId = args.get("entityId", args.get("id"))
+        if identifier not in INITIAL_MOB_SPAWN_TYPES or not self._valid_entity_id(entityId):
+            return
+        if str(entityId) in getattr(self, "_unmarked_initial_mob_children", ()):
+            return
+        pending = getattr(self, "_pending_initial_mob_spawns", None)
+        if pending is None:
+            pending = self._pending_initial_mob_spawns = {}
+        if len(pending) >= MAX_INITIAL_MOB_SPAWNS:
+            return
+        pending.setdefault(str(entityId), {
+            "type": identifier, "dimensionId": int(args.get("dimensionId", config.DIMENSION_ID)),
+            "expires": self._tick + INITIAL_MOB_SPAWN_WAIT_TICKS, "lastTried": -1,
+        })
+
+    def _process_initial_mob_spawns(self):
+        pending = getattr(self, "_pending_initial_mob_spawns", {})
+        # Retrying an unavailable actor moves it behind untried actors.
+        keys = sorted(pending, key=lambda key: (pending[key]["lastTried"], key))
+        for entityId in keys[:INITIAL_MOB_SPAWNS_PER_TICK]:
+            record = pending.get(entityId)
+            if record is None:
+                continue
+            if self._tick >= record["expires"]:
+                pending.pop(entityId, None)
+                continue
+            record["lastTried"] = self._tick
+            position = self._get_foot_pos(entityId)
+            if position is None or self._get_engine_type(entityId) != record["type"]:
+                continue
+            claimed = self._claim_initial_mob_spawn(entityId)
+            if claimed is None:
+                continue
+            pending.pop(entityId, None)
+            if not claimed:
+                continue
+            support = (int(math.floor(position[0])), int(math.floor(position[1])) - 1,
+                       int(math.floor(position[2])))
+            if spawn_policy.is_leaf_support(self._block_name(self._get_block(support, record["dimensionId"]))):
+                continue
+            if record["type"] == spider_logic.SWARM_SPIDER:
+                self._spawn_swarm_companions(entityId, position, record["dimensionId"])
+            elif record["type"] == TOWER_BROODLING_IDENTIFIER:
+                self._spawn_broodling_companions(position, record["dimensionId"])
+            if record["type"] in (spider_logic.SWARM_SPIDER, spider_logic.KING_SPIDER):
+                self._maybe_spawn_spider_jockey(entityId, record["type"], position, record["dimensionId"])
+
+    def _spawn_initial_companions(self, identifier, position, dimensionId, count):
+        """Each source companion gets at most two placement attempts."""
+        unmarked = getattr(self, "_unmarked_initial_mob_children", None)
+        if unmarked is None:
+            unmarked = self._unmarked_initial_mob_children = set()
+        for _index in range(count):
+            if len(unmarked) >= MAX_INITIAL_MOB_SPAWNS:
+                return
+            for _attempt in range(2):
+                candidate = (float(position[0]) + random.choice((-0.9, 0.9)),
+                             float(position[1]), float(position[2]) + random.choice((-0.9, 0.9)))
+                blockPos = tuple(int(math.floor(value)) for value in candidate)
+                try:
+                    if not self._chunk_comp.CheckChunkState(int(dimensionId), blockPos):
+                        continue
+                except Exception:
+                    continue
+                support = (blockPos[0], blockPos[1] - 1, blockPos[2])
+                if not spawn_policy.ground_support_allowed(self._block_name(self._get_block(support, dimensionId))):
+                    continue
+                if self._block_name(self._get_block(blockPos, dimensionId)) not in spawn_policy.SPAWN_EMPTY_BLOCKS:
+                    continue
+                childId = self._spawn_ruin_entity(identifier, candidate, random.uniform(0.0, 360.0), dimensionId)
+                if childId is None:
+                    continue
+                unmarked.add(str(childId))
+                initialized = self._claim_initial_mob_spawn(childId, child=True)
+                getattr(self, "_pending_initial_mob_spawns", {}).pop(str(childId), None)
+                if initialized is None:
+                    # An unmarked child must never become a new group parent.
+                    try:
+                        self.DestroyEntity(childId)
+                    except Exception:
+                        pass
+                else:
+                    unmarked.discard(str(childId))
+                break
 
     def _maybe_spawn_spider_jockey(
         self, spiderId, spiderType, spiderPos, dimensionId
@@ -12383,17 +12691,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             spiderType, difficulty, random.randrange(20)
         ):
             return None
-        try:
-            druidId = self.CreateEngineEntityByTypeStr(
-                "tf_slice:skeleton_druid",
-                tuple(spiderPos),
-                (0.0, random.uniform(0.0, 360.0)),
-                int(dimensionId),
-                False,
-                False,
-            )
-        except Exception:
-            druidId = None
+        druidId = self._spawn_ruin_entity("tf_slice:skeleton_druid", tuple(spiderPos),
+                                        random.uniform(0.0, 360.0), int(dimensionId))
         if not druidId:
             return None
         if spider_logic.druid_jockey_is_baby(spiderType):
@@ -13379,10 +13678,12 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 identifier = self._get_engine_type(entityId)
             if identifier != SEGMENT_IDENTIFIER:
                 continue
-            if entityId in self._segment_owners:
+            if entity_registry_logic.matching_entity_key(
+                self._segment_owners, entityId
+            ) is not None:
                 continue
             try:
-                self.DestroyEntity(entityId)
+                self.DestroyEntity(str(entityId))
             except Exception as exc:
                 print "[TwilightBossSlice] orphan segment cleanup failed:", exc
 
@@ -13895,6 +14196,11 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         for bossId, state in self._bosses.items():
             if state.get("dead"):
                 continue
+            if not state.get("actorLoaded", True):
+                continue
+            bossPos = self._get_foot_pos(bossId)
+            if bossPos is None:
+                continue
             if state.get("dying"):
                 self._update_naga_death(bossId, state)
                 continue
@@ -13903,9 +14209,6 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 continue
             if not self._ensure_boss_home(bossId, state):
                 self._stop_navigation(bossId, state)
-                continue
-            bossPos = self._get_foot_pos(bossId)
-            if bossPos is None:
                 continue
             bossPos = self._recover_boss_below_home(
                 bossId, state, bossPos
@@ -14343,9 +14646,11 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         excluded = set(self._bosses.keys())
         excluded.update(self._segment_owners.keys())
         excluded.add(bossId)
+        excluded = set(str(entityId) for entityId in excluded)
+        animals = set(str(entityId) for entityId in animals)
 
         for entityId in livingEntities:
-            if entityId in excluded:
+            if str(entityId) in excluded:
                 continue
             entityPos = self._get_foot_pos(entityId)
             if entityPos is None:
@@ -14364,7 +14669,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             if contactPos is None:
                 continue
             damage = naga_logic.segment_collision_damage(
-                entityId in animals
+                str(entityId) in animals
             )
             if self._hurt(entityId, damage, bossId) is False:
                 continue
@@ -14568,7 +14873,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         )
         if not isinstance(inflight, dict) or inflight.get("key") != key:
             return
-        inflight.update({"done": True, "result": result is not False})
+        success = result.get("code") == 1 if isinstance(result, dict) else result is True
+        inflight.update({"done": True, "result": success})
 
     def _complete_portal_background_preload(self, success):
         inflight = getattr(
@@ -14599,7 +14905,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             "_portal_background_preload_inflight",
             None,
         )
-        if inflight is not None:
+        if isinstance(inflight, dict):
             if inflight.get("done"):
                 self._complete_portal_background_preload(
                     bool(inflight.get("result"))
@@ -14608,10 +14914,18 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 "deadlineTick",
                 self._tick + 1,
             ):
-                self._complete_portal_background_preload(False)
+                # A script deadline cannot cancel the engine's async task.
+                # Keep its ownership until the real callback, or extra jobs
+                # would compete with the player's current chunk requests.
+                if not inflight.get("timedOut"):
+                    inflight.update({"timedOut": True})
+                    self._worldgen_perf_increment("backgroundPreloadTimedOut")
+                return
             else:
                 return
 
+        if getattr(self, "_dimension_change_in_progress", set()):
+            return
         queue = getattr(
             self,
             "_portal_background_preload_queue",
@@ -14622,6 +14936,15 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         item = queue.pop(0)
         dimensionId = item["dimensionId"]
         chunkX, chunkZ = item["chunkPosition"]
+        playerId = item.get("playerId")
+        playerPos = self._get_foot_pos(playerId) if self._get_dimension(playerId) == dimensionId else None
+        radius = portal_logic.PORTAL_BACKGROUND_PRELOAD_CHUNK_RADIUS + 1
+        if (playerPos is None
+                or abs((int(math.floor(playerPos[0])) >> 4) - chunkX) > radius
+                or abs((int(math.floor(playerPos[2])) >> 4) - chunkZ) > radius):
+            getattr(self, "_portal_background_preload_keys", set()).discard(item["key"])
+            self._worldgen_perf_increment("backgroundPreloadSkipped")
+            return
         chunkCenter = (chunkX * 16 + 8, 64, chunkZ * 16 + 8)
         checker = getattr(self._chunk_comp, "CheckChunkState", None)
         if callable(checker):
@@ -14715,10 +15038,11 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         self._release_staged_portal_hold(playerId, request)
         self._pending_portal_entries.pop(playerId, None)
         self._release_portal_area(request)
-        self._queue_portal_background_preload(
-            playerId,
-            destinationExit,
-        )
+        if config.PORTAL_BACKGROUND_PRELOAD_ENABLED:
+            self._queue_portal_background_preload(
+                playerId,
+                destinationExit,
+            )
         completedAt = self._portal_now_seconds()
         nativeStartedAt = request.get("nativeChangeStartedAt")
         nativeFinishedAt = request.get(
@@ -14778,6 +15102,15 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         ):
             currentDimension = self._get_dimension(playerId)
             if self._portal_request_expired(request):
+                if (request.get("state") == "awaiting_engine_ready"
+                        and not request.get("clientEngineReady")):
+                    # Timeout is not permission to invoke another native
+                    # teleport while the client's respawn is still pending.
+                    self._drop_portal_arrival(
+                        playerId, request,
+                        u"\u5207\u7ef4\u5c31\u7eea\u786e\u8ba4\u8d85\u65f6\uff0c\u5df2\u53d6\u6d88\u4f4d\u7f6e\u4fee\u6b63\u3002",
+                    )
+                    continue
                 if (
                     currentDimension == config.DIMENSION_ID
                     and (
@@ -14848,15 +15181,21 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                         self._tick + 1,
                     ):
                         continue
-                    request["clientEngineReadyPending"] = False
-                    request["clientEngineReady"] = True
-                    request["clientEngineReadyFallback"] = True
-                    request["nextAttemptTick"] = self._tick + 1
+                    # The old 80-tick fallback reproduced a native SetPos
+                    # assertion before client DimensionChangeEnded. Retry
+                    # the same handshake; elapsed time cannot synthesize ACK.
+                    request["clientEngineReadyFallbackTick"] = (
+                        self._tick + config.PORTAL_CLIENT_ENGINE_READY_FALLBACK_TICKS
+                    )
+                    self.NotifyToClient(playerId, "PortalArrivalPrepared", {
+                        "position": request.get("preparedExit"),
+                        "token": request["clientEngineReadyToken"],
+                    })
                     self._entry_trace(
-                        "entry.direct.engine_ready.fallback_scheduled",
+                        "entry.direct.engine_ready.retry",
                         playerId=playerId,
                         position=request.get("preparedExit"),
-                        relocateAtTick=request["nextAttemptTick"],
+                        retryAtTick=request["clientEngineReadyFallbackTick"],
                     )
                     continue
                 if not self._relocate_staged_portal_entry(
@@ -17269,7 +17608,18 @@ class ServerSystem(serverApi.GetServerSystemCls()):
 
     def Update(self):
         started = time.time()
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None and probe.tick():
+            self.NotifyToClient(self._chunk_latency_probe_owner, "EnvironmentStatusRequest", {
+                "load_probe": {"action": "stop"},
+                "probe_message": "Server probe ended: %s errors=%s" % (probe.path, probe.errors),
+            })
         self._tick += 1
+        self._get_twilight_session().tick()
+        diagnostic = getattr(self, "_native_world_diag", None)
+        if diagnostic is not None:
+            diagnostic.flush(self._emit_native_world_diag)
+        self._tick_water_marker_cleanup()
         self._item_effects.tick()
         self._flush_reward_deliveries()
         self._purge_orphaned_ur_ghast_trophy_visuals()
@@ -17281,6 +17631,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         if self._ur_ghast_logic_step:
             self._ur_ghast_logic_tick += int(sourceClock["steps"])
         self._purge_pending_naga_spawns()
+        self._process_initial_mob_spawns()
         self._process_leaf_decay_queue()
         self._discover_small_entity_runtime()
         self._process_portal_catalysts()
@@ -17439,6 +17790,25 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 except ValueError:
                     requested = 4
             self._burst(playerId, requested)
+        elif command == "loadprobe":
+            self._control_chunk_latency_probe(playerId, parts[2] if len(parts) == 3 else "")
+        elif command == "environment":
+            # Read counters already collected by engine callbacks. Querying
+            # status must not force-load a chunk or start a profiling job.
+            counters = self._worldgen_perf_snapshot()["counters"]
+            perf = getattr(self, "_last_perf", {})
+            payload = {"streaming": {
+                "generated": counters.get("chunkGenerated", 0),
+                "loaded": counters.get("chunkLoaded", 0),
+                "queue": len(self._portal_background_preload_queue),
+                "inflight": self._portal_background_preload_inflight is not None,
+                "prewarm": config.PORTAL_BACKGROUND_PRELOAD_ENABLED,
+                "scriptAvgMs": perf.get("avgMs"),
+                "scriptP95Ms": perf.get("p95Ms"),
+            }}
+            if len(parts) == 4 and parts[2].lower() == "clouds" and parts[3].lower() in ("on", "off"):
+                payload["clouds_enabled"] = parts[3].lower() == "on"
+            self.NotifyToClient(playerId, "EnvironmentStatusRequest", payload)
         elif command == "perf":
             self._notify(
                 playerId, "Slice perf: %s" % self._make_perf_packet(), "AQUA"
@@ -17587,7 +17957,83 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 "YELLOW",
             )
 
+    def _control_chunk_latency_probe(self, playerId, action):
+        probe = getattr(self, "_chunk_latency_probe", None)
+        owner = getattr(self, "_chunk_latency_probe_owner", None)
+        control = None
+        if not config.CHUNK_LATENCY_PROBE_OUTPUT_DIR:
+            message = "Chunk probe unavailable in this pack."
+        elif probe is not None and (probe.active or probe.owned_profile) and owner != playerId:
+            message = "Chunk probe is already owned by another player."
+        elif action == "start":
+            if probe is None:
+                probe = chunk_latency_probe.Probe("server", sdk=serverApi)
+                self._chunk_latency_probe = probe
+            token = str(int(time.time() * 1000)) + "-" + str(self._tick)
+            if probe.start(config.CHUNK_LATENCY_PROBE_OUTPUT_DIR, token):
+                self._chunk_latency_probe_owner = playerId
+                control = {"action": "start", "token": token}
+                probe.record("start_counters", self._worldgen_perf_snapshot())
+                message = "Chunk probe started for at most 60 seconds. errors=%s" % probe.errors
+            else:
+                message = "Chunk probe already active or unavailable."
+        elif action == "stop" and probe is not None:
+            probe.record("end_counters", self._worldgen_perf_snapshot())
+            probe.stop()
+            control = {"action": "stop"}
+            message = "Chunk probe ended: %s errors=%s" % (probe.path, probe.errors)
+        else:
+            message = "Use !slice loadprobe start or !slice loadprobe stop"
+        payload = {"probe_message": message}
+        if control is not None:
+            payload["load_probe"] = control
+        self.NotifyToClient(playerId, "EnvironmentStatusRequest", payload)
+
+    def _emit_native_world_diag(self, line):
+        print line
+
+    def _tick_water_marker_cleanup(self):
+        cleanup = getattr(self, "_water_marker_cleanup", None)
+        if cleanup is None or not cleanup.has_work():
+            return
+        paused = bool(getattr(self, "_dimension_change_in_progress", set())
+                      or getattr(self, "_pending_portal_entries", {}))
+
+        def ready(position, dimension):
+            return native_world_diagnostics.call(self, "water.ready", position, dimension,
+                self._chunk_comp.CheckChunkState, dimension, position)
+
+        def clear_marker(position, dimension):
+            # Keep neighbor updates: native water must be able to fill the
+            # removed marker; this path never places water itself.
+            return native_world_diagnostics.call(self, "water.write", position, dimension,
+                self._block_comp.SetBlockNew,
+                position, {"name": "minecraft:air", "aux": 0},
+                0, dimension, True, True)
+
+        def read(position, dimension):
+            return native_world_diagnostics.call(self, "water.read", position, dimension,
+                self._get_block, position, dimension)
+
+        cleanup.tick(self._tick, paused, ready, read, clear_marker)
+        counters = getattr(self, "_worldgen_perf_counters", None)
+        if counters is not None:
+            for name, value in cleanup.counters.items():
+                counters["waterMarker_" + name] = value
+
     def OnPlaceNeteaseStructureFeatureEvent(self, args):
+        pair = native_world_diagnostics.record(self, "structure.begin", args)
+        try:
+            return self._dispatch_structure_feature_event(args)
+        finally:
+            cleanup = getattr(self, "_water_marker_cleanup", None)
+            if cleanup is not None:
+                cleanup.record_event(args, self._tick)
+            diagnostic_args = dict(args)
+            diagnostic_args["pair"] = pair
+            native_world_diagnostics.record(self, "structure.final", diagnostic_args)
+
+    def _dispatch_structure_feature_event(self, args):
         try:
             dimensionId = int(args.get("dimensionId", -1))
         except (TypeError, ValueError):
@@ -17879,8 +18325,15 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         )
 
     def OnChunkGeneratedServerEvent(self, args):
+        native_world_diagnostics.record(self, "chunk.generated", args)
+        cleanup = getattr(self, "_water_marker_cleanup", None)
+        if cleanup is not None:
+            cleanup.observe_loaded(args)
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None:
+            probe.record("server_generated", args)
         try:
-            dimensionId = int(args.get("dimensionId", -1))
+            dimensionId = int(args.get("dimension", args.get("dimensionId", -1)))
         except (TypeError, ValueError):
             dimensionId = -1
         if dimensionId == config.DIMENSION_ID:
@@ -17889,8 +18342,15 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             self._ruin_worldgen.on_chunk_generated_event(args)
 
     def OnChunkLoadedServerEvent(self, args):
+        native_world_diagnostics.record(self, "chunk.loaded", args)
+        cleanup = getattr(self, "_water_marker_cleanup", None)
+        if cleanup is not None:
+            cleanup.observe_loaded(args)
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None:
+            probe.record("server_loaded", args)
         try:
-            dimensionId = int(args.get("dimensionId", -1))
+            dimensionId = int(args.get("dimension", args.get("dimensionId", -1)))
         except (TypeError, ValueError):
             dimensionId = -1
         if dimensionId == config.DIMENSION_ID:
@@ -18469,13 +18929,15 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             self._set_block(blockPos, "minecraft:oak_leaves", dimensionId)
 
     def OnServerSpawnMob(self, args):
+        if args.get("cancel", False):
+            return
         biome_identifier = None
         try:
             biome_identifier = self._biome_comp.GetBiomeName(
                 (
-                    int(float(args.get("x", 0))),
-                    int(float(args.get("y", 64))),
-                    int(float(args.get("z", 0))),
+                    int(math.floor(float(args.get("x", 0)))),
+                    int(math.floor(float(args.get("y", 64)))),
+                    int(math.floor(float(args.get("z", 0)))),
                 ),
                 int(args.get("dimensionId", 0)),
             )
@@ -18488,6 +18950,19 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         ):
             args["cancel"] = True
             return
+        if str(args.get("identifier", "")).split(":", 1)[0] != "custom":
+            spawnDimension = int(args.get("dimensionId", 0))
+            support = (int(math.floor(float(args.get("x", 0)))),
+                       int(math.floor(float(args.get("y", 64)))) - 1,
+                       int(math.floor(float(args.get("z", 0)))))
+            supportName = self._block_name(self._get_block(support, spawnDimension))
+            leafForbidden = (spawn_policy.is_leaf_support(supportName)
+                             and (spawnDimension == config.DIMENSION_ID
+                                  or supportName.startswith("tf_slice:")))
+            if leafForbidden or (not supportName and spawnDimension == config.DIMENSION_ID):
+                args["cancel"] = True
+                return
+        self._queue_initial_mob_spawn(args)
         identifier = args.get("realIdentifier") or args.get("identifier")
         if identifier != config.BOSS_IDENTIFIER:
             if identifier != LICH_IDENTIFIER:
@@ -18591,12 +19066,16 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             self._register_hydra(entityId, dimensionId)
             return
         if entityType == HYDRA_HEAD_IDENTIFIER:
-            self._restore_hydra_head_owner(entityId)
+            if not self._restore_hydra_head_owner(entityId):
+                self._hydra_attachment_rescan = True
             return
         if entityType == HYDRA_NECK_IDENTIFIER:
+            if not self._restore_hydra_neck_owner(entityId):
+                self._hydra_attachment_rescan = True
             return
         if entityType == HYDRA_PART_PROXY_IDENTIFIER:
-            self._restore_hydra_part_owner(entityId)
+            if not self._restore_hydra_part_owner(entityId):
+                self._hydra_attachment_rescan = True
             return
         if entityType == HYDRA_MORTAR_IDENTIFIER:
             self._set_entity_on_fire(entityId, 3600)
@@ -18652,30 +19131,6 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 "carrying": False,
             }
             self._ruin_mobs[entityId] = state
-            if entityType == "tf_slice:swarm_spider":
-                isSwarmChild = self._pending_swarm_children > 0
-                if self._pending_swarm_children > 0:
-                    self._pending_swarm_children -= 1
-                else:
-                    self._spawn_swarm_companions(
-                        entityId,
-                        self._get_foot_pos(entityId),
-                        dimensionId,
-                    )
-                if not isSwarmChild:
-                    self._maybe_spawn_spider_jockey(
-                        entityId,
-                        entityType,
-                        self._get_foot_pos(entityId),
-                        dimensionId,
-                    )
-            elif entityType == "tf_slice:king_spider":
-                self._maybe_spawn_spider_jockey(
-                    entityId,
-                    entityType,
-                    self._get_foot_pos(entityId),
-                    dimensionId,
-                )
             return
         if entityType == LICH_CLONE_IDENTIFIER:
             self._register_lich_clone(entityId, dimensionId)
@@ -18735,6 +19190,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
 
     def OnRemoveEntity(self, args):
         entityId = args.get("id", args.get("entityId"))
+        getattr(self, "_pending_initial_mob_spawns", {}).pop(str(entityId), None)
+        getattr(self, "_unmarked_initial_mob_children", set()).discard(str(entityId))
         knightProjectileKey = entity_registry_logic.matching_entity_key(
             self._knight_projectiles, entityId
         )
@@ -18960,20 +19417,31 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         self._ruin_mobs.pop(entityId, None)
         self._tiny_birds.pop(entityId, None)
         self._penguins.discard(entityId)
-        owner = self._segment_owners.pop(entityId, None)
+        segmentKey = entity_registry_logic.matching_entity_key(
+            self._segment_owners, entityId
+        )
+        owner = self._segment_owners.get(segmentKey) if segmentKey is not None else None
         if owner is not None:
             bossId, index = owner
             state = self._boss_state(bossId)
-            if state is not None and state["segmentIds"][index] == entityId:
-                state["segmentIds"][index] = None
+            if state is not None:
+                self._forget_naga_segment(state, index, entityId)
+                if state["segmentIds"][index] is None:
+                    state["segmentBurstTicks"].pop(index, None)
+            else:
+                self._segment_owners.pop(segmentKey, None)
         bossKey = self._boss_key(entityId)
         state = self._bosses.get(bossKey) if bossKey is not None else None
         if state is not None:
-            self._on_boss_actor_removed(
-                self._bosses,
-                entityId,
-                ("dead",),
-            )
+            # Keep a dead head's outstanding body cleanup reachable. The
+            # segment updater retires the record after all actors are gone.
+            if state.get("dead") and any(state.get("segmentIds", ())):
+                state["actorLoaded"] = False
+                state["targetId"] = None
+            else:
+                self._on_boss_actor_removed(
+                    self._bosses, entityId, ("dead",),
+                )
             self._boss_sync_dirty = True
         self._pending_catalysts.pop(entityId, None)
         self._pending_quest_offerings.pop(entityId, None)
@@ -19555,6 +20023,9 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         playerId = args.get("playerId", args.get("id", args.get("entityId")))
         if playerId is None:
             return
+        session = getattr(self, "_twilight_session", None)
+        if session is not None:
+            session.died(playerId)
         self._clear_player_fortification(playerId)
         try:
             gameType = int(CF.CreateGame(LEVEL_ID).GetPlayerGameType(playerId))
@@ -19619,6 +20090,10 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         playerId = args.get("playerId", args.get("id", args.get("entityId")))
         if playerId is None:
             return
+        session = getattr(self, "_twilight_session", None)
+        if session is not None:
+            session.suspended.discard(playerId)
+            session.capture(playerId)
         self.NotifyToClient(playerId, "BossHudReset", {})
         self._sequence += 1
         self.NotifyToClient(
@@ -20884,7 +21359,10 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                         args["toValue"] = doubled
                 except (TypeError, ValueError):
                     pass
-        segmentOwner = self._segment_owners.get(entityId)
+        segmentKey = entity_registry_logic.matching_entity_key(
+            self._segment_owners, entityId
+        )
+        segmentOwner = self._segment_owners.get(segmentKey)
         if incomingDamage and segmentOwner is not None:
             parentState = self._boss_state(segmentOwner[0])
             if parentState is not None:
@@ -21155,7 +21633,10 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 )
             self._save_lich_state(entityId, lichState)
             return
-        owner = self._segment_owners.get(entityId)
+        segmentKey = entity_registry_logic.matching_entity_key(
+            self._segment_owners, entityId
+        )
+        owner = self._segment_owners.get(segmentKey)
         if owner is not None:
             bossId, _ = owner
             state = self._boss_state(bossId)
@@ -21432,6 +21913,25 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         self._trophy_block_use_ticks[playerId] = self._tick
         return True
 
+    def _get_twilight_session(self):
+        session = getattr(self, "_twilight_session", None)
+        if session is None:
+            session = twilight_session.TwilightSession(self, config.DIMENSION_ID)
+            self._twilight_session = session
+        return session
+
+    def OnTwilightSessionReady(self, args):
+        playerId = args.get("__id__")
+        if playerId is not None:
+            self._known_players.add(playerId)
+            self._get_twilight_session().on_ready(playerId)
+
+    def OnTwilightPlayerLeave(self, args):
+        playerId = args.get("id")
+        if playerId is not None:
+            self._get_twilight_session().leave(playerId)
+            self._known_players.discard(playerId)
+
     def OnClientReady(self, args):
         playerId = args.get("playerId")
         if playerId is not None:
@@ -21446,7 +21946,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             )
             if self._get_dimension(playerId) == config.DIMENSION_ID:
                 self._delay_fire_swamp_discovery(playerId)
-                if not self._queue_portal_recovery(playerId):
+                if (not self._get_twilight_session().has_record(playerId)
+                        and not self._queue_portal_recovery(playerId)):
                     self._pending_portal_recovery_players.add(playerId)
 
     def OnDimensionChangeServerEvent(self, args):
@@ -21470,6 +21971,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             self._dimension_worldgen_ready_ticks = {}
         self._dimension_change_in_progress.add(playerId)
         self._dimension_worldgen_ready_ticks.pop(playerId, None)
+        if self._get_twilight_session().dimension_start(args):
+            return
         if (
             args.get("toDimensionId") != config.DIMENSION_ID
             or args.get("fromDimensionId") == config.DIMENSION_ID
@@ -21531,6 +22034,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         elif playerId is not None:
             self._fire_swamp_discovery_ready_ticks.pop(playerId, None)
             self._fire_swamp_discovery_queue = []
+        if self._get_twilight_session().dimension_finish(args):
+            return
         request = self._pending_portal_entries.get(playerId)
         if request is None:
             if arrivedInTwilight:
@@ -23461,6 +23966,10 @@ class ServerSystem(serverApi.GetServerSystemCls()):
                 reason="unknown_player",
             )
             return
+        session = self._get_twilight_session()
+        if (entityId in session.pending
+                or (session.has_record(entityId) and entityId not in session.ready)):
+            return
         if self._portal_cooldowns.get(entityId, 0) > self._tick:
             self._entry_trace(
                 "portal.inside.rejected",
@@ -23668,6 +24177,8 @@ class ServerSystem(serverApi.GetServerSystemCls()):
         )
 
     def OnPortalArrivalEngineReady(self, args):
+        if self._get_twilight_session().acknowledge(args):
+            return
         playerId = args.get("__id__")
         request = self._pending_portal_entries.get(playerId)
         if (
@@ -23680,6 +24191,7 @@ class ServerSystem(serverApi.GetServerSystemCls()):
             return
         request["clientEngineReadyPending"] = False
         request["clientEngineReady"] = True
+        request["clientEngineReadyAcknowledgedTick"] = self._tick
         request["nextAttemptTick"] = self._tick + 1
         self._entry_trace(
             "entry.direct.engine_ready.ack",

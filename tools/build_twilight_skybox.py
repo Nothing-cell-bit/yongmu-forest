@@ -135,11 +135,22 @@ def _star_quad(direction, size, angle):
     ]
 
 
-def build_skybox(output_dir):
+def build_skybox(output_dir, star_scale=1.0, sky_color=SKY_COLOR):
+    # Keep the source-parity render reproducible. The smaller-star port
+    # candidate changes angular size only, not the Java RNG stream/palette.
+    star_scale = float(star_scale)
+    if not math.isfinite(star_scale) or not 0.0 < star_scale <= 1.0:
+        raise ValueError("star_scale must be finite and in (0, 1]")
+    if (len(sky_color) != 4 or any(type(value) is not int or not 0 <= value <= 255
+                                   for value in sky_color) or sky_color[3] != 255):
+        raise ValueError("sky_color must be four byte values with opaque alpha")
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     canvas_size = FACE_SIZE * SUPERSAMPLE
     images = {
+        # Rasterize every palette against the same reference background.
+        # Lanczos clips intermediate negative lobes differently near black;
+        # recoloring the final coverage keeps the small stars identical.
         name: Image.new("RGBA", (canvas_size, canvas_size), SKY_COLOR)
         for name in FACE_NAMES
     }
@@ -162,7 +173,7 @@ def build_skybox(output_dir):
         direction = _normalize(sample)
         angle = random_source.next_double() * math.pi * 2.0
         face = _face_for(direction)
-        quad = _star_quad(direction, size, angle)
+        quad = _star_quad(direction, size * star_scale, angle)
         draws[face].polygon(
             [_project(face, point) for point in quad],
             fill=STAR_COLOR,
@@ -176,6 +187,15 @@ def build_skybox(output_dir):
             (FACE_SIZE, FACE_SIZE),
             resampling,
         )
+        if tuple(sky_color) != SKY_COLOR:
+            coverage = image.getchannel('R')
+            channels = []
+            for background in sky_color[:3]:
+                table = [int(round(background + max(0, value - SKY_COLOR[0])
+                                   * (255 - background) / float(255 - SKY_COLOR[0])))
+                         for value in range(256)]
+                channels.append(coverage.point(table))
+            image = Image.merge('RGBA', tuple(channels) + (image.getchannel('A'),))
         image.save(
             output_dir / (name + ".png"),
             format="PNG",
@@ -198,13 +218,17 @@ def main():
     )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--star-scale", type=float, default=1.0,
+        help="angular star size relative to upstream; use 0.55 for the small-star candidate",
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         default=default_output,
         help="directory receiving the six PNG faces",
     )
     args = parser.parse_args()
-    stats = build_skybox(args.output)
+    stats = build_skybox(args.output, star_scale=args.star_scale)
     print(
         "built %d accepted stars from %d attempts in %s"
         % (stats["accepted_stars"], STAR_ATTEMPTS, args.output)

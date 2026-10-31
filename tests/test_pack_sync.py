@@ -204,6 +204,54 @@ class PackSyncTests(unittest.TestCase):
                 ).read_text(encoding="utf-8"),
             )
 
+    def test_scoped_addon_cli_explicitly_updates_identity_references(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            source, unused_world = self._write_scoped_cli_fixture(root)
+            target = root / "addon"
+            target.mkdir()
+            for kind, pack, old_id in (
+                ("behavior", "TwilightBossSliceB", "old-behavior"),
+                ("resource", "TwilightBossSliceR", "old-resource"),
+            ):
+                folder = target / pack
+                folder.mkdir()
+                (folder / "manifest.json").write_text(json.dumps({
+                    "header": {"uuid": old_id, "version": [0, 11, 72]}
+                }), encoding="utf-8")
+                (folder / "keep.txt").write_text("unchanged gameplay", encoding="utf-8")
+                (target / ("world_" + kind + "_packs.json")).write_text(
+                    json.dumps([{"pack_id": old_id, "version": [0, 11, 72], "type": "Addon"}]),
+                    encoding="utf-8",
+                )
+            argv = ["sync_packs.py", "--source-root", str(source),
+                    "--target-root", str(target), "--update-pack-references",
+                    "--include-file", "TwilightBossSliceB:manifest.json",
+                    "--include-file", "TwilightBossSliceR:manifest.json"]
+            with mock.patch.object(sync_packs, "ROOT", root), mock.patch.object(sys, "argv", argv):
+                self.assertEqual(0, sync_packs.main())
+            for kind, pack, expected in (
+                ("behavior", "TwilightBossSliceB", "behavior-id"),
+                ("resource", "TwilightBossSliceR", "resource-id"),
+            ):
+                references = json.loads((target / ("world_" + kind + "_packs.json")).read_text("utf-8"))
+                self.assertEqual([{"pack_id": expected, "version": [0, 11, 73], "type": "Addon"}], references)
+                self.assertEqual("unchanged gameplay", (target / pack / "keep.txt").read_text("utf-8"))
+
+    def test_reference_update_requires_both_selected_manifests(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            source, world = self._write_scoped_cli_fixture(root)
+            argv = ["sync_packs.py", "--source-root", str(source),
+                    "--target-root", str(world), "--update-pack-references",
+                    "--include-file", "TwilightBossSliceB:selected.py"]
+            error = io.StringIO()
+            with mock.patch.object(sync_packs, "ROOT", root), mock.patch.object(sys, "argv", argv), redirect_stderr(error):
+                with self.assertRaises(SystemExit):
+                    sync_packs.main()
+            self.assertIn("requires both selected manifests", error.getvalue())
+            self.assertFalse((world / "TwilightBossSliceB").exists())
+
     def test_scoped_world_cli_rejects_source_root_outside_task_directories(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)

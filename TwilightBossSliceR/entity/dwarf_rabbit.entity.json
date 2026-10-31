@@ -3,21 +3,29 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "tf_slice:dwarf_rabbit",
-      "materials": {"default": "entity_alphatest"},
-      "textures": {
-        "brown": "textures/entity/tf_slice/bunnybrown",
-        "dutch": "textures/entity/tf_slice/bunnydutch",
-        "white": "textures/entity/tf_slice/bunnywhite"
+      "materials": {
+        "default": "entity_alphatest"
       },
-      "geometry": {"default": "geometry.tf_slice.dwarf_rabbit"},
+      "textures": {
+        "brown": "textures/tf_beautified/entities/mobs/tf_slice__bunnybrown",
+        "dutch": "textures/tf_beautified/entities/mobs/tf_slice__bunnydutch",
+        "white": "textures/tf_beautified/entities/mobs/tf_slice__bunnywhite"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.dwarf_rabbit_art_v1"
+      },
       "animations": {
         "walk": "animation.quadruped.walk",
-        "look_at_target": "animation.common.look_at_target"
+        "look_at_target": "animation.common.look_at_target",
+        "art_details": "animation.tf_slice.dwarf_rabbit_art.details"
       },
       "scripts": {
         "animate": [
-          {"walk": "query.modified_move_speed"},
-          "look_at_target"
+          {
+            "walk": "query.modified_move_speed"
+          },
+          "look_at_target",
+          "art_details"
         ]
       },
       "render_controllers": [

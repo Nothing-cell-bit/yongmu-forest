@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/tower_broodling"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__tower_broodling"
       },
       "geometry": {
-        "default": "geometry.spider.v1.8"
+        "default": "geometry.tf_slice.tower_broodling_art_v1"
       },
       "animations": {
         "default_leg_pose": "animation.spider.default_leg_pose",

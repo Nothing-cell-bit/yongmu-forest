@@ -1,0 +1,124 @@
+{
+  "biomes": {
+    "dm33027004_birch_forest_mutated": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_enchanted_forest",
+      "fog_color": "#C0FFD8",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_flower_forest": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_jungle": {
+      "water_surface_color": "#005522",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_mushroom_island": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_mushroom_island_shore": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_ocean": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_plains": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_redwood_taiga_mutated": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_dark_forest_center",
+      "fog_color": "#493000",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 32.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_river": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_roofed_forest": {
+      "water_surface_color": "#BC8857",
+      "fog_identifier": "tf_slice:fog_spooky_forest",
+      "fog_color": "#AAA0C8",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 32.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_roofed_forest_mutated": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_dark_forest",
+      "fog_color": "#000000",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 32.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_savanna": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_sunflower_plains": {
+      "water_surface_color": "#3F76E4",
+      "fog_identifier": "tf_slice:fog_twilight_forest",
+      "fog_color": "#20224A",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 40.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_swampland": {
+      "water_surface_color": "#95B55F",
+      "fog_identifier": "tf_slice:fog_swamp",
+      "fog_color": "#003F21",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 24.0,
+      "inherit_from_prior_fog": false
+    },
+    "dm33027004_swampland_mutated": {
+      "water_surface_color": "#6C2C2C",
+      "fog_identifier": "tf_slice:fog_fire_swamp",
+      "fog_color": "#380A00",
+      "water_fog_color": "#050533",
+      "water_fog_distance": 16.0,
+      "inherit_from_prior_fog": false
+    }
+  }
+}

@@ -11,7 +11,7 @@
         "enchanted": "entity_alphatest_glint"
       },
       "textures": {
-        "default": "textures/items/knightmetal_shield",
+        "default": "textures/tf_beautified/items/knightmetal_shield",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {

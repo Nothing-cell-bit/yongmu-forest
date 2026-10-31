@@ -7,7 +7,7 @@
         "default": "entity_emissive_alpha"
       },
       "textures": {
-        "default": "textures/blocks/root"
+        "default": "textures/tf_beautified/blocks/root"
       },
       "geometry": {
         "default": "geometry.tf_slice.nature_bolt"

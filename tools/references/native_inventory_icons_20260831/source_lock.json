@@ -1,0 +1,40 @@
+{
+  "sourceScreenshot": "codex-clipboard-6f59bdd5-2575-4926-bd10-9dd298333140.png",
+  "sourceSha256": "9ee6c9d1341a161de85b8bfb7774c5ae3176b38c66f5f9c3c30939033856093c",
+  "acceptedFrom": "User-marked native icons in the creative inventory grid",
+  "acceptedDate": "2026-08-31",
+  "cropSize": [64, 64],
+  "backgroundKey": {
+    "color": "#919191",
+    "similarity": 0.02,
+    "blend": 0.0
+  },
+  "crops": {
+    "stairs": [937, 112],
+    "slab": [1027, 112],
+    "button": [1117, 112],
+    "fence": [1207, 112],
+    "fence_gate": [1297, 112],
+    "pressure_plate": [1387, 112],
+    "door": [1477, 112],
+    "trapdoor": [37, 202],
+    "sign": [127, 202],
+    "hanging_sign": [307, 202]
+  },
+  "suffixSource": {
+    "stairs": "stairs",
+    "slab": "slab",
+    "button": "button",
+    "fence": "fence",
+    "fence_gate": "fence_gate",
+    "pressure_plate": "pressure_plate",
+    "door": "door",
+    "trapdoor": "trapdoor",
+    "sign": "sign",
+    "wall_sign": "sign",
+    "hanging_sign": "hanging_sign",
+    "wall_hanging_sign": "hanging_sign",
+    "banister": "fence"
+  },
+  "policy": "Use these extracted pixels directly for the initial creative inventory grid. Do not substitute a custom model, delay correction until selection, or regenerate the projection."
+}

@@ -160,7 +160,7 @@
     "anchor_from": "top_left",
     "anchor_to": "top_left",
     "size": [8, 8],
-    "texture": "textures/ui/tf_slice/magic_map_player/north",
+    "texture": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_player/north",
     "keep_ratio": false,
     "layer": 7
   },
@@ -169,7 +169,7 @@
     "anchor_from": "top_left",
     "anchor_to": "top_left",
     "size": [8, 8],
-    "texture": "textures/ui/tf_slice/magic_map_player/north",
+    "texture": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_player/north",
     "keep_ratio": false,
     "layer": 8
   },
@@ -199,7 +199,7 @@
           "anchor_from": "center",
           "anchor_to": "center",
           "size": [220, 218],
-          "texture": "textures/ui/tf_slice/magic_map_frame_v2",
+          "texture": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_frame_v2",
           "layer": 1,
           "controls": [
             {

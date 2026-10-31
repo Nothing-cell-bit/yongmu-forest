@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:nagastone_stairs_right",
-      "register_to_creative_menu": true,
+      "register_to_creative_menu": false,
       "states": {
         "tf_slice:facing": [
           "north",
@@ -120,6 +120,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "pickaxe",
+        "destroy_special": true,
+        "level": 0
       }
     },
     "permutations": [

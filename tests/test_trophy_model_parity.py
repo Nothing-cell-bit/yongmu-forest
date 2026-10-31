@@ -17,6 +17,7 @@ if str(BP) not in sys.path:
     sys.path.insert(0, str(BP))
 
 from tools import build_public_block_shapes as builder
+from tools.retired_runtime_pngs import original_texture
 from TwilightBossSlice import release_metadata
 
 
@@ -32,9 +33,12 @@ IN_SCOPE_TROPHIES = (
 
 
 class TrophyModelParityTests(unittest.TestCase):
-    def test_trophy_runtime_cache_generation_is_0_11_99(self):
-        """Collision-free items and break effects must not reuse 0.11.98."""
-        self.assertEqual((0, 12, 0), release_metadata.PACK_VERSION)
+    def test_trophy_runtime_cache_generation_matches_mining_fix_release(self):
+        """The mining repair must not reuse the previous release cache key."""
+        self.assertEqual((0, 12, 4), release_metadata.PACK_VERSION)
+        for pack in ('TwilightBossSliceB', 'TwilightBossSliceR'):
+            manifest = json.loads((ROOT / pack / 'manifest.json').read_text('utf-8'))
+            self.assertEqual(list(release_metadata.PACK_VERSION), manifest['header']['version'])
 
     def test_trophy_only_rebuild_refreshes_creative_item_aliases(self):
         self.assertTrue(hasattr(builder, "normalize_trophy_creative_catalog"))
@@ -248,13 +252,13 @@ class TrophyModelParityTests(unittest.TestCase):
             source = builder.UPSTREAM_TEXTURES / builder.TROPHY_SPECS[name][
                 "item_texture"
             ]
-            target = builder.RP / "textures" / "blocks" / (name + "_trophy.png")
+            target = original_texture(builder.RP / "textures" / "blocks" / (name + "_trophy.png"), ROOT)
             self.assertEqual(source.read_bytes(), target.read_bytes(), name)
         for name in ("knight_phantom", "minoshroom", "quest_ram"):
             source = builder.UPSTREAM_TEXTURES / builder.TROPHY_SPECS[name][
                 "item_texture"
             ]
-            target = builder.RP / "textures" / "blocks" / (name + "_trophy.png")
+            target = original_texture(builder.RP / "textures" / "blocks" / (name + "_trophy.png"), ROOT)
             self.assertNotEqual(source.read_bytes(), target.read_bytes(), name)
             image = Image.open(target).convert("RGBA")
             expected_size = 16 if name == "quest_ram" else 32
@@ -407,14 +411,14 @@ class TrophyModelParityTests(unittest.TestCase):
                     self.assertGreater(opaque_pixels, 800)
 
     def test_knight_phantom_combined_atlas_preserves_both_original_textures(self):
-        combined = Image.open(
+        combined = Image.open(original_texture(
             builder.RP
             / "textures"
             / "entity"
             / "tf_slice"
             / "trophies"
-            / "knight_phantom.png"
-        ).convert("RGBA")
+            / "knight_phantom.png", ROOT
+        )).convert("RGBA")
         self.assertEqual((128, 32), combined.size)
         sources = (
             (0, "model/phantomskeleton.png"),
@@ -885,11 +889,10 @@ class TrophyModelParityTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn("PUBLIC_TROPHY_IDS", creative_source)
-        validator_source = (ROOT / "tools" / "validate_slice.py").read_text(
-            encoding="utf-8"
-        )
-        self.assertIn("PUBLIC_TROPHY_IDS", validator_source)
-        self.assertIn("| PUBLIC_TROPHY_IDS", validator_source)
+        from tools import block_mining_contract
+        # Exercise the current guard rather than searching a removed tool's text.
+        self.assertTrue(block_ids.issubset(block_mining_contract.contract()['blocks']))
+        self.assertEqual([], block_mining_contract.mining_issues(BP))
 
         catalog = json.loads(
             (
@@ -955,10 +958,11 @@ class TrophyModelParityTests(unittest.TestCase):
                 builder.trophy_loot_document(name)["pools"][0]["entries"][0]["name"],
             )
     def test_generated_flat_trophy_items_match_builder(self):
+        from tools.block_texture_beautification import normalize_resource_document
         for name in IN_SCOPE_TROPHIES:
             generated = BP / "items" / (name + "_trophy.item.json")
             self.assertEqual(
-                builder.trophy_item_document(name),
+                normalize_resource_document(generated, builder.trophy_item_document(name)),
                 json.loads(generated.read_text(encoding="utf-8")),
             )
 

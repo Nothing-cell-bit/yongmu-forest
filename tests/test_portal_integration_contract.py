@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 PORTAL_ID = "tf_slice:twilight_portal"
 TARGET_DIMENSION_ID = 33027004
 
@@ -79,7 +80,7 @@ class PortalResourceContractTests(unittest.TestCase):
             / "dm33027004_ocean.json"
         )["minecraft:biome"]
         client_biome = read_json(
-            RP / "biomes" / "dm33027004_ocean.client_biome.json"
+            BIOME_PROFILES / "dm33027004_ocean.client_biome.json"
         )["minecraft:client_biome"]
 
         self.assertEqual(
@@ -112,7 +113,7 @@ class PortalResourceContractTests(unittest.TestCase):
         )
         self.assertFalse(
             any(
-                (RP / "biomes").glob(
+                (BIOME_PROFILES).glob(
                     "dm33027003_*.client_biome.json"
                 )
             )

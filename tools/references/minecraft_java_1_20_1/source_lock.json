@@ -1,0 +1,19 @@
+{
+  "version": "1.20.1",
+  "source": "Mojang official client JAR",
+  "clientSha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+  "models": [
+    "minecraft:block/block",
+    "minecraft:block/thin_block",
+    "minecraft:block/stairs",
+    "minecraft:block/slab",
+    "minecraft:block/button_inventory",
+    "minecraft:block/fence_inventory",
+    "minecraft:block/template_fence_gate",
+    "minecraft:block/pressure_plate_up",
+    "minecraft:block/template_orientable_trapdoor_bottom",
+    "minecraft:item/chest",
+    "minecraft:block/cube_column",
+    "minecraft:block/cube"
+  ]
+}

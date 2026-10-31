@@ -2,6 +2,7 @@
 from pathlib import Path
 import argparse
 import hashlib
+import json
 import subprocess
 import sys
 import zipfile
@@ -10,7 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=ROOT / 'dist/yongmu-forest-0.12.0.mcaddon')
+    version = json.loads((ROOT / 'TwilightBossSliceB/manifest.json').read_text(encoding='utf-8'))['header']['version']
+    version_text = '.'.join(str(part) for part in version)
+    parser.add_argument('--output', type=Path, default=ROOT / ('dist/yongmu-forest-' + version_text + '.mcaddon'))
     args = parser.parse_args()
     subprocess.run([sys.executable, str(ROOT / 'tools/check_runtime_packs.py')], check=True)
     target = args.output.resolve()

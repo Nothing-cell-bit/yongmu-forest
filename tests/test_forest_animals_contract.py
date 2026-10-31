@@ -159,7 +159,7 @@ class ForestAnimalBehaviorContractTests(unittest.TestCase):
 
 
 class ForestAnimalResourceContractTests(unittest.TestCase):
-    def test_models_use_mobile_quadruped_rigs_and_original_textures(self):
+    def test_models_keep_locked_base_rigs_and_explicit_visual_variants(self):
         geometry = read_json(
             RP / "models" / "entity" / "forest_animals.geo.json"
         )["minecraft:geometry"]
@@ -170,9 +170,27 @@ class ForestAnimalResourceContractTests(unittest.TestCase):
             client = read_json(
                 RP / "entity" / ("%s.entity.json" % name)
             )["minecraft:client_entity"]["description"]
+            # User-authorized art variants keep the locked original rig in
+            # this shared source file; the live binding is verified separately.
+            art_registry = ROOT / "resource_art/entity_beautification/v1/manifest.json"
+            art_data = read_json(art_registry) if art_registry.exists() else {}
+            active_art = art_data.get("entities", {}).get("tf_slice:"+name) if art_data.get("enabled") else None
             self.assertEqual(
-                spec["geometry"], client["geometry"]["default"]
+                "geometry.tf_slice."+name+"_art_v1" if active_art else spec["geometry"],
+                client["geometry"]["default"],
             )
+            if active_art:
+                expected_texture = "textures/tf_beautified/entities/deer_v1" if name=="deer" else "textures/tf_beautified/entities/mobs/"+spec["texture"][:-4]
+                self.assertEqual(expected_texture, client["textures"]["default"])
+                geometry_path = "models/entity/art/deer_v1.geo.json" if name=="deer" else "models/entity/art/mobs/"+name+"_default.geo.json"
+                candidate = read_json(RP / geometry_path)["minecraft:geometry"][0]
+                self.assertEqual("geometry.tf_slice."+name+"_art_v1", candidate["description"]["identifier"])
+                candidate_bones = {bone["name"]: bone for bone in candidate["bones"]}
+                for original_bone in geometries[spec["geometry"]]["bones"]:
+                    current = candidate_bones[original_bone["name"]]
+                    self.assertEqual(original_bone["pivot"], current["pivot"])
+                    self.assertEqual(original_bone.get("parent"), current.get("parent"))
+                    self.assertEqual(original_bone["cubes"], current["cubes"][:len(original_bone["cubes"])])
             bones = {
                 bone["name"]
                 for bone in geometries[spec["geometry"]]["bones"]

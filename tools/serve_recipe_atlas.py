@@ -17,6 +17,11 @@ try:
 except ImportError:  # pragma: no cover - package import in tests
     from tools.build_recipe_atlas import DEFAULT_OUTPUT, build_catalog, build_html
 
+try:
+    from build_farmers_recipe_atlas import rebuild as rebuild_farmers
+except ImportError:
+    from tools.build_farmers_recipe_atlas import rebuild as rebuild_farmers
+
 
 LOOPBACK_HOST = "127.0.0.1"
 REBUILD_HEADER = "X-Recipe-Atlas-Request"
@@ -58,11 +63,13 @@ class RecipeAtlasHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path = urlsplit(self.path).path
-        if path not in ("/", "/index.html"):
+        if path not in ("/", "/index.html", "/farmers-delight.html"):
             self.send_error(404)
             return
         try:
-            body = self.server.output.read_bytes()
+            output = (self.server.output.with_name("farmers-delight.html")
+                      if path == "/farmers-delight.html" else self.server.output)
+            body = output.read_bytes()
         except OSError as error:
             self._json(500, {"ok": False, "error": str(error)})
             return
@@ -84,7 +91,13 @@ class RecipeAtlasHandler(BaseHTTPRequestHandler):
             return
         try:
             with self.server.rebuild_lock:
-                recipe_count = rebuild(self.server.output)
+                if urlsplit(self.path).query == "mod=farmers-delight":
+                    recipe_count = rebuild_farmers(self.server.output.with_name("farmers-delight.html"))
+                elif not urlsplit(self.path).query:
+                    recipe_count = rebuild(self.server.output)
+                else:
+                    self._json(400, {"ok": False, "error": "unknown atlas"})
+                    return
         except Exception as error:  # keep the local UI responsive with details
             self._json(500, {"ok": False, "error": str(error)})
             return
@@ -96,6 +109,7 @@ class RecipeAtlasHandler(BaseHTTPRequestHandler):
 
 def create_server(port=8765, output=DEFAULT_OUTPUT):
     rebuild(output)
+    rebuild_farmers(Path(output).with_name("farmers-delight.html"))
     return RecipeAtlasServer(
         (LOOPBACK_HOST, int(port)), RecipeAtlasHandler, output
     )

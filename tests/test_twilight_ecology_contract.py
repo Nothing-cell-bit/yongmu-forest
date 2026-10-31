@@ -13,6 +13,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 if str(BP) not in sys.path:
     sys.path.insert(0, str(BP))
 
@@ -937,7 +938,7 @@ class TwilightSkyContractTests(unittest.TestCase):
         )
 
     def test_legacy_sky_is_not_occluded_by_deferred_biome_components(self):
-        for path in (RP / "biomes").glob("*.client_biome.json"):
+        for path in (BIOME_PROFILES).glob("*.client_biome.json"):
             components = read_json(path)["minecraft:client_biome"][
                 "components"
             ]

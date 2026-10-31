@@ -11,6 +11,7 @@ from tools.native_structure_worldgen_safety import base_iterations
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 FEATURES = BP / "netease_features"
 RULES = BP / "netease_feature_rules"
 if str(BP) not in sys.path:
@@ -442,10 +443,10 @@ class MushroomForestGenerationContractTests(unittest.TestCase):
 
     def test_dense_mushroom_atmosphere_matches_regular_mushroom_forest(self):
         dense = read_json(
-            RP / "biomes" / "dm33027004_mushroom_island.client_biome.json"
+            BIOME_PROFILES / "dm33027004_mushroom_island.client_biome.json"
         )["minecraft:client_biome"]["components"]
         regular = read_json(
-            RP / "biomes" / "dm33027004_mushroom_island_shore.client_biome.json"
+            BIOME_PROFILES / "dm33027004_mushroom_island_shore.client_biome.json"
         )["minecraft:client_biome"]["components"]
         self.assertEqual(
             regular["minecraft:sky_color"],

@@ -11,7 +11,7 @@
         "enchanted": "entity_alphatest_glint"
       },
       "textures": {
-        "default": "textures/items/filled_maze_map",
+        "default": "textures/tf_beautified/items/filled_maze_map",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {

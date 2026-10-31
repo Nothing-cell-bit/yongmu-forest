@@ -7,12 +7,12 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "skeleton": "textures/entity/tf_slice/knight_phantom_skeleton",
-        "armor": "textures/entity/tf_slice/knight_phantom_armor"
+        "skeleton": "textures/tf_beautified/entities/mobs/tf_slice__knight_phantom_skeleton",
+        "armor": "textures/tf_beautified/entities/mobs/tf_slice__knight_phantom_armor"
       },
       "geometry": {
-        "default": "geometry.tf_slice.knight_phantom",
-        "armor": "geometry.tf_slice.knight_phantom_armor"
+        "default": "geometry.tf_slice.knight_phantom_art_v1",
+        "armor": "geometry.tf_slice.knight_phantom_art_v1_armor"
       },
       "animations": {
         "move": "animation.tf_slice.knight_phantom.move"

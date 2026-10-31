@@ -666,7 +666,8 @@ class RouteModelQualityTests(unittest.TestCase):
             entries["ur_ghast"]["source"]["renderer_class"],
         )
         self.assertIn("JAPPA", entries["ur_ghast"]["source"]["model_branch"])
-        self.assertTrue(ur_ghast_texture["source"].endswith("/towerboss.png"))
+        self.assertTrue(ur_ghast_texture["source"].endswith("/ur_ghast_yellow.png"))
+        self.assertTrue(ur_ghast_texture["twilight_source"].endswith("/towerboss.png"))
         self.assertEqual(
             "TwilightBossSliceR/textures/entity/tf_slice/ur_ghast.png",
             ur_ghast_texture["target"],

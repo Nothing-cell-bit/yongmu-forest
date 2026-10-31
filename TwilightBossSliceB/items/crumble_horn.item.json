@@ -19,7 +19,9 @@
         "max_durability": 1024
       },
       "minecraft:use_animation": "bow",
-      "minecraft:use_duration": 72000
+      "minecraft:use_modifiers": {
+        "use_duration": 3600.0
+      }
     }
   }
 }

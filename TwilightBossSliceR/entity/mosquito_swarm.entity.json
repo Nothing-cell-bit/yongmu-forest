@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/mosquitoswarm"
+        "default": "textures/tf_beautified/entities/mobs/mosquitoswarm"
       },
       "geometry": {
-        "default": "geometry.tf_slice.mosquito_swarm"
+        "default": "geometry.tf_slice.mosquito_swarm_art_v1"
       },
       "render_controllers": [
         "controller.render.default"

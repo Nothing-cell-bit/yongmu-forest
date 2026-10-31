@@ -73,6 +73,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "shovel",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

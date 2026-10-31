@@ -1,0 +1,40 @@
+{
+  "world": "2af0fb9a-13a4-4d58-8a6f-8d2cd5fc5846",
+  "position": [
+    145,
+    -310
+  ],
+  "waterFillNode": {
+    "type": "fill",
+    "min_height": 61,
+    "max_height": 63,
+    "pool": [
+      {
+        "fill_block": "minecraft:water",
+        "weight": 1
+      }
+    ]
+  },
+  "observedColumn": {
+    "58": "minecraft:stone",
+    "59": "minecraft:stone",
+    "60": "minecraft:sand",
+    "61": "minecraft:water",
+    "62": "minecraft:water",
+    "63": "minecraft:air",
+    "64": "minecraft:air",
+    "65": "minecraft:air",
+    "66": "minecraft:air",
+    "67": "minecraft:air",
+    "68": "minecraft:air",
+    "69": "minecraft:air",
+    "70": "minecraft:air",
+    "71": "minecraft:air",
+    "72": "minecraft:air",
+    "73": "minecraft:air",
+    "74": "minecraft:air",
+    "75": "minecraft:air",
+    "76": "minecraft:air"
+  },
+  "userObservation": "河道、矿山和报错检查都正常"
+}

@@ -13,6 +13,8 @@ import TwilightBossSlice.magic_map_logic as magic_map_logic
 import TwilightBossSlice.knight_route_logic as knight_route_logic
 import TwilightBossSlice.ruin_worldgen_logic as ruin_logic
 import TwilightBossSlice.ruin_catalog_data as ruin_catalog_data
+import TwilightBossSlice.ledger_json_cache as ledger_json_cache
+import TwilightBossSlice.spawn_policy as spawn_policy
 
 
 LEDGER_KEY = "tf_slice:ruin_landmarks_v1"
@@ -53,16 +55,7 @@ DARK_FOREST_BIOME = biome_catalog.BIOMES_BY_KEY["dark_forest"]["identifier"]
 DARK_FOREST_SPAWN_INTERVAL_TICKS = 40
 DARK_FOREST_LOCAL_MONSTER_CAP = 18
 MAX_DARK_FOREST_GROUPS_PER_SCAN = 2
-DARK_FOREST_CONTROLLED_SPAWNS = (
-    ("minecraft:enderman", 2, 1, 2),
-    ("minecraft:zombie", 5, 1, 2),
-    ("minecraft:skeleton", 5, 1, 2),
-    ("tf_slice:mist_wolf", 5, 1, 1),
-    ("tf_slice:skeleton_druid", 5, 1, 1),
-    ("tf_slice:king_spider", 1, 1, 1),
-    ("tf_slice:kobold", 10, 1, 3),
-    ("minecraft:witch", 2, 1, 1),
-)
+DARK_FOREST_CONTROLLED_SPAWNS = spawn_policy.CONTROLLED_MONSTER_POOLS[DARK_FOREST_BIOME]
 DARK_FOREST_CONTROLLED_MOBS = frozenset(
     entry[0] for entry in DARK_FOREST_CONTROLLED_SPAWNS
 )
@@ -986,12 +979,11 @@ class StructureWorldgenService(object):
             return False
 
     def _ledger_storage_shards(self):
-        serialized = json.dumps(
-            self._ledger,
-            ensure_ascii=True,
-            separators=(",", ":"),
-            sort_keys=True,
-        )
+        cache = getattr(self, "_ledger_json_cache", None)
+        if cache is None:
+            cache = ledger_json_cache.LedgerJsonCache()
+            self._ledger_json_cache = cache
+        serialized = cache.encode(self._ledger)
         if not isinstance(serialized, bytes):
             serialized = serialized.encode("utf-8")
         encoded = base64.b64encode(zlib.compress(serialized, 9))
@@ -2964,7 +2956,7 @@ class StructureWorldgenService(object):
     def _biome_name(self, x, z):
         try:
             return self._biome.GetBiomeName(
-                (int(x), 64, int(z)),
+                (int(math.floor(float(x))), 64, int(math.floor(float(z)))),
                 self._dimension_id,
             )
         except Exception as error:
@@ -4113,8 +4105,8 @@ class StructureWorldgenService(object):
         checker = getattr(self._chunk, "CheckChunkState", None)
         if checker is None:
             return True
-        chunk_x = int(x) >> 4
-        chunk_z = int(z) >> 4
+        chunk_x = int(math.floor(float(x))) >> 4
+        chunk_z = int(math.floor(float(z))) >> 4
         position = (
             chunk_x * 16 + 8,
             int(y),
@@ -5283,6 +5275,8 @@ class StructureWorldgenService(object):
         )
 
     def _is_hollow_hill_spawn_position_clear(self, position):
+        if not self._chunk_position_ready(*position):
+            return False
         block_x = int(math.floor(position[0]))
         block_y = int(math.floor(position[1]))
         block_z = int(math.floor(position[2]))
@@ -5305,7 +5299,7 @@ class StructureWorldgenService(object):
         feet_name = str((feet or {}).get("name", ""))
         head_name = str((head or {}).get("name", ""))
         return (
-            ground_name not in HOLLOW_HILL_SPAWN_AIR_BLOCKS
+            spawn_policy.ground_support_allowed(ground_name)
             and feet_name in HOLLOW_HILL_SPAWN_AIR_BLOCKS
             and head_name in HOLLOW_HILL_SPAWN_AIR_BLOCKS
         )
@@ -6019,12 +6013,13 @@ class StructureWorldgenService(object):
             break
 
     @staticmethod
-    def _dark_forest_spawn_choice(seed):
+    def _dark_forest_spawn_choice(seed, biome_identifier=DARK_FOREST_BIOME):
         rng = ruin_logic.JavaRandom(seed)
-        total = sum(entry[1] for entry in DARK_FOREST_CONTROLLED_SPAWNS)
+        entries = spawn_policy.CONTROLLED_MONSTER_POOLS[biome_identifier]
+        total = sum(entry[1] for entry in entries)
         roll = rng.next_int(total)
-        selected = DARK_FOREST_CONTROLLED_SPAWNS[-1]
-        for entry in DARK_FOREST_CONTROLLED_SPAWNS:
+        selected = entries[-1]
+        for entry in entries:
             if roll < int(entry[1]):
                 selected = entry
                 break
@@ -6036,7 +6031,7 @@ class StructureWorldgenService(object):
             "count": minimum + rng.next_int(maximum - minimum + 1),
         }
 
-    def _count_dark_forest_monsters(self, player):
+    def _count_dark_forest_monsters(self, player, biome_identifier=DARK_FOREST_BIOME):
         position = player.get("position") or ()
         if len(position) != 3:
             return DARK_FOREST_LOCAL_MONSTER_CAP
@@ -6060,13 +6055,14 @@ class StructureWorldgenService(object):
             entities = None
         if entities is None:
             return DARK_FOREST_LOCAL_MONSTER_CAP
+        identifiers = frozenset(entry[0] for entry in spawn_policy.CONTROLLED_MONSTER_POOLS[biome_identifier])
         return sum(
             1
             for entity_id in entities
-            if self._entity_identifier(entity_id) in DARK_FOREST_CONTROLLED_MOBS
+            if self._entity_identifier(entity_id) in identifiers
         )
 
-    def _dark_forest_spawn_candidates(self, player, seed, limit):
+    def _dark_forest_spawn_candidates(self, player, seed, limit, biome_identifier=DARK_FOREST_BIOME):
         player_position = player.get("position") or ()
         if len(player_position) != 3 or int(limit) <= 0:
             return []
@@ -6079,7 +6075,7 @@ class StructureWorldgenService(object):
         for _unused in range(attempts):
             block_x = center_x + rng.next_int(97) - 48
             block_z = center_z + rng.next_int(97) - 48
-            if self._biome_name(block_x, block_z) != DARK_FOREST_BIOME:
+            if self._biome_name(block_x, block_z) != biome_identifier:
                 continue
             start_y = center_y + rng.next_int(17) - 8
             y_offsets = [0]
@@ -6099,10 +6095,11 @@ class StructureWorldgenService(object):
                 break
         return result
 
-    def _spawn_dark_forest_group(self, player, players, current_tick):
+    def _spawn_dark_forest_group(self, player, players, current_tick, biome_identifier=DARK_FOREST_BIOME):
+        """Historical entry name; dispatch the exact pool for each owned biome."""
         remaining = (
             DARK_FOREST_LOCAL_MONSTER_CAP
-            - self._count_dark_forest_monsters(player)
+            - self._count_dark_forest_monsters(player, biome_identifier)
         )
         if remaining <= 0 or self._entity_spawner is None:
             return 0
@@ -6111,20 +6108,22 @@ class StructureWorldgenService(object):
             self._world_seed,
             int(math.floor(float(position[0]))),
             int(math.floor(float(position[2]))),
-            "dark_forest",
+            biome_catalog.BIOMES_BY_IDENTIFIER[biome_identifier]["key"],
             "controlled_spawn",
             int(current_tick) // DARK_FOREST_SPAWN_INTERVAL_TICKS,
         )
-        selected = self._dark_forest_spawn_choice(seed)
+        if biome_identifier == DARK_FOREST_BIOME:
+            selected = self._dark_forest_spawn_choice(seed)
+        else:
+            selected = self._dark_forest_spawn_choice(seed, biome_identifier)
         requested = min(int(remaining), int(selected["count"]))
-        candidates = self._dark_forest_spawn_candidates(
-            player,
-            seed ^ 0x4441524B,
-            max(12, requested * 12),
-        )
+        candidate_args = (player, seed ^ 0x4441524B, max(12, requested * 12))
+        candidates = (self._dark_forest_spawn_candidates(*candidate_args)
+                      if biome_identifier == DARK_FOREST_BIOME else
+                      self._dark_forest_spawn_candidates(*(candidate_args + (biome_identifier,))))
         spawned = 0
         for candidate, yaw in candidates:
-            if self._biome_name(candidate[0], candidate[2]) != DARK_FOREST_BIOME:
+            if self._biome_name(candidate[0], candidate[2]) != biome_identifier:
                 continue
             if not self._controlled_spawn_position_allowed(
                 {},
@@ -6135,6 +6134,17 @@ class StructureWorldgenService(object):
             if not self._is_hollow_hill_spawn_position_clear(candidate):
                 continue
             if not self._chunk_position_ready(*candidate):
+                continue
+            # GetBlockLightLevel is only valid for loaded positions. A missing
+            # light reading must not turn an inherited monster into a day spawn.
+            try:
+                light = self._block.GetBlockLightLevel(
+                    tuple(int(math.floor(value)) for value in candidate), self._dimension_id
+                )
+                max_light = 15 if selected["entity"] == "tf_slice:mosquito_swarm" else 7
+                if light is None or not 0 <= int(light) <= max_light:
+                    continue
+            except Exception:
                 continue
             try:
                 entity_id = self._entity_spawner(
@@ -6171,12 +6181,13 @@ class StructureWorldgenService(object):
             if (
                 int(player.get("dimensionId", -1)) != self._dimension_id
                 or len(position) != 3
-                or self._biome_name(position[0], position[2])
-                != DARK_FOREST_BIOME
             ):
                 continue
+            biome_identifier = self._biome_name(position[0], position[2])
+            if biome_identifier not in spawn_policy.CONTROLLED_MONSTER_POOLS:
+                continue
             scanned += 1
-            self._spawn_dark_forest_group(player, players, current_tick)
+            self._spawn_dark_forest_group(player, players, current_tick, biome_identifier)
             if scanned >= MAX_DARK_FOREST_GROUPS_PER_SCAN:
                 break
 
@@ -6301,6 +6312,12 @@ class StructureWorldgenService(object):
     def _controlled_spawn_position_allowed(self, job, position, players):
         if self._controlled_spawn_in_boss_area(job, position):
             return False
+        if not self._chunk_position_ready(*position):
+            return False
+        support = (int(math.floor(position[0])), int(math.floor(position[1])) - 1,
+                   int(math.floor(position[2])))
+        if spawn_policy.is_leaf_support(self._block_name(*support)):
+            return False
         has_player = False
         within_activation_range = False
         for player in players or ():
@@ -6364,13 +6381,18 @@ class StructureWorldgenService(object):
             result.append({"center": center, "size": size})
         return result
 
-    def _controlled_structure_spawn_table(self, job, player):
+    def _controlled_structure_spawn_table(
+        self, job, player, hostile_spawning_enabled=True
+    ):
         contract = job.get("controlledSpawns") or {}
         tiers = contract.get("tiers") or {}
         kind = str(job.get("kind", ""))
         position = player.get("position") or ()
         if kind == "knight_stronghold":
-            return "stronghold", list(tiers.get("stronghold", ()))
+            return "stronghold", (
+                list(tiers.get("stronghold", ()))
+                if hostile_spawning_enabled else []
+            )
         if kind != "dark_tower":
             return None, []
 
@@ -6384,8 +6406,16 @@ class StructureWorldgenService(object):
             return None, []
         if player_block in ("minecraft:water", "minecraft:flowing_water"):
             water = list(tiers.get("water", ()))
+            if not hostile_spawning_enabled:
+                water = [
+                    entry for entry in water
+                    if entry.get("entity") in CONTROLLED_STRUCTURE_WATER_MOBS
+                ]
             if water:
                 return "water", water
+
+        if not hostile_spawning_enabled:
+            return None, []
 
         roof_entries = list(tiers.get("roof", ()))
         if roof_entries and self._dark_tower_roof_zones(job, player):
@@ -6439,6 +6469,8 @@ class StructureWorldgenService(object):
         )
 
     def _controlled_structure_spawn_position_clear(self, identifier, position):
+        if not self._chunk_position_ready(*position):
+            return False
         block_x = int(math.floor(float(position[0])))
         block_y = int(math.floor(float(position[1])))
         block_z = int(math.floor(float(position[2])))
@@ -6447,6 +6479,9 @@ class StructureWorldgenService(object):
                 "minecraft:water",
                 "minecraft:flowing_water",
             )
+        ground_name = self._block_name(block_x, block_y - 1, block_z)
+        if spawn_policy.is_leaf_support(ground_name):
+            return False
         clearance = 3 if identifier in CONTROLLED_STRUCTURE_TALL_MOBS else 2
         for offset_y in range(clearance):
             if self._block_name(block_x, block_y + offset_y, block_z) not in (
@@ -6455,9 +6490,7 @@ class StructureWorldgenService(object):
                 return False
         if identifier in CONTROLLED_STRUCTURE_FLYING_MOBS:
             return True
-        return self._block_name(block_x, block_y - 1, block_z) not in (
-            HOLLOW_HILL_SPAWN_AIR_BLOCKS
-        )
+        return spawn_policy.ground_support_allowed(ground_name)
 
     def _dark_tower_roof_spawn_candidates(
         self,
@@ -6575,8 +6608,11 @@ class StructureWorldgenService(object):
         player,
         current_tick,
         players=None,
+        hostile_spawning_enabled=True,
     ):
-        tier, entries = self._controlled_structure_spawn_table(job, player)
+        tier, entries = self._controlled_structure_spawn_table(
+            job, player, hostile_spawning_enabled
+        )
         if not entries or self._entity_spawner is None:
             return 0
         kind = str(job.get("kind", ""))
@@ -6667,7 +6703,9 @@ class StructureWorldgenService(object):
             )
         return spawned
 
-    def _spawn_controlled_structure_monsters(self, current_tick, players):
+    def _spawn_controlled_structure_monsters(
+        self, current_tick, players, hostile_spawning_enabled=True
+    ):
         if self._entity_spawner is None:
             return
         if int(current_tick) % CONTROLLED_STRUCTURE_SPAWN_INTERVAL_TICKS != 0:
@@ -6685,6 +6723,12 @@ class StructureWorldgenService(object):
             player = self._controlled_structure_player(job, players)
             if player is None:
                 continue
+            if not hostile_spawning_enabled:
+                _tier, entries = self._controlled_structure_spawn_table(
+                    job, player, False
+                )
+                if not entries:
+                    continue
             if not self._controlled_spawn_attempt_due(
                 "controlled_structure:%s" % str(ledger_key),
                 job,
@@ -6698,6 +6742,7 @@ class StructureWorldgenService(object):
                 player,
                 current_tick,
                 players,
+                hostile_spawning_enabled=hostile_spawning_enabled,
             )
             if active_structures >= MAX_CONTROLLED_STRUCTURE_GROUPS_PER_SCAN:
                 break
@@ -7345,12 +7390,14 @@ class StructureWorldgenService(object):
             self._activate_courtyard_bosses(players, current_tick)
             self._activate_knight_groups(players, current_tick)
             self._spawn_dark_forest_monsters(current_tick, players)
+            self._spawn_hollow_hill_monsters(current_tick, players)
+            self._spawn_lich_tower_monsters(current_tick, players)
+            self._spawn_labyrinth_monsters(current_tick, players)
         else:
             self._reset_knight_groups_for_peaceful()
-        self._spawn_hollow_hill_monsters(current_tick, players)
-        self._spawn_lich_tower_monsters(current_tick, players)
-        self._spawn_labyrinth_monsters(current_tick, players)
-        self._spawn_controlled_structure_monsters(current_tick, players)
+        self._spawn_controlled_structure_monsters(
+            current_tick, players, hostile_spawning_enabled=boss_spawning_enabled
+        )
 
     def debug_list(self):
         return sorted(self._catalog)

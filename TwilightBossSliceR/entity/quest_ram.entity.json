@@ -3,22 +3,32 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "tf_slice:quest_ram",
-      "materials": {"default": "entity_alphatest"},
-      "textures": {
-        "default": "textures/entity/tf_slice/quest_ram"
+      "materials": {
+        "default": "entity_alphatest"
       },
-      "geometry": {"default": "geometry.tf_slice.quest_ram"},
+      "textures": {
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__quest_ram"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.quest_ram_art_v1"
+      },
       "animations": {
         "walk": "animation.tf_slice.quest_ram.walk",
-        "look_at_target": "animation.tf_slice.quest_ram.look"
+        "look_at_target": "animation.tf_slice.quest_ram.look",
+        "art_details": "animation.tf_slice.quest_ram_art.details"
       },
       "scripts": {
         "animate": [
-          {"walk": "query.modified_move_speed"},
-          "look_at_target"
+          {
+            "walk": "query.modified_move_speed"
+          },
+          "look_at_target",
+          "art_details"
         ]
       },
-      "render_controllers": ["controller.render.default"],
+      "render_controllers": [
+        "controller.render.default"
+      ],
       "spawn_egg": {
         "base_color": "#F2EFE6",
         "overlay_color": "#55D6D0"

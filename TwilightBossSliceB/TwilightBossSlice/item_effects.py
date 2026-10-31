@@ -4,6 +4,7 @@ import copy
 import random
 
 from TwilightBossSlice import portal_logic, knight_route_logic
+from TwilightBossSlice import mining_tool_rules
 
 
 # NetEase EnchantType IDs, matching upstream TFCreativeTabs/enchanted recipes.
@@ -83,6 +84,8 @@ class ItemEffects(object):
         self.h, self.cf, self.api, self.level = host, factory, api, level_id
         self.recipe_cache = {}
         self.glowing = {}
+        self._mining_tools_registered = False
+        self._mining_registration_attempts = 0
 
     def refresh_inventory(self, player):
         comp = self.cf.CreateItem(player)
@@ -92,6 +95,10 @@ class ItemEffects(object):
             updates = {}
             for slot, stack in enumerate(comp.GetPlayerAllItems(pos, True) or ()):
                 changed = with_default_enchantments(stack)
+                adjusted = mining_tool_rules.with_fractional_speed(
+                    changed if changed is not None else stack, comp)
+                if adjusted is not None:
+                    changed = adjusted
                 if changed is not None:
                     updates[(pos, slot)] = changed
             if updates:
@@ -99,6 +106,15 @@ class ItemEffects(object):
 
     def tick(self):
         if self.h._tick % 30 == 0:
+            if not self._mining_tools_registered and self._mining_registration_attempts < 3:
+                self._mining_registration_attempts += 1
+                try:
+                    self._mining_tools_registered = mining_tool_rules.register_shears(
+                        self.cf.CreateItem(self.level))
+                except Exception:
+                    self._mining_tools_registered = False
+                if not self._mining_tools_registered and self._mining_registration_attempts == 3:
+                    print('[TwilightBossSlice] native shears mining setup unavailable')
             for player in self.h._get_online_players():
                 try:
                     self.refresh_inventory(player)

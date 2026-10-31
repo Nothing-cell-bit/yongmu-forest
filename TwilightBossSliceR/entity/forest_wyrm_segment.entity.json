@@ -7,12 +7,12 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/nagasegment"
+        "default": "textures/tf_beautified/entities/mobs/nagasegment"
       },
       "geometry": {
-        "default": "geometry.tf_slice.forest_wyrm_segment",
-        "taper": "geometry.tf_slice.forest_wyrm_segment_taper",
-        "tail": "geometry.tf_slice.forest_wyrm_segment_tail"
+        "default": "geometry.tf_slice.forest_wyrm_segment_art_v1",
+        "taper": "geometry.tf_slice.forest_wyrm_segment_art_v1_taper",
+        "tail": "geometry.tf_slice.forest_wyrm_segment_art_v1_tail"
       },
       "render_controllers": [
         "controller.render.tf_slice.forest_wyrm_segment"

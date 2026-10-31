@@ -11,7 +11,7 @@
         "enchanted": "entity_alphatest_glint"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/trophies/knight_phantom",
+        "default": "textures/tf_beautified/entity/tf_slice/trophies/knight_phantom",
         "enchanted": "textures/misc/enchanted_actor_glint"
       },
       "geometry": {

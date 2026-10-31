@@ -1,0 +1,21 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:phantom_helmet",
+      "custom_item_type": "armor",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:max_damage": 330,
+      "netease:armor": {
+        "defense": 3,
+        "enchantment": 8,
+        "armor_slot": 0,
+        "toughness": 3,
+        "knockback_resistance": 0
+      }
+    }
+  }
+}

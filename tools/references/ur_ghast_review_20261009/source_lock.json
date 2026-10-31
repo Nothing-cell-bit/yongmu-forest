@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-09",
+  "reason": "User explicitly requested original red regions become yellow with original gradients retained",
+  "algorithm": "Visible R-dominant pixels: (R,G,B,A)->(R,R,min(G,B),A); all other pixels unchanged. Preserves HSL lightness and saturation, resolution, alpha and shape.",
+  "textures": [
+    {
+      "source": "twilightforest-1.20.1-4.3.2508-extracted\\00_original_tree\\assets\\twilightforest\\textures\\model\\towerboss.png",
+      "source_sha256": "d320cc4ab392153f274402c400cd5b0049e6f4c8697688354c634c4b678e1908",
+      "derived": "tools\\references\\ur_ghast_review_20261009\\ur_ghast_yellow.png",
+      "target": "TwilightBossSliceR\\textures\\entity\\tf_slice\\ur_ghast.png",
+      "sha256": "8f985bccbf22b264c207a884bd8827595433e61495362f29cd469711bf0d29a2"
+    },
+    {
+      "source": "twilightforest-1.20.1-4.3.2508-extracted\\00_original_tree\\assets\\twilightforest\\textures\\model\\towerboss_openeyes.png",
+      "source_sha256": "7f583510b7a5a8cca5f496236efd0c405bab2ff44ec14a7e47293847f995ff22",
+      "derived": "tools\\references\\ur_ghast_review_20261009\\ur_ghast_open_yellow.png",
+      "target": "TwilightBossSliceR\\textures\\entity\\tf_slice\\ur_ghast_open.png",
+      "sha256": "76292506b10157556d9b782ef8f3d6271c75c60fb7f64ef0b5123c080c9a52a5"
+    },
+    {
+      "source": "twilightforest-1.20.1-4.3.2508-extracted\\00_original_tree\\assets\\twilightforest\\textures\\model\\towerboss_fire.png",
+      "source_sha256": "95887edeba72bf3ce90d60a1ac81872cefa8bcd5b12555a8707ad3bc6a26e147",
+      "derived": "tools\\references\\ur_ghast_review_20261009\\ur_ghast_attack_yellow.png",
+      "target": "TwilightBossSliceR\\textures\\entity\\tf_slice\\ur_ghast_attack.png",
+      "sha256": "7cdb73d363baab8ca98f4bc441794cbf947b91adc452f90bd94100826ac480f3"
+    }
+  ],
+  "trophy_target": "TwilightBossSliceR\\textures\\entity\\tf_slice\\trophies\\ur_ghast.png"
+}

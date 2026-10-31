@@ -6,10 +6,15 @@
       "register_to_creative_menu": false
     },
     "components": {
-      "netease:neighborchanged_sendto_script": {"value": true},
-      "netease:random_tick": {"enable": true, "tick_to_script": true},
+      "netease:neighborchanged_sendto_script": {
+        "value": true
+      },
+      "netease:random_tick": {
+        "enable": true,
+        "tick_to_script": true
+      },
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0.1
+        "seconds_to_destroy": 0.0
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 0.1

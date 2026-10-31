@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:destroy_time": {
-        "value": 2.0
+        "value": 2.5
       },
       "minecraft:explosion_resistance": {
         "value": 3.0
@@ -107,6 +107,11 @@
         "can_pair": true,
         "mute": false,
         "can_be_blocked": true
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

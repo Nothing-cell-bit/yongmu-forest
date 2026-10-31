@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/carminite_golem"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__carminite_golem"
       },
       "geometry": {
-        "default": "geometry.tf_slice.carminite_golem"
+        "default": "geometry.tf_slice.carminite_golem_art_v1"
       },
       "animations": {
         "move": "animation.tf_slice.carminite_golem.move"

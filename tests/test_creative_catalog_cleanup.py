@@ -115,7 +115,11 @@ class CreativeCatalogCleanupTests(unittest.TestCase):
         self.assertIn("tf_slice:forest_wyrm_spawn_egg", categories["nature"])
         self.assertIn("tf_slice:darkwood_sapling", categories["nature"])
         self.assertIn("tf_slice:ironwood_pickaxe", categories["equipment"])
-        self.assertIn("tf_slice:naga_chestplate", categories["equipment"])
+        # Native armor uses the NetEase equipment registry. Vanilla catalog
+        # references produced Missing referenced asset on the 3.9 client.
+        self.assertNotIn("tf_slice:naga_chestplate", all_items)
+        native = json.loads((BP / "netease_items_beh/naga_chestplate.item.json").read_text("utf-8"))
+        self.assertEqual("equipment", native["minecraft:item"]["description"]["category"])
         self.assertIn("tf_slice:dark_planks", categories["construction"])
         self.assertIn("tf_slice:mangrove_banister", categories["construction"])
         self.assertIn("tf_slice:raven_feather", categories["items"])

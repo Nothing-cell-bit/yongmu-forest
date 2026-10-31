@@ -8,10 +8,10 @@
         "outer": "slime_outer"
       },
       "textures": {
-        "default": "textures/entity/mazeslime"
+        "default": "textures/tf_beautified/entities/mobs/mazeslime"
       },
       "geometry": {
-        "default": "geometry.tf_slice.maze_slime"
+        "default": "geometry.tf_slice.maze_slime_art_v1"
       },
       "render_controllers": [
         "controller.render.tf_slice.maze_slime"

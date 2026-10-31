@@ -1,0 +1,52 @@
+{
+  "source": "C:\\MCStudioDownload\\MCX64Editor\\Res\\MC\\inner_template_pack\\behavior_pack\\netease_biomes\\biome.json",
+  "sourceSha256": "e07aa99962a4c2f16b849bfd2d20d83e4c24bfa76f1530b1b087850904b44f66",
+  "component": {
+    "adjustments": [
+      {
+        "max_height": 30,
+        "min_height": 0,
+        "pool": [
+          {
+            "fill_block": "minecraft:air",
+            "weight": 10
+          }
+        ],
+        "type": "fill"
+      },
+      {
+        "max_height": "84 + query.noise(variable.worldx / 80, variable.worldz / 80) * 30",
+        "min_height": 30,
+        "pool": [
+          {
+            "fill_block": "minecraft:air",
+            "weight": 10
+          }
+        ],
+        "type": "fill"
+      },
+      {
+        "max_height": "84 + query.noise(variable.worldz / 80, variable.worldx / 80) * 30",
+        "min_height": 30,
+        "pool": [
+          {
+            "fill_block": "minecraft:air",
+            "weight": 10
+          }
+        ],
+        "type": "fill"
+      },
+      {
+        "max_height": "84 + query.noise(variable.worldz / 20, variable.worldx / 20) * 40",
+        "min_height": 30,
+        "pool": [
+          {
+            "fill_block": "minecraft:air",
+            "weight": 10
+          }
+        ],
+        "type": "fill"
+      }
+    ]
+  }
+}

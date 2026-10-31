@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/block_chain_goblin"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__block_chain_goblin"
       },
       "geometry": {
-        "default": "geometry.tf_slice.block_chain_goblin"
+        "default": "geometry.tf_slice.block_chain_goblin_art_v1"
       },
       "animations": {
         "move": "animation.tf_slice.block_chain_goblin.move"

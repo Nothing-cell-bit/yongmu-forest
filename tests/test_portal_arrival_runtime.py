@@ -798,7 +798,7 @@ class PortalArrivalRuntimeTests(unittest.TestCase):
         self.assertEqual(0.0, FACTORY.gravity.value)
         self.assertEqual([], FACTORY.chunk.deleted)
 
-    def test_missing_engine_ready_ack_waits_for_safe_fallback_tick(self):
+    def test_missing_engine_ready_ack_retries_without_position_write(self):
         self._queue_and_start_loading()
         self._finish_bootstrap_arrival()
         FACTORY.block.terrain_ready = True
@@ -813,16 +813,57 @@ class PortalArrivalRuntimeTests(unittest.TestCase):
 
         self.system._tick = request["clientEngineReadyFallbackTick"]
         self.system._process_portal_arrivals()
-        self.assertTrue(request["clientEngineReadyFallback"])
+        self.assertFalse(request["clientEngineReady"])
+        self.assertFalse(request["clientEngineReadyFallback"])
         self.assertEqual([], FACTORY.positions)
-
-        self.system._tick = request["nextAttemptTick"]
+        token = request["clientEngineReadyToken"]
+        for _ in range(8):
+            self.system._tick = request["clientEngineReadyFallbackTick"]
+            self.system._process_portal_arrivals()
+        self.assertEqual([], FACTORY.positions)
+        self.assertEqual(token, request["clientEngineReadyToken"])
+        self.assertEqual("awaiting_engine_ready", request["state"])
+        prepared = [data for _player, event, data in self.client_notifications if event == "PortalArrivalPrepared"]
+        self.assertGreater(len(prepared), 1)
+        self.assertTrue(all(data["token"] == token for data in prepared))
+        self.system.OnPortalArrivalEngineReady({"__id__": "player", "token": token})
+        self.system._process_portal_arrivals()
+        self.assertEqual([], FACTORY.positions)
+        self.system._tick += 1
         self.system._process_portal_arrivals()
         self.assertEqual([(34.5, 66.0, 62.5)], FACTORY.positions)
         self.assertEqual(
             "client_loading",
             self.system._pending_portal_entries["player"]["state"],
         )
+
+    def test_direct_relocator_rejects_fabricated_fallback_ready_flag(self):
+        request = {"directEntry": True, "directEntryFootPos": (34.5, 97.0, 62.5),
+                   "clientEngineReady": True, "clientEngineReadyFallback": True}
+        self.assertFalse(self.system._relocate_staged_portal_entry("player", request, (34.5, 66.0, 62.5)))
+        self.assertEqual([], FACTORY.positions)
+
+    def test_unconfirmed_engine_timeout_cancels_without_second_dimension_change(self):
+        self._queue_and_start_loading();self._finish_bootstrap_arrival()
+        FACTORY.block.terrain_ready = True;FACTORY.block.writable = True
+        self._advance_to_ready_tick(acknowledge_client=False)
+        request = self.system._pending_portal_entries["player"]
+        self.now_seconds = request["expiresAt"] + 0.001
+        self.system._process_portal_arrivals()
+        self.assertNotIn("player", self.system._pending_portal_entries)
+        self.assertEqual(1, len(self.dimension_changes))
+        self.assertEqual([], FACTORY.positions)
+        self.assertEqual(0.0, FACTORY.gravity.value)
+        self.assertTrue(any(event == "PortalArrivalFinished" and data.get("cancelled")
+                            for _player, event, data in self.client_notifications))
+
+    def test_real_chunk_events_use_dimension_key_for_counters(self):
+        self.system._ruin_worldgen = None
+        self.system.OnChunkGeneratedServerEvent({"dimension": SERVER.config.DIMENSION_ID, "chunkPosX": 2, "chunkPosZ": 5})
+        self.system.OnChunkLoadedServerEvent({"dimension": SERVER.config.DIMENSION_ID, "chunkPosX": 2, "chunkPosZ": 5})
+        self.system.OnChunkLoadedServerEvent({"dimension": 0, "chunkPosX": 2, "chunkPosZ": 5})
+        self.assertEqual(1, self.system._worldgen_perf_counters.get("chunkGenerated"))
+        self.assertEqual(1, self.system._worldgen_perf_counters.get("chunkLoaded"))
 
     def test_server_hard_gate_only_covers_the_three_by_three_safe_core(self):
         request = {"destinationXZ": (35, 62)}
@@ -873,6 +914,7 @@ class PortalArrivalRuntimeTests(unittest.TestCase):
         )
 
     def test_background_prewarm_is_directional_serial_and_nonblocking(self):
+        self.dimension_id = SERVER.config.DIMENSION_ID
         FACTORY.chunk.ready = False
 
         queued = self.system._queue_portal_background_preload(
@@ -904,7 +946,76 @@ class PortalArrivalRuntimeTests(unittest.TestCase):
             ],
         )
 
+    def test_background_timeout_keeps_native_task_owned_until_callback(self):
+        self.dimension_id = SERVER.config.DIMENSION_ID
+        FACTORY.chunk.ready = False
+        self.system._queue_portal_background_preload("player", (34.5, 66.0, 62.5))
+        self.system._process_portal_background_preloads()
+        pending = self.system._portal_background_preload_inflight
+        self.system._tick = pending["deadlineTick"] + 1
+        for _ in range(5):
+            self.system._process_portal_background_preloads()
+        self.assertEqual(1, len(FACTORY.chunk.async_tasks))
+        self.assertIs(pending, self.system._portal_background_preload_inflight)
+        self.assertIs(True, pending["timedOut"])
+        self.assertFalse(pending["done"])
+        self.assertEqual(1, self.system._worldgen_perf_counters["backgroundPreloadTimedOut"])
+        self.assertNotIn("player", self.system._pending_portal_entries)
+        FACTORY.chunk.async_tasks[0][3](True)
+        self.system._process_portal_background_preloads()
+        self.assertEqual(2, len(FACTORY.chunk.async_tasks))
+
+    def test_background_callback_uses_sdk_result_code(self):
+        self.dimension_id = SERVER.config.DIMENSION_ID
+        FACTORY.chunk.ready = False
+        self.system._queue_portal_background_preload("player", (34.5, 66.0, 62.5))
+        self.system._process_portal_background_preloads()
+        FACTORY.chunk.async_tasks[0][3]({"code": 0})
+        self.system._process_portal_background_preloads()
+        self.assertEqual(1, self.system._worldgen_perf_counters.get("backgroundPreloadFailed", 0))
+        self.assertEqual(0, self.system._worldgen_perf_counters.get("backgroundPreloadCompleted", 0))
+        FACTORY.chunk.async_tasks[1][3]({"code": 1})
+        self.system._process_portal_background_preloads()
+        self.assertEqual(1, self.system._worldgen_perf_counters["backgroundPreloadCompleted"])
+
+    def test_background_queue_does_not_run_during_dimension_transition(self):
+        self.dimension_id = SERVER.config.DIMENSION_ID
+        FACTORY.chunk.ready = False
+        self.system._queue_portal_background_preload("player", (34.5, 66.0, 62.5))
+        self.system._dimension_change_in_progress.add("player")
+        self.system._process_portal_background_preloads()
+        self.assertEqual([], FACTORY.chunk.async_tasks)
+        self.assertEqual([], FACTORY.chunk.checked)
+        self.assertEqual(72, len(self.system._portal_background_preload_queue))
+
+    def test_background_queue_discards_work_after_owner_leaves_dimension(self):
+        self.dimension_id = 0
+        FACTORY.chunk.ready = False
+        self.system._queue_portal_background_preload("player", (34.5, 66.0, 62.5))
+        for _ in range(72):
+            self.system._process_portal_background_preloads()
+        self.assertEqual([], FACTORY.chunk.async_tasks)
+        self.assertEqual([], FACTORY.chunk.checked)
+        self.assertEqual(set(), self.system._portal_background_preload_keys)
+
+    def test_background_queue_discards_chunks_far_behind_exploring_player(self):
+        self.dimension_id = SERVER.config.DIMENSION_ID
+        FACTORY.chunk.ready = False
+        self.system._queue_portal_background_preload("player", (34.5, 66.0, 62.5))
+        self.system._get_foot_pos = types.MethodType(lambda _self, _id: (4096.0, 66.0, -4096.0), self.system)
+        for _ in range(72):
+            self.system._process_portal_background_preloads()
+        self.assertEqual([], FACTORY.chunk.async_tasks)
+        self.assertEqual([], FACTORY.chunk.checked)
+        self.assertEqual(set(), self.system._portal_background_preload_keys)
+
     def test_finished_arrival_queues_prewarm_without_extending_player_hold(self):
+        # Explicit legacy comparison mode; production now leaves the native
+        # player tickets in charge of loading instead of queuing 72 extras.
+        from unittest.mock import patch
+        option = patch.object(SERVER.config, "PORTAL_BACKGROUND_PRELOAD_ENABLED", True, create=True)
+        option.start()
+        self.addCleanup(option.stop)
         self._queue_and_start_loading()
         self._finish_bootstrap_arrival()
         FACTORY.block.terrain_ready = True
@@ -924,6 +1035,18 @@ class PortalArrivalRuntimeTests(unittest.TestCase):
         self.assertEqual(1, len(summaries))
         self.assertIn("totalMs", summaries[0])
         self.assertIn("counters", summaries[0])
+
+    def test_default_arrival_releases_player_without_old_portal_prewarm(self):
+        self._queue_and_start_loading()
+        self._finish_bootstrap_arrival()
+        FACTORY.block.terrain_ready = True
+        FACTORY.block.writable = True
+        self._advance_to_ready_tick()
+        self.assertNotIn("player", self.system._pending_portal_entries)
+        self.assertEqual(0.0, FACTORY.gravity.value)
+        self.assertEqual([], self.system._portal_background_preload_queue)
+        self.assertEqual([], FACTORY.chunk.async_tasks)
+        self.assertTrue(any(event == "PortalArrivalFinished" for _player, event, _data in self.client_notifications))
 
     def test_worldgen_callbacks_record_stage_counts_and_landmark_dispatch(self):
         target = {"dimensionId": SERVER.config.DIMENSION_ID}
@@ -1530,6 +1653,7 @@ class PortalArrivalRuntimeTests(unittest.TestCase):
         self.assertNotIn("player", self.system._pending_portal_entries)
         self.assertEqual(writes_before_join, len(FACTORY.block.writes))
         self.assertTrue(self.system._portal_links)
+        self.assertIn(("player", "PortalArrivalFinished", {"cancelled": False, "reused": True}), self.client_notifications)
 
     def test_existing_return_portal_repairs_blocked_body_space(self):
         FACTORY.block.writable = True

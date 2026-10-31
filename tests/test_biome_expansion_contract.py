@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 SCRIPT_ROOT = str(BP)
 if SCRIPT_ROOT not in sys.path:
     sys.path.insert(0, SCRIPT_ROOT)
@@ -107,7 +108,7 @@ class BiomeExpansionContractTests(unittest.TestCase):
         server_paths = list(
             (BP / "netease_biomes" / "dm33027004").glob("*.json")
         )
-        client_paths = list((RP / "biomes").glob("*.client_biome.json"))
+        client_paths = list((BIOME_PROFILES).glob("*.client_biome.json"))
 
         server_ids = {
             read_json(path)["minecraft:biome"]["description"]["identifier"]
@@ -596,7 +597,7 @@ class BiomeExpansionContractTests(unittest.TestCase):
     def test_every_client_biome_has_the_complete_twilight_render_contract(self):
         for identifier, _inherits, _noise_params, _weight in EXPECTED.values():
             components = read_json(
-                RP / "biomes" / ("%s.client_biome.json" % identifier)
+                BIOME_PROFILES / ("%s.client_biome.json" % identifier)
             )["minecraft:client_biome"]["components"]
             expected_fog = {
                 "dm33027004_roofed_forest": "tf_slice:fog_spooky_forest",

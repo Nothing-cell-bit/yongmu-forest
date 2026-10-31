@@ -49,10 +49,15 @@
         "value": false
       },
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 4.0
+        "seconds_to_destroy": 40.0
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10.0
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

@@ -12,8 +12,16 @@
       "minecraft:light_emission": 4,
       "minecraft:collision_box": false,
       "minecraft:selection_box": {
-        "origin": [-8, 0, -8],
-        "size": [16, 13, 16]
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          13,
+          16
+        ]
       },
       "minecraft:geometry": "geometry.tf_slice.twilight_portal",
       "minecraft:material_instances": {
@@ -26,12 +34,28 @@
       },
       "netease:aabb": {
         "collision": {
-          "min": [0.0, 0.0, 0.0],
-          "max": [0.0, 0.0, 0.0]
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            0.0,
+            0.0,
+            0.0
+          ]
         },
         "clip": {
-          "min": [0.0, 0.0, 0.0],
-          "max": [1.0, 0.8125, 1.0]
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            0.8125,
+            1.0
+          ]
         }
       },
       "netease:neighborchanged_sendto_script": {
@@ -48,7 +72,8 @@
       },
       "netease:solid": {
         "value": false
-      }
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/no_mining_drop.json"
     }
   }
 }

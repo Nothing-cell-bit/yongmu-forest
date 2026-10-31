@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "tf_slice:fiery_boots",
+      "custom_item_type": "armor",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:max_damage": 325,
+      "netease:armor": {
+        "defense": 4,
+        "enchantment": 10,
+        "armor_slot": 3,
+        "toughness": 1,
+        "knockback_resistance": 0
+      },
+      "netease:fire_resistant": {
+        "value": true
+      }
+    }
+  }
+}

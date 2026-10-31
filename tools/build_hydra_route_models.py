@@ -27,6 +27,11 @@ JAR_SHA256 = "0BDC89263616D1B35C32EF82C5E9C14CBD20368E2FE8B468C72A28320BE7A778"
 
 
 def write_json(path, value):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    value = normalize_resource_document(path, value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -1044,7 +1049,13 @@ def main():
 
     texture_names = ("minotaur.png", "minoshroomtaur.png", "mazeslime.png", "mosquitoswarm.png", "hydra4.png", "hydramortar.png")
     for name in texture_names:
-        shutil.copy2(str(MODEL_TEXTURES / name), str(RP / "textures" / "entity" / name))
+        try:
+            from retired_runtime_pngs import is_retired_runtime_png
+        except ImportError:
+            from tools.retired_runtime_pngs import is_retired_runtime_png
+        target = RP / "textures" / "entity" / name
+        if not is_retired_runtime_png(target, ROOT):
+            shutil.copy2(str(MODEL_TEXTURES / name), str(target))
 
     behaviors = {
         "minotaur": configure_charger(

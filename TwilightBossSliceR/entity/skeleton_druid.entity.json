@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/skeleton_druid"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__skeleton_druid"
       },
       "geometry": {
-        "default": "geometry.tf_slice.skeleton_druid"
+        "default": "geometry.tf_slice.skeleton_druid_art_v1"
       },
       "render_controllers": [
         "controller.render.default"

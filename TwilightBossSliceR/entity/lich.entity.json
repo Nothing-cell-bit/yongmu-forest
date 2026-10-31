@@ -8,12 +8,12 @@
         "shield": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/twilightlich64",
-        "shield_fill": "textures/ui/tf_slice/lich_shield_fill",
-        "shield_frame": "textures/ui/tf_slice/lich_shield_frame"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__twilightlich64",
+        "shield_fill": "textures/tf_beautified/remaining/ui/tf_slice/lich_shield_fill",
+        "shield_frame": "textures/tf_beautified/remaining/ui/tf_slice/lich_shield_frame"
       },
       "geometry": {
-        "default": "geometry.tf_slice.lich",
+        "default": "geometry.tf_slice.lich_art_v1",
         "shields": "geometry.tf_slice.lich_shields"
       },
       "render_controllers": [

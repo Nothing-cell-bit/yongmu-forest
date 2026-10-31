@@ -1,0 +1,13 @@
+{
+  "version": "1.20.1",
+  "metadata_url": "https://piston-meta.mojang.com/v1/packages/760a390e336b2b6202ec5906757cee3a929a7c85/1.20.1.json",
+  "jar_url": "https://piston-data.mojang.com/v1/objects/0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838/client.jar",
+  "jar_sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+  "textures": [
+    {
+      "source": "assets/minecraft/textures/item/ghast_tear.png",
+      "sha256": "6f13587b4de52bb1d27d2b7e52ee0787984e30af86fb301615006395b934db06",
+      "file": "ghast_tear.png"
+    }
+  ]
+}

@@ -726,14 +726,19 @@ def _validate_custom_block_states(identifier, states, structure_name):
 
 
 def _render_safe_structure_proxy(name):
-    """Return an engine-placeable proxy that changes no world blocks.
+    """Return the legacy render-safe proxy, pending no-write validation.
 
     NetEase 3.8 can forward a rejected structure feature into the client
     tessellator. A nominally empty mcstructure (empty palette with only a
     ``-1`` block index) then has no material to bake and can terminate the
-    native client. ``minecraft:structure_void`` is the format's explicit
-    non-replacing block, so it keeps the proxy a no-op while giving the
-    engine a real palette entry.
+    native client. A structure_void palette entry avoided that empty-palette
+    case, but MUST NOT be assumed world-neutral: a 3.9 runtime DB inspection
+    on 2026-10-20 found indexed structure_void cells displacing river water.
+    A populated-palette/all-skip-index candidate failed runtime acceptance
+    on 2026-10-20. A later index-0 candidate also hit WallConnectionType
+    assertions without an inventory opening, so the earlier clean control
+    does not establish index encoding as their cause. Neither candidate's
+    format validation alone establishes native rendering safety.
 
     Structure void remains forbidden through ``SparseStructure.set`` for
     authored ruins. Only these dedicated worldgen proxies may contain it.
@@ -5581,12 +5586,13 @@ def _trim_unused_structure_height(structure):
 
 
 def _ensure_surface_native_tile_has_render_safe_palette(structure):
-    """Keep an empty terrain tile world-neutral but safe for native rendering."""
+    """Supply the legacy render palette; no-write behavior is not guaranteed."""
     if not structure.blocks:
         # NetEase can forward every dynamically selected structure tile to the
         # client renderer.  An empty palette (all block indices are -1) can
         # terminate the native tessellator.  structure_void supplies a baked
-        # palette entry while preserving the tile's intended no-write behavior.
+        # palette entry. NetEase 3.9 can place this indexed cell, so this is
+        # not proof of no-write behavior; see _render_safe_structure_proxy.
         structure.blocks[(0, 0, 0)] = (
             "minecraft:structure_void",
             {},
@@ -6782,6 +6788,49 @@ def _surface_region_anchor_expression(
     )
 
 
+DRY_GROUND_RUINS = (
+    "monolith", "stone_circle", "well", "foundation", "druid_hut",
+    "outside_stalagmite", "grove_ruins",
+)
+
+
+def _dry_footprint_feature(identifier, selector_identifier, size_x, size_z, points=None):
+    # Query gives the first placeable layer above the native terrain.
+    # This dimension's water is Y62: require dry land throughout the footprint.
+    span = max(int(size_x), int(size_z))
+    if not 1 <= span <= 16:
+        raise ValueError("Small-ruin dry footprint exceeds its 16x16 budget")
+    if points is None:
+        points = [(x, z) for x in range(span) for z in range(span)]
+    checks = [
+        "query.get_height_at(variable.originx + %d, variable.originz + %d) > 63"
+        % (x, z) for x, z in points
+    ]
+    return {"format_version": "1.20.30", "minecraft:scatter_feature": {
+        "description": {"identifier": identifier},
+        "places_feature": selector_identifier,
+        "iterations": "(%s) ? 1 : 0" % " && ".join(checks),
+        "x": 0, "y": 0, "z": 0}}
+
+
+def _dry_footprint_documents(identifier, selector_identifier, size_x, size_z):
+    span = max(int(size_x), int(size_z))
+    if not 1 <= span <= 16:
+        raise ValueError("Small-ruin dry footprint exceeds its 16x16 budget")
+    points = [(x, z) for x in range(span) for z in range(span)]
+    batches = [points[i:i + 32] for i in range(0, len(points), 32)]
+    identifiers = [identifier if i == 0 else identifier + "_part%02d" % i
+                   for i in range(len(batches))]
+    # Avoid one huge Molang expression; all guards still run only after the
+    # existing rarity draw succeeds, stopping immediately at any wet cell.
+    return {
+        key.split(":")[-1] + ".json": _dry_footprint_feature(
+            key, identifiers[i + 1] if i + 1 < len(identifiers) else selector_identifier,
+            size_x, size_z, batches[i])
+        for i, key in enumerate(identifiers)
+    }
+
+
 def _scatter_feature(
     identifier,
     selector_identifier,
@@ -6789,11 +6838,14 @@ def _scatter_feature(
     size_x,
     size_z,
 ):
+    ruin_id = identifier.split(":")[-1].removesuffix("_scatter_feature")
+    selected = ("tf_slice:%s_dry_ground_feature" % ruin_id
+                if ruin_id in DRY_GROUND_RUINS else selector_identifier)
     return {
         "format_version": "1.20.30",
         "minecraft:scatter_feature": {
             "description": {"identifier": identifier},
-            "places_feature": selector_identifier,
+            "places_feature": selected,
             "iterations": _surface_slope_expression(size_x, size_z),
             "scatter_chance": {"numerator": 1, "denominator": denominator},
             "x": 0,
@@ -6966,6 +7018,12 @@ def write_native_resources(
             ),
         ),
     )
+    if ruin_id in DRY_GROUND_RUINS:
+        for name, document in _dry_footprint_documents(
+                "tf_slice:%s_dry_ground_feature" % ruin_id, selector_id,
+                maximum_size_x, maximum_size_z,
+        ).items():
+            _write_json(BP / "netease_features" / name, document)
     return catalog_variants
 
 

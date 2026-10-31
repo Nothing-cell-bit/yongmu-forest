@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/fire_beetle"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__fire_beetle"
       },
       "geometry": {
-        "default": "geometry.tf_slice.fire_beetle"
+        "default": "geometry.tf_slice.fire_beetle_art_v1"
       },
       "render_controllers": [
         "controller.render.default"

@@ -47,6 +47,11 @@ class CanopyWoodFamilyContractTests(unittest.TestCase):
         for suffix in builder.CANOPY_NATIVE_SUFFIXES:
             name = "canopy_" + suffix
             self.assertNotIn(name, builder.CANOPY_CUSTOM_SUFFIXES)
+            if suffix == "fence":
+                document = json.loads((BP / "netease_blocks" / (name + ".json")).read_text(encoding="utf-8"))
+                self.assertFalse(document["minecraft:block"]["description"]["register_to_creative_menu"])
+                self.assertNotIn("TwilightBossSliceB/netease_blocks/%s.json" % name, builder.canopy_removed_artifacts())
+                continue
             self.assertIn(
                 "TwilightBossSliceB/netease_blocks/%s.json" % name,
                 builder.canopy_removed_artifacts(),
@@ -279,8 +284,13 @@ class CanopyWoodFamilyContractTests(unittest.TestCase):
             }
             for suffix in builder.CANOPY_NATIVE_SUFFIXES:
                 name = "canopy_" + suffix
-                self.assertFalse((bp / "netease_blocks" / (name + ".json")).exists())
-                self.assertNotIn("tf_slice:" + name, client_blocks)
+                if suffix == "fence":
+                    document = json.loads((bp / "netease_blocks" / (name + ".json")).read_text(encoding="utf-8"))
+                    self.assertFalse(document["minecraft:block"]["description"]["register_to_creative_menu"])
+                    self.assertIn("tf_slice:" + name, client_blocks)
+                else:
+                    self.assertFalse((bp / "netease_blocks" / (name + ".json")).exists())
+                    self.assertNotIn("tf_slice:" + name, client_blocks)
                 self.assertIn("cherry_" + suffix, client_blocks)
                 self.assertNotIn("tf_slice:" + name, items)
                 self.assertNotIn("minecraft:cherry_" + suffix, items)

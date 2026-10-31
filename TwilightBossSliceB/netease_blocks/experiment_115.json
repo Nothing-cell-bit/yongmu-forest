@@ -65,7 +65,7 @@
         "value": false
       },
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 4.0
+        "seconds_to_destroy": 0.5
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10.0
@@ -73,7 +73,8 @@
       "netease:block_entity": {
         "tick": true,
         "movable": false
-      }
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/no_mining_drop.json"
     }
   }
 }

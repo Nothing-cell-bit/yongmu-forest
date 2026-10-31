@@ -59,6 +59,11 @@
             1.0
           ]
         }
+      },
+      "netease:tier": {
+        "digger": "shovel",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

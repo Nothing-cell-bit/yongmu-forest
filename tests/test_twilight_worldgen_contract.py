@@ -10,6 +10,7 @@ from tools.native_structure_worldgen_safety import base_iterations
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 if str(BP) not in sys.path:
     sys.path.insert(0, str(BP))
 
@@ -225,7 +226,7 @@ class TwilightForestBiomeContractTests(unittest.TestCase):
             read_json(path)["minecraft:client_biome"]["description"][
                 "identifier"
             ]
-            for path in (RP / "biomes").glob("*.client_biome.json")
+            for path in (BIOME_PROFILES).glob("*.client_biome.json")
         }
         self.assertEqual(registered, client_ids)
 
@@ -260,7 +261,7 @@ class TwilightForestBiomeContractTests(unittest.TestCase):
     def test_twilight_visuals_match_upstream_palette(self):
         for biome_id in BIOME_SPECS.values():
             components = read_json(
-                RP / "biomes" / ("%s.client_biome.json" % biome_id)
+                BIOME_PROFILES / ("%s.client_biome.json" % biome_id)
             )["minecraft:client_biome"]["components"]
             self.assertIn("#", components["minecraft:sky_color"]["sky_color"])
             self.assertIn("#", components["minecraft:water_appearance"]["surface_color"])

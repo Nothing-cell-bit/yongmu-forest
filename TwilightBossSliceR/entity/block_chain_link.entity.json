@@ -7,7 +7,7 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/block_chain_goblin"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__block_chain_goblin"
       },
       "geometry": {
         "default": "geometry.tf_slice.block_chain_link"

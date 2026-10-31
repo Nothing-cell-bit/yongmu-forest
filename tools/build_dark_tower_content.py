@@ -105,6 +105,11 @@ def load(path):
 
 
 def write(path, value):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    value = normalize_resource_document(path, value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -952,11 +957,22 @@ def build():
         write(BP / "items" / (identifier + ".item.json"), item_document(identifier, stack))
         source_name = identifier
         source = UPSTREAM / "textures" / "item" / (source_name + ".png")
+        if identifier == "fiery_tears":
+            try:
+                from tools.ur_ghast_presentation import texture_source
+            except ImportError:
+                from ur_ghast_presentation import texture_source
+            source = texture_source(source)
         if identifier == "ur_ghast_banner":
             source = UPSTREAM / "textures" / "entity" / "banner" / "ur_ghast.png"
         target = RP / "textures" / "items" / (identifier + ".png")
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(str(source), str(target))
+        try:
+            from retired_runtime_pngs import is_retired_runtime_png
+        except ImportError:
+            from tools.retired_runtime_pngs import is_retired_runtime_png
+        if not is_retired_runtime_png(target, ROOT):
+            shutil.copy2(str(source), str(target))
         atlas["texture_data"]["tf_slice:%s" % identifier] = {"textures": "textures/items/%s" % identifier}
     write(RP / "textures" / "item_texture.json", atlas)
 

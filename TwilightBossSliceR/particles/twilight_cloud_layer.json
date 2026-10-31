@@ -5,7 +5,7 @@
       "identifier": "tf_slice:twilight_cloud_layer",
       "basic_render_parameters": {
         "material": "particles_alpha",
-        "texture": "textures/environment/33027004_clouds"
+        "texture": "textures/tf_beautified/remaining/environment/33027004_clouds"
       }
     },
     "components": {

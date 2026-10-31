@@ -1,0 +1,17 @@
+{
+  "geometrySource": "The final accepted mangrove inventory icon for each suffix",
+  "paletteSource": {
+    "light": {
+      "path": "TwilightBossSliceR/textures/blocks/mangrove_planks.png",
+      "sha256": "db7ed7ef853e2b0af03da1c3d37a0d1feec9d20237e833260d04a10da841e9e5"
+    },
+    "dark": {
+      "path": "TwilightBossSliceR/textures/blocks/dark_planks.png",
+      "sha256": "8ebed0a8e47fe6389af1bd816dc0815d3ef965049ab783f46a47498c4f0133e9"
+    }
+  },
+  "algorithm": "Per-channel mean/deviation transfer from mangrove_planks to dark_planks; pixels with alpha=0 or max(rgb)<55 are preserved.",
+  "geometryInvariant": "Width, height, alpha bytes, pixel coordinates, camera angle, scale and silhouette must be byte-identical to the corresponding mangrove icon.",
+  "acceptedDate": "2026-09-01",
+  "policy": "Blackwood icons may differ from mangrove only in RGB palette. Never substitute an independently rendered blackwood model."
+}

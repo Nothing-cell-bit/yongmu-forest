@@ -2,7 +2,8 @@
   "format_version": "1.21.60",
   "minecraft:item": {
     "description": {
-      "identifier": "tf_slice:diamond_minotaur_axe"
+      "identifier": "tf_slice:diamond_minotaur_axe",
+      "custom_item_type": "weapon"
     },
     "components": {
       "minecraft:display_name": {
@@ -22,6 +23,19 @@
       "minecraft:enchantable": {
         "slot": "axe",
         "value": 22
+      },
+      "netease:weapon": {
+        "type": "hatchet",
+        "level": 3,
+        "speed": 8,
+        "attack_damage": 0,
+        "enchantment": 22
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_tool",
+          "minecraft:is_axe"
+        ]
       }
     }
   }

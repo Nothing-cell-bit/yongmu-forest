@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:canopy_sapling",
-      "register_to_creative_menu": true,
+      "register_to_creative_menu": false,
       "states": {
         "tf_slice:growth_stage": [
           0,
@@ -13,7 +13,7 @@
     },
     "components": {
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 0.2
+        "seconds_to_destroy": 0.0
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 3.0
@@ -73,6 +73,11 @@
       "netease:random_tick": {
         "enable": true,
         "tick_to_script": true
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

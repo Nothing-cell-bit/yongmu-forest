@@ -5,7 +5,7 @@
       "identifier": "tf_slice:hydra_flame",
       "basic_render_parameters": {
         "material": "particles_alpha",
-        "texture": "textures/particle/particles"
+        "texture": "textures/tf_beautified/remaining/native/particle/particles"
       }
     },
     "components": {

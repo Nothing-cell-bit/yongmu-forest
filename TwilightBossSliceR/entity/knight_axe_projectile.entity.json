@@ -7,7 +7,7 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/items/knightmetal_axe"
+        "default": "textures/tf_beautified/items/knightmetal_axe"
       },
       "geometry": {
         "default": "geometry.tf_slice.knight_axe_projectile"

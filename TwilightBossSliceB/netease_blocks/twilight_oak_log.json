@@ -46,6 +46,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

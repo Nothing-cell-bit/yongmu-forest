@@ -7,7 +7,7 @@
         "default": "entity_emissive_alpha"
       },
       "textures": {
-        "default": "textures/blocks/fire_0"
+        "default": "textures/tf_beautified/remaining/native/blocks/fire_0"
       },
       "geometry": {
         "default": "geometry.tf_slice.fire_breath"

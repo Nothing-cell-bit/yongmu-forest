@@ -5,7 +5,7 @@
       "identifier": "tf_slice:ur_ghast_tear",
       "basic_render_parameters": {
         "material": "particles_alpha",
-        "texture": "textures/items/fiery_tears"
+        "texture": "textures/tf_beautified/items/ghast_tear"
       }
     },
     "components": {

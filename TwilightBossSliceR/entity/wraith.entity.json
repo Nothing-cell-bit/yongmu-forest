@@ -7,10 +7,10 @@
         "default": "entity_alphablend"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/wraith"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__wraith"
       },
       "geometry": {
-        "default": "geometry.tf_slice.wraith"
+        "default": "geometry.tf_slice.wraith_art_v1"
       },
       "render_controllers": [
         "controller.render.tf_slice.wraith"

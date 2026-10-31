@@ -756,19 +756,7 @@
     "textures": "tf_slice:dark_planks",
     "sound": "wood"
   },
-  "dark_oak_sign": {
-    "textures": "tf_slice:dark_planks",
-    "sound": "wood"
-  },
-  "dark_oak_wall_sign": {
-    "textures": "tf_slice:dark_planks",
-    "sound": "wood"
-  },
   "dark_oak_hanging_sign": {
-    "textures": "tf_slice:dark_planks",
-    "sound": "wood"
-  },
-  "dark_oak_wall_hanging_sign": {
     "textures": "tf_slice:dark_planks",
     "sound": "wood"
   },
@@ -808,19 +796,11 @@
     "textures": "tf_slice:mangrove_planks",
     "sound": "wood"
   },
-  "mangrove_sign": {
-    "textures": "tf_slice:mangrove_planks",
-    "sound": "wood"
-  },
   "mangrove_wall_sign": {
     "textures": "tf_slice:mangrove_planks",
     "sound": "wood"
   },
   "mangrove_hanging_sign": {
-    "textures": "tf_slice:mangrove_planks",
-    "sound": "wood"
-  },
-  "mangrove_wall_hanging_sign": {
     "textures": "tf_slice:mangrove_planks",
     "sound": "wood"
   },
@@ -906,6 +886,22 @@
       "down": "tf_slice:canopy_door_lower",
       "side": "tf_slice:canopy_door_upper"
     },
+    "sound": "wood"
+  },
+  "darkoak_standing_sign": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "darkoak_wall_sign": {
+    "textures": "tf_slice:dark_planks",
+    "sound": "wood"
+  },
+  "mangrove_standing_sign": {
+    "textures": "tf_slice:mangrove_planks",
+    "sound": "wood"
+  },
+  "tf_slice:canopy_fence": {
+    "netease_model": "tf_slice:public_canopy_fence",
     "sound": "wood"
   }
 }

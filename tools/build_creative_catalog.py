@@ -3,6 +3,7 @@
 
 from __future__ import print_function
 
+import copy
 import json
 from pathlib import Path
 
@@ -200,7 +201,7 @@ def _load(path):
 
 def _registered_categories(bp):
     result = {}
-    for path in (bp / "items").glob("*.json"):
+    for path in list((bp / "items").glob("*.json")) + list((bp / "netease_items_beh").glob("*.json")):
         item = _load(path).get("minecraft:item", {})
         description = item.get("description", {})
         identifier = description.get("identifier")
@@ -254,6 +255,64 @@ def modernize_item_icons(bp):
         )
         changed += 1
     return changed
+
+
+def repair_utility_use_components(bp):
+    """Migrate the two known utility definitions from legacy ticks to seconds."""
+    durations = {"tf_slice:crumble_horn":72000,"tf_slice:magic_map":1}
+    changed = 0
+    for path in sorted((bp / "items").glob("*.json")):
+        document = _load(path)
+        item = document.get("minecraft:item", {})
+        identifier = item.get("description", {}).get("identifier")
+        components = item.get("components", {})
+        if identifier not in durations or "minecraft:use_duration" not in components:
+            continue
+        ticks = components["minecraft:use_duration"]
+        if ticks != durations[identifier]:
+            raise ValueError("Utility use duration changed; review units: " + identifier)
+        seconds = float(ticks) / 20.0
+        modifiers = components.setdefault("minecraft:use_modifiers", {})
+        if "use_duration" in modifiers and modifiers["use_duration"] != seconds:
+            raise ValueError("Conflicting utility use duration: " + identifier)
+        modifiers["use_duration"] = seconds
+        components.pop("minecraft:use_duration")
+        path.write_text(json.dumps(document, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+        changed += 1
+    return changed
+
+
+def normalize_catalog_owned_description(path, document):
+    """Preserve explicit catalog ownership at the production JSON write entry."""
+    path = Path(path)
+    bp = next((p for p in path.parents if p.name == "TwilightBossSliceB"), None)
+    if bp is None or not isinstance(document, dict):
+        return document
+    relative = path.relative_to(bp).as_posix()
+    # Native items own their creative category. The vanilla catalog cannot
+    # resolve this registry on NetEase 3.9 (runtime ContentLog, 2026-10-22).
+    if relative.startswith("netease_items_beh/"):
+        return document
+    if not relative.startswith(("items/", "netease_items_beh/", "blocks/", "netease_blocks/")):
+        return document
+    catalog_path = bp / "item_catalog/crafting_item_catalog.json"
+    if not catalog_path.is_file():
+        return document
+    catalog = _load(catalog_path).get("minecraft:crafting_items_catalog", {})
+    ids = {identifier for category in catalog.get("categories", [])
+           for group in category.get("groups", []) for identifier in group.get("items", [])}
+    kind = "minecraft:item" if "minecraft:item" in document else "minecraft:block"
+    description = document.get(kind, {}).get("description", {})
+    if description.get("identifier") not in ids:
+        return document
+    result = copy.deepcopy(document)
+    output = result[kind]["description"]
+    if kind == "minecraft:item":
+        output.pop("menu_category", None)
+        output.pop("category", None)
+    else:
+        output["register_to_creative_menu"] = False
+    return result
 
 
 def hide_technical_blocks(bp):
@@ -423,15 +482,24 @@ def _construction_order(identifier):
     return len(groups)
 
 
+def _native_item_ids(bp):
+    return {
+        _load(path)["minecraft:item"]["description"]["identifier"]
+        for path in (bp / "netease_items_beh").glob("*.json")
+    }
+
+
 def normalize_creative_catalog(root=ROOT):
     root = Path(root)
     bp = root / "TwilightBossSliceB"
     modernize_item_menu_categories(bp)
     modernize_item_icons(bp)
+    repair_utility_use_components(bp)
     hide_technical_blocks(bp)
     path = bp / "item_catalog" / "crafting_item_catalog.json"
     document = _load(path)
     catalog = document["minecraft:crafting_items_catalog"]
+    native_ids = _native_item_ids(bp)
     ordered_items = []
     seen = set()
     group_identifier = None
@@ -456,6 +524,7 @@ def normalize_creative_catalog(root=ROOT):
         and identifier not in OBSOLETE_WOOD_BLOCK_IDS
         and identifier not in MIGRATED_WOOD_ALIAS_IDS
         and identifier not in HIDDEN_DYNAMIC_ITEM_IDS
+        and identifier not in native_ids
     ]
     registered = _registered_categories(bp)
     for identifier in PUBLIC_WOOD_SHAPE_IDS:
@@ -470,6 +539,8 @@ def normalize_creative_catalog(root=ROOT):
     for identifier in REQUIRED_EXTRA_PUBLIC_IDS:
         if identifier in registered and identifier not in ordered_items:
             ordered_items.append(identifier)
+    ordered_items = [identifier for identifier in ordered_items
+                     if identifier not in native_ids]
 
     block_ids = _registered_block_ids(bp)
     for identifier in PUBLIC_WOOD_SHAPE_IDS:

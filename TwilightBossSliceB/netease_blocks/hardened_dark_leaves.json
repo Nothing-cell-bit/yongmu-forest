@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:hardened_dark_leaves",
-      "register_to_creative_menu": true
+      "register_to_creative_menu": false
     },
     "components": {
       "minecraft:destructible_by_mining": {

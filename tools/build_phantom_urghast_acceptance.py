@@ -154,6 +154,11 @@ def relative(path):
 
 
 def write_json(path, value):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    value = normalize_resource_document(path, value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

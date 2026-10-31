@@ -7,8 +7,8 @@
         "shield": "entity_alphatest"
       },
       "textures": {
-        "shield_fill": "textures/ui/tf_slice/lich_shield_fill",
-        "shield_frame": "textures/ui/tf_slice/lich_shield_frame"
+        "shield_fill": "textures/tf_beautified/remaining/ui/tf_slice/lich_shield_fill",
+        "shield_frame": "textures/tf_beautified/remaining/ui/tf_slice/lich_shield_frame"
       },
       "geometry": {
         "default": "geometry.tf_slice.fortification_shields"

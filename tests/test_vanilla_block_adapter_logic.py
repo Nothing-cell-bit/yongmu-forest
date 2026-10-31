@@ -183,6 +183,10 @@ class VanillaBlockAdapterLogicTests(unittest.TestCase):
         for identifier in vanilla_block_adapter_logic.MIGRATED_WOOD_ALIASES:
             self.assertNotIn(identifier, items)
             name = identifier.split(":", 1)[1]
+            if name == "canopy_fence":
+                document = json.loads((BP / "netease_blocks" / (name + ".json")).read_text(encoding="utf-8"))
+                self.assertFalse(document["minecraft:block"]["description"]["register_to_creative_menu"])
+                continue
             self.assertFalse(
                 (BP / "netease_blocks" / (name + ".json")).exists()
             )
@@ -223,6 +227,10 @@ class VanillaBlockAdapterLogicTests(unittest.TestCase):
         )["minecraft:block"]
         self.assertEqual(24, len(canopy["permutations"]))
         for suffix in vanilla_block_adapter_logic.CANOPY_NATIVE_SUFFIXES:
+            if suffix == "fence":
+                document = json.loads((BP / "netease_blocks" / "canopy_fence.json").read_text(encoding="utf-8"))
+                self.assertFalse(document["minecraft:block"]["description"]["register_to_creative_menu"])
+                continue
             self.assertFalse(
                 (
                     BP

@@ -22,6 +22,9 @@ import TwilightBossSlice.native_item_diagnostics as native_item_diagnostics
 import TwilightBossSlice.nagaBossHudUI as nagaBossHudUI
 import TwilightBossSlice.portal_logic as portal_logic
 import TwilightBossSlice.portalLoadingUI as portalLoadingUI
+import TwilightBossSlice.twilight_environment as twilight_environment
+import TwilightBossSlice.biome_sky as biome_sky
+import TwilightBossSlice.chunk_latency_probe as chunk_latency_probe
 import TwilightBossSlice.routeBossHudUI as routeBossHudUI
 
 
@@ -41,8 +44,15 @@ class ClientSystem(clientApi.GetClientSystemCls()):
 
     def __init__(self, namespace, systemName):
         super(ClientSystem, self).__init__(namespace, systemName)
+        self._reset_boss_hud_session()
+        self.ListenForEvent(
+            ENGINE_NAMESPACE, ENGINE_SYSTEM, "OnLocalPlayerStopLoading",
+            self, self.OnTwilightSessionStopLoading,
+        )
         self.ListenForEvent(config.ModName, config.ServerSystemName,
                             "TorchberryGlow", self, self.OnTorchberryGlow)
+        self.ListenForEvent(config.ModName, config.ServerSystemName,
+                            "EnvironmentStatusRequest", self, self.OnEnvironmentStatusRequest)
         self._last_sequence = -1
         self._chain_visuals = chain_visual_client.ChainVisuals(
             CF, LEVEL_ID, local_player=clientApi.GetLocalPlayerId,
@@ -87,6 +97,18 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         self._twilight_sky_active = False
         self._twilight_sky_override_dirty = False
         self._twilight_sky_refresh_tick = 0
+        self._guarded_environment = twilight_environment.GuardedEnvironment(
+            config.DIMENSION_ID, config.TWILIGHT_SKY_TEXTURES,
+            self._create_guarded_sky_component,
+            config.TWILIGHT_POST_ENTRY_ENVIRONMENT_FRAMES,
+            texture_provider=self._get_twilight_biome_sky_textures,
+            texture_transition=biome_sky.SkyTransition(config.TWILIGHT_SKY_TEXTURES),
+            star_textures=biome_sky.STAR_TEXTURES,
+            color_decoder=biome_sky.rgba_from_textures,
+        )
+        self._guarded_environment_last_status = None
+        self._initial_sky_presentation = twilight_environment.InitialSkyPresentation()
+        self._guarded_clouds_enabled = config.TWILIGHT_POST_ENTRY_CLOUDS_ENABLED
         self._magic_map_ui_ready = False
         self._fire_react_ui_ready = False
         self._magic_map_hud_registered = False
@@ -426,17 +448,68 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         self._register_magic_map_hud_proxy()
         print "[TwilightBossSlice] client system ready"
 
-    def Destroy(self):
-        self._chain_visuals.clear()
-        self._clear_ur_ghast_hitbox_shapes()
-        self._clear_hydra_actor_visuals(True)
-        self._clear_fortification_visuals()
+    def _reset_boss_hud_session(self):
+        # HUD modules can survive a world while their native screens do not.
+        # Release handles before clearing pending data so stale nodes are
+        # never called during teardown or used as proof of a live screen.
+        lichBossHudUI.invalidate()
+        nagaBossHudUI.invalidate()
+        routeBossHudUI.invalidate()
         lichBossHudUI.set_bosses([])
         nagaBossHudUI.set_bosses([])
         routeBossHudUI.set_minoshrooms([])
         routeBossHudUI.set_hydras([])
         routeBossHudUI.set_knight_phantoms([])
         routeBossHudUI.set_ur_ghasts([])
+        self._bosses = {}
+        self._last_sequence = -1
+        self._received_packets = 0
+        self._sequence_gaps = 0
+        self._boss_hud_ui_ready = False
+        self._boss_hud_retry_at = {}
+        for kind in ("lich", "naga", "minoshroom", "hydra",
+                     "knight_phantoms", "ur_ghast"):
+            setattr(self, "_%s_boss_hud_registered" % kind, False)
+            setattr(self, "_%s_boss_hud_node" % kind, None)
+
+    def _on_boss_hud_ui_ready(self):
+        # Resource definitions are valid only after UiInitFinished. A cached
+        # registration from a previous native screen is not a live binding.
+        lichBossHudUI.invalidate()
+        nagaBossHudUI.invalidate()
+        routeBossHudUI.invalidate()
+        for kind in ("lich", "naga", "minoshroom", "hydra",
+                     "knight_phantoms", "ur_ghast"):
+            setattr(self, "_%s_boss_hud_registered" % kind, False)
+            setattr(self, "_%s_boss_hud_node" % kind, None)
+        self._boss_hud_ui_ready = True
+        self._boss_hud_retry_at = {}
+
+    def _can_attempt_boss_hud(self, kind):
+        tick = getattr(self, "_magic_map_ui_retry_tick", 0)
+        if tick < self._boss_hud_retry_at.get(kind, -1):
+            return False
+        # A missing native definition must not be retried on every packet.
+        # Update advances this clock even when no Boss snapshot arrives.
+        self._boss_hud_retry_at[kind] = tick + 20
+        return True
+
+    def OnTwilightSessionStopLoading(self, args):
+        if self._is_local_dimension_event(args):
+            self.NotifyToServer("TwilightSessionReady", {})
+
+    def Destroy(self):
+        presentation = getattr(self, "_initial_sky_presentation", None)
+        if presentation is not None:
+            presentation.cancel()
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None:
+            probe.stop("client_destroy")
+        self._chain_visuals.clear()
+        self._clear_ur_ghast_hitbox_shapes()
+        self._clear_hydra_actor_visuals(True)
+        self._clear_fortification_visuals()
+        self._reset_boss_hud_session()
         self._portal_loading_ui_ready = False
         portalLoadingUI.invalidate()
         self._end_portal_loading()
@@ -454,7 +527,16 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         self._chain_visuals.receive(args)
 
     def OnBlockChainRender(self, args=None):
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None:
+            probe.frame()
         self._chain_visuals.render()
+        if config.TWILIGHT_POST_ENTRY_ENVIRONMENT_ENABLED:
+            self._guarded_environment.render_frame(self._portal_loading_active)
+            presentation = getattr(self, "_initial_sky_presentation", None)
+            if presentation is not None:
+                presentation.frame(self._guarded_environment.active
+                                   and not self._portal_loading_active)
 
     def Update(self):
         self._magic_map_ui_retry_tick += 1
@@ -479,9 +561,13 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         self._update_ambient_fireflies()
 
     def OnScriptTickClient(self):
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None and probe.tick():
+            self.OnEnvironmentStatusRequest({})
         # ClientSystem.Update is not continuously scheduled by every NetEase
         # client lifecycle. The engine tick event is the stable 30 Hz driver.
         self._update_portal_loading()
+        self._update_guarded_environment()
         self._update_twilight_sky()
         self._update_twilight_cloud_layer()
         self._update_naga_state_effects()
@@ -1294,7 +1380,11 @@ class ClientSystem(clientApi.GetClientSystemCls()):
             return False
 
     def _begin_portal_loading(self):
+        presentation = getattr(self, "_initial_sky_presentation", None)
+        if presentation is not None:
+            presentation.cancel()
         self._portal_loading_active = True
+        self._portal_loading_server_finished = False
         self._portal_loading_destination = None
         self._portal_loading_token = None
         self._portal_loading_ready_ticks = 0
@@ -1313,7 +1403,8 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         portalLoadingUI.set_visible(True)
 
     def _end_portal_loading(self):
-        portalLoadingUI.set_visible(False)
+        presentation = getattr(self, "_initial_sky_presentation", None)
+        portalLoadingUI.set_visible(bool(presentation and presentation.active))
         self._portal_loading_active = False
         self._portal_loading_destination = None
         self._portal_loading_token = None
@@ -1327,6 +1418,9 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         self._portal_loading_ack_sent = False
 
     def OnChunkLoadedClientEvent(self, args):
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None:
+            probe.record("client_loaded", args)
         if not self._portal_loading_active:
             return
         try:
@@ -1484,13 +1578,29 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         portalLoadingUI.set_visible(True)
 
     def OnPortalArrivalFinished(self, args):
-        del args
+        self._portal_loading_server_finished = True
+        self._guarded_environment.confirm_arrival(not args.get("cancelled", False))
+        presentation = getattr(self, "_initial_sky_presentation", None)
+        if presentation is not None:
+            if (config.TWILIGHT_POST_ENTRY_ENVIRONMENT_ENABLED
+                    and not args.get("cancelled", False)
+                    and (self._guarded_environment.dimension == config.DIMENSION_ID
+                         or (self._guarded_environment.dimension is None
+                             and self._portal_loading_active))):
+                presentation.request()
+            else:
+                presentation.cancel()
         self._end_portal_loading()
 
     def OnDimensionChangeClientEvent(self, args):
         self._chain_visuals.clear()
         if not self._is_local_dimension_event(args):
             return
+        self._boss_hud_ui_ready = False
+        self._guarded_environment.begin_change()
+        presentation = getattr(self, "_initial_sky_presentation", None)
+        if presentation is not None:
+            presentation.cancel()
         self._portal_loading_ui_ready = False
         portalLoadingUI.invalidate()
         self._portal_loading_node = None
@@ -1527,12 +1637,20 @@ class ClientSystem(clientApi.GetClientSystemCls()):
             currentDimension = CF.CreateGame(LEVEL_ID).GetCurrentDimension()
         except Exception:
             currentDimension = None
+        self._guarded_environment.finish_change(currentDimension)
         if currentDimension == config.DIMENSION_ID:
-            if not self._portal_loading_active:
-                self._begin_portal_loading()
-            self._ensure_portal_loading_ui()
-            portalLoadingUI.set_visible(True)
+            if not getattr(self, "_portal_loading_server_finished", False):
+                if not self._portal_loading_active:
+                    self._begin_portal_loading()
+                self._ensure_portal_loading_ui()
+                portalLoadingUI.set_visible(True)
+            else:
+                presentation = getattr(self, "_initial_sky_presentation", None)
+                portalLoadingUI.set_visible(bool(presentation and presentation.active))
         elif currentDimension is not None:
+            presentation = getattr(self, "_initial_sky_presentation", None)
+            if presentation is not None:
+                presentation.cancel()
             self._end_portal_loading()
         self._portal_dimension_finish_seen = (
             currentDimension == config.DIMENSION_ID
@@ -1554,6 +1672,9 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         self._update_twilight_cloud_layer()
 
     def OnUiInitFinished(self, args):
+        self._on_boss_hud_ui_ready()
+        if hasattr(self, "_guarded_environment"):
+            self._guarded_environment.ui_ready()
         # UiInitFinished is emitted again after a dimension switch. Any
         # SkyRender component created before this point may be permanently
         # detached from LevelRenderer, even though the Python object exists.
@@ -1565,7 +1686,15 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         portalLoadingUI.invalidate()
         self._portal_loading_node = None
         self._ensure_portal_loading_ui()
-        portalLoadingUI.set_visible(self._portal_loading_active)
+        presentation = getattr(self, "_initial_sky_presentation", None)
+        if (presentation is not None and self._guarded_environment.confirmed
+                and self._guarded_environment.dimension == config.DIMENSION_ID):
+            if not presentation.active:
+                presentation.cancel()
+                presentation.request()
+            presentation.frames = 0
+        portalLoadingUI.set_visible(self._portal_loading_active
+                                   or bool(presentation and presentation.active))
         self._reset_twilight_cloud_layer()
         self._reset_twilight_sky()
         self._log_twilight_sky("ui_ready")
@@ -1588,8 +1717,12 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         self._ur_ghast_boss_hud_node = None
 
     def _ensure_lich_boss_hud(self):
+        if not self._boss_hud_ui_ready:
+            return False
         if lichBossHudUI.is_active():
             return True
+        if not self._can_attempt_boss_hud("lich"):
+            return False
         if not self._lich_boss_hud_registered:
             try:
                 registered = clientApi.RegisterUI(
@@ -1598,7 +1731,9 @@ class ClientSystem(clientApi.GetClientSystemCls()):
                     config.ModName + ".lichBossHudUI.LichBossHudUI",
                     "lich_boss_hud.main",
                 )
-                self._lich_boss_hud_registered = registered is not False
+                self._lich_boss_hud_registered = registered is True
+                if not self._lich_boss_hud_registered:
+                    return False
             except Exception as error:
                 print "[TwilightBossSlice] Lich boss HUD register failed:", error
                 return False
@@ -1606,7 +1741,10 @@ class ClientSystem(clientApi.GetClientSystemCls()):
             self._lich_boss_hud_node = clientApi.GetUI(
                 config.ModName, config.LICH_BOSS_HUD_UI_NAME
             )
-            if self._lich_boss_hud_node is None:
+            if self._lich_boss_hud_node is not None:
+                self._lich_boss_hud_node.Init()
+            if (self._lich_boss_hud_node is None
+                    or not self._lich_boss_hud_node.IsReady()):
                 clientApi.CreateUI(
                     config.ModName,
                     config.LICH_BOSS_HUD_UI_NAME,
@@ -1617,15 +1755,23 @@ class ClientSystem(clientApi.GetClientSystemCls()):
                 )
             if self._lich_boss_hud_node is not None:
                 self._lich_boss_hud_node.Init()
-            return lichBossHudUI.is_active()
+            active = lichBossHudUI.is_active()
+            if not active:
+                self._lich_boss_hud_registered = False
+            return active
         except Exception as error:
             print "[TwilightBossSlice] Lich boss HUD create failed:", error
             self._lich_boss_hud_node = None
+            self._lich_boss_hud_registered = False
             return False
 
     def _ensure_naga_boss_hud(self):
+        if not self._boss_hud_ui_ready:
+            return False
         if nagaBossHudUI.is_active():
             return True
+        if not self._can_attempt_boss_hud("naga"):
+            return False
         if not self._naga_boss_hud_registered:
             try:
                 registered = clientApi.RegisterUI(
@@ -1634,7 +1780,9 @@ class ClientSystem(clientApi.GetClientSystemCls()):
                     config.ModName + ".nagaBossHudUI.NagaBossHudUI",
                     "naga_boss_hud.main",
                 )
-                self._naga_boss_hud_registered = registered is not False
+                self._naga_boss_hud_registered = registered is True
+                if not self._naga_boss_hud_registered:
+                    return False
             except Exception as error:
                 print "[TwilightBossSlice] Naga boss HUD register failed:", error
                 return False
@@ -1642,7 +1790,10 @@ class ClientSystem(clientApi.GetClientSystemCls()):
             self._naga_boss_hud_node = clientApi.GetUI(
                 config.ModName, config.NAGA_BOSS_HUD_UI_NAME
             )
-            if self._naga_boss_hud_node is None:
+            if self._naga_boss_hud_node is not None:
+                self._naga_boss_hud_node.Init()
+            if (self._naga_boss_hud_node is None
+                    or not self._naga_boss_hud_node.IsReady()):
                 clientApi.CreateUI(
                     config.ModName,
                     config.NAGA_BOSS_HUD_UI_NAME,
@@ -1653,13 +1804,19 @@ class ClientSystem(clientApi.GetClientSystemCls()):
                 )
             if self._naga_boss_hud_node is not None:
                 self._naga_boss_hud_node.Init()
-            return nagaBossHudUI.is_active()
+            active = nagaBossHudUI.is_active()
+            if not active:
+                self._naga_boss_hud_registered = False
+            return active
         except Exception as error:
             print "[TwilightBossSlice] Naga boss HUD create failed:", error
             self._naga_boss_hud_node = None
+            self._naga_boss_hud_registered = False
             return False
 
     def _ensure_route_boss_hud(self, kind):
+        if not self._boss_hud_ui_ready:
+            return False
         if kind == "hydra":
             if routeBossHudUI.hydra_active():
                 return True
@@ -1692,24 +1849,30 @@ class ClientSystem(clientApi.GetClientSystemCls()):
             screen = "minoshroom_boss_hud.main"
             registeredName = "_minoshroom_boss_hud_registered"
             nodeName = "_minoshroom_boss_hud_node"
+        if not self._can_attempt_boss_hud(kind):
+            return False
         if not getattr(self, registeredName):
             try:
                 registered = clientApi.RegisterUI(
                     config.ModName, uiName, classPath, screen
                 )
-                setattr(self, registeredName, registered is not False)
+                setattr(self, registeredName, registered is True)
+                if not getattr(self, registeredName):
+                    return False
             except Exception as error:
                 print "[TwilightBossSlice] route boss HUD register failed:", kind, error
                 return False
         try:
             node = clientApi.GetUI(config.ModName, uiName)
-            if node is None:
+            if node is not None:
+                node.Init()
+            if node is None or not node.IsReady():
                 clientApi.CreateUI(config.ModName, uiName, {"isHud": 1})
                 node = clientApi.GetUI(config.ModName, uiName)
             setattr(self, nodeName, node)
             if node is not None:
                 node.Init()
-            return (
+            active = (
                 routeBossHudUI.hydra_active()
                 if kind == "hydra"
                 else routeBossHudUI.knight_phantoms_active()
@@ -1718,9 +1881,13 @@ class ClientSystem(clientApi.GetClientSystemCls()):
                 if kind == "ur_ghast"
                 else routeBossHudUI.minoshroom_active()
             )
+            if not active:
+                setattr(self, registeredName, False)
+            return active
         except Exception as error:
             print "[TwilightBossSlice] route boss HUD create failed:", kind, error
             setattr(self, nodeName, None)
+            setattr(self, registeredName, False)
             return False
 
     def _register_magic_map_hud_proxy(self):
@@ -2533,6 +2700,87 @@ class ClientSystem(clientApi.GetClientSystemCls()):
         )
         return True
 
+    def _create_guarded_sky_component(self):
+        return CF.CreateSkyRender(LEVEL_ID)
+
+    def _get_twilight_biome_sky_textures(self):
+        if self._ambient_biome_comp is None:
+            return None
+        position = CF.CreatePos(clientApi.GetLocalPlayerId()).GetFootPos()
+        if position is None:
+            return None
+        # The client SDK takes a single loaded-world (x, y, z) tuple. Floor
+        # negative coordinates as well; int(-0.2) would query the wrong block.
+        block_pos = tuple(int(math.floor(value)) for value in position)
+        return biome_sky.textures_for_biome(
+            self._ambient_biome_comp.GetBiomeName(block_pos))
+
+    def OnEnvironmentStatusRequest(self, args):
+        control = args.get("load_probe")
+        if isinstance(control, dict):
+            probe = getattr(self, "_chunk_latency_probe", None)
+            if probe is None:
+                probe = chunk_latency_probe.Probe("client")
+                self._chunk_latency_probe = probe
+            if control.get("action") == "start":
+                probe.start(config.CHUNK_LATENCY_PROBE_OUTPUT_DIR, control.get("token"))
+            elif control.get("action") == "stop":
+                probe.stop()
+        if isinstance(args.get("clouds_enabled"), bool):
+            self._guarded_clouds_enabled = args["clouds_enabled"]
+            if not self._guarded_clouds_enabled:
+                self._reset_twilight_cloud_layer()
+        status = self._guarded_environment.status()
+        self._log_twilight_sky("requested_environment_status", status)
+        message = "Sky active=%s ui=%s server=%s frames=%s tries=%s error=%s clouds=%s enabled=%s" % (
+            status["active"], status["uiReady"], status["serverConfirmed"],
+            status["frames"], status["attempts"], status["error"],
+            len(self._twilight_cloud_particle_ids),
+            self._guarded_clouds_enabled,
+        )
+        streaming = args.get("streaming")
+        probe = getattr(self, "_chunk_latency_probe", None)
+        if probe is not None:
+            message += "\nProbe active=%s errors=%s output=%s" % (probe.active, probe.errors, probe.path)
+        if args.get("probe_message"):
+            message += "\n" + str(args["probe_message"])
+        if isinstance(streaming, dict):
+            # Counts are server events, not client-visible chunk guarantees.
+            message += "\nChunks generated=%s loaded=%s prewarm=%s queue=%s inflight=%s scriptAvgMs=%s scriptP95Ms=%s" % (
+                streaming.get("generated"), streaming.get("loaded"),
+                streaming.get("prewarm"), streaming.get("queue"),
+                streaming.get("inflight"), streaming.get("scriptAvgMs"),
+                streaming.get("scriptP95Ms"),
+            )
+        try:
+            CF.CreateTextNotifyClient(LEVEL_ID).SetLeftCornerNotify(message)
+        except Exception:
+            pass
+
+    def _update_guarded_environment(self):
+        if not config.TWILIGHT_POST_ENTRY_ENVIRONMENT_ENABLED:
+            return
+        self._guarded_environment.tick(self._portal_loading_active)
+        presentation = getattr(self, "_initial_sky_presentation", None)
+        if presentation is not None:
+            was_active = presentation.active
+            presentation.tick(self._portal_loading_active)
+            if was_active and not presentation.active:
+                portalLoadingUI.set_visible(self._portal_loading_active)
+                self._log_twilight_sky("initial_presentation_" + presentation.reason)
+        status = self._guarded_environment.status()
+        signature = (status["active"], status["attempts"], status["error"],
+                     tuple(status["requestedTextures"]), status["biomeError"])
+        if status["attempts"] and signature != self._guarded_environment_last_status:
+            self._guarded_environment_last_status = signature
+            self._log_twilight_sky("post_entry_cubemap", status)
+
+    def _guarded_clouds_ready(self):
+        return bool(config.TWILIGHT_POST_ENTRY_ENVIRONMENT_ENABLED
+                    and self._guarded_clouds_enabled
+                    and self._guarded_environment.active
+                    and not self._portal_loading_active)
+
     def _update_twilight_sky(self):
         if not config.TWILIGHT_NATIVE_ENVIRONMENT_EFFECTS_ENABLED:
             return
@@ -2727,13 +2975,15 @@ class ClientSystem(clientApi.GetClientSystemCls()):
 
     def _update_twilight_cloud_layer(self):
         if not config.TWILIGHT_NATIVE_ENVIRONMENT_EFFECTS_ENABLED:
-            return
+            if not self._guarded_clouds_ready():
+                return
         if self._twilight_dimension_switching:
             return
         if not self._twilight_sky_ui_ready:
             return
         if not self._twilight_sky_render_ready:
-            return
+            if not self._guarded_clouds_ready():
+                return
         try:
             currentDimension = CF.CreateGame(
                 LEVEL_ID
@@ -3740,7 +3990,6 @@ class ClientSystem(clientApi.GetClientSystemCls()):
             particleNames = (
                 "minecraft:large_explosion",
                 "minecraft:basic_smoke_particle",
-                "minecraft:redstone_wire_dust_particle",
             )
             for index in range(12):
                 self._spawn_naga_state_particle(
@@ -3756,7 +4005,7 @@ class ClientSystem(clientApi.GetClientSystemCls()):
             origin = positions[0]
             for unusedIndex in range(40):
                 self._spawn_naga_state_particle(
-                    "minecraft:redstone_wire_dust_particle",
+                    "minecraft:basic_smoke_particle",
                     (
                         origin[0] + random.uniform(-1.0, 1.0),
                         origin[1] + random.uniform(-1.0, 1.0),

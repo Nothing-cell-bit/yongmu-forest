@@ -15,6 +15,11 @@ from pathlib import Path
 from PIL import Image
 
 try:
+    from native_armor import ARMOR as NATIVE_ARMOR, behavior_document as native_armor_document, write_armor
+except ImportError:
+    from tools.native_armor import ARMOR as NATIVE_ARMOR, behavior_document as native_armor_document, write_armor
+
+try:
     from build_public_block_shapes import build as build_public_block_shapes
 except ImportError:  # pragma: no cover - package import in tests
     from tools.build_public_block_shapes import build as build_public_block_shapes
@@ -302,6 +307,11 @@ def load_json(path):
 
 
 def write_json(path, value):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    value = normalize_resource_document(path, value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -399,6 +409,8 @@ def register_fire_swamp_textures(terrain_data):
 
 
 def item_document(identifier):
+    if identifier in NATIVE_ARMOR:
+        return native_armor_document(identifier)
     components = {
         "minecraft:display_name": {"value": "item.tf_slice:%s.name" % identifier},
         "minecraft:icon": {
@@ -806,11 +818,18 @@ def generate_fire_swamp_machine_content():
     generate_recipes()
 
 
+def write_item_definition(identifier):
+    if identifier in NATIVE_ARMOR:
+        write_armor(BP, RP, identifier, write_json)
+    else:
+        write_json(BP / "items" / (identifier + ".item.json"), item_document(identifier))
+
+
 def main():
     catalog = load_json(CATALOG_PATH)
     all_blocks = catalog["mazestoneBlocks"] + catalog["fireSwampBlocks"] + catalog["mangroveBlocks"]
     for identifier in catalog["items"]:
-        write_json(BP / "items" / (identifier + ".item.json"), item_document(identifier))
+        write_item_definition(identifier)
 
     terrain = load_json(RP / "textures" / "terrain_texture.json")
     terrain_data = terrain["texture_data"]

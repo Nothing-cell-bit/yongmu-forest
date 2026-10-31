@@ -1,33 +1,13 @@
 # 图片许可与署名
 
-本次发布的441张PNG图片位于`TwilightBossSliceR/textures/`，逐文件来源与校验值见[ASSET_MANIFEST.json](ASSET_MANIFEST.json)。
+2026-10-31 源码更新包含 4,426 张 PNG，均位于 `TwilightBossSliceR/textures/`。路径、尺寸、SHA-256、作者和逐文件来源说明见 [ASSET_MANIFEST.json](ASSET_MANIFEST.json)。数量包括群系天空及其过渡变体。
 
-## The Twilight Forest 图片与改制内容
+原始作品为 **The Twilight Forest / 暮色森林**，作者为 **TeamTwilight 及相应素材贡献者**。基线 `1.20.1-4.3.2508`，记录的源码提交为 `a7dd8f13c653e137f977f5ffaa870fcb20fc1625`。上游来源及许可保留在 `ASSET_CREDITS.md` 和 `ASSET_LICENSE`。
 
-原始作品：**The Twilight Forest / 暮色森林**。
+本次沿用历史清单中可按相同哈希确认的署名。新增或变更的项目资产记为项目适配或生成内容，不声称已逐一证明与上游字节相同。改动包含像素美化、AI 辅助纹理编辑、模型贴图适配、UI 和程序生成的天空资源。相关工具在 `tools/`；原始编辑稿及完整开发证据保留在本地开发区。
 
-创作者与署名：**TeamTwilight 及相应素材贡献者**。逐文件的源路径用于定位上游作品和相关贡献记录；没有将上游作品归为本项目原创。
+上游美术改编及本项目按既有条款提供的美术贡献继续适用 **CC BY-NC-SA 4.0**，保留 TeamTwilight、相应贡献者与 **Yongmu Forest contributors** 署名、来源及改动说明。维护者为 [Nothing-cell-bit](https://github.com/Nothing-cell-bit)。许可全文见 `ASSET_LICENSE`。
 
-- 项目：https://github.com/TeamTwilight/twilightforest
-- 基线版本：1.20.1-4.3.2508。
-- 记录的源码提交：[a7dd8f13c653e137f977f5ffaa870fcb20fc1625](https://github.com/TeamTwilight/twilightforest/tree/a7dd8f13c653e137f977f5ffaa870fcb20fc1625)。
-- 上游图片路径：`assets/twilightforest/`下的对应相对路径，具体见清单。
-- 上游资产许可：[固定提交中的ASSET_LICENSE](https://github.com/TeamTwilight/twilightforest/blob/a7dd8f13c653e137f977f5ffaa870fcb20fc1625/ASSET_LICENSE)。
+Minecraft Java 1.20.1 的未修改恶魂之泪精灵由 **Mojang / Microsoft** 拥有，清单以 `Minecraft-game-resource` 单独标识，来源与哈希见 `tools/references/minecraft_java_1_20_1/ghast_presentation/source_lock.json`。此类游戏资源不重新授予 CC 许可，亦不作为独立素材库授权；相关说明见 `THIRD_PARTY_NOTICES.md`。
 
-本次包含354张与上游字节一致的图片、8张RGBA像素一致但PNG编码不同的图片，以及43张经过裁切、旋转、着色、拼接或物品视图渲染的改制图片。文件改名和目录迁移也在清单中说明。改制图片继续按**CC BY-NC-SA 4.0**分发，保留上游署名。
-
-## 本项目生成的图片
-
-另有36张由本项目代码生成或维护者确认自行制作的贴图或UI图片，包括蛇形角色色彩图集、星空、调色板与玩家标记等。创作者记为 **Yongmu Forest contributors**，维护者账号为 [Nothing-cell-bit](https://github.com/Nothing-cell-bit)。按维护者本次发布要求，这些图片同样以**CC BY-NC-SA 4.0**提供。涉及上游渲染思路的条目在清单中保留实现参考说明。
-
-## 使用条件
-
-许可：[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)，全文在[ASSET_LICENSE](ASSET_LICENSE)。
-
-使用或再分发时，保留适当署名、来源及许可链接，标明改动；遵守非商业性条件，并对改编内容采用相同或兼容的许可。此段是便于阅读的摘要，具体条件以许可全文为准。许可不提供担保，也不表示任何原作者或平台为本项目背书。
-
-源码的LGPL许可与图片的CC许可分别适用。非商业目的本身不会给来源不明的其他文件赋予CC许可。
-
-## 本次补全的图片
-
-维护者于 2026-09-23 确认 `textures/environment/33027004_clouds.png`（云层）与 `textures/ui/tf_slice/magic_map_frame_v2.png`（地图边框）由其自行制作或生成，现已纳入发布和图片清单，按同一 CC BY-NC-SA 4.0 条件提供。
+使用或再分发时，应遵守各文件原有条件，保留适当署名、来源、许可链接和改动说明。代码的 LGPL 许可、图片许可与声音来源分别适用。

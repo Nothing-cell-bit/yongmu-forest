@@ -24,6 +24,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "hoe",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

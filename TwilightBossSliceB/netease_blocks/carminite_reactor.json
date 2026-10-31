@@ -55,7 +55,7 @@
         "value": false
       },
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 4.0
+        "seconds_to_destroy": 10.0
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10.0
@@ -66,6 +66,11 @@
       },
       "netease:neighborchanged_sendto_script": {
         "value": true
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": true,
+        "level": 0
       }
     },
     "permutations": [

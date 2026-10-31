@@ -13,31 +13,31 @@ _PENDING_SNAPSHOT = {}
 _ACTIVE_UI = None
 
 ICON_PATHS = {
-    "small_hill": "textures/ui/tf_slice/magic_map_icons/small_hill",
-    "medium_hill": "textures/ui/tf_slice/magic_map_icons/medium_hill",
-    "large_hill": "textures/ui/tf_slice/magic_map_icons/large_hill",
-    "hedge_maze": "textures/ui/tf_slice/magic_map_icons/hedge_maze",
+    "small_hill": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/small_hill",
+    "medium_hill": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/medium_hill",
+    "large_hill": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/large_hill",
+    "hedge_maze": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/hedge_maze",
     "naga_courtyard": (
-        "textures/ui/tf_slice/magic_map_icons/naga_courtyard"
+        "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/naga_courtyard"
     ),
-    "lich_tower": "textures/ui/tf_slice/magic_map_icons/lich_tower",
-    "ice_tower": "textures/ui/tf_slice/magic_map_icons/ice_tower",
-    "quest_grove": "textures/ui/tf_slice/magic_map_icons/quest_grove",
-    "hydra_lair": "textures/ui/tf_slice/magic_map_icons/hydra_lair",
-    "labyrinth": "textures/ui/tf_slice/magic_map_icons/labyrinth",
-    "dark_tower": "textures/ui/tf_slice/magic_map_icons/dark_tower",
+    "lich_tower": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/lich_tower",
+    "ice_tower": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/ice_tower",
+    "quest_grove": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/quest_grove",
+    "hydra_lair": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/hydra_lair",
+    "labyrinth": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/labyrinth",
+    "dark_tower": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/dark_tower",
     "knight_stronghold": (
-        "textures/ui/tf_slice/magic_map_icons/knight_stronghold"
+        "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/knight_stronghold"
     ),
-    "yeti_cave": "textures/ui/tf_slice/magic_map_icons/yeti_cave",
-    "troll_cave": "textures/ui/tf_slice/magic_map_icons/troll_cave",
-    "final_castle": "textures/ui/tf_slice/magic_map_icons/final_castle",
+    "yeti_cave": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/yeti_cave",
+    "troll_cave": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/troll_cave",
+    "final_castle": "textures/tf_beautified/remaining/ui/tf_slice/magic_map_icons/final_castle",
 }
 
 PLAYER_MARKER_TEXTURE_PATHS = dict(
     (
         direction,
-        "textures/ui/tf_slice/magic_map_player/" + direction,
+        "textures/tf_beautified/remaining/ui/tf_slice/magic_map_player/" + direction,
     )
     for direction in ("north", "east", "south", "west", "off_map")
 )

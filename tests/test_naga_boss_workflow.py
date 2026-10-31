@@ -180,7 +180,7 @@ class NagaRelatedItemTests(unittest.TestCase):
             "naga_leggings": ("slot.armor.legs", 6, 315, "armor_legs"),
         }
         for name, (slot, protection, durability, enchant_slot) in expectations.items():
-            item_path = BP_ITEMS / (name + ".item.json")
+            item_path = BP_ITEMS.parent / "netease_items_beh" / (name + ".item.json")
             texture_path = RP_ITEMS / (name + ".png")
             source_texture = UPSTREAM_ITEMS / (name + ".png")
             self.assertTrue(item_path.is_file(), name)
@@ -189,18 +189,15 @@ class NagaRelatedItemTests(unittest.TestCase):
             components = json.loads(item_path.read_text(encoding="utf-8"))[
                 "minecraft:item"
             ]["components"]
-            self.assertEqual(slot, components["minecraft:wearable"]["slot"])
+            self.assertEqual({"slot.armor.chest": 1, "slot.armor.legs": 2}[slot], components["netease:armor"]["armor_slot"])
             self.assertEqual(
-                protection, components["minecraft:wearable"]["protection"]
+                protection, components["netease:armor"]["defense"]
             )
             self.assertEqual(
                 durability,
-                components["minecraft:durability"]["max_durability"],
+                components["minecraft:max_damage"],
             )
-            self.assertEqual(
-                enchant_slot, components["minecraft:enchantable"]["slot"]
-            )
-            self.assertEqual(15, components["minecraft:enchantable"]["value"])
+            self.assertEqual(15, components["netease:armor"]["enchantment"])
 
     def test_scale_recipes_restore_both_original_armor_patterns(self):
         expectations = {

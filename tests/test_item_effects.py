@@ -222,7 +222,11 @@ class EffectsTests(unittest.TestCase):
 
 class ItemDefinitionsTests(unittest.TestCase):
     def components(self, name):
-        return json.loads((ROOT/'TwilightBossSliceB/items'/(name+'.item.json')).read_text(encoding='utf8'))['minecraft:item']['components']
+        bp = ROOT / 'TwilightBossSliceB'
+        paths = [bp / folder / (name + '.item.json') for folder in ('items', 'netease_items_beh')]
+        registered = [path for path in paths if path.is_file()]
+        self.assertEqual(1, len(registered), name)
+        return json.loads(registered[0].read_text(encoding='utf8'))['minecraft:item']['components']
 
     def test_stroganoff_can_be_eaten_when_full(self):
         self.assertTrue(self.components('meef_stroganoff')['minecraft:food'].get('can_always_eat'))
@@ -236,7 +240,9 @@ class ItemDefinitionsTests(unittest.TestCase):
     def test_fiery_gear_and_boss_food_are_fireproof_as_drops(self):
         for name in ('fiery_sword','fiery_pickaxe','fiery_helmet','fiery_chestplate',
                      'fiery_leggings','fiery_boots','hydra_chop','meef_stroganoff'):
-            self.assertTrue(self.components(name)['minecraft:fire_resistant']['value'])
+            components = self.components(name)
+            fireproof = components.get('minecraft:fire_resistant', components.get('netease:fire_resistant', {}))
+            self.assertTrue(fireproof.get('value'), name)
 
     def test_torchberries_are_zero_nutrition_and_always_edible(self):
         food = self.components('torchberries')['minecraft:food']

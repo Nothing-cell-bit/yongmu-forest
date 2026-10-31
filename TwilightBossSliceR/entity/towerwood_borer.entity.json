@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/towerwood_borer"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__towerwood_borer"
       },
       "geometry": {
-        "default": "geometry.tf_slice.towerwood_borer"
+        "default": "geometry.tf_slice.towerwood_borer_art_v1"
       },
       "animations": {
         "move": "animation.tf_slice.towerwood_borer.move"

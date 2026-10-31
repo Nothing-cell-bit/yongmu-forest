@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from build_phantom_urghast_models import build as build_route_models
+from ur_ghast_presentation import texture_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -260,9 +261,13 @@ def _registry_entry(identifier, spec):
         ),
         "textures": [
             {
-                "source": _source_reference(EXTRACTED / source_name),
+                "source": _source_reference(texture_source(EXTRACTED / source_name)),
                 "target": target_name,
-                "sha256": _sha256(EXTRACTED / source_name),
+                "sha256": _sha256(texture_source(EXTRACTED / source_name)),
+                **({"twilight_source": _source_reference(EXTRACTED / source_name),
+                    "twilight_sha256": _sha256(EXTRACTED / source_name),
+                    "adaptation": "2026-10-09 user-directed yellow hue; original layout and gradient retained"}
+                   if identifier == "ur_ghast" else {}),
             }
             for source_name, target_name in texture_pairs
         ],
@@ -312,7 +317,7 @@ def _registry_entry(identifier, spec):
             "model_acceptance/failures. The retry now selects the locked "
             "new/JAPPA branch shown by the supplied original reference: a "
             "16px body with nine thicker, shorter, three-part tentacles, its "
-            "source animation owner, exact towerboss textures, 12.5 renderer "
+            "source animation owner, approved yellow-hue towerboss textures, 12.5 renderer "
             "scale, 14x18 physical collision, and a 12.5x12.5 selectable "
             "head/body volume centered at Y 12.5. It remains rejected until "
             "a fresh cold-client review passes."

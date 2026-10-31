@@ -5,7 +5,7 @@
       "identifier": "tf_slice:slime_splash",
       "basic_render_parameters": {
         "material": "particles_blend",
-        "texture": "textures/blocks/slime"
+        "texture": "textures/tf_beautified/base/slime"
       }
     },
     "components": {

@@ -1552,7 +1552,7 @@ class UrGhastRuntimeRejectionRegressionTests(unittest.TestCase):
             tear["description"]["identifier"],
         )
         self.assertEqual(
-            "textures/items/fiery_tears",
+            "textures/items/ghast_tear",
             tear["description"]["basic_render_parameters"]["texture"],
         )
         components = tear["components"]
@@ -1591,7 +1591,7 @@ class UrGhastRuntimeRejectionRegressionTests(unittest.TestCase):
         self.assertNotIn('"textures/environment/rain"', builder)
         self.assertNotIn("ur_ghast_rain.json", builder)
         self.assertIn("ur_ghast_tear.json", builder)
-        self.assertIn("textures/items/fiery_tears", builder)
+        self.assertIn("textures/items/ghast_tear", builder)
 
         client = (PACKAGE / "clientSystem.py").read_text(encoding="utf-8")
         tick = client[client.index("def OnScriptTickClient"):]

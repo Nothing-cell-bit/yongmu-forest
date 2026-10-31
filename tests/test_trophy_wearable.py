@@ -24,13 +24,13 @@ class TrophyWearableTests(TestCase):
             self.assertNotIn("slot.weapon.mainhand", predicate)
             self.assertNotIn("slot.weapon.offhand", predicate)
 
-    def test_every_trophy_keeps_stackable_items_and_binds_worn_models(self):
+    def test_every_trophy_has_valid_head_slot_definition_and_binds_worn_models(self):
         for name in builder.TROPHY_SPECS:
             with self.subTest(trophy=name):
                 item = builder.trophy_item_document(name)["minecraft:item"]
                 comp = item["components"]
                 self.assertEqual({"slot": "slot.armor.head", "protection": 0}, comp.get("minecraft:wearable"))
-                self.assertEqual(64, comp["minecraft:max_stack_size"])
+                self.assertEqual(1, comp["minecraft:max_stack_size"])
                 self.assertNotIn("minecraft:durability", comp)
                 self.assertEqual("tf_slice:" + name + "_trophy", comp["minecraft:block_placer"]["block"])
                 attachment = builder.trophy_attachable_document(name)["minecraft:attachable"]["description"]

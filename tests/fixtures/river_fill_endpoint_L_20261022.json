@@ -1,0 +1,33 @@
+{
+  "world": "dffde402-0e79-4c49-b111-d79336bb0052",
+  "position": [
+    145,
+    -310
+  ],
+  "biomeIdsBothPlaneOrders": [
+    7,
+    7
+  ],
+  "waterFillNode": {
+    "type": "fill",
+    "min_height": 61,
+    "max_height": 62,
+    "pool": [
+      {
+        "fill_block": "minecraft:water",
+        "weight": 1
+      }
+    ]
+  },
+  "observedColumn": {
+    "58": "minecraft:stone",
+    "59": "minecraft:stone",
+    "60": "minecraft:sand",
+    "61": "minecraft:water",
+    "62": "minecraft:sand",
+    "63": "minecraft:air",
+    "64": "minecraft:air",
+    "65": "minecraft:air"
+  },
+  "limitation": "One measured endpoint case; final M still needs native verification against possible later surface overwrite."
+}

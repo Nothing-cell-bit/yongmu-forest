@@ -8,7 +8,7 @@
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/tf_slice/armor/ironwood_1",
+        "default": "textures/tf_beautified/remaining/models/tf_slice/armor/ironwood_1",
         "enchanted": "textures/misc/enchanted_actor_glint"
       },
       "geometry": {

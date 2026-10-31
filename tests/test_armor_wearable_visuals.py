@@ -30,10 +30,10 @@ ARMOR = {
     "steeleaf_chestplate": ("chest", 8, 9, "steeleaf_1"),
     "steeleaf_leggings": ("legs", 6, 9, "steeleaf_2"),
     "steeleaf_boots": ("feet", 3, 9, "steeleaf_1"),
-    "knightmetal_helmet": ("head", 3, 9, "knightly_1"),
-    "knightmetal_chestplate": ("chest", 8, 9, "knightly_1"),
-    "knightmetal_leggings": ("legs", 6, 9, "knightly_2"),
-    "knightmetal_boots": ("feet", 3, 9, "knightly_1"),
+    "knightmetal_helmet": ("head", 3, 8, "knightly_1"),
+    "knightmetal_chestplate": ("chest", 8, 8, "knightly_1"),
+    "knightmetal_leggings": ("legs", 6, 8, "knightly_2"),
+    "knightmetal_boots": ("feet", 3, 8, "knightly_1"),
     "naga_chestplate": ("chest", 7, 15, "naga_scale_1"),
     "naga_leggings": ("legs", 6, 15, "naga_scale_2"),
     "phantom_helmet": ("head", 3, 8, "phantom_1"),
@@ -68,9 +68,18 @@ class ArmorWearableVisualTests(unittest.TestCase):
             "feet": "armor_feet",
         }
         for name, (slot, protection, enchantability, _texture) in ARMOR.items():
-            components = read_json(BP_ITEMS / (name + ".item.json"))[
+            path = BP_ITEMS / (name + ".item.json")
+            if not path.is_file():
+                path = BP_ITEMS.parent / "netease_items_beh" / (name + ".item.json")
+            components = read_json(path)[
                 "minecraft:item"
             ]["components"]
+            if "netease:armor" in components:
+                armor = components["netease:armor"]
+                self.assertEqual({"head": 0, "chest": 1, "legs": 2, "feet": 3}[slot], armor["armor_slot"], name)
+                self.assertEqual(protection, armor["defense"], name)
+                self.assertEqual(enchantability, armor["enchantment"], name)
+                continue
             self.assertEqual(
                 {"slot": "slot.armor." + slot, "protection": protection},
                 components.get("minecraft:wearable"),
@@ -97,7 +106,7 @@ class ArmorWearableVisualTests(unittest.TestCase):
             )
             self.assertEqual(
                 {
-                    "default": "textures/models/tf_slice/armor/" + texture,
+                    "default": "textures/tf_beautified/remaining/models/tf_slice/armor/" + texture,
                     "enchanted": "textures/misc/enchanted_actor_glint",
                 },
                 description["textures"],
@@ -108,16 +117,17 @@ class ArmorWearableVisualTests(unittest.TestCase):
                 if name == "phantom_helmet"
                 else GEOMETRY[slot]
             )
-            self.assertEqual(
-                {"default": expected_geometry}, description["geometry"], name
-            )
+            expected_geometries = {"default": expected_geometry}
+            if name == "ironwood_boots":
+                expected_geometries["redcap"] = "geometry.tf_slice.redcap.armor.boots"
+            self.assertEqual(expected_geometries, description["geometry"], name)
             self.assertEqual(
                 {"parent_setup": PARENT_SETUP[slot]},
                 description["scripts"],
                 name,
             )
             self.assertEqual(
-                ["controller.render.armor"],
+                ["controller.render.tf_slice.redcap_boots" if name == "ironwood_boots" else "controller.render.armor"],
                 description["render_controllers"],
                 name,
             )

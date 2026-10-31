@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 PACKAGE_ROOT = BP
 if str(PACKAGE_ROOT) not in sys.path:
     sys.path.insert(0, str(PACKAGE_ROOT))
@@ -119,13 +120,14 @@ class FireSwampBlockContractTests(unittest.TestCase):
                 expected,
                 block["description"]["states"]["tf_slice:jet_state"],
             )
-            flame = next(
-                entry
-                for entry in block["permutations"]
-                if "'flame'" in entry["condition"]
-            )
+            # Both the popping/flame material permutation and the flame-only
+            # light permutation apply; the engine merges their components.
+            flame = {}
+            for entry in block["permutations"]:
+                if "'flame'" in entry["condition"]:
+                    flame.update(entry["components"])
             self.assertEqual(
-                15, flame["components"]["minecraft:light_emission"]
+                15, flame["minecraft:light_emission"]
             )
 
     def test_encased_smoker_exposes_power_state(self):
@@ -378,12 +380,19 @@ class FireSwampAcquisitionContractTests(unittest.TestCase):
             "minecraft:destructible_by_explosion"
         ]["explosion_resistance"]
         self.assertEqual(6.0, resistance)
-        self.assertTrue(
-            (RP / "textures" / "blocks" / "encased_towerwood.png").is_file()
-        )
+        # Beautification retired the original PNG path; follow the actual
+        # client entry and atlas rather than requiring a redundant old file.
+        alias = read_json(RP / "blocks.json")["tf_slice:encased_towerwood"]["textures"]
+        texture = read_json(RP / "textures" / "terrain_texture.json")["texture_data"][alias]["textures"]
+        self.assertTrue((RP / (texture + ".png")).is_file())
         terrain = read_json(RP / "textures" / "terrain_texture.json")
+        art_manifest = read_json(ROOT / "resource_art" / "block_beautification" / "v1" / "manifest.json")
+        art_entry = next(entry for entry in art_manifest["entries"]
+                         if entry["source_runtime_path"] == "textures/blocks/encased_towerwood")
+        expected_path = ("textures/tf_beautified/" + str(Path(art_entry["output_relative"]).with_suffix("")).replace("\\", "/")
+                         if art_manifest["enabled"] else art_entry["source_runtime_path"])
         self.assertEqual(
-            "textures/blocks/encased_towerwood",
+            expected_path,
             terrain["texture_data"]["tf_slice:encased_towerwood"]["textures"],
         )
 
@@ -453,7 +462,7 @@ class FireSwampAcquisitionContractTests(unittest.TestCase):
 class FireSwampClientContractTests(unittest.TestCase):
     def test_source_water_color_and_non_firefly_ash_texture(self):
         biome = read_json(
-            RP / "biomes" / "dm33027004_swampland_mutated.client_biome.json"
+            BIOME_PROFILES / "dm33027004_swampland_mutated.client_biome.json"
         )["minecraft:client_biome"]["components"]
         self.assertEqual(
             "#6C2C2C", biome["minecraft:water_appearance"]["surface_color"]

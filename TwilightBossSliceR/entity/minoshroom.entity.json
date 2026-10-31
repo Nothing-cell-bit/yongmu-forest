@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/minoshroomtaur"
+        "default": "textures/tf_beautified/entities/mobs/minoshroomtaur"
       },
       "geometry": {
-        "default": "geometry.tf_slice.minoshroom"
+        "default": "geometry.tf_slice.minoshroom_art_v1"
       },
       "render_controllers": [
         "controller.render.default"

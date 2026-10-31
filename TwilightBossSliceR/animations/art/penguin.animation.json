@@ -1,0 +1,45 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tf_slice.penguin_art.details": {
+      "loop": true,
+      "animation_length": 4,
+      "bones": {
+        "art_tail": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.45": [
+              0,
+              0,
+              0
+            ],
+            "0.70": [
+              0,
+              12,
+              0
+            ],
+            "1.00": [
+              0,
+              -5.4,
+              0
+            ],
+            "1.30": [
+              0,
+              0,
+              0
+            ],
+            "4.0": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

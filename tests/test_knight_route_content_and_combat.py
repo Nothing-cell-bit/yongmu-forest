@@ -186,7 +186,8 @@ class KnightRouteContentContractTests(unittest.TestCase):
             "phantom_chestplate",
         }
         for name in names:
-            self.assertTrue((BP / "items" / (name + ".item.json")).is_file(), name)
+            paths = [BP / folder / (name + ".item.json") for folder in ("items", "netease_items_beh")]
+            self.assertEqual(1, sum(path.is_file() for path in paths), name)
         breaking = json.loads(
             (BP / "enchantments" / "destruction.enchantment.json").read_text(
                 encoding="utf-8"

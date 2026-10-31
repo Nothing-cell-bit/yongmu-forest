@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:destroy_time": {
-        "value": 0.3
+        "value": 2.0
       },
       "minecraft:explosion_resistance": {
         "value": 0.3
@@ -50,6 +50,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

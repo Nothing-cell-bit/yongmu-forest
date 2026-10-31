@@ -154,7 +154,7 @@ class MagicMapContentContractTests(unittest.TestCase):
         self.assertFalse(screen["should_steal_mouse"])
         parchment = screen["controls"][1]["parchment_frame"]
         self.assertEqual(
-            "textures/ui/tf_slice/magic_map_frame_v2",
+            "textures/tf_beautified/remaining/ui/tf_slice/magic_map_frame_v2",
             parchment["texture"],
         )
         self.assertEqual([220, 218], parchment["size"])
@@ -401,7 +401,7 @@ class MagicMapContentContractTests(unittest.TestCase):
         self.assertEqual("image", held_player["type"])
         self.assertEqual([8, 8], held_player["size"])
         self.assertEqual(
-            "textures/ui/tf_slice/magic_map_player/north",
+            "textures/tf_beautified/remaining/ui/tf_slice/magic_map_player/north",
             held_player["texture"],
         )
         held_backdrop = player_controls["held_player_marker_backdrop"]

@@ -39,6 +39,7 @@ class EnchantedTreeWorldgenService(MushroomWorldgenService):
         self._catalog = json.loads(catalog_data.CATALOG_JSON)["variants"]
         self._world_seed = self._load_world_seed()
         self._ledger = self._load_tree_ledger()
+        self._refresh_pending_jobs()
         self._handoffs = collections.deque()
         self._handoff_keys = set()
         self._sequence = max(
@@ -87,6 +88,7 @@ class EnchantedTreeWorldgenService(MushroomWorldgenService):
                 : len(self._ledger) - MAX_LEDGER_RECORDS
             ]:
                 self._ledger.pop(key, None)
+        self._refresh_pending_jobs()
         try:
             self._extra.SetExtraData(
                 LEDGER_KEY, copy.deepcopy(self._ledger), False

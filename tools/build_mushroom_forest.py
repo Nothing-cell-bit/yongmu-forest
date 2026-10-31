@@ -58,6 +58,11 @@ def red_cap_style(roll):
 
 
 def write_json(path, document):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    document = normalize_resource_document(path, document)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(document, ensure_ascii=False, indent=2) + "\n",
@@ -613,7 +618,7 @@ def _patch_biome_surfaces(root):
     ] = "minecraft:grass"
     write_json(dense_path, dense)
 
-    rp_biomes = root / "TwilightBossSliceR" / "biomes"
+    rp_biomes = root / "resource_art" / "biome_profiles"
     regular = json.loads(
         (
             rp_biomes
@@ -630,6 +635,11 @@ def _patch_biome_surfaces(root):
         "minecraft:water_appearance"
     ]
     write_json(dense_client_path, dense_client)
+    try:
+        from biome_render_compat import write_legacy_registry
+    except ImportError:
+        from tools.biome_render_compat import write_legacy_registry
+    write_legacy_registry(root)
 
 
 def _build_mycelium_blob(feature_dir, rule_dir):

@@ -1,0 +1,15 @@
+{
+  "acceptedFrom": "User-confirmed NetEase inventory rendering",
+  "acceptedDate": "2026-08-30",
+  "iconCount": 25,
+  "representative": {
+    "mangrove_stairs.png": "846b9896beaa19fe2c01ddb713d6876b5cca695b9f5d231493c7febada4b95ea",
+    "right_hand_dark_stairs.png": "191314e557f080601d0231ae19a48a65a1c50846fbde9663eedf66cf690bc622"
+  },
+  "selectedRightHandReference": "dark_stairs.png",
+  "familyIconSource": {
+    "dark": "dark",
+    "mangrove": "dark"
+  },
+  "policy": "Copy the selected right-hand engine renders byte-for-byte; do not recompute camera, UV, lighting, outline, shading, or the rejected pale mangrove variant."
+}

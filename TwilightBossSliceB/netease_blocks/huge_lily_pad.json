@@ -3,11 +3,16 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:huge_lily_pad",
-      "register_to_creative_menu": true
+      "register_to_creative_menu": false
     },
     "components": {
-      "netease:neighborchanged_sendto_script": {"value": true},
-      "netease:random_tick": {"enable": true, "tick_to_script": true},
+      "netease:neighborchanged_sendto_script": {
+        "value": true
+      },
+      "netease:random_tick": {
+        "enable": true,
+        "tick_to_script": true
+      },
       "minecraft:destructible_by_mining": {
         "seconds_to_destroy": 0.0
       },

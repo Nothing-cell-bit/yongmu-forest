@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:dark_planks",
-      "register_to_creative_menu": true
+      "register_to_creative_menu": false
     },
     "components": {
       "minecraft:destructible_by_mining": {
@@ -55,6 +55,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

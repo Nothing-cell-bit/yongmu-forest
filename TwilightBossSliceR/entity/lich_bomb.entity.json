@@ -4,7 +4,7 @@
     "description": {
       "identifier": "tf_slice:lich_bomb",
       "materials": {"default": "entity_emissive_alpha"},
-      "textures": {"default": "textures/items/magma_cream"},
+      "textures": {"default": "textures/tf_beautified/remaining/native/items/magma_cream"},
       "geometry": {"default": "geometry.tf_slice.lich_bomb"},
       "animations": {"face_player": "animation.actor.billboard"},
       "scripts": {"animate": ["face_player"]},

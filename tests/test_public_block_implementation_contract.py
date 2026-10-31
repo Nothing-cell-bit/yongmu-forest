@@ -3,6 +3,7 @@
 
 import hashlib
 import json
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -149,8 +150,8 @@ class PublicBlockImplementationContractTests(unittest.TestCase):
                 origin = cube["origin"]
                 size = cube["size"]
                 if name not in upstream_static_names:
-                    self.assertGreaterEqual(origin[0], 0, path.name)
-                    self.assertLessEqual(origin[0] + size[0], 16, path.name)
+                    self.assertGreaterEqual(origin[0], -16, path.name)
+                    self.assertLessEqual(origin[0] + size[0], 0, path.name)
                     self.assertGreaterEqual(origin[2], 0, path.name)
                     self.assertLessEqual(origin[2] + size[2], 16, path.name)
                 for face, uv in cube.get("uv", {}).items():
@@ -602,6 +603,25 @@ class PublicBlockImplementationContractTests(unittest.TestCase):
                         "%s %s" % (identifier, face),
                     )
     def test_public_block_generator_is_idempotent(self):
+        """The real generator must never target the canonical packs in a test."""
+        from tools import build_public_block_shapes as builder
+
+        with tempfile.TemporaryDirectory() as directory:
+            isolated = Path(directory)
+            isolated_bp = isolated / "TwilightBossSliceB"
+            isolated_rp = isolated / "TwilightBossSliceR"
+            shutil.copytree(BP, isolated_bp, ignore=shutil.ignore_patterns("structures", "__pycache__"))
+            shutil.copytree(RP, isolated_rp, ignore=shutil.ignore_patterns("__pycache__"))
+            shutil.copytree(ROOT / "resource_art", isolated / "resource_art")
+            with mock.patch.object(builder, "ROOT", isolated), mock.patch.object(
+                builder, "BP", isolated_bp
+            ), mock.patch.object(builder, "RP", isolated_rp), mock.patch.dict(
+                self._assert_public_block_generator_is_idempotent.__func__.__globals__,
+                {"ROOT": isolated, "BP": isolated_bp, "RP": isolated_rp},
+            ):
+                self._assert_public_block_generator_is_idempotent()
+
+    def _assert_public_block_generator_is_idempotent(self):
         from tools import build_public_block_shapes as builder
 
         self.assertEqual(

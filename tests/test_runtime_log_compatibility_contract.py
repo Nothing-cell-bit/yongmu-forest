@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 
 
 def load_json(path):
@@ -21,7 +22,7 @@ class RuntimeLogCompatibilityContractTests(unittest.TestCase):
             / "dm33027004"
             / (identifier + ".json")
         )
-        client_path = RP / "biomes" / (identifier + ".client_biome.json")
+        client_path = BIOME_PROFILES / (identifier + ".client_biome.json")
         dimension = load_json(
             BP / "netease_dimension" / "dm33027004.json"
         )["netease:dimension_info"]["components"]

@@ -244,6 +244,11 @@ def load_json(path):
 
 
 def write_json(path, value):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    value = normalize_resource_document(path, value)
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -1840,6 +1845,12 @@ def trophy_document(
 
 
 def copy_texture(source, target):
+    try:
+        from retired_runtime_pngs import is_retired_runtime_png
+    except ImportError:
+        from tools.retired_runtime_pngs import is_retired_runtime_png
+    if is_retired_runtime_png(target, ROOT):
+        return
     source = Path(source)
     target = Path(target)
     if not source.is_file():
@@ -1961,6 +1972,18 @@ def ensure_vanilla_adapter_item_textures(atlas):
 
 def ensure_vanilla_adapter_client_blocks(client_blocks):
     """Bind vanilla behavior templates to explicit Twilight material aliases."""
+    # Client block registry names differ from inventory item names.  These
+    # exact names occur in the NetEase 3.8 and 3.10 vanilla blocks.json.
+    for obsolete in (
+        "dark_oak_sign", "dark_oak_wall_sign", "dark_oak_wall_hanging_sign",
+        "mangrove_sign", "mangrove_wall_hanging_sign",
+    ):
+        client_blocks.pop(obsolete, None)
+    sign_client_names = {
+        ("dark_oak", "sign"): "darkoak_standing_sign",
+        ("dark_oak", "wall_sign"): "darkoak_wall_sign",
+        ("mangrove", "sign"): "mangrove_standing_sign",
+    }
     shared_suffixes = (
         "stairs",
         "slab",
@@ -1989,7 +2012,12 @@ def ensure_vanilla_adapter_client_blocks(client_blocks):
             else shared_suffixes
         )
         for suffix in active_suffixes:
-            client_blocks["%s_%s" % (family, suffix)] = {
+            if suffix == "wall_hanging_sign":
+                continue  # Wall placement is a state of the hanging-sign block.
+            client_name = sign_client_names.get(
+                (family, suffix), "%s_%s" % (family, suffix)
+            )
+            client_blocks[client_name] = {
                 "textures": planks,
                 "sound": "wood",
             }
@@ -2112,8 +2140,10 @@ def _netease_model_path(name):
 
 
 def _netease_coordinate(values):
+    # NetEase block geometry occupies [-16,0,0]..[0,16,16], unlike
+    # centered Bedrock geometry [-8,0,-8]..[8,16,8]. Translate pivots too.
     return [
-        round(float(values[0]) + 8.0, 4),
+        round(float(values[0]) - 8.0, 4),
         round(float(values[1]), 4),
         round(float(values[2]) + 8.0, 4),
     ]
@@ -2681,7 +2711,7 @@ def _java_gui_face_is_visible(vertices):
     return signed_area < -1.0e-9
 
 
-def _render_java_item_model_icon(name, target):
+def _render_java_item_model_icon(name, target, texture_resolver=None):
     """Bake one upstream Java item model into a deterministic GUI icon.
 
     Java renders every item in the same 16-unit GUI coordinate system.  Keep
@@ -2752,6 +2782,8 @@ def _render_java_item_model_icon(name, target):
     texture_cache = {}
     for face in raw_faces:
         path = _java_texture_path(face["texture"])
+        if texture_resolver is not None:
+            path = Path(texture_resolver(path))
         if path not in texture_cache:
             source = Image.open(str(path)).convert("RGBA")
             texture_cache[path] = (
@@ -2902,6 +2934,11 @@ def _render_geometry_item_icon(
 ):
     cubes = _item_icon_cubes(geometry_entry)
     canvas_size = 256
+    try:
+        from block_texture_beautification import resolve_source_texture
+    except ImportError:
+        from tools.block_texture_beautification import resolve_source_texture
+    texture_path = resolve_source_texture(texture_path, ROOT)
     texture_image = Image.open(str(texture_path)).convert("RGBA")
     texture_size = texture_image.size
     bones_by_name = {
@@ -3936,7 +3973,7 @@ def canopy_recipe_documents():
             "banister",
             ("---", "| |"),
             {
-                "-": {"item": "tf_slice:canopy_slab"},
+                "-": {"item": "minecraft:cherry_slab"},
                 "|": stick,
             },
             3,
@@ -4057,6 +4094,8 @@ def canopy_removed_artifacts():
     ]
     for suffix in CANOPY_NATIVE_SUFFIXES:
         name = "canopy_" + suffix
+        if suffix == "fence":
+            continue  # Saved structures still require a hidden legacy block.
         paths.extend(
             (
                 "TwilightBossSliceB/netease_blocks/%s.json" % name,
@@ -4152,6 +4191,8 @@ def build_canopy_wood_family():
 
     for suffix in CANOPY_NATIVE_SUFFIXES:
         name = "canopy_" + suffix
+        if suffix == "fence":
+            continue  # Retained separately for old worlds and structure palettes.
         for path in (
             BP / "netease_blocks" / (name + ".json"),
             _netease_model_path(name),
@@ -4224,6 +4265,7 @@ def build_canopy_wood_family():
             3,
         ),
     )
+    ensure_legacy_canopy_fence(client_blocks, atlas)
     write_json(terrain_path, terrain)
     write_json(item_path, item_atlas)
     write_json(blocks_path, client_blocks)
@@ -4282,34 +4324,31 @@ def build_shape_blocks(client_blocks, atlas):
                 "netease_model": _netease_model_name(name),
                 "sound": "wood",
             }
-    write_json(
-        BP / "netease_blocks" / "canopy_fence.json",
-        _native_shape_document("canopy", "fence"),
+    ensure_legacy_canopy_fence(client_blocks, atlas)
+
+
+def ensure_legacy_canopy_fence(client_blocks, atlas):
+    """Keep saved blocks/template palettes valid, without a second public item."""
+    atlas["tf_slice:canopy_fence"] = copy.deepcopy(
+        atlas.get("tf_slice:canopy_log", {"textures": "textures/blocks/canopy_log"})
     )
-    canopy_document = load_json(BP / "netease_blocks" / "canopy_fence.json")
-    canopy_document["minecraft:block"]["components"]["netease:connection"] = {
-        "blocks": ["tf_slice:canopy_fence"]
-    }
-    write_json(BP / "netease_blocks" / "canopy_fence.json", canopy_document)
+    document = _native_shape_document("canopy", "fence")
+    block = document["minecraft:block"]
+    block["description"]["register_to_creative_menu"] = False
+    block["components"]["netease:connection"] = {"blocks": ["tf_slice:canopy_fence"]}
+    write_json(BP / "netease_blocks" / "canopy_fence.json", document)
+    geometry = _dynamic_fence_geometry("geometry.tf_slice.native_canopy_fence")
     write_json(
         _netease_model_path("canopy_fence"),
         _netease_model_document(
-            "canopy_fence",
-            _dynamic_fence_geometry("geometry.tf_slice.native_canopy_fence"),
-            ["tf_slice:canopy_fence"],
-            _ensure_item_icon(
-                "canopy_fence",
-                _dynamic_fence_geometry(
-                    "geometry.tf_slice.native_canopy_fence"
-                ),
-                "tf_slice:canopy_fence",
-                atlas,
-            ),
+            "canopy_fence", geometry, ["tf_slice:canopy_fence"],
+            # Legacy inventory stacks migrate to the native public item.
+            # Retain an existing material for the hidden compatibility model.
+            "tf_slice:canopy_fence",
         ),
     )
     client_blocks["tf_slice:canopy_fence"] = {
-        "netease_model": _netease_model_name("canopy_fence"),
-        "sound": "wood",
+        "netease_model": _netease_model_name("canopy_fence"), "sound": "wood",
     }
 
 
@@ -4432,7 +4471,9 @@ def trophy_item_document(name):
                     "slot": "slot.armor.head",
                     "protection": 0,
                 },
-                "minecraft:max_stack_size": 64,
+                # The engine requires head-slot wearable definitions to use 1.
+                # Inventory-only SDK overrides preserve existing trophy stacks.
+                "minecraft:max_stack_size": 1,
             },
         },
     }
@@ -4456,6 +4497,10 @@ def trophy_loot_document(name):
 
 
 def build_trophies(atlas, item_atlas, client_blocks, trophy_geometries):
+    try:
+        from tools.ur_ghast_presentation import texture_source
+    except ImportError:
+        from ur_ghast_presentation import texture_source
     model_directory = RP / "textures" / "entity" / "tf_slice" / "trophies"
     item_directory = RP / "textures" / "blocks"
     transparent_target = item_directory / "trophy_anchor_transparent.png"
@@ -4474,7 +4519,7 @@ def build_trophies(atlas, item_atlas, client_blocks, trophy_geometries):
         model_target = model_directory / (variant + ".png")
         if len(spec["model_textures"]) == 1:
             copy_texture(
-                UPSTREAM_TEXTURES / spec["model_textures"][0], model_target
+                texture_source(UPSTREAM_TEXTURES / spec["model_textures"][0]), model_target
             )
         else:
             _build_knight_phantom_trophy_texture(model_target)
@@ -4567,29 +4612,12 @@ def normalize_trophy_creative_catalog():
         for group in category.get("groups", []):
             items = []
             for identifier in group.get("items", []):
+                if identifier == "tf_slice:canopy_fence":
+                    continue  # The public fence uses the native cherry template.
                 identifier = replacements.get(identifier, identifier)
                 if identifier not in items:
                     items.append(identifier)
             group["items"] = items
-    catalog_items = {
-        identifier
-        for category in catalog.get("categories", [])
-        for group in category.get("groups", [])
-        for identifier in group.get("items", [])
-    }
-    if "tf_slice:canopy_fence" not in catalog_items:
-        construction = next(
-            (
-                category
-                for category in catalog.get("categories", [])
-                if category.get("category_name") == "construction"
-            ),
-            None,
-        )
-        if construction and construction.get("groups"):
-            construction["groups"][0].setdefault("items", []).append(
-                "tf_slice:canopy_fence"
-            )
     write_json(path, document)
     return tuple(replacements.values())
 

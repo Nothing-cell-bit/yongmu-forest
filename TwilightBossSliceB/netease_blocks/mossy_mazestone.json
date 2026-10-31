@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:destroy_time": {
-        "value": 1.5
+        "value": 100.0
       },
       "minecraft:explosion_resistance": {
         "value": 100.0
@@ -20,6 +20,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "pickaxe",
+        "destroy_special": true,
+        "level": 3
       }
     }
   }

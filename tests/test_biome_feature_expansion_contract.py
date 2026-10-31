@@ -10,6 +10,7 @@ from tools.native_structure_worldgen_safety import base_iterations
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 
 FEATURE_BLOCKS = {
     "rainbow_oak_leaves",
@@ -539,8 +540,7 @@ class BiomeFeatureExpansionContractTests(unittest.TestCase):
         )
 
         client_biome = read_json(
-            RP
-            / "biomes"
+            BIOME_PROFILES
             / "dm33027004_birch_forest_mutated.client_biome.json"
         )["minecraft:client_biome"]["components"]
         self.assertEqual(

@@ -3,14 +3,18 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "tf_slice:tiny_bird",
-      "materials": {"default": "entity_alphatest"},
-      "textures": {
-        "blue": "textures/entity/tf_slice/tinybirdblue",
-        "brown": "textures/entity/tf_slice/tinybirdbrown",
-        "gold": "textures/entity/tf_slice/tinybirdgold",
-        "red": "textures/entity/tf_slice/tinybirdred"
+      "materials": {
+        "default": "entity_alphatest"
       },
-      "geometry": {"default": "geometry.tf_slice.tiny_bird"},
+      "textures": {
+        "blue": "textures/tf_beautified/entities/mobs/tf_slice__tinybirdblue",
+        "brown": "textures/tf_beautified/entities/mobs/tf_slice__tinybirdbrown",
+        "gold": "textures/tf_beautified/entities/mobs/tf_slice__tinybirdgold",
+        "red": "textures/tf_beautified/entities/mobs/tf_slice__tinybirdred"
+      },
+      "geometry": {
+        "default": "geometry.tf_slice.tiny_bird_art_v1"
+      },
       "render_controllers": [
         "controller.render.tf_slice.tiny_bird"
       ],
@@ -26,7 +30,10 @@
         "look": "animation.common.look_at_target"
       },
       "scripts": {
-        "animate": ["flight_controller", "look"]
+        "animate": [
+          "flight_controller",
+          "look"
+        ]
       }
     }
   }

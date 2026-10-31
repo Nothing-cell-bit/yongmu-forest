@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/kobold"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__kobold"
       },
       "geometry": {
-        "default": "geometry.tf_slice.kobold"
+        "default": "geometry.tf_slice.kobold_art_v1"
       },
       "render_controllers": [
         "controller.render.default"

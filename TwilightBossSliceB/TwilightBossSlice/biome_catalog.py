@@ -984,12 +984,7 @@ def _route_biome_condition_prelude(region_size, extra_assignments=()):
     )
 
 
-def _route_biome_variant_condition(
-    region_size,
-    clauses_by_variant,
-    extra_assignments=(),
-):
-    """Return a negative-safe four-variant coordinate condition."""
+def _route_select_variant_clause(clauses_by_variant):
     selected_clause = clauses_by_variant.get(ROUTE_LAYOUT_VARIANTS[-1], "0")
     for variant in reversed(ROUTE_LAYOUT_VARIANTS[:-1]):
         selected_clause = "((%s==%d)?(%s):(%s))" % (
@@ -997,6 +992,25 @@ def _route_biome_variant_condition(
             int(variant),
             clauses_by_variant.get(variant, "0"),
             selected_clause,
+        )
+    return selected_clause
+
+
+def _route_biome_variant_condition(
+    region_size,
+    clauses_by_variant,
+    extra_assignments=(),
+    work_guards_by_variant=None,
+):
+    """Return the same mask while avoiding waves outside its coarse bounds."""
+    selected_clause = _route_select_variant_clause(clauses_by_variant)
+    if work_guards_by_variant is not None:
+        guard = _route_select_variant_clause(work_guards_by_variant)
+        # The final mask already rejects everything outside this exact union.
+        # Ternary evaluation keeps expensive trig out of those coordinates.
+        extra_assignments = tuple(
+            (name, "((%s) ? (%s) : 0)" % (guard, expression))
+            for name, expression in extra_assignments
         )
     return "%s return (%s) ? 0 : -1;" % (
         _route_biome_condition_prelude(
@@ -1118,11 +1132,18 @@ def route_biome_companion_stabilize_condition(
         ),
     )
     clauses = {}
+    guards = {}
     for variant in ROUTE_LAYOUT_VARIANTS:
         terms = []
+        coarse_terms = []
         for origin_x, origin_z in mask_origins_by_variant.get(variant, ()):
             delta_x = "(%s - %d)" % (local_x, int(origin_x))
             delta_z = "(%s - %d)" % (local_z, int(origin_z))
+            coarse_terms.append(
+                "((math.abs(%s) < %d) && (math.abs(%s) < %d))"
+                % (delta_x, ROUTE_OUTER_COARSE_RADIUS_CELLS,
+                   delta_z, ROUTE_OUTER_COARSE_RADIUS_CELLS)
+            )
             distance_squared = "((%s * %s) + (%s * %s))" % (
                 delta_x,
                 delta_x,
@@ -1142,12 +1163,14 @@ def route_biome_companion_stabilize_condition(
             )
             terms.append(noisy_outer)
         clauses[variant] = " || ".join(terms) or "0"
+        guards[variant] = " || ".join(coarse_terms) or "0"
     return _route_biome_variant_condition(
         region_size,
         clauses,
         (
             ("temp.outer_radius_sq", radius_squared),
         ),
+        work_guards_by_variant=guards,
     )
 
 
@@ -1166,11 +1189,18 @@ def route_biome_core_stabilize_condition(
         ),
     )
     clauses = {}
+    guards = {}
     for variant in ROUTE_LAYOUT_VARIANTS:
         terms = []
+        coarse_terms = []
         for origin_x, origin_z in mask_origins_by_variant.get(variant, ()):
             delta_x = "(%s - %d)" % (local_x, int(origin_x))
             delta_z = "(%s - %d)" % (local_z, int(origin_z))
+            coarse_terms.append(
+                "((math.abs(%s) < %d) && (math.abs(%s) < %d))"
+                % (delta_x, ROUTE_CORE_COARSE_RADIUS_CELLS,
+                   delta_z, ROUTE_CORE_COARSE_RADIUS_CELLS)
+            )
             terms.append(
                 "((math.abs(%s) < %d) && (math.abs(%s) < %d) "
                 "&& (((%s * %s) + (%s * %s) + (%s * %s) + (%s * %s)) < %s))"
@@ -1191,10 +1221,12 @@ def route_biome_core_stabilize_condition(
                 )
             )
         clauses[variant] = " || ".join(terms) or "0"
+        guards[variant] = " || ".join(coarse_terms) or "0"
     return _route_biome_variant_condition(
         region_size,
         clauses,
         (("temp.radius_squared", radius_squared),),
+        work_guards_by_variant=guards,
     )
 
 

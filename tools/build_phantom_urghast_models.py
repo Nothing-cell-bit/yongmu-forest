@@ -77,6 +77,11 @@ TEXTURE_BRANCHES = {
 
 
 def write_json(path, value):
+    try:
+        from block_texture_beautification import normalize_resource_document
+    except ImportError:
+        from tools.block_texture_beautification import normalize_resource_document
+    value = normalize_resource_document(path, value)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
         json.dumps(value, ensure_ascii=False, indent=2) + "\n",
@@ -856,6 +861,14 @@ def client_entity(identifier):
 
 
 def copy_textures():
+    try:
+        from tools.ur_ghast_presentation import texture_source
+    except ImportError:
+        from ur_ghast_presentation import texture_source
+    try:
+        from retired_runtime_pngs import is_retired_runtime_png
+    except ImportError:
+        from tools.retired_runtime_pngs import is_retired_runtime_png
     for identifier, branches in TEXTURE_BRANCHES.items():
         targets = [identifier]
         if len(branches) == 3:
@@ -863,8 +876,10 @@ def copy_textures():
         if identifier == "knight_phantom":
             targets = ["knight_phantom_skeleton", "knight_phantom_armor"]
         for source_name, target_name in zip(branches, targets):
-            source = MODEL_TEXTURES / source_name
+            source = texture_source(MODEL_TEXTURES / source_name)
             target = RP / "textures" / "entity" / "tf_slice" / (target_name + ".png")
+            if is_retired_runtime_png(target, ROOT):
+                continue
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, target)
 

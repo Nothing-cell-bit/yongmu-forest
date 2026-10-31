@@ -2,7 +2,7 @@
 """Single release and upstream authority for every pack surface."""
 
 
-PACK_VERSION = (0, 12, 0)
+PACK_VERSION = (0, 12, 4)
 PACK_VERSION_STRING = ".".join(str(part) for part in PACK_VERSION)
 RELEASE_STAGE = "ur_ghast_hitbox_debug_candidate_runtime_pending"
 

@@ -348,17 +348,19 @@ def dimension_document():
 
 
 def main():
+    try:
+        from biome_render_compat import write_profile, write_legacy_registry
+    except ImportError:
+        from tools.biome_render_compat import write_profile, write_legacy_registry
     for key, profile in PROFILES.items():
         entry = biome_catalog.BIOMES_BY_KEY[key]
         write(
             BP / "netease_biomes" / "dm33027004" / (entry["identifier"] + ".json"),
             server_biome(entry, profile),
         )
-        write(
-            RP / "biomes" / (entry["identifier"] + ".client_biome.json"),
-            client_biome(entry, profile),
-        )
+        write_profile(ROOT, client_biome(entry, profile))
         write(RP / "fogs" / (key + ".fog.json"), fog(key, profile))
+    write_legacy_registry(ROOT)
     write(BP / "netease_dimension" / "dm33027004.json", dimension_document())
     print("generated 2 dark-forest biomes, 2 fogs, and the dimension source")
 

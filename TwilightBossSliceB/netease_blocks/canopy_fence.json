@@ -3,7 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "tf_slice:canopy_fence",
-      "register_to_creative_menu": true
+      "register_to_creative_menu": false
     },
     "components": {
       "minecraft:destroy_time": {
@@ -266,6 +266,11 @@
         "blocks": [
           "tf_slice:canopy_fence"
         ]
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

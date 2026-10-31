@@ -54,8 +54,11 @@
       "netease:pathable": {
         "value": false
       },
-      "minecraft:destructible_by_mining": false,
-      "minecraft:destructible_by_explosion": false
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 50.0
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:loot": "loot_tables/blocks/tf_slice/no_mining_drop.json"
     },
     "permutations": [
       {

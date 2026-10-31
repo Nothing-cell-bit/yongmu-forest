@@ -7,21 +7,23 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/bighorn"
+        "default": "textures/tf_beautified/entities/mobs/bighorn"
       },
       "geometry": {
-        "default": "geometry.tf_slice.bighorn_sheep"
+        "default": "geometry.tf_slice.bighorn_sheep_art_v1"
       },
       "animations": {
         "walk": "animation.quadruped.walk",
-        "look_at_target": "animation.common.look_at_target"
+        "look_at_target": "animation.common.look_at_target",
+        "art_details": "animation.tf_slice.bighorn_sheep_art.details"
       },
       "scripts": {
         "animate": [
           {
             "walk": "query.modified_move_speed"
           },
-          "look_at_target"
+          "look_at_target",
+          "art_details"
         ]
       },
       "render_controllers": [

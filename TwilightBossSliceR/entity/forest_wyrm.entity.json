@@ -7,13 +7,13 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "head": "textures/entity/nagahead",
-        "head_charging": "textures/entity/nagahead_charging",
-        "head_dazed": "textures/entity/nagahead_dazed"
+        "head": "textures/tf_beautified/entities/mobs/nagahead",
+        "head_charging": "textures/tf_beautified/entities/mobs/nagahead_charging",
+        "head_dazed": "textures/tf_beautified/entities/mobs/nagahead_dazed"
       },
       "geometry": {
-        "default": "geometry.tf_slice.forest_wyrm",
-        "eyelids": "geometry.tf_slice.forest_wyrm_eyelids"
+        "default": "geometry.tf_slice.forest_wyrm_art_v1",
+        "eyelids": "geometry.tf_slice.forest_wyrm_art_v1_eyelids"
       },
       "animations": {
         "circle": "animation.tf_slice.forest_wyrm.circle",
@@ -24,7 +24,9 @@
         "controller": "controller.animation.tf_slice.forest_wyrm"
       },
       "scripts": {
-        "animate": ["controller"]
+        "animate": [
+          "controller"
+        ]
       },
       "render_controllers": [
         "controller.render.tf_slice.forest_wyrm_head",

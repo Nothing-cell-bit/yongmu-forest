@@ -7,7 +7,7 @@
         "default": "entity_alphablend"
       },
       "textures": {
-        "default": "textures/entity/hydramortar"
+        "default": "textures/tf_beautified/remaining/entity/hydramortar"
       },
       "geometry": {
         "default": "geometry.tf_slice.hydra_mortar"

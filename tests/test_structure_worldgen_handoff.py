@@ -1,4 +1,5 @@
 import json
+import os
 import pathlib
 import random
 import sys
@@ -10,7 +11,7 @@ from lib2to3.refactor import RefactoringTool
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-BP = ROOT / "TwilightBossSliceB"
+BP = pathlib.Path(os.environ.get("TF_SLICE_BEHAVIOR_PACK", str(ROOT / "TwilightBossSliceB")))
 SERVICE_PATH = BP / "TwilightBossSlice" / "structureWorldgenService.py"
 sys.path.insert(0, str(BP))
 sys.path.insert(0, str(ROOT / "tools"))
@@ -134,6 +135,9 @@ class FakeBlockInfo(object):
 
     def GetTopBlockHeight(self, _position, _dimension_id):
         return 64
+
+    def GetBlockLightLevel(self, _position, _dimension_id):
+        return 0
 
     def GetBlockNew(self, position, _dimension_id):
         return self.blocks.get(
@@ -832,10 +836,11 @@ class NativeStructureThreadHandoffTests(unittest.TestCase):
             }
         ]
 
-        self.service.tick(99, players, boss_spawning_enabled=False)
+        # Hostile spawn-table checks run with the difficulty gate enabled.
+        self.service.tick(99, players, boss_spawning_enabled=True)
         self.assertEqual([], spawned)
 
-        self.service.tick(100, players, boss_spawning_enabled=False)
+        self.service.tick(100, players, boss_spawning_enabled=True)
 
         self.assertEqual("tf_slice:block_chain_goblin", spawned[0][0])
         self.assertEqual(33027004, spawned[0][3])
@@ -921,7 +926,7 @@ class NativeStructureThreadHandoffTests(unittest.TestCase):
             }
         ]
 
-        self.service.tick(100, players, boss_spawning_enabled=False)
+        self.service.tick(100, players, boss_spawning_enabled=True)
 
         self.assertEqual(["tf_slice:tower_ghast"], [row[0] for row in spawned])
 
@@ -1143,7 +1148,7 @@ class NativeStructureThreadHandoffTests(unittest.TestCase):
             }
         ]
 
-        self.service.tick(100, players, boss_spawning_enabled=False)
+        self.service.tick(100, players, boss_spawning_enabled=True)
 
         self.assertEqual([], spawned)
 

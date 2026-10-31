@@ -5,7 +5,7 @@
       "identifier": "tf_slice:knight_phantom_smoke",
       "basic_render_parameters": {
         "material": "particles_blend",
-        "texture": "textures/particle/firefly"
+        "texture": "textures/tf_beautified/remaining/particle/firefly"
       }
     },
     "components": {

@@ -23,7 +23,7 @@ def set_minoshrooms(bosses, stack_slot=None):
     _PENDING_MINOSHROOMS = list(bosses or ())
     if stack_slot is not None:
         _PENDING_MINOSHROOM_SLOT = max(0, int(stack_slot))
-    if _MINOSHROOM_UI is not None:
+    if _MINOSHROOM_UI is not None and _MINOSHROOM_UI.IsReady():
         _MINOSHROOM_UI.ApplyBosses(
             _PENDING_MINOSHROOMS,
             _PENDING_MINOSHROOM_SLOT,
@@ -35,7 +35,7 @@ def set_hydras(bosses, stack_slot=None):
     _PENDING_HYDRAS = list(bosses or ())
     if stack_slot is not None:
         _PENDING_HYDRA_SLOT = max(0, int(stack_slot))
-    if _HYDRA_UI is not None:
+    if _HYDRA_UI is not None and _HYDRA_UI.IsReady():
         _HYDRA_UI.ApplyBosses(_PENDING_HYDRAS, _PENDING_HYDRA_SLOT)
 
 
@@ -44,7 +44,7 @@ def set_knight_phantoms(bosses, stack_slot=None):
     _PENDING_KNIGHT_PHANTOMS = list(bosses or ())
     if stack_slot is not None:
         _PENDING_KNIGHT_PHANTOMS_SLOT = max(0, int(stack_slot))
-    if _KNIGHT_PHANTOMS_UI is not None:
+    if _KNIGHT_PHANTOMS_UI is not None and _KNIGHT_PHANTOMS_UI.IsReady():
         _KNIGHT_PHANTOMS_UI.ApplyBosses(
             _PENDING_KNIGHT_PHANTOMS,
             _PENDING_KNIGHT_PHANTOMS_SLOT,
@@ -56,7 +56,7 @@ def set_ur_ghasts(bosses, stack_slot=None):
     _PENDING_UR_GHASTS = list(bosses or ())
     if stack_slot is not None:
         _PENDING_UR_GHAST_SLOT = max(0, int(stack_slot))
-    if _UR_GHAST_UI is not None:
+    if _UR_GHAST_UI is not None and _UR_GHAST_UI.IsReady():
         _UR_GHAST_UI.ApplyBosses(_PENDING_UR_GHASTS, _PENDING_UR_GHAST_SLOT)
 
 
@@ -124,7 +124,13 @@ class _RouteBossHudBase(ScreenNode):
             self._fill = None
 
     def IsReady(self):
-        return self._root is not None
+        if self._root is None:
+            return False
+        try:
+            # A Python wrapper can outlive the native HUD after world reload.
+            return self.GetBaseUIControl("/boss_root") is not None
+        except Exception:
+            return False
 
     def _apply(
         self,

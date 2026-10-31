@@ -749,6 +749,7 @@ def build_html(catalog):
 </head>
 <body>
   <main class="shell">
+    <nav aria-label="图鉴页面" style="display:flex;gap:24px;margin-bottom:24px"><a href="index.html" style="color:var(--green)" aria-current="page">暮色森林配方</a><a href="farmers-delight.html" style="color:var(--gold)">农夫乐事配方 →</a></nav>
     <header class="masthead">
       <div>
         <p class="eyebrow">Twilight Forest · Recipe Atlas</p>

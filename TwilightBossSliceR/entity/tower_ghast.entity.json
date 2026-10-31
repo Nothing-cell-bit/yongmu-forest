@@ -7,12 +7,12 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/tower_ghast",
-        "open": "textures/entity/tf_slice/tower_ghast_open",
-        "attack": "textures/entity/tf_slice/tower_ghast_attack"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__tower_ghast",
+        "open": "textures/tf_beautified/entities/mobs/tf_slice__tower_ghast_open",
+        "attack": "textures/tf_beautified/entities/mobs/tf_slice__tower_ghast_attack"
       },
       "geometry": {
-        "default": "geometry.tf_slice.tower_ghast"
+        "default": "geometry.tf_slice.tower_ghast_art_v1"
       },
       "animations": {
         "move": "animation.tf_slice.tower_ghast.move"

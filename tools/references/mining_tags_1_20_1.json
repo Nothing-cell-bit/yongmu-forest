@@ -1,0 +1,1601 @@
+{
+  "schema_version": 1,
+  "game_version": "1.20.1",
+  "mod_version": "4.3.2508",
+  "layers": [
+    {
+      "archive_name": "client-1.20.1.jar",
+      "archive_sha256": "56b71336d2b4fdffd197f56595b0da93e32a946f78f382a299b8f4b92758bb0f",
+      "archive_sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838",
+      "tags": {
+        "data/minecraft/tags/blocks/acacia_logs.json": {
+          "values": [
+            "minecraft:acacia_log",
+            "minecraft:acacia_wood",
+            "minecraft:stripped_acacia_log",
+            "minecraft:stripped_acacia_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/all_hanging_signs.json": {
+          "values": [
+            "#minecraft:ceiling_hanging_signs",
+            "#minecraft:wall_hanging_signs"
+          ]
+        },
+        "data/minecraft/tags/blocks/anvil.json": {
+          "values": [
+            "minecraft:anvil",
+            "minecraft:chipped_anvil",
+            "minecraft:damaged_anvil"
+          ]
+        },
+        "data/minecraft/tags/blocks/bamboo_blocks.json": {
+          "values": [
+            "minecraft:bamboo_block",
+            "minecraft:stripped_bamboo_block"
+          ]
+        },
+        "data/minecraft/tags/blocks/banners.json": {
+          "values": [
+            "minecraft:white_banner",
+            "minecraft:orange_banner",
+            "minecraft:magenta_banner",
+            "minecraft:light_blue_banner",
+            "minecraft:yellow_banner",
+            "minecraft:lime_banner",
+            "minecraft:pink_banner",
+            "minecraft:gray_banner",
+            "minecraft:light_gray_banner",
+            "minecraft:cyan_banner",
+            "minecraft:purple_banner",
+            "minecraft:blue_banner",
+            "minecraft:brown_banner",
+            "minecraft:green_banner",
+            "minecraft:red_banner",
+            "minecraft:black_banner",
+            "minecraft:white_wall_banner",
+            "minecraft:orange_wall_banner",
+            "minecraft:magenta_wall_banner",
+            "minecraft:light_blue_wall_banner",
+            "minecraft:yellow_wall_banner",
+            "minecraft:lime_wall_banner",
+            "minecraft:pink_wall_banner",
+            "minecraft:gray_wall_banner",
+            "minecraft:light_gray_wall_banner",
+            "minecraft:cyan_wall_banner",
+            "minecraft:purple_wall_banner",
+            "minecraft:blue_wall_banner",
+            "minecraft:brown_wall_banner",
+            "minecraft:green_wall_banner",
+            "minecraft:red_wall_banner",
+            "minecraft:black_wall_banner"
+          ]
+        },
+        "data/minecraft/tags/blocks/birch_logs.json": {
+          "values": [
+            "minecraft:birch_log",
+            "minecraft:birch_wood",
+            "minecraft:stripped_birch_log",
+            "minecraft:stripped_birch_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/cauldrons.json": {
+          "values": [
+            "minecraft:cauldron",
+            "minecraft:water_cauldron",
+            "minecraft:lava_cauldron",
+            "minecraft:powder_snow_cauldron"
+          ]
+        },
+        "data/minecraft/tags/blocks/ceiling_hanging_signs.json": {
+          "values": [
+            "minecraft:oak_hanging_sign",
+            "minecraft:spruce_hanging_sign",
+            "minecraft:birch_hanging_sign",
+            "minecraft:acacia_hanging_sign",
+            "minecraft:cherry_hanging_sign",
+            "minecraft:jungle_hanging_sign",
+            "minecraft:dark_oak_hanging_sign",
+            "minecraft:crimson_hanging_sign",
+            "minecraft:warped_hanging_sign",
+            "minecraft:mangrove_hanging_sign",
+            "minecraft:bamboo_hanging_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/cherry_logs.json": {
+          "values": [
+            "minecraft:cherry_log",
+            "minecraft:cherry_wood",
+            "minecraft:stripped_cherry_log",
+            "minecraft:stripped_cherry_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/crimson_stems.json": {
+          "values": [
+            "minecraft:crimson_stem",
+            "minecraft:stripped_crimson_stem",
+            "minecraft:crimson_hyphae",
+            "minecraft:stripped_crimson_hyphae"
+          ]
+        },
+        "data/minecraft/tags/blocks/dark_oak_logs.json": {
+          "values": [
+            "minecraft:dark_oak_log",
+            "minecraft:dark_oak_wood",
+            "minecraft:stripped_dark_oak_log",
+            "minecraft:stripped_dark_oak_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/fence_gates.json": {
+          "values": [
+            "minecraft:acacia_fence_gate",
+            "minecraft:birch_fence_gate",
+            "minecraft:dark_oak_fence_gate",
+            "minecraft:jungle_fence_gate",
+            "minecraft:oak_fence_gate",
+            "minecraft:spruce_fence_gate",
+            "minecraft:crimson_fence_gate",
+            "minecraft:warped_fence_gate",
+            "minecraft:mangrove_fence_gate",
+            "minecraft:bamboo_fence_gate",
+            "minecraft:cherry_fence_gate"
+          ]
+        },
+        "data/minecraft/tags/blocks/jungle_logs.json": {
+          "values": [
+            "minecraft:jungle_log",
+            "minecraft:jungle_wood",
+            "minecraft:stripped_jungle_log",
+            "minecraft:stripped_jungle_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/logs.json": {
+          "values": [
+            "#minecraft:logs_that_burn",
+            "#minecraft:crimson_stems",
+            "#minecraft:warped_stems"
+          ]
+        },
+        "data/minecraft/tags/blocks/logs_that_burn.json": {
+          "values": [
+            "#minecraft:dark_oak_logs",
+            "#minecraft:oak_logs",
+            "#minecraft:acacia_logs",
+            "#minecraft:birch_logs",
+            "#minecraft:jungle_logs",
+            "#minecraft:spruce_logs",
+            "#minecraft:mangrove_logs",
+            "#minecraft:cherry_logs"
+          ]
+        },
+        "data/minecraft/tags/blocks/mangrove_logs.json": {
+          "values": [
+            "minecraft:mangrove_log",
+            "minecraft:mangrove_wood",
+            "minecraft:stripped_mangrove_log",
+            "minecraft:stripped_mangrove_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/axe.json": {
+          "values": [
+            "minecraft:note_block",
+            "minecraft:attached_melon_stem",
+            "minecraft:attached_pumpkin_stem",
+            "minecraft:azalea",
+            "minecraft:bamboo",
+            "minecraft:barrel",
+            "minecraft:bee_nest",
+            "minecraft:beehive",
+            "minecraft:beetroots",
+            "minecraft:big_dripleaf_stem",
+            "minecraft:big_dripleaf",
+            "minecraft:bookshelf",
+            "minecraft:brown_mushroom_block",
+            "minecraft:brown_mushroom",
+            "minecraft:campfire",
+            "minecraft:carrots",
+            "minecraft:cartography_table",
+            "minecraft:carved_pumpkin",
+            "minecraft:cave_vines_plant",
+            "minecraft:cave_vines",
+            "minecraft:chest",
+            "minecraft:chorus_flower",
+            "minecraft:chorus_plant",
+            "minecraft:cocoa",
+            "minecraft:composter",
+            "minecraft:crafting_table",
+            "minecraft:crimson_fungus",
+            "minecraft:daylight_detector",
+            "minecraft:dead_bush",
+            "minecraft:fern",
+            "minecraft:fletching_table",
+            "minecraft:glow_lichen",
+            "minecraft:grass",
+            "minecraft:hanging_roots",
+            "minecraft:jack_o_lantern",
+            "minecraft:jukebox",
+            "minecraft:ladder",
+            "minecraft:large_fern",
+            "minecraft:lectern",
+            "minecraft:lily_pad",
+            "minecraft:loom",
+            "minecraft:melon_stem",
+            "minecraft:melon",
+            "minecraft:mushroom_stem",
+            "minecraft:nether_wart",
+            "minecraft:potatoes",
+            "minecraft:pumpkin_stem",
+            "minecraft:pumpkin",
+            "minecraft:red_mushroom_block",
+            "minecraft:red_mushroom",
+            "minecraft:scaffolding",
+            "minecraft:small_dripleaf",
+            "minecraft:smithing_table",
+            "minecraft:soul_campfire",
+            "minecraft:spore_blossom",
+            "minecraft:sugar_cane",
+            "minecraft:sweet_berry_bush",
+            "minecraft:tall_grass",
+            "minecraft:trapped_chest",
+            "minecraft:twisting_vines_plant",
+            "minecraft:twisting_vines",
+            "minecraft:vine",
+            "minecraft:warped_fungus",
+            "minecraft:weeping_vines_plant",
+            "minecraft:weeping_vines",
+            "minecraft:wheat",
+            "#minecraft:banners",
+            "#minecraft:fence_gates",
+            "#minecraft:logs",
+            "#minecraft:planks",
+            "#minecraft:saplings",
+            "#minecraft:signs",
+            "#minecraft:wooden_buttons",
+            "#minecraft:wooden_doors",
+            "#minecraft:wooden_fences",
+            "#minecraft:wooden_pressure_plates",
+            "#minecraft:wooden_slabs",
+            "#minecraft:wooden_stairs",
+            "#minecraft:wooden_trapdoors",
+            "minecraft:mangrove_roots",
+            "#minecraft:all_hanging_signs",
+            "minecraft:bamboo_mosaic",
+            "minecraft:bamboo_mosaic_slab",
+            "minecraft:bamboo_mosaic_stairs",
+            "#minecraft:bamboo_blocks",
+            "minecraft:chiseled_bookshelf"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/hoe.json": {
+          "values": [
+            "minecraft:nether_wart_block",
+            "minecraft:warped_wart_block",
+            "minecraft:hay_block",
+            "minecraft:dried_kelp_block",
+            "minecraft:target",
+            "minecraft:shroomlight",
+            "minecraft:sponge",
+            "minecraft:wet_sponge",
+            "minecraft:jungle_leaves",
+            "minecraft:oak_leaves",
+            "minecraft:spruce_leaves",
+            "minecraft:dark_oak_leaves",
+            "minecraft:acacia_leaves",
+            "minecraft:birch_leaves",
+            "minecraft:azalea_leaves",
+            "minecraft:flowering_azalea_leaves",
+            "minecraft:mangrove_leaves",
+            "minecraft:sculk_sensor",
+            "minecraft:calibrated_sculk_sensor",
+            "minecraft:moss_block",
+            "minecraft:moss_carpet",
+            "minecraft:sculk",
+            "minecraft:sculk_catalyst",
+            "minecraft:sculk_vein",
+            "minecraft:sculk_shrieker",
+            "minecraft:pink_petals",
+            "minecraft:cherry_leaves"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/pickaxe.json": {
+          "values": [
+            "minecraft:stone",
+            "minecraft:granite",
+            "minecraft:polished_granite",
+            "minecraft:diorite",
+            "minecraft:polished_diorite",
+            "minecraft:andesite",
+            "minecraft:polished_andesite",
+            "minecraft:cobblestone",
+            "minecraft:gold_ore",
+            "minecraft:deepslate_gold_ore",
+            "minecraft:iron_ore",
+            "minecraft:deepslate_iron_ore",
+            "minecraft:coal_ore",
+            "minecraft:deepslate_coal_ore",
+            "minecraft:nether_gold_ore",
+            "minecraft:lapis_ore",
+            "minecraft:deepslate_lapis_ore",
+            "minecraft:lapis_block",
+            "minecraft:dispenser",
+            "minecraft:sandstone",
+            "minecraft:chiseled_sandstone",
+            "minecraft:cut_sandstone",
+            "minecraft:gold_block",
+            "minecraft:iron_block",
+            "minecraft:bricks",
+            "minecraft:mossy_cobblestone",
+            "minecraft:obsidian",
+            "minecraft:spawner",
+            "minecraft:diamond_ore",
+            "minecraft:deepslate_diamond_ore",
+            "minecraft:diamond_block",
+            "minecraft:furnace",
+            "minecraft:cobblestone_stairs",
+            "minecraft:stone_pressure_plate",
+            "minecraft:iron_door",
+            "minecraft:redstone_ore",
+            "minecraft:deepslate_redstone_ore",
+            "minecraft:netherrack",
+            "minecraft:basalt",
+            "minecraft:polished_basalt",
+            "minecraft:stone_bricks",
+            "minecraft:mossy_stone_bricks",
+            "minecraft:cracked_stone_bricks",
+            "minecraft:chiseled_stone_bricks",
+            "minecraft:iron_bars",
+            "minecraft:chain",
+            "minecraft:brick_stairs",
+            "minecraft:stone_brick_stairs",
+            "minecraft:nether_bricks",
+            "minecraft:nether_brick_fence",
+            "minecraft:nether_brick_stairs",
+            "minecraft:enchanting_table",
+            "minecraft:brewing_stand",
+            "minecraft:end_stone",
+            "minecraft:sandstone_stairs",
+            "minecraft:emerald_ore",
+            "minecraft:deepslate_emerald_ore",
+            "minecraft:ender_chest",
+            "minecraft:emerald_block",
+            "minecraft:light_weighted_pressure_plate",
+            "minecraft:heavy_weighted_pressure_plate",
+            "minecraft:redstone_block",
+            "minecraft:nether_quartz_ore",
+            "minecraft:hopper",
+            "minecraft:quartz_block",
+            "minecraft:chiseled_quartz_block",
+            "minecraft:quartz_pillar",
+            "minecraft:quartz_stairs",
+            "minecraft:dropper",
+            "minecraft:white_terracotta",
+            "minecraft:orange_terracotta",
+            "minecraft:magenta_terracotta",
+            "minecraft:light_blue_terracotta",
+            "minecraft:yellow_terracotta",
+            "minecraft:lime_terracotta",
+            "minecraft:pink_terracotta",
+            "minecraft:gray_terracotta",
+            "minecraft:light_gray_terracotta",
+            "minecraft:cyan_terracotta",
+            "minecraft:purple_terracotta",
+            "minecraft:blue_terracotta",
+            "minecraft:brown_terracotta",
+            "minecraft:green_terracotta",
+            "minecraft:red_terracotta",
+            "minecraft:black_terracotta",
+            "minecraft:iron_trapdoor",
+            "minecraft:prismarine",
+            "minecraft:prismarine_bricks",
+            "minecraft:dark_prismarine",
+            "minecraft:prismarine_stairs",
+            "minecraft:prismarine_brick_stairs",
+            "minecraft:dark_prismarine_stairs",
+            "minecraft:prismarine_slab",
+            "minecraft:prismarine_brick_slab",
+            "minecraft:dark_prismarine_slab",
+            "minecraft:terracotta",
+            "minecraft:coal_block",
+            "minecraft:red_sandstone",
+            "minecraft:chiseled_red_sandstone",
+            "minecraft:cut_red_sandstone",
+            "minecraft:red_sandstone_stairs",
+            "minecraft:stone_slab",
+            "minecraft:smooth_stone_slab",
+            "minecraft:sandstone_slab",
+            "minecraft:cut_sandstone_slab",
+            "minecraft:petrified_oak_slab",
+            "minecraft:cobblestone_slab",
+            "minecraft:brick_slab",
+            "minecraft:stone_brick_slab",
+            "minecraft:nether_brick_slab",
+            "minecraft:quartz_slab",
+            "minecraft:red_sandstone_slab",
+            "minecraft:cut_red_sandstone_slab",
+            "minecraft:purpur_slab",
+            "minecraft:smooth_stone",
+            "minecraft:smooth_sandstone",
+            "minecraft:smooth_quartz",
+            "minecraft:smooth_red_sandstone",
+            "minecraft:purpur_block",
+            "minecraft:purpur_pillar",
+            "minecraft:purpur_stairs",
+            "minecraft:end_stone_bricks",
+            "minecraft:magma_block",
+            "minecraft:red_nether_bricks",
+            "minecraft:bone_block",
+            "minecraft:observer",
+            "minecraft:white_glazed_terracotta",
+            "minecraft:orange_glazed_terracotta",
+            "minecraft:magenta_glazed_terracotta",
+            "minecraft:light_blue_glazed_terracotta",
+            "minecraft:yellow_glazed_terracotta",
+            "minecraft:lime_glazed_terracotta",
+            "minecraft:pink_glazed_terracotta",
+            "minecraft:gray_glazed_terracotta",
+            "minecraft:light_gray_glazed_terracotta",
+            "minecraft:cyan_glazed_terracotta",
+            "minecraft:purple_glazed_terracotta",
+            "minecraft:blue_glazed_terracotta",
+            "minecraft:brown_glazed_terracotta",
+            "minecraft:green_glazed_terracotta",
+            "minecraft:red_glazed_terracotta",
+            "minecraft:black_glazed_terracotta",
+            "minecraft:white_concrete",
+            "minecraft:orange_concrete",
+            "minecraft:magenta_concrete",
+            "minecraft:light_blue_concrete",
+            "minecraft:yellow_concrete",
+            "minecraft:lime_concrete",
+            "minecraft:pink_concrete",
+            "minecraft:gray_concrete",
+            "minecraft:light_gray_concrete",
+            "minecraft:cyan_concrete",
+            "minecraft:purple_concrete",
+            "minecraft:blue_concrete",
+            "minecraft:brown_concrete",
+            "minecraft:green_concrete",
+            "minecraft:red_concrete",
+            "minecraft:black_concrete",
+            "minecraft:dead_tube_coral_block",
+            "minecraft:dead_brain_coral_block",
+            "minecraft:dead_bubble_coral_block",
+            "minecraft:dead_fire_coral_block",
+            "minecraft:dead_horn_coral_block",
+            "minecraft:tube_coral_block",
+            "minecraft:brain_coral_block",
+            "minecraft:bubble_coral_block",
+            "minecraft:fire_coral_block",
+            "minecraft:horn_coral_block",
+            "minecraft:dead_tube_coral",
+            "minecraft:dead_brain_coral",
+            "minecraft:dead_bubble_coral",
+            "minecraft:dead_fire_coral",
+            "minecraft:dead_horn_coral",
+            "minecraft:dead_tube_coral_fan",
+            "minecraft:dead_brain_coral_fan",
+            "minecraft:dead_bubble_coral_fan",
+            "minecraft:dead_fire_coral_fan",
+            "minecraft:dead_horn_coral_fan",
+            "minecraft:dead_tube_coral_wall_fan",
+            "minecraft:dead_brain_coral_wall_fan",
+            "minecraft:dead_bubble_coral_wall_fan",
+            "minecraft:dead_fire_coral_wall_fan",
+            "minecraft:dead_horn_coral_wall_fan",
+            "minecraft:polished_granite_stairs",
+            "minecraft:smooth_red_sandstone_stairs",
+            "minecraft:mossy_stone_brick_stairs",
+            "minecraft:polished_diorite_stairs",
+            "minecraft:mossy_cobblestone_stairs",
+            "minecraft:end_stone_brick_stairs",
+            "minecraft:stone_stairs",
+            "minecraft:smooth_sandstone_stairs",
+            "minecraft:smooth_quartz_stairs",
+            "minecraft:granite_stairs",
+            "minecraft:andesite_stairs",
+            "minecraft:red_nether_brick_stairs",
+            "minecraft:polished_andesite_stairs",
+            "minecraft:diorite_stairs",
+            "minecraft:polished_granite_slab",
+            "minecraft:smooth_red_sandstone_slab",
+            "minecraft:mossy_stone_brick_slab",
+            "minecraft:polished_diorite_slab",
+            "minecraft:mossy_cobblestone_slab",
+            "minecraft:end_stone_brick_slab",
+            "minecraft:smooth_sandstone_slab",
+            "minecraft:smooth_quartz_slab",
+            "minecraft:granite_slab",
+            "minecraft:andesite_slab",
+            "minecraft:red_nether_brick_slab",
+            "minecraft:polished_andesite_slab",
+            "minecraft:diorite_slab",
+            "minecraft:smoker",
+            "minecraft:blast_furnace",
+            "minecraft:grindstone",
+            "minecraft:stonecutter",
+            "minecraft:bell",
+            "minecraft:lantern",
+            "minecraft:soul_lantern",
+            "minecraft:warped_nylium",
+            "minecraft:crimson_nylium",
+            "minecraft:netherite_block",
+            "minecraft:ancient_debris",
+            "minecraft:crying_obsidian",
+            "minecraft:respawn_anchor",
+            "minecraft:lodestone",
+            "minecraft:blackstone",
+            "minecraft:blackstone_stairs",
+            "minecraft:blackstone_slab",
+            "minecraft:polished_blackstone",
+            "minecraft:polished_blackstone_bricks",
+            "minecraft:cracked_polished_blackstone_bricks",
+            "minecraft:chiseled_polished_blackstone",
+            "minecraft:polished_blackstone_brick_slab",
+            "minecraft:polished_blackstone_brick_stairs",
+            "minecraft:gilded_blackstone",
+            "minecraft:polished_blackstone_stairs",
+            "minecraft:polished_blackstone_slab",
+            "minecraft:polished_blackstone_pressure_plate",
+            "minecraft:chiseled_nether_bricks",
+            "minecraft:cracked_nether_bricks",
+            "minecraft:quartz_bricks",
+            "minecraft:tuff",
+            "minecraft:calcite",
+            "minecraft:oxidized_copper",
+            "minecraft:weathered_copper",
+            "minecraft:exposed_copper",
+            "minecraft:copper_block",
+            "minecraft:copper_ore",
+            "minecraft:deepslate_copper_ore",
+            "minecraft:oxidized_cut_copper",
+            "minecraft:weathered_cut_copper",
+            "minecraft:exposed_cut_copper",
+            "minecraft:cut_copper",
+            "minecraft:oxidized_cut_copper_stairs",
+            "minecraft:weathered_cut_copper_stairs",
+            "minecraft:exposed_cut_copper_stairs",
+            "minecraft:cut_copper_stairs",
+            "minecraft:oxidized_cut_copper_slab",
+            "minecraft:weathered_cut_copper_slab",
+            "minecraft:exposed_cut_copper_slab",
+            "minecraft:cut_copper_slab",
+            "minecraft:waxed_copper_block",
+            "minecraft:waxed_weathered_copper",
+            "minecraft:waxed_exposed_copper",
+            "minecraft:waxed_oxidized_copper",
+            "minecraft:waxed_oxidized_cut_copper",
+            "minecraft:waxed_weathered_cut_copper",
+            "minecraft:waxed_exposed_cut_copper",
+            "minecraft:waxed_cut_copper",
+            "minecraft:waxed_oxidized_cut_copper_stairs",
+            "minecraft:waxed_weathered_cut_copper_stairs",
+            "minecraft:waxed_exposed_cut_copper_stairs",
+            "minecraft:waxed_cut_copper_stairs",
+            "minecraft:waxed_oxidized_cut_copper_slab",
+            "minecraft:waxed_weathered_cut_copper_slab",
+            "minecraft:waxed_exposed_cut_copper_slab",
+            "minecraft:waxed_cut_copper_slab",
+            "minecraft:lightning_rod",
+            "minecraft:pointed_dripstone",
+            "minecraft:dripstone_block",
+            "minecraft:deepslate",
+            "minecraft:cobbled_deepslate",
+            "minecraft:cobbled_deepslate_stairs",
+            "minecraft:cobbled_deepslate_slab",
+            "minecraft:polished_deepslate",
+            "minecraft:polished_deepslate_stairs",
+            "minecraft:polished_deepslate_slab",
+            "minecraft:deepslate_tiles",
+            "minecraft:deepslate_tile_stairs",
+            "minecraft:deepslate_tile_slab",
+            "minecraft:deepslate_bricks",
+            "minecraft:deepslate_brick_stairs",
+            "minecraft:deepslate_brick_slab",
+            "minecraft:chiseled_deepslate",
+            "minecraft:cracked_deepslate_bricks",
+            "minecraft:cracked_deepslate_tiles",
+            "minecraft:smooth_basalt",
+            "minecraft:raw_iron_block",
+            "minecraft:raw_copper_block",
+            "minecraft:raw_gold_block",
+            "minecraft:ice",
+            "minecraft:packed_ice",
+            "minecraft:blue_ice",
+            "minecraft:piston",
+            "minecraft:sticky_piston",
+            "minecraft:piston_head",
+            "minecraft:amethyst_cluster",
+            "minecraft:small_amethyst_bud",
+            "minecraft:medium_amethyst_bud",
+            "minecraft:large_amethyst_bud",
+            "minecraft:amethyst_block",
+            "minecraft:budding_amethyst",
+            "minecraft:infested_cobblestone",
+            "minecraft:infested_chiseled_stone_bricks",
+            "minecraft:infested_cracked_stone_bricks",
+            "minecraft:infested_deepslate",
+            "minecraft:infested_stone",
+            "minecraft:infested_mossy_stone_bricks",
+            "minecraft:infested_stone_bricks",
+            "#minecraft:stone_buttons",
+            "#minecraft:walls",
+            "#minecraft:shulker_boxes",
+            "#minecraft:anvil",
+            "#minecraft:cauldrons",
+            "#minecraft:rails",
+            "minecraft:conduit",
+            "minecraft:mud_bricks",
+            "minecraft:mud_brick_stairs",
+            "minecraft:mud_brick_slab",
+            "minecraft:packed_mud"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/shovel.json": {
+          "values": [
+            "minecraft:clay",
+            "minecraft:dirt",
+            "minecraft:coarse_dirt",
+            "minecraft:podzol",
+            "minecraft:farmland",
+            "minecraft:grass_block",
+            "minecraft:gravel",
+            "minecraft:mycelium",
+            "minecraft:sand",
+            "minecraft:red_sand",
+            "minecraft:snow_block",
+            "minecraft:snow",
+            "minecraft:soul_sand",
+            "minecraft:dirt_path",
+            "minecraft:white_concrete_powder",
+            "minecraft:orange_concrete_powder",
+            "minecraft:magenta_concrete_powder",
+            "minecraft:light_blue_concrete_powder",
+            "minecraft:yellow_concrete_powder",
+            "minecraft:lime_concrete_powder",
+            "minecraft:pink_concrete_powder",
+            "minecraft:gray_concrete_powder",
+            "minecraft:light_gray_concrete_powder",
+            "minecraft:cyan_concrete_powder",
+            "minecraft:purple_concrete_powder",
+            "minecraft:blue_concrete_powder",
+            "minecraft:brown_concrete_powder",
+            "minecraft:green_concrete_powder",
+            "minecraft:red_concrete_powder",
+            "minecraft:black_concrete_powder",
+            "minecraft:soul_soil",
+            "minecraft:rooted_dirt",
+            "minecraft:muddy_mangrove_roots",
+            "minecraft:mud",
+            "minecraft:suspicious_sand",
+            "minecraft:suspicious_gravel"
+          ]
+        },
+        "data/minecraft/tags/blocks/needs_diamond_tool.json": {
+          "values": [
+            "minecraft:obsidian",
+            "minecraft:crying_obsidian",
+            "minecraft:netherite_block",
+            "minecraft:respawn_anchor",
+            "minecraft:ancient_debris"
+          ]
+        },
+        "data/minecraft/tags/blocks/needs_iron_tool.json": {
+          "values": [
+            "minecraft:diamond_block",
+            "minecraft:diamond_ore",
+            "minecraft:deepslate_diamond_ore",
+            "minecraft:emerald_ore",
+            "minecraft:deepslate_emerald_ore",
+            "minecraft:emerald_block",
+            "minecraft:gold_block",
+            "minecraft:raw_gold_block",
+            "minecraft:gold_ore",
+            "minecraft:deepslate_gold_ore",
+            "minecraft:redstone_ore",
+            "minecraft:deepslate_redstone_ore"
+          ]
+        },
+        "data/minecraft/tags/blocks/needs_stone_tool.json": {
+          "values": [
+            "minecraft:iron_block",
+            "minecraft:raw_iron_block",
+            "minecraft:iron_ore",
+            "minecraft:deepslate_iron_ore",
+            "minecraft:lapis_block",
+            "minecraft:lapis_ore",
+            "minecraft:deepslate_lapis_ore",
+            "minecraft:copper_block",
+            "minecraft:raw_copper_block",
+            "minecraft:copper_ore",
+            "minecraft:deepslate_copper_ore",
+            "minecraft:cut_copper_slab",
+            "minecraft:cut_copper_stairs",
+            "minecraft:cut_copper",
+            "minecraft:weathered_copper",
+            "minecraft:weathered_cut_copper_slab",
+            "minecraft:weathered_cut_copper_stairs",
+            "minecraft:weathered_cut_copper",
+            "minecraft:oxidized_copper",
+            "minecraft:oxidized_cut_copper_slab",
+            "minecraft:oxidized_cut_copper_stairs",
+            "minecraft:oxidized_cut_copper",
+            "minecraft:exposed_copper",
+            "minecraft:exposed_cut_copper_slab",
+            "minecraft:exposed_cut_copper_stairs",
+            "minecraft:exposed_cut_copper",
+            "minecraft:waxed_copper_block",
+            "minecraft:waxed_cut_copper_slab",
+            "minecraft:waxed_cut_copper_stairs",
+            "minecraft:waxed_cut_copper",
+            "minecraft:waxed_weathered_copper",
+            "minecraft:waxed_weathered_cut_copper_slab",
+            "minecraft:waxed_weathered_cut_copper_stairs",
+            "minecraft:waxed_weathered_cut_copper",
+            "minecraft:waxed_exposed_copper",
+            "minecraft:waxed_exposed_cut_copper_slab",
+            "minecraft:waxed_exposed_cut_copper_stairs",
+            "minecraft:waxed_exposed_cut_copper",
+            "minecraft:waxed_oxidized_copper",
+            "minecraft:waxed_oxidized_cut_copper_slab",
+            "minecraft:waxed_oxidized_cut_copper_stairs",
+            "minecraft:waxed_oxidized_cut_copper",
+            "minecraft:lightning_rod"
+          ]
+        },
+        "data/minecraft/tags/blocks/oak_logs.json": {
+          "values": [
+            "minecraft:oak_log",
+            "minecraft:oak_wood",
+            "minecraft:stripped_oak_log",
+            "minecraft:stripped_oak_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/planks.json": {
+          "values": [
+            "minecraft:oak_planks",
+            "minecraft:spruce_planks",
+            "minecraft:birch_planks",
+            "minecraft:jungle_planks",
+            "minecraft:acacia_planks",
+            "minecraft:dark_oak_planks",
+            "minecraft:crimson_planks",
+            "minecraft:warped_planks",
+            "minecraft:mangrove_planks",
+            "minecraft:bamboo_planks",
+            "minecraft:cherry_planks"
+          ]
+        },
+        "data/minecraft/tags/blocks/rails.json": {
+          "values": [
+            "minecraft:rail",
+            "minecraft:powered_rail",
+            "minecraft:detector_rail",
+            "minecraft:activator_rail"
+          ]
+        },
+        "data/minecraft/tags/blocks/saplings.json": {
+          "values": [
+            "minecraft:oak_sapling",
+            "minecraft:spruce_sapling",
+            "minecraft:birch_sapling",
+            "minecraft:jungle_sapling",
+            "minecraft:acacia_sapling",
+            "minecraft:dark_oak_sapling",
+            "minecraft:azalea",
+            "minecraft:flowering_azalea",
+            "minecraft:mangrove_propagule",
+            "minecraft:cherry_sapling"
+          ]
+        },
+        "data/minecraft/tags/blocks/shulker_boxes.json": {
+          "values": [
+            "minecraft:shulker_box",
+            "minecraft:black_shulker_box",
+            "minecraft:blue_shulker_box",
+            "minecraft:brown_shulker_box",
+            "minecraft:cyan_shulker_box",
+            "minecraft:gray_shulker_box",
+            "minecraft:green_shulker_box",
+            "minecraft:light_blue_shulker_box",
+            "minecraft:light_gray_shulker_box",
+            "minecraft:lime_shulker_box",
+            "minecraft:magenta_shulker_box",
+            "minecraft:orange_shulker_box",
+            "minecraft:pink_shulker_box",
+            "minecraft:purple_shulker_box",
+            "minecraft:red_shulker_box",
+            "minecraft:white_shulker_box",
+            "minecraft:yellow_shulker_box"
+          ]
+        },
+        "data/minecraft/tags/blocks/signs.json": {
+          "values": [
+            "#minecraft:standing_signs",
+            "#minecraft:wall_signs"
+          ]
+        },
+        "data/minecraft/tags/blocks/spruce_logs.json": {
+          "values": [
+            "minecraft:spruce_log",
+            "minecraft:spruce_wood",
+            "minecraft:stripped_spruce_log",
+            "minecraft:stripped_spruce_wood"
+          ]
+        },
+        "data/minecraft/tags/blocks/standing_signs.json": {
+          "values": [
+            "minecraft:oak_sign",
+            "minecraft:spruce_sign",
+            "minecraft:birch_sign",
+            "minecraft:acacia_sign",
+            "minecraft:jungle_sign",
+            "minecraft:dark_oak_sign",
+            "minecraft:crimson_sign",
+            "minecraft:warped_sign",
+            "minecraft:mangrove_sign",
+            "minecraft:bamboo_sign",
+            "minecraft:cherry_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/stone_buttons.json": {
+          "values": [
+            "minecraft:stone_button",
+            "minecraft:polished_blackstone_button"
+          ]
+        },
+        "data/minecraft/tags/blocks/wall_hanging_signs.json": {
+          "values": [
+            "minecraft:oak_wall_hanging_sign",
+            "minecraft:spruce_wall_hanging_sign",
+            "minecraft:birch_wall_hanging_sign",
+            "minecraft:acacia_wall_hanging_sign",
+            "minecraft:cherry_wall_hanging_sign",
+            "minecraft:jungle_wall_hanging_sign",
+            "minecraft:dark_oak_wall_hanging_sign",
+            "minecraft:crimson_wall_hanging_sign",
+            "minecraft:warped_wall_hanging_sign",
+            "minecraft:mangrove_wall_hanging_sign",
+            "minecraft:bamboo_wall_hanging_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/wall_signs.json": {
+          "values": [
+            "minecraft:oak_wall_sign",
+            "minecraft:spruce_wall_sign",
+            "minecraft:birch_wall_sign",
+            "minecraft:acacia_wall_sign",
+            "minecraft:jungle_wall_sign",
+            "minecraft:dark_oak_wall_sign",
+            "minecraft:crimson_wall_sign",
+            "minecraft:warped_wall_sign",
+            "minecraft:mangrove_wall_sign",
+            "minecraft:bamboo_wall_sign",
+            "minecraft:cherry_wall_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/walls.json": {
+          "values": [
+            "minecraft:cobblestone_wall",
+            "minecraft:mossy_cobblestone_wall",
+            "minecraft:brick_wall",
+            "minecraft:prismarine_wall",
+            "minecraft:red_sandstone_wall",
+            "minecraft:mossy_stone_brick_wall",
+            "minecraft:granite_wall",
+            "minecraft:stone_brick_wall",
+            "minecraft:nether_brick_wall",
+            "minecraft:andesite_wall",
+            "minecraft:red_nether_brick_wall",
+            "minecraft:sandstone_wall",
+            "minecraft:end_stone_brick_wall",
+            "minecraft:diorite_wall",
+            "minecraft:blackstone_wall",
+            "minecraft:polished_blackstone_brick_wall",
+            "minecraft:polished_blackstone_wall",
+            "minecraft:cobbled_deepslate_wall",
+            "minecraft:polished_deepslate_wall",
+            "minecraft:deepslate_tile_wall",
+            "minecraft:deepslate_brick_wall",
+            "minecraft:mud_brick_wall"
+          ]
+        },
+        "data/minecraft/tags/blocks/warped_stems.json": {
+          "values": [
+            "minecraft:warped_stem",
+            "minecraft:stripped_warped_stem",
+            "minecraft:warped_hyphae",
+            "minecraft:stripped_warped_hyphae"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_buttons.json": {
+          "values": [
+            "minecraft:oak_button",
+            "minecraft:spruce_button",
+            "minecraft:birch_button",
+            "minecraft:jungle_button",
+            "minecraft:acacia_button",
+            "minecraft:dark_oak_button",
+            "minecraft:crimson_button",
+            "minecraft:warped_button",
+            "minecraft:mangrove_button",
+            "minecraft:bamboo_button",
+            "minecraft:cherry_button"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_doors.json": {
+          "values": [
+            "minecraft:oak_door",
+            "minecraft:spruce_door",
+            "minecraft:birch_door",
+            "minecraft:jungle_door",
+            "minecraft:acacia_door",
+            "minecraft:dark_oak_door",
+            "minecraft:crimson_door",
+            "minecraft:warped_door",
+            "minecraft:mangrove_door",
+            "minecraft:bamboo_door",
+            "minecraft:cherry_door"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_fences.json": {
+          "values": [
+            "minecraft:oak_fence",
+            "minecraft:acacia_fence",
+            "minecraft:dark_oak_fence",
+            "minecraft:spruce_fence",
+            "minecraft:birch_fence",
+            "minecraft:jungle_fence",
+            "minecraft:crimson_fence",
+            "minecraft:warped_fence",
+            "minecraft:mangrove_fence",
+            "minecraft:bamboo_fence",
+            "minecraft:cherry_fence"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_pressure_plates.json": {
+          "values": [
+            "minecraft:oak_pressure_plate",
+            "minecraft:spruce_pressure_plate",
+            "minecraft:birch_pressure_plate",
+            "minecraft:jungle_pressure_plate",
+            "minecraft:acacia_pressure_plate",
+            "minecraft:dark_oak_pressure_plate",
+            "minecraft:crimson_pressure_plate",
+            "minecraft:warped_pressure_plate",
+            "minecraft:mangrove_pressure_plate",
+            "minecraft:bamboo_pressure_plate",
+            "minecraft:cherry_pressure_plate"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_slabs.json": {
+          "values": [
+            "minecraft:oak_slab",
+            "minecraft:spruce_slab",
+            "minecraft:birch_slab",
+            "minecraft:jungle_slab",
+            "minecraft:acacia_slab",
+            "minecraft:dark_oak_slab",
+            "minecraft:crimson_slab",
+            "minecraft:warped_slab",
+            "minecraft:mangrove_slab",
+            "minecraft:bamboo_slab",
+            "minecraft:cherry_slab"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_stairs.json": {
+          "values": [
+            "minecraft:oak_stairs",
+            "minecraft:spruce_stairs",
+            "minecraft:birch_stairs",
+            "minecraft:jungle_stairs",
+            "minecraft:acacia_stairs",
+            "minecraft:dark_oak_stairs",
+            "minecraft:crimson_stairs",
+            "minecraft:warped_stairs",
+            "minecraft:mangrove_stairs",
+            "minecraft:bamboo_stairs",
+            "minecraft:cherry_stairs"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_trapdoors.json": {
+          "values": [
+            "minecraft:acacia_trapdoor",
+            "minecraft:birch_trapdoor",
+            "minecraft:dark_oak_trapdoor",
+            "minecraft:jungle_trapdoor",
+            "minecraft:oak_trapdoor",
+            "minecraft:spruce_trapdoor",
+            "minecraft:crimson_trapdoor",
+            "minecraft:warped_trapdoor",
+            "minecraft:mangrove_trapdoor",
+            "minecraft:bamboo_trapdoor",
+            "minecraft:cherry_trapdoor"
+          ]
+        }
+      }
+    },
+    {
+      "archive_name": "[暮色森林] twilightforest-1.20.1-4.3.2508-universal.jar",
+      "archive_sha256": "0bdc89263616d1b35c32ef82c5e9c14cbd20368e2fe8b468c72a28320be7a778",
+      "archive_sha1": "fa3b506a45d3e9c465551cd533fd50c899496e9f",
+      "tags": {
+        "data/forge/tags/blocks/needs_wood_tool.json": {
+          "values": [
+            "twilightforest:nagastone",
+            "twilightforest:nagastone_head",
+            "twilightforest:etched_nagastone",
+            "twilightforest:cracked_etched_nagastone",
+            "twilightforest:mossy_etched_nagastone",
+            "twilightforest:nagastone_pillar",
+            "twilightforest:cracked_nagastone_pillar",
+            "twilightforest:mossy_nagastone_pillar",
+            "twilightforest:nagastone_stairs_left",
+            "twilightforest:cracked_nagastone_stairs_left",
+            "twilightforest:mossy_nagastone_stairs_left",
+            "twilightforest:nagastone_stairs_right",
+            "twilightforest:cracked_nagastone_stairs_right",
+            "twilightforest:mossy_nagastone_stairs_right",
+            "twilightforest:spiral_bricks",
+            "twilightforest:twisted_stone",
+            "twilightforest:twisted_stone_pillar",
+            "twilightforest:bold_stone_pillar",
+            "twilightforest:aurora_pillar",
+            "twilightforest:aurora_slab",
+            "twilightforest:trollsteinn"
+          ]
+        },
+        "data/minecraft/tags/blocks/ceiling_hanging_signs.json": {
+          "values": [
+            "twilightforest:twilight_oak_hanging_sign",
+            "twilightforest:canopy_hanging_sign",
+            "twilightforest:mangrove_hanging_sign",
+            "twilightforest:dark_hanging_sign",
+            "twilightforest:time_hanging_sign",
+            "twilightforest:transformation_hanging_sign",
+            "twilightforest:mining_hanging_sign",
+            "twilightforest:sorting_hanging_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/fence_gates.json": {
+          "values": [
+            "twilightforest:twilight_oak_fence_gate",
+            "twilightforest:canopy_fence_gate",
+            "twilightforest:mangrove_fence_gate",
+            "twilightforest:dark_fence_gate",
+            "twilightforest:time_fence_gate",
+            "twilightforest:transformation_fence_gate",
+            "twilightforest:mining_fence_gate",
+            "twilightforest:sorting_fence_gate"
+          ]
+        },
+        "data/minecraft/tags/blocks/logs.json": {
+          "values": [
+            "#twilightforest:logs"
+          ]
+        },
+        "data/minecraft/tags/blocks/logs_that_burn.json": {
+          "values": [
+            "#twilightforest:twilight_oak_logs",
+            "#twilightforest:canopy_logs",
+            "#twilightforest:mangrove_logs",
+            "#twilightforest:timewood_logs",
+            "#twilightforest:transwood_logs",
+            "#twilightforest:mining_logs",
+            "#twilightforest:sortwood_logs"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/axe.json": {
+          "values": [
+            "twilightforest:hedge",
+            "twilightforest:root",
+            "twilightforest:liveroot_block",
+            "twilightforest:mangrove_root",
+            "twilightforest:uncrafting_table",
+            "twilightforest:encased_smoker",
+            "twilightforest:encased_fire_jet",
+            "twilightforest:time_log_core",
+            "twilightforest:transformation_log_core",
+            "twilightforest:mining_log_core",
+            "twilightforest:sorting_log_core",
+            "twilightforest:reappearing_block",
+            "twilightforest:vanishing_block",
+            "twilightforest:antibuilder",
+            "twilightforest:carminite_reactor",
+            "twilightforest:carminite_builder",
+            "twilightforest:ghast_trap",
+            "twilightforest:huge_stalk",
+            "twilightforest:huge_mushgloom",
+            "twilightforest:huge_mushgloom_stem",
+            "twilightforest:cinder_log",
+            "twilightforest:cinder_wood",
+            "twilightforest:ironwood_block",
+            "twilightforest:death_tome_spawner",
+            "twilightforest:empty_canopy_bookshelf",
+            "twilightforest:canopy_bookshelf",
+            "twilightforest:twilight_oak_chest",
+            "twilightforest:canopy_chest",
+            "twilightforest:mangrove_chest",
+            "twilightforest:dark_chest",
+            "twilightforest:time_chest",
+            "twilightforest:transformation_chest",
+            "twilightforest:mining_chest",
+            "twilightforest:sorting_chest",
+            "#twilightforest:banisters",
+            "#twilightforest:hollow_logs",
+            "#twilightforest:towerwood"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/hoe.json": {
+          "values": [
+            "twilightforest:twilight_oak_leaves",
+            "twilightforest:canopy_leaves",
+            "twilightforest:mangrove_leaves",
+            "twilightforest:dark_leaves",
+            "twilightforest:rainbow_oak_leaves",
+            "twilightforest:time_leaves",
+            "twilightforest:transformation_leaves",
+            "twilightforest:mining_leaves",
+            "twilightforest:sorting_leaves",
+            "twilightforest:thorn_leaves",
+            "twilightforest:thorn_rose",
+            "twilightforest:beanstalk_leaves",
+            "twilightforest:steeleaf_block",
+            "twilightforest:arctic_fur_block"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/pickaxe.json": {
+          "values": [
+            "twilightforest:nagastone",
+            "twilightforest:nagastone_head",
+            "twilightforest:stronghold_shield",
+            "twilightforest:trophy_pedestal",
+            "twilightforest:aurora_pillar",
+            "twilightforest:aurora_slab",
+            "twilightforest:underbrick",
+            "twilightforest:mossy_underbrick",
+            "twilightforest:cracked_underbrick",
+            "twilightforest:underbrick_floor",
+            "twilightforest:deadrock",
+            "twilightforest:cracked_deadrock",
+            "twilightforest:weathered_deadrock",
+            "twilightforest:trollsteinn",
+            "twilightforest:giant_leaves",
+            "twilightforest:giant_obsidian",
+            "twilightforest:giant_cobblestone",
+            "twilightforest:giant_log",
+            "twilightforest:cinder_furnace",
+            "twilightforest:twilight_portal_miniature_structure",
+            "twilightforest:naga_courtyard_miniature_structure",
+            "twilightforest:lich_tower_miniature_structure",
+            "twilightforest:knightmetal_block",
+            "twilightforest:ironwood_block",
+            "twilightforest:fiery_block",
+            "twilightforest:spiral_bricks",
+            "twilightforest:etched_nagastone",
+            "twilightforest:nagastone_pillar",
+            "twilightforest:nagastone_stairs_left",
+            "twilightforest:nagastone_stairs_right",
+            "twilightforest:mossy_etched_nagastone",
+            "twilightforest:mossy_nagastone_pillar",
+            "twilightforest:mossy_nagastone_stairs_left",
+            "twilightforest:mossy_nagastone_stairs_right",
+            "twilightforest:cracked_etched_nagastone",
+            "twilightforest:cracked_nagastone_pillar",
+            "twilightforest:cracked_nagastone_stairs_left",
+            "twilightforest:cracked_nagastone_stairs_right",
+            "twilightforest:iron_ladder",
+            "twilightforest:twisted_stone",
+            "twilightforest:twisted_stone_pillar",
+            "twilightforest:keepsake_casket",
+            "twilightforest:bold_stone_pillar",
+            "#twilightforest:mazestone",
+            "#twilightforest:castle_blocks"
+          ]
+        },
+        "data/minecraft/tags/blocks/mineable/shovel.json": {
+          "values": [
+            "twilightforest:smoker",
+            "twilightforest:fire_jet",
+            "twilightforest:uberous_soil"
+          ]
+        },
+        "data/minecraft/tags/blocks/needs_diamond_tool.json": {
+          "values": [
+            "twilightforest:aurora_block",
+            "twilightforest:deadrock",
+            "twilightforest:cracked_deadrock",
+            "twilightforest:weathered_deadrock",
+            "#twilightforest:castle_blocks",
+            "#twilightforest:mazestone"
+          ]
+        },
+        "data/minecraft/tags/blocks/needs_iron_tool.json": {
+          "values": [
+            "twilightforest:fiery_block",
+            "twilightforest:knightmetal_block"
+          ]
+        },
+        "data/minecraft/tags/blocks/needs_stone_tool.json": {
+          "values": [
+            "twilightforest:underbrick",
+            "twilightforest:cracked_underbrick",
+            "twilightforest:mossy_underbrick",
+            "twilightforest:underbrick_floor",
+            "twilightforest:iron_ladder"
+          ]
+        },
+        "data/minecraft/tags/blocks/planks.json": {
+          "values": [
+            "twilightforest:twilight_oak_planks",
+            "twilightforest:canopy_planks",
+            "twilightforest:mangrove_planks",
+            "twilightforest:dark_planks",
+            "twilightforest:time_planks",
+            "twilightforest:transformation_planks",
+            "twilightforest:mining_planks",
+            "twilightforest:sorting_planks",
+            "twilightforest:towerwood",
+            "twilightforest:encased_towerwood",
+            "twilightforest:cracked_towerwood",
+            "twilightforest:mossy_towerwood",
+            "twilightforest:infested_towerwood"
+          ]
+        },
+        "data/minecraft/tags/blocks/saplings.json": {
+          "values": [
+            "twilightforest:twilight_oak_sapling",
+            "twilightforest:canopy_sapling",
+            "twilightforest:mangrove_sapling",
+            "twilightforest:darkwood_sapling",
+            "twilightforest:time_sapling",
+            "twilightforest:transformation_sapling",
+            "twilightforest:mining_sapling",
+            "twilightforest:sorting_sapling",
+            "twilightforest:hollow_oak_sapling",
+            "twilightforest:rainbow_oak_sapling"
+          ]
+        },
+        "data/minecraft/tags/blocks/standing_signs.json": {
+          "values": [
+            "twilightforest:twilight_oak_sign",
+            "twilightforest:canopy_sign",
+            "twilightforest:mangrove_sign",
+            "twilightforest:dark_sign",
+            "twilightforest:time_sign",
+            "twilightforest:transformation_sign",
+            "twilightforest:mining_sign",
+            "twilightforest:sorting_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/wall_hanging_signs.json": {
+          "values": [
+            "twilightforest:twilight_oak_wall_hanging_sign",
+            "twilightforest:canopy_wall_hanging_sign",
+            "twilightforest:mangrove_wall_hanging_sign",
+            "twilightforest:dark_wall_hanging_sign",
+            "twilightforest:time_wall_hanging_sign",
+            "twilightforest:transformation_wall_hanging_sign",
+            "twilightforest:mining_wall_hanging_sign",
+            "twilightforest:sorting_wall_hanging_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/wall_signs.json": {
+          "values": [
+            "twilightforest:twilight_wall_sign",
+            "twilightforest:canopy_wall_sign",
+            "twilightforest:mangrove_wall_sign",
+            "twilightforest:dark_wall_sign",
+            "twilightforest:time_wall_sign",
+            "twilightforest:transformation_wall_sign",
+            "twilightforest:mining_wall_sign",
+            "twilightforest:sorting_wall_sign"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_buttons.json": {
+          "values": [
+            "twilightforest:twilight_oak_button",
+            "twilightforest:canopy_button",
+            "twilightforest:mangrove_button",
+            "twilightforest:dark_button",
+            "twilightforest:time_button",
+            "twilightforest:transformation_button",
+            "twilightforest:mining_button",
+            "twilightforest:sorting_button"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_doors.json": {
+          "values": [
+            "twilightforest:twilight_oak_door",
+            "twilightforest:canopy_door",
+            "twilightforest:mangrove_door",
+            "twilightforest:dark_door",
+            "twilightforest:time_door",
+            "twilightforest:transformation_door",
+            "twilightforest:mining_door",
+            "twilightforest:sorting_door"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_fences.json": {
+          "values": [
+            "twilightforest:twilight_oak_fence",
+            "twilightforest:canopy_fence",
+            "twilightforest:mangrove_fence",
+            "twilightforest:dark_fence",
+            "twilightforest:time_fence",
+            "twilightforest:transformation_fence",
+            "twilightforest:mining_fence",
+            "twilightforest:sorting_fence"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_pressure_plates.json": {
+          "values": [
+            "twilightforest:twilight_oak_pressure_plate",
+            "twilightforest:canopy_pressure_plate",
+            "twilightforest:mangrove_pressure_plate",
+            "twilightforest:dark_pressure_plate",
+            "twilightforest:time_pressure_plate",
+            "twilightforest:transformation_pressure_plate",
+            "twilightforest:mining_pressure_plate",
+            "twilightforest:sorting_pressure_plate"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_slabs.json": {
+          "values": [
+            "twilightforest:twilight_oak_slab",
+            "twilightforest:canopy_slab",
+            "twilightforest:mangrove_slab",
+            "twilightforest:dark_slab",
+            "twilightforest:time_slab",
+            "twilightforest:transformation_slab",
+            "twilightforest:mining_slab",
+            "twilightforest:sorting_slab"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_stairs.json": {
+          "values": [
+            "twilightforest:twilight_oak_stairs",
+            "twilightforest:canopy_stairs",
+            "twilightforest:mangrove_stairs",
+            "twilightforest:dark_stairs",
+            "twilightforest:time_stairs",
+            "twilightforest:transformation_stairs",
+            "twilightforest:mining_stairs",
+            "twilightforest:sorting_stairs"
+          ]
+        },
+        "data/minecraft/tags/blocks/wooden_trapdoors.json": {
+          "values": [
+            "twilightforest:twilight_oak_trapdoor",
+            "twilightforest:canopy_trapdoor",
+            "twilightforest:mangrove_trapdoor",
+            "twilightforest:dark_trapdoor",
+            "twilightforest:time_trapdoor",
+            "twilightforest:transformation_trapdoor",
+            "twilightforest:mining_trapdoor",
+            "twilightforest:sorting_trapdoor"
+          ]
+        },
+        "data/twilightforest/tags/blocks/banisters.json": {
+          "values": [
+            "twilightforest:oak_banister",
+            "twilightforest:spruce_banister",
+            "twilightforest:birch_banister",
+            "twilightforest:jungle_banister",
+            "twilightforest:acacia_banister",
+            "twilightforest:dark_oak_banister",
+            "twilightforest:crimson_banister",
+            "twilightforest:warped_banister",
+            "twilightforest:vangrove_banister",
+            "twilightforest:bamboo_banister",
+            "twilightforest:cherry_banister",
+            "twilightforest:twilight_oak_banister",
+            "twilightforest:canopy_banister",
+            "twilightforest:mangrove_banister",
+            "twilightforest:dark_banister",
+            "twilightforest:time_banister",
+            "twilightforest:transformation_banister",
+            "twilightforest:mining_banister",
+            "twilightforest:sorting_banister"
+          ]
+        },
+        "data/twilightforest/tags/blocks/canopy_logs.json": {
+          "values": [
+            "twilightforest:canopy_log",
+            "twilightforest:stripped_canopy_log",
+            "twilightforest:canopy_wood",
+            "twilightforest:stripped_canopy_wood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/castle_blocks.json": {
+          "values": [
+            "twilightforest:castle_brick",
+            "twilightforest:worn_castle_brick",
+            "twilightforest:cracked_castle_brick",
+            "twilightforest:mossy_castle_brick",
+            "twilightforest:castle_roof_tile",
+            "twilightforest:thick_castle_brick",
+            "twilightforest:bold_castle_brick_tile",
+            "twilightforest:bold_castle_brick_pillar",
+            "twilightforest:encased_castle_brick_tile",
+            "twilightforest:encased_castle_brick_pillar",
+            "twilightforest:castle_brick_stairs",
+            "twilightforest:worn_castle_brick_stairs",
+            "twilightforest:cracked_castle_brick_stairs",
+            "twilightforest:mossy_castle_brick_stairs",
+            "twilightforest:encased_castle_brick_stairs",
+            "twilightforest:bold_castle_brick_stairs",
+            "twilightforest:pink_castle_rune_brick",
+            "twilightforest:yellow_castle_rune_brick",
+            "twilightforest:blue_castle_rune_brick",
+            "twilightforest:violet_castle_rune_brick",
+            "twilightforest:pink_castle_door",
+            "twilightforest:yellow_castle_door",
+            "twilightforest:blue_castle_door",
+            "twilightforest:violet_castle_door"
+          ]
+        },
+        "data/twilightforest/tags/blocks/darkwood_logs.json": {
+          "values": [
+            "twilightforest:dark_log",
+            "twilightforest:stripped_dark_log",
+            "twilightforest:dark_wood",
+            "twilightforest:stripped_dark_wood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/hollow_logs.json": {
+          "values": [
+            "#twilightforest:hollow_logs_horizontal",
+            "#twilightforest:hollow_logs_vertical",
+            "#twilightforest:hollow_logs_climbable"
+          ]
+        },
+        "data/twilightforest/tags/blocks/hollow_logs_climbable.json": {
+          "values": [
+            "twilightforest:hollow_oak_log_climbable",
+            "twilightforest:hollow_spruce_log_climbable",
+            "twilightforest:hollow_birch_log_climbable",
+            "twilightforest:hollow_jungle_log_climbable",
+            "twilightforest:hollow_acacia_log_climbable",
+            "twilightforest:hollow_dark_oak_log_climbable",
+            "twilightforest:hollow_crimson_stem_climbable",
+            "twilightforest:hollow_warped_stem_climbable",
+            "twilightforest:hollow_vangrove_log_climbable",
+            "twilightforest:hollow_cherry_log_climbable",
+            "twilightforest:hollow_twilight_oak_log_climbable",
+            "twilightforest:hollow_canopy_log_climbable",
+            "twilightforest:hollow_mangrove_log_climbable",
+            "twilightforest:hollow_dark_log_climbable",
+            "twilightforest:hollow_time_log_climbable",
+            "twilightforest:hollow_transformation_log_climbable",
+            "twilightforest:hollow_mining_log_climbable",
+            "twilightforest:hollow_sorting_log_climbable"
+          ]
+        },
+        "data/twilightforest/tags/blocks/hollow_logs_horizontal.json": {
+          "values": [
+            "twilightforest:hollow_oak_log_horizontal",
+            "twilightforest:hollow_spruce_log_horizontal",
+            "twilightforest:hollow_birch_log_horizontal",
+            "twilightforest:hollow_jungle_log_horizontal",
+            "twilightforest:hollow_acacia_log_horizontal",
+            "twilightforest:hollow_dark_oak_log_horizontal",
+            "twilightforest:hollow_crimson_stem_horizontal",
+            "twilightforest:hollow_warped_stem_horizontal",
+            "twilightforest:hollow_vangrove_log_horizontal",
+            "twilightforest:hollow_cherry_log_horizontal",
+            "twilightforest:hollow_twilight_oak_log_horizontal",
+            "twilightforest:hollow_canopy_log_horizontal",
+            "twilightforest:hollow_mangrove_log_horizontal",
+            "twilightforest:hollow_dark_log_horizontal",
+            "twilightforest:hollow_time_log_horizontal",
+            "twilightforest:hollow_transformation_log_horizontal",
+            "twilightforest:hollow_mining_log_horizontal",
+            "twilightforest:hollow_sorting_log_horizontal"
+          ]
+        },
+        "data/twilightforest/tags/blocks/hollow_logs_vertical.json": {
+          "values": [
+            "twilightforest:hollow_oak_log_vertical",
+            "twilightforest:hollow_spruce_log_vertical",
+            "twilightforest:hollow_birch_log_vertical",
+            "twilightforest:hollow_jungle_log_vertical",
+            "twilightforest:hollow_acacia_log_vertical",
+            "twilightforest:hollow_dark_oak_log_vertical",
+            "twilightforest:hollow_crimson_stem_vertical",
+            "twilightforest:hollow_warped_stem_vertical",
+            "twilightforest:hollow_vangrove_log_vertical",
+            "twilightforest:hollow_cherry_log_vertical",
+            "twilightforest:hollow_twilight_oak_log_vertical",
+            "twilightforest:hollow_canopy_log_vertical",
+            "twilightforest:hollow_mangrove_log_vertical",
+            "twilightforest:hollow_dark_log_vertical",
+            "twilightforest:hollow_time_log_vertical",
+            "twilightforest:hollow_transformation_log_vertical",
+            "twilightforest:hollow_mining_log_vertical",
+            "twilightforest:hollow_sorting_log_vertical"
+          ]
+        },
+        "data/twilightforest/tags/blocks/logs.json": {
+          "values": [
+            "#twilightforest:twilight_oak_logs",
+            "#twilightforest:canopy_logs",
+            "#twilightforest:mangrove_logs",
+            "#twilightforest:darkwood_logs",
+            "#twilightforest:timewood_logs",
+            "#twilightforest:transwood_logs",
+            "#twilightforest:mining_logs",
+            "#twilightforest:sortwood_logs"
+          ]
+        },
+        "data/twilightforest/tags/blocks/mangrove_logs.json": {
+          "values": [
+            "twilightforest:mangrove_log",
+            "twilightforest:stripped_mangrove_log",
+            "twilightforest:mangrove_wood",
+            "twilightforest:stripped_mangrove_wood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/mazestone.json": {
+          "values": [
+            "twilightforest:mazestone",
+            "twilightforest:mazestone_brick",
+            "twilightforest:cracked_mazestone",
+            "twilightforest:mossy_mazestone",
+            "twilightforest:cut_mazestone",
+            "twilightforest:decorative_mazestone",
+            "twilightforest:mazestone_mosaic",
+            "twilightforest:mazestone_border"
+          ]
+        },
+        "data/twilightforest/tags/blocks/mining_logs.json": {
+          "values": [
+            "twilightforest:mining_log",
+            "twilightforest:stripped_mining_log",
+            "twilightforest:mining_wood",
+            "twilightforest:stripped_mining_wood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/sortwood_logs.json": {
+          "values": [
+            "twilightforest:sorting_log",
+            "twilightforest:stripped_sorting_log",
+            "twilightforest:sorting_wood",
+            "twilightforest:stripped_sorting_wood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/timewood_logs.json": {
+          "values": [
+            "twilightforest:time_log",
+            "twilightforest:stripped_time_log",
+            "twilightforest:time_wood",
+            "twilightforest:stripped_time_wood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/towerwood.json": {
+          "values": [
+            "twilightforest:towerwood",
+            "twilightforest:mossy_towerwood",
+            "twilightforest:cracked_towerwood",
+            "twilightforest:infested_towerwood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/transwood_logs.json": {
+          "values": [
+            "twilightforest:transformation_log",
+            "twilightforest:stripped_transformation_log",
+            "twilightforest:transformation_wood",
+            "twilightforest:stripped_transformation_wood"
+          ]
+        },
+        "data/twilightforest/tags/blocks/twilight_oak_logs.json": {
+          "values": [
+            "twilightforest:twilight_oak_log",
+            "twilightforest:stripped_twilight_oak_log",
+            "twilightforest:twilight_oak_wood",
+            "twilightforest:stripped_twilight_oak_wood"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -13,13 +13,13 @@ python tools/check_runtime_packs.py --verify-snapshot
 python tools/package_addon.py
 ```
 
-使用 Python 3.11 运行上述检查和打包命令。生成文件为 `dist/yongmu-forest-0.12.0.mcaddon`。
+使用 Python 3.11 运行上述检查和打包命令。生成文件为 `dist/yongmu-forest-0.12.4.mcaddon`。
 
-仓库已包含本次发布时本地行为包和资源包的 **9,544 个运行文件**，包括 441 张 PNG、73 个 OGG、7,318 个结构文件及全部包内 JSON 配置。不使用 Git LFS；普通 `git clone` 即可取得这些文件，无须重新生成建筑、模型或音效。现成导入包见 [Releases](https://github.com/Nothing-cell-bit/yongmu-forest/releases)。
+仓库已包含2026-10-31 更新的本地行为包和资源包的 **13,600 个运行文件**，包括 4,426 张 PNG、73 个 OGG、7,318 个结构文件及全部包内 JSON 配置。不使用 Git LFS；普通 `git clone` 即可取得这些文件，无须重新生成建筑、模型或音效。历史导入包见 [Releases](https://github.com/Nothing-cell-bit/yongmu-forest/releases)；本次仅更新源码，最新包请使用上述命令在本地打包。
 
 **游戏运行需要网易 MC Studio / ModSDK 开发环境及其配套客户端。** 将两个包导入同一 AddOn 项目，在新建测试世界中同时启用行为包与资源包。导入压缩包方式受所用开发工具版本影响，目录导入方式及排错见[运行说明](docs/DEVELOPMENT.md)。这不是 Java Forge/Fabric 模组，也不能用 Python 直接启动游戏逻辑。SDK 和游戏客户端由官方工具提供，不随仓库分发。
 
-本次发布验证了文件完整性和静态资源检查，**未重新进行客户端运行时验收**。源码版本为 `0.12.0`；开发快照可能仍有 Bug，详见[状态说明](docs/STATUS.md)。
+本次发布验证了文件完整性和静态资源检查，**未重新进行客户端运行时验收**。源码版本为 `0.12.4`；开发快照可能仍有 Bug，详见[状态说明](docs/STATUS.md)。
 
 ## 主要内容
 
@@ -38,7 +38,7 @@ python tools/package_addon.py
 | `tools/` | 资源工具、检查器与导入包打包脚本 |
 | `tests/` | 离线逻辑与资源契约测试 |
 | `PACK_SNAPSHOT.json` | 本次完整运行包逐文件大小与 SHA-256 |
-| `ASSET_MANIFEST.json` | 441 张图片的来源与校验值 |
+| `ASSET_MANIFEST.json` | 4,426 张图片的来源与校验值 |
 | `SOURCE_SNAPSHOT.json` | 最初代码导入的历史记录 |
 | `AUDIO_CREDITS.md` | 音效生成、加工来源和许可区分 |
 
@@ -60,3 +60,7 @@ python tools/run_public_tests.py
 - 音效包含自行合成和录音加工，分别保留原来源条件，见 [AUDIO_CREDITS.md](AUDIO_CREDITS.md)，不把所有声音统一重新授权为 CC。
 
 本项目免费提供。各类文件分别适用其许可证；项目免费不改变上游许可。本项目不代表 TeamTwilight、Mojang、Microsoft 或网易官方。
+
+## 2026-10-31 更新
+
+当前双包版本为 `0.12.4`。本次更新包括 Boss HUD、地图和维度入口、群系天空与植被、原生装备和方块资源，以及对应工具和测试。细节、检查范围和可选工具依赖审计见[更新记录](docs/updates/20261031.md)。

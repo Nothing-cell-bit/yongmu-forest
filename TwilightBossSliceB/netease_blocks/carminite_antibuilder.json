@@ -49,7 +49,7 @@
         "value": false
       },
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 4.0
+        "seconds_to_destroy": 10.0
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10.0
@@ -57,7 +57,13 @@
       "netease:block_entity": {
         "tick": true,
         "movable": false
-      }
+      },
+      "netease:tier": {
+        "digger": "hatchet",
+        "destroy_special": true,
+        "level": 0
+      },
+      "minecraft:loot": "loot_tables/blocks/tf_slice/no_mining_drop.json"
     }
   }
 }

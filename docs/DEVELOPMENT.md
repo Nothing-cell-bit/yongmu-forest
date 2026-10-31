@@ -16,7 +16,7 @@ python tools/check_runtime_packs.py --verify-snapshot
 python tools/package_addon.py
 ```
 
-最后一步只压缩现有文件，不运行任何生成器、不写入 MC Studio 或已有存档。输出路径默认是 `dist/yongmu-forest-0.12.0.mcaddon`；若已存在，请通过 `--output` 指定新文件名。旁边的 `.sha256` 文件供下载后校验。
+最后一步只压缩现有文件，不运行任何生成器、不写入 MC Studio 或已有存档。输出路径默认是 `dist/yongmu-forest-0.12.4.mcaddon`；若已存在，请通过 `--output` 指定新文件名。旁边的 `.sha256` 文件供下载后校验。
 
 也可从 GitHub Releases 下载现成包。平台不接受 `.mcaddon` 时，可将其作为 ZIP 解压，取得下列两个目录：
 
@@ -34,7 +34,7 @@ TwilightBossSliceR/manifest.json
 
 行为包 UUID：`8b8df0d2-33a4-4b23-b1d4-2fe84c4b7a11`。
 资源包 UUID：`cf9ac2fa-4bca-4cc9-8a78-92d62579e9d4`。
-两包版本均为 `0.12.0`，行为包已声明对资源包的依赖。
+两包版本均为 `0.12.4`，行为包已声明对资源包的依赖。
 
 首次建议用新世界测试。存档、账户、游戏安装、个人路径、调试日志和 SDK 未随源码公开。本次发布没有对下载后的安装流程做新的实机验收；遇到问题请附客户端/SDK 版本、复现步骤和去除私人信息后的日志。
 

@@ -968,12 +968,29 @@ def main() -> int:
             "this repository's tmp or deployment_payloads directory"
         ),
     )
+    parser.add_argument(
+        "--update-pack-references",
+        action="store_true",
+        help=(
+            "update existing Studio/direct-layout pack reference records; "
+            "requires both manifests in a scoped --target-root operation"
+        ),
+    )
     args = parser.parse_args()
     if bool(args.behavior_root) != bool(args.resource_root):
         parser.error("--behavior-root and --resource-root must be used together")
     if not args.target_root and not args.behavior_root and not args.world_root:
         parser.error("at least one synchronization destination is required")
     scoped = bool(args.include_file or args.remove_file)
+    if args.update_pack_references and (
+        not scoped or len(args.target_root) != 1
+        or args.behavior_root or args.world_root
+        or not {name + ":manifest.json" for name in PACK_NAMES}.issubset(args.include_file)
+    ):
+        parser.error(
+            "--update-pack-references requires both selected manifests "
+            "and exactly one scoped --target-root"
+        )
     if scoped and args.acknowledge_full_mirror:
         parser.error(
             "--acknowledge-full-mirror cannot be combined with scoped files"
@@ -1093,6 +1110,11 @@ def main() -> int:
                     removals=args.remove_file,
                     allow_large_sync=args.allow_large_sync,
                 )
+                if args.update_pack_references:
+                    changed_references = _sync_world_pack_references(
+                        scoped_source_root, target_root
+                    )
+                    print("PACK_REFERENCES: updated=%d" % changed_references)
             else:
                 results = mirror_addon(
                     ROOT,

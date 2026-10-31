@@ -14,12 +14,12 @@ def set_bosses(bosses, stack_slot=None):
     _PENDING_BOSSES = list(bosses or ())
     if stack_slot is not None:
         _PENDING_STACK_SLOT = max(0, int(stack_slot))
-    if _ACTIVE_UI is not None:
+    if is_active():
         _ACTIVE_UI.ApplyBosses(_PENDING_BOSSES, _PENDING_STACK_SLOT)
 
 
 def is_active():
-    return _ACTIVE_UI is not None
+    return _ACTIVE_UI is not None and _ACTIVE_UI.IsReady()
 
 
 def invalidate():
@@ -60,6 +60,12 @@ class NagaBossHudUI(ScreenNode):
             self._fill = None
             self._fill_clip = None
         self.ApplyBosses(_PENDING_BOSSES, _PENDING_STACK_SLOT)
+
+    def IsReady(self):
+        try:
+            return self.GetBaseUIControl("/boss_root") is not None
+        except Exception:
+            return False
 
     def ApplyBosses(self, bosses, stack_slot=0):
         if self._root is None:

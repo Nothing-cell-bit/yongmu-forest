@@ -2,6 +2,10 @@
   "namespace": "portal_loading",
   "main": {
     "type": "screen",
+    "size": [
+      "100%",
+      "100%"
+    ],
     "render_game_behind": true,
     "is_showing_menu": false,
     "absorbs_input": false,
@@ -9,42 +13,1198 @@
       {
         "overlay": {
           "type": "image",
+          "texture": "textures/ui/white",
+          "keep_ratio": false,
           "anchor_from": "center",
           "anchor_to": "center",
-          "size": ["100%", "100%"],
-          "texture": "textures/ui/white",
-          "color": [0.015, 0.025, 0.035],
-          "alpha": 0.98,
-          "keep_ratio": false,
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "color": [
+            0.016,
+            0.034,
+            0.035
+          ],
+          "alpha": 1.0,
           "visible": false,
           "layer": 400,
           "controls": [
             {
-              "title": {
-                "type": "label",
+              "mist_0": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  "100%",
+                  100
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "color": [
+                  0.025,
+                  0.07,
+                  0.068
+                ],
+                "layer": 401
+              }
+            },
+            {
+              "mist_1": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  "100%",
+                  65
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "color": [
+                  0.026,
+                  0.085,
+                  0.073
+                ],
+                "layer": 401
+              }
+            },
+            {
+              "mist_2": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  "100%",
+                  30
+                ],
+                "offset": [
+                  0,
+                  0
+                ],
+                "color": [
+                  0.035,
+                  0.1,
+                  0.078
+                ],
+                "layer": 401
+              }
+            },
+            {
+              "trunk_0": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  21,
+                  250
+                ],
+                "offset": [
+                  "-2%",
+                  0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_0": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  105,
+                  80.0
+                ],
+                "offset": [
+                  "-6%",
+                  -150.0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_0": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  63,
+                  6
+                ],
+                "offset": [
+                  "-4%",
+                  -112.5
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "trunk_1": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  13,
+                  210
+                ],
+                "offset": [
+                  "5%",
+                  0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_1": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  65,
+                  67.2
+                ],
+                "offset": [
+                  "1%",
+                  -126.0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_1": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  39,
+                  6
+                ],
+                "offset": [
+                  "3%",
+                  -94.5
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "trunk_2": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  10,
+                  165
+                ],
+                "offset": [
+                  "12%",
+                  0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_2": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  50,
+                  52.800000000000004
+                ],
+                "offset": [
+                  "8%",
+                  -99.0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_2": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  30,
+                  6
+                ],
+                "offset": [
+                  "10%",
+                  -74.25
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "trunk_3": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  7,
+                  120
+                ],
+                "offset": [
+                  "20%",
+                  0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_3": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  35,
+                  38.4
+                ],
+                "offset": [
+                  "16%",
+                  -72.0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_3": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  21,
+                  6
+                ],
+                "offset": [
+                  "18%",
+                  -54.0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "trunk_4": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  7,
+                  132
+                ],
+                "offset": [
+                  "77%",
+                  0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_4": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  35,
+                  42.24
+                ],
+                "offset": [
+                  "73%",
+                  -79.2
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_4": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  21,
+                  6
+                ],
+                "offset": [
+                  "75%",
+                  -59.4
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "trunk_5": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  11,
+                  180
+                ],
+                "offset": [
+                  "85%",
+                  0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_5": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  55,
+                  57.6
+                ],
+                "offset": [
+                  "81%",
+                  -108.0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_5": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  33,
+                  6
+                ],
+                "offset": [
+                  "83%",
+                  -81.0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "trunk_6": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  16,
+                  220
+                ],
+                "offset": [
+                  "92%",
+                  0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_6": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  80,
+                  70.4
+                ],
+                "offset": [
+                  "88%",
+                  -132.0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_6": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  48,
+                  6
+                ],
+                "offset": [
+                  "90%",
+                  -99.0
+                ],
+                "color": [
+                  0.018,
+                  0.05,
+                  0.043
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "trunk_7": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  24,
+                  270
+                ],
+                "offset": [
+                  "99%",
+                  0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "crown_7": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  120,
+                  86.4
+                ],
+                "offset": [
+                  "95%",
+                  -162.0
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "branch_7": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [
+                  72,
+                  6
+                ],
+                "offset": [
+                  "97%",
+                  -121.5
+                ],
+                "color": [
+                  0.014,
+                  0.04,
+                  0.034
+                ],
+                "layer": 402
+              }
+            },
+            {
+              "firefly_0": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "25%",
+                  "26%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "firefly_1": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "31%",
+                  "72%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "firefly_2": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "72%",
+                  "23%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "firefly_3": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "67%",
+                  "65%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "firefly_4": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "17%",
+                  "48%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "firefly_5": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "80%",
+                  "80%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "firefly_6": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "38%",
+                  "15%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "firefly_7": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  "59%",
+                  "87%"
+                ],
+                "color": [
+                  0.36,
+                  0.58,
+                  0.31
+                ],
+                "layer": 403
+              }
+            },
+            {
+              "portal_halo": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
                 "anchor_from": "center",
                 "anchor_to": "center",
-                "offset": [0, -14],
-                "size": [260, 24],
-                "text": "正在进入暮色森林……",
-                "color": [0.72, 0.86, 0.74],
-                "font_scale_factor": 1.15,
+                "size": [
+                  36,
+                  42
+                ],
+                "offset": [
+                  0,
+                  -64
+                ],
+                "color": [
+                  0.035,
+                  0.1,
+                  0.08
+                ],
+                "layer": 405
+              }
+            },
+            {
+              "portal_frame": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  26,
+                  32
+                ],
+                "offset": [
+                  0,
+                  -64
+                ],
+                "color": [
+                  0.35,
+                  0.52,
+                  0.34
+                ],
+                "layer": 406
+              }
+            },
+            {
+              "portal_inside": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  20,
+                  26
+                ],
+                "offset": [
+                  0,
+                  -64
+                ],
+                "color": [
+                  0.08,
+                  0.1,
+                  0.17
+                ],
+                "layer": 407
+              }
+            },
+            {
+              "portal_light": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  10,
+                  18
+                ],
+                "offset": [
+                  0,
+                  -64
+                ],
+                "color": [
+                  0.17,
+                  0.22,
+                  0.29
+                ],
+                "layer": 408
+              }
+            },
+            {
+              "spark_v": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  1,
+                  7
+                ],
+                "offset": [
+                  0,
+                  -65
+                ],
+                "color": [
+                  0.76,
+                  0.85,
+                  0.59
+                ],
+                "layer": 409
+              }
+            },
+            {
+              "spark_h": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  7,
+                  1
+                ],
+                "offset": [
+                  0,
+                  -65
+                ],
+                "color": [
+                  0.76,
+                  0.85,
+                  0.59
+                ],
+                "layer": 409
+              }
+            },
+            {
+              "title": {
+                "type": "label",
+                "text": "暮色森林",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  -27
+                ],
+                "size": [
+                  "90%",
+                  24
+                ],
+                "font_scale_factor": 1.7,
+                "color": [
+                  0.84,
+                  0.91,
+                  0.75
+                ],
                 "text_alignment": "center",
-                "layer": 401
+                "layer": 410
+              }
+            },
+            {
+              "subtitle": {
+                "type": "label",
+                "text": "T W I L I G H T   F O R E S T",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  -5
+                ],
+                "size": [
+                  "90%",
+                  16
+                ],
+                "font_scale_factor": 0.6,
+                "color": [
+                  0.45,
+                  0.62,
+                  0.53
+                ],
+                "text_alignment": "center",
+                "layer": 410
+              }
+            },
+            {
+              "divider_left": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  44,
+                  1
+                ],
+                "offset": [
+                  -36,
+                  12
+                ],
+                "color": [
+                  0.19,
+                  0.33,
+                  0.26
+                ],
+                "layer": 409
+              }
+            },
+            {
+              "divider_right": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  44,
+                  1
+                ],
+                "offset": [
+                  36,
+                  12
+                ],
+                "color": [
+                  0.19,
+                  0.33,
+                  0.26
+                ],
+                "layer": 409
+              }
+            },
+            {
+              "divider_seed": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  3,
+                  3
+                ],
+                "offset": [
+                  0,
+                  12
+                ],
+                "color": [
+                  0.57,
+                  0.68,
+                  0.4
+                ],
+                "layer": 409
+              }
+            },
+            {
+              "status": {
+                "type": "label",
+                "text": "正在进入暮色森林",
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "offset": [
+                  0,
+                  33
+                ],
+                "size": [
+                  "90%",
+                  16
+                ],
+                "font_scale_factor": 0.85,
+                "color": [
+                  0.65,
+                  0.77,
+                  0.66
+                ],
+                "text_alignment": "center",
+                "layer": 410
+              }
+            },
+            {
+              "waiting_dot_0": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  -8,
+                  53
+                ],
+                "color": [
+                  0.34,
+                  0.49,
+                  0.34
+                ],
+                "layer": 409
+              }
+            },
+            {
+              "waiting_dot_1": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  0,
+                  53
+                ],
+                "color": [
+                  0.44000000000000006,
+                  0.59,
+                  0.44000000000000006
+                ],
+                "layer": 409
+              }
+            },
+            {
+              "waiting_dot_2": {
+                "type": "image",
+                "texture": "textures/ui/white",
+                "keep_ratio": false,
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [
+                  2,
+                  2
+                ],
+                "offset": [
+                  8,
+                  53
+                ],
+                "color": [
+                  0.54,
+                  0.69,
+                  0.54
+                ],
+                "layer": 409
               }
             },
             {
               "hint": {
                 "type": "label",
+                "text": "循着萤火，走入无尽林海",
                 "anchor_from": "center",
                 "anchor_to": "center",
-                "offset": [0, 16],
-                "size": [300, 18],
-                "text": "正在准备地形与返程门，请稍候",
-                "color": [0.62, 0.69, 0.65],
-                "font_scale_factor": 0.8,
+                "offset": [
+                  0,
+                  83
+                ],
+                "size": [
+                  "90%",
+                  16
+                ],
+                "font_scale_factor": 0.65,
+                "color": [
+                  0.44,
+                  0.59,
+                  0.5
+                ],
                 "text_alignment": "center",
-                "layer": 401
+                "layer": 410
               }
             }
           ]

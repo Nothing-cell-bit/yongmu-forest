@@ -53,7 +53,7 @@ def documents():
         "ur_ghast_tear.json": particle(
             "ur_ghast_tear",
             "particles_alpha",
-            "textures/items/fiery_tears",
+            "textures/items/ghast_tear",
             {
                 "minecraft:emitter_rate_instant": {"num_particles": 1},
                 "minecraft:emitter_lifetime_once": {},

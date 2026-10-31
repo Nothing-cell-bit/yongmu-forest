@@ -7,10 +7,10 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/upper_goblin_knight"
+        "default": "textures/tf_beautified/entities/mobs/tf_slice__upper_goblin_knight"
       },
       "geometry": {
-        "default": "geometry.tf_slice.upper_goblin_knight"
+        "default": "geometry.tf_slice.upper_goblin_knight_art_v1"
       },
       "animations": {
         "move": "animation.tf_slice.upper_goblin_knight.move"

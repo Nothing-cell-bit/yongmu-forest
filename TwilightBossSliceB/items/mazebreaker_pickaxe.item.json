@@ -2,7 +2,8 @@
   "format_version": "1.21.60",
   "minecraft:item": {
     "description": {
-      "identifier": "tf_slice:mazebreaker_pickaxe"
+      "identifier": "tf_slice:mazebreaker_pickaxe",
+      "custom_item_type": "weapon"
     },
     "components": {
       "minecraft:display_name": {
@@ -22,6 +23,56 @@
       "minecraft:enchantable": {
         "slot": "pickaxe",
         "value": 10
+      },
+      "netease:weapon": {
+        "type": "pickaxe",
+        "level": 3,
+        "speed": 8,
+        "attack_damage": 0,
+        "enchantment": 10
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_tool",
+          "minecraft:is_pickaxe"
+        ]
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": "tf_slice:cracked_mazestone",
+            "speed": 128
+          },
+          {
+            "block": "tf_slice:cut_mazestone",
+            "speed": 128
+          },
+          {
+            "block": "tf_slice:decorative_mazestone",
+            "speed": 128
+          },
+          {
+            "block": "tf_slice:mazestone",
+            "speed": 128
+          },
+          {
+            "block": "tf_slice:mazestone_border",
+            "speed": 128
+          },
+          {
+            "block": "tf_slice:mazestone_brick",
+            "speed": 128
+          },
+          {
+            "block": "tf_slice:mazestone_mosaic",
+            "speed": 128
+          },
+          {
+            "block": "tf_slice:mossy_mazestone",
+            "speed": 128
+          }
+        ]
       }
     }
   }

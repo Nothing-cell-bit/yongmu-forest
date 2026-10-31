@@ -788,7 +788,12 @@ def generated_files():
     for relative_path in COMPATIBILITY_ENTITY_GROUPS:
         path = ROOT / relative_path
         outputs[path] = serialize(build_compatible_client_entity(path, companions))
-    return outputs
+    try:
+        from retired_runtime_pngs import is_retired_runtime_png
+    except ImportError:
+        from tools.retired_runtime_pngs import is_retired_runtime_png
+    return {path: content for path, content in outputs.items()
+            if not is_retired_runtime_png(path, ROOT)}
 
 
 def write_outputs(outputs):

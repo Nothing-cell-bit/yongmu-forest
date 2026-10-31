@@ -72,8 +72,6 @@
             "items": [
               "tf_slice:ironwood_pickaxe",
               "tf_slice:ironwood_boots",
-              "tf_slice:naga_chestplate",
-              "tf_slice:naga_leggings",
               "tf_slice:gold_minotaur_axe",
               "tf_slice:diamond_minotaur_axe",
               "tf_slice:mazebreaker_pickaxe",
@@ -95,22 +93,12 @@
               "tf_slice:steeleaf_boots",
               "tf_slice:fiery_sword",
               "tf_slice:fiery_pickaxe",
-              "tf_slice:fiery_helmet",
-              "tf_slice:fiery_chestplate",
-              "tf_slice:fiery_leggings",
-              "tf_slice:fiery_boots",
               "tf_slice:knightmetal_ring",
               "tf_slice:knightmetal_sword",
               "tf_slice:knightmetal_pickaxe",
               "tf_slice:knightmetal_axe",
               "tf_slice:block_and_chain",
               "tf_slice:knightmetal_shield",
-              "tf_slice:phantom_helmet",
-              "tf_slice:phantom_chestplate",
-              "tf_slice:knightmetal_helmet",
-              "tf_slice:knightmetal_chestplate",
-              "tf_slice:knightmetal_leggings",
-              "tf_slice:knightmetal_boots",
               "tf_slice:fortification_scepter",
               "tf_slice:lifedrain_scepter",
               "tf_slice:twilight_scepter",
@@ -215,8 +203,7 @@
               "tf_slice:encased_fire_jet",
               "tf_slice:maze_slime_block",
               "tf_slice:fiery_block",
-              "tf_slice:cicada_jar",
-              "tf_slice:canopy_fence"
+              "tf_slice:cicada_jar"
             ]
           }
         ]

@@ -48,7 +48,7 @@ class RuntimeContentLogRegressionTests(unittest.TestCase):
     def test_patch_version_is_bumped_for_client_cache_invalidation(self):
         self.assertEqual((0, 12, 0), release_metadata.PACK_VERSION)
 
-    def test_knightmetal_armor_uses_slot_specific_enchant_categories(self):
+    def test_knightmetal_armor_native_slots_preserve_enchant_ownership(self):
         expected = {
             "knightmetal_helmet": ("slot.armor.head", "armor_head"),
             "knightmetal_chestplate": ("slot.armor.chest", "armor_torso"),
@@ -57,17 +57,17 @@ class RuntimeContentLogRegressionTests(unittest.TestCase):
         }
         for identifier, (wearable_slot, enchant_slot) in expected.items():
             item = read_json(
-                BP / "items" / (identifier + ".item.json")
+                BP / "netease_items_beh" / (identifier + ".item.json")
             )["minecraft:item"]
             components = item["components"]
             self.assertEqual(
-                wearable_slot,
-                components["minecraft:wearable"]["slot"],
+                {"slot.armor.head": 0, "slot.armor.chest": 1, "slot.armor.legs": 2, "slot.armor.feet": 3}[wearable_slot],
+                components["netease:armor"]["armor_slot"],
                 identifier,
             )
             self.assertEqual(
-                enchant_slot,
-                components["minecraft:enchantable"]["slot"],
+                8,
+                components["netease:armor"]["enchantment"],
                 identifier,
             )
 
@@ -145,11 +145,9 @@ class RuntimeContentLogRegressionTests(unittest.TestCase):
             "knightmetal_boots",
         ):
             item = read_json(
-                BP / "items" / (identifier + ".item.json")
+                RP / "netease_items_res" / (identifier + ".item.json")
             )["minecraft:item"]
-            texture_key = item["components"]["minecraft:icon"][
-                "textures"
-            ]["default"]
+            texture_key = item["components"]["minecraft:icon"]
             self.assertIn(texture_key, atlas, identifier)
             texture_path = atlas[texture_key]["textures"] + ".png"
             self.assertTrue((RP / texture_path).is_file(), identifier)
@@ -410,13 +408,16 @@ class SimplifiedChineseLocalizationTests(unittest.TestCase):
     def test_every_registered_public_content_has_a_chinese_name(self):
         chinese = read_language(RP / "texts" / "zh_CN.lang")
         expected = set()
-        for path in (BP / "items").glob("*.json"):
+        item_paths = list((BP / "items").glob("*.json")) + list((BP / "netease_items_beh").glob("*.json"))
+        for path in item_paths:
             item = read_json(path).get("minecraft:item", {})
             if not item:
                 continue
             display = item.get("components", {}).get(
                 "minecraft:display_name", {}
             ).get("value")
+            if path.parent.name == "netease_items_beh":
+                display = "item.%s.name" % item["description"]["identifier"]
             self.assertTrue(display, path.name)
             expected.add(display)
         for folder in ("blocks", "netease_blocks"):

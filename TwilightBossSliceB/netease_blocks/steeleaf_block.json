@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 5
+        "seconds_to_destroy": 5.0
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 6
@@ -55,6 +55,11 @@
       },
       "netease:pathable": {
         "value": false
+      },
+      "netease:tier": {
+        "digger": "hoe",
+        "destroy_special": false,
+        "level": 0
       }
     }
   }

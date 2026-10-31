@@ -7,7 +7,7 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/items/knightmetal_pickaxe"
+        "default": "textures/tf_beautified/items/knightmetal_pickaxe"
       },
       "geometry": {
         "default": "geometry.tf_slice.knight_pickaxe_projectile"

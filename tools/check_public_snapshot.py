@@ -68,8 +68,13 @@ def main():
                     findings.append({'path':rel.as_posix(),'rule':'png-dimensions'})
             if hashlib.sha256(raw).hexdigest() != item['sha256'] or len(raw) != item['bytes']:
                 findings.append({'path':rel.as_posix(),'rule':'image-hash-mismatch'})
-            if item.get('license') != 'CC-BY-NC-SA-4.0' or not item.get('creators') or not item.get('changes'):
+            if item.get('license') not in {'CC-BY-NC-SA-4.0', 'Minecraft-game-resource'} or not item.get('creators') or not item.get('changes'):
                 findings.append({'path':rel.as_posix(),'rule':'image-attribution-missing'})
+            if item.get('license') == 'Minecraft-game-resource' and (
+                item.get('origin') != 'minecraft-java-1.20.1'
+                or not item.get('upstream_paths') or not item.get('evidence')
+            ):
+                findings.append({'path':rel.as_posix(),'rule':'game-resource-provenance-missing'})
             checked += 1
             continue
         if path.name not in {'LICENSE','ASSET_LICENSE','.gitignore','.gitattributes'} and path.suffix not in ALLOWED_SUFFIXES:

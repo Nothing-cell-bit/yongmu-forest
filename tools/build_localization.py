@@ -455,7 +455,8 @@ def build_localization(root=ROOT):
             english[egg_key] = "Spawn " + english[key]
             chinese[egg_key] = "生成 " + translated
 
-    for path in sorted((bp / "items").glob("*.json")):
+    item_paths = list((bp / "items").glob("*.json")) + list((bp / "netease_items_beh").glob("*.json"))
+    for path in sorted(item_paths):
         item = _load_json(path).get("minecraft:item", {})
         description = item.get("description", {})
         full_identifier = description.get("identifier", "")

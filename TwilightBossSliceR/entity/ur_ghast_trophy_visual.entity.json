@@ -7,7 +7,7 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/tf_slice/trophies/ur_ghast"
+        "default": "textures/tf_beautified/entity/tf_slice/trophies/ur_ghast"
       },
       "geometry": {
         "default": "geometry.tf_slice.ur_ghast_trophy_visual"

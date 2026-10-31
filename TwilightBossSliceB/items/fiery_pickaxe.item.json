@@ -2,7 +2,8 @@
   "format_version": "1.21.60",
   "minecraft:item": {
     "description": {
-      "identifier": "tf_slice:fiery_pickaxe"
+      "identifier": "tf_slice:fiery_pickaxe",
+      "custom_item_type": "weapon"
     },
     "components": {
       "minecraft:display_name": {
@@ -25,6 +26,19 @@
       },
       "minecraft:fire_resistant": {
         "value": true
+      },
+      "netease:weapon": {
+        "type": "pickaxe",
+        "level": 4,
+        "speed": 9,
+        "attack_damage": 0,
+        "enchantment": 10
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_tool",
+          "minecraft:is_pickaxe"
+        ]
       }
     }
   }

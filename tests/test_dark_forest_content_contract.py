@@ -12,6 +12,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 BP = ROOT / "TwilightBossSliceB"
 RP = ROOT / "TwilightBossSliceR"
+BIOME_PROFILES = ROOT / "resource_art" / "biome_profiles"
 sys.path.insert(0, str(ROOT / "tools"))
 sys.path.insert(0, str(BP))
 
@@ -1000,8 +1001,7 @@ class DarkForestContentContractTests(unittest.TestCase):
 
     def test_center_uses_the_effective_runtime_autumn_colors(self):
         center = load(
-            RP
-            / "biomes"
+            BIOME_PROFILES
             / "dm33027004_redwood_taiga_mutated.client_biome.json"
         )["minecraft:client_biome"]["components"]
         # The 4.3.2508 foliage handler normalizes noise to [0, 1] before

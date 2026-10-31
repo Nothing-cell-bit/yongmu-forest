@@ -25,6 +25,11 @@ TWILIGHT_STAR_BRIGHTNESS = 0.0
 # implementation available for future engine builds, but quarantine every
 # native environment effect that depends on that readiness signal.
 TWILIGHT_NATIVE_ENVIRONMENT_EFFECTS_ENABLED = False
+# Candidate: dimension-local cubemap after arrival, UI and observed frames.
+TWILIGHT_POST_ENTRY_ENVIRONMENT_ENABLED = True
+TWILIGHT_POST_ENTRY_ENVIRONMENT_FRAMES = 60
+# Enable separately after the cubemap passes target-client acceptance.
+TWILIGHT_POST_ENTRY_CLOUDS_ENABLED = False
 TWILIGHT_SKY_REFRESH_TICKS = 20
 TWILIGHT_SKY_RENDER_WARMUP_TICKS = 40
 TWILIGHT_SKY_DIAGNOSTIC_LIMIT = 12
@@ -32,12 +37,12 @@ TWILIGHT_SKY_DIAGNOSTIC_LIMIT = 12
 # These fixed faces are the NetEase equivalent of the upstream renderer's
 # deterministic world-space star vertex buffer.
 TWILIGHT_SKY_TEXTURES = [
-    "textures/environment/twilight_sky/negative_z",
-    "textures/environment/twilight_sky/positive_x",
-    "textures/environment/twilight_sky/positive_z",
-    "textures/environment/twilight_sky/negative_x",
-    "textures/environment/twilight_sky/positive_y",
-    "textures/environment/twilight_sky/negative_y",
+    "textures/environment/twilight_sky_small/negative_z",
+    "textures/environment/twilight_sky_small/positive_x",
+    "textures/environment/twilight_sky_small/positive_z",
+    "textures/environment/twilight_sky_small/negative_x",
+    "textures/environment/twilight_sky_small/positive_y",
+    "textures/environment/twilight_sky_small/negative_y",
 ]
 # NetEase only resolves native `{dimension}_clouds.png` overrides for the
 # built-in/mirror dimension ID range. Dimension 33027004 therefore owns an
@@ -57,6 +62,14 @@ ENTRY_POS = (3.5, 97.0, 0.5)
 # the loading overlay after DimensionChangeFinish; X/Z already match the
 # deterministic west edge selected by portal_logic.find_exit.
 PORTAL_DIRECT_ENTRY_ENABLED = True
+# Candidate: let native player tickets prioritize the current view. The
+# legacy fixed 72-chunk portal prewarm keeps loading the old exit after the
+# player moves away; retain it only for explicit comparison testing.
+# This cannot shorten the earlier native dimension-change wait by itself.
+PORTAL_BACKGROUND_PRELOAD_ENABLED = False
+# Only the reviewed local diagnostic payload supplies a directory.
+# Normal packs cannot start recording; the command is always explicit.
+CHUNK_LATENCY_PROBE_OUTPUT_DIR = None
 WORLDGEN_DIRECT_ENTRY_FOOT_Y = 97.0
 # Native structure callbacks can race the first LevelChunk publication during
 # ChangePlayerDimension. Enter at a deterministic structure-free staging area,
@@ -85,6 +98,8 @@ PORTAL_BUILD_RETRY_TICKS = 5
 PORTAL_AREA_MARGIN = 80
 PORTAL_CLIENT_READY_TIMEOUT_TICKS = 180
 PORTAL_CLIENT_READY_STABLE_TICKS = 2
+# Compatibility name: retry the Prepared notification after this interval;
+# elapsed time never grants SetPos permission without the client's ACK.
 PORTAL_CLIENT_ENGINE_READY_FALLBACK_TICKS = 80
 PORTAL_CLIENT_RENDER_SETTLE_TICKS = 20
 PORTAL_CLIENT_LOADING_TIMEOUT_TICKS = 1800
@@ -98,6 +113,8 @@ DEFAULT_DIFFICULTY_ID = 2
 CONTACT_COOLDOWN_TICKS = 20
 SEGMENT_COLLISION_SCAN_RADIUS = 32
 SEGMENT_REMOVAL_RETRY_TICKS = 2
+SEGMENT_REMOVAL_MAX_RETRY_TICKS = 200
+SEGMENT_REMOVAL_LOG_INTERVAL_TICKS = 600
 WAYPOINT_REACHED_DISTANCE = 2.25
 DEFAULT_MOB_GRIEFING = True
 BOSS_DISCOVERY_INTERVAL_TICKS = 20

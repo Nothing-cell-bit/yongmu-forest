@@ -53,6 +53,11 @@
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 6.0
+      },
+      "netease:tier": {
+        "digger": "pickaxe",
+        "destroy_special": true,
+        "level": 2
       }
     }
   }
